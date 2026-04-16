@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-17T00:20:34",
-  "total_pages": 72,
+  "generated_at": "2026-04-17T00:41:45",
+  "total_pages": 110,
   "pages": [
     {
       "path": "rules.md",
@@ -207,6 +207,29 @@
       ]
     },
     {
+      "path": "concepts/观念对象.md",
+      "title": "观念对象",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "phenomenology"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "本质直观",
+        "现象学",
+        "胡塞尔",
+        "sources/2026-04-17-husserl-theological-turn.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/本质直观.md",
+        "entities/胡塞尔/profile.md",
+        "sources/2026-04-17-husserl-theological-turn.md"
+      ]
+    },
+    {
       "path": "concepts/RAG.md",
       "title": "RAG",
       "type": "concept",
@@ -258,6 +281,29 @@
       ]
     },
     {
+      "path": "concepts/本质直观.md",
+      "title": "本质直观",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "phenomenology"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "观念对象",
+        "现象学",
+        "胡塞尔",
+        "sources/2026-04-17-husserl-theological-turn.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/观念对象.md",
+        "entities/胡塞尔/profile.md",
+        "sources/2026-04-17-husserl-theological-turn.md"
+      ]
+    },
+    {
       "path": "concepts/Superalignment.md",
       "title": "Superalignment",
       "type": "concept",
@@ -279,6 +325,51 @@
         "entities/常天喆/profile.md",
         "entities/微软亚洲研究院/profile.md",
         "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/三言.md",
+      "title": "三言",
+      "type": "concept",
+      "domain": [
+        "chinese-philosophy",
+        "literature"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "庄子",
+        "sources/2026-04-17-zhuangzi-language-philosophy.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/庄子/profile.md",
+        "sources/2026-04-17-zhuangzi-language-philosophy.md"
+      ]
+    },
+    {
+      "path": "concepts/满溢现象.md",
+      "title": "满溢现象",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "phenomenology",
+        "theology"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "还原与给予",
+        "现象学神学转向",
+        "马里翁",
+        "sources/2026-04-17-husserl-theological-turn.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/现象学神学转向.md",
+        "concepts/还原与给予.md",
+        "entities/马里翁/profile.md",
+        "sources/2026-04-17-husserl-theological-turn.md"
       ]
     },
     {
@@ -420,6 +511,43 @@
       ]
     },
     {
+      "path": "concepts/依赖性论题.md",
+      "title": "依赖性论题",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "kant",
+        "theology"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "宇宙论证明",
+        "本体论证明",
+        "二律背反",
+        "先验幻相",
+        "康德",
+        "阿奎那",
+        "帕特森·布朗",
+        "乔纳森·班尼特",
+        "艾伦·伍德",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/二律背反.md",
+        "concepts/先验幻相.md",
+        "concepts/宇宙论证明.md",
+        "concepts/本体论证明.md",
+        "entities/乔纳森·班尼特/profile.md",
+        "entities/帕特森·布朗/profile.md",
+        "entities/康德/profile.md",
+        "entities/艾伦·伍德/profile.md",
+        "entities/阿奎那/profile.md",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ]
+    },
+    {
       "path": "concepts/Fact-checking Agent.md",
       "title": "Fact-checking Agent",
       "type": "concept",
@@ -449,6 +577,30 @@
       ]
     },
     {
+      "path": "concepts/还原与给予.md",
+      "title": "还原与给予",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "phenomenology"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "满溢现象",
+        "现象学神学转向",
+        "马里翁",
+        "sources/2026-04-17-husserl-theological-turn.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/满溢现象.md",
+        "concepts/现象学神学转向.md",
+        "entities/马里翁/profile.md",
+        "sources/2026-04-17-husserl-theological-turn.md"
+      ]
+    },
+    {
       "path": "concepts/价值观对齐.md",
       "title": "价值观对齐",
       "type": "concept",
@@ -474,6 +626,29 @@
         "entities/微软亚洲研究院/profile.md",
         "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
         "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/二律背反.md",
+      "title": "二律背反",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "kant"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "先验幻相",
+        "纯粹理性批判",
+        "康德",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/先验幻相.md",
+        "entities/康德/profile.md",
+        "sources/2026-04-17-kant-dependency-thesis.md"
       ]
     },
     {
@@ -575,6 +750,240 @@
       ]
     },
     {
+      "path": "concepts/性史.md",
+      "title": "性史",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "critical-theory"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "话语权力",
+        "规训与惩罚",
+        "福柯",
+        "sources/2026-04-17-yudafu-sinking.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/规训与惩罚.md",
+        "concepts/话语权力.md",
+        "entities/福柯/profile.md",
+        "sources/2026-04-17-yudafu-sinking.md"
+      ]
+    },
+    {
+      "path": "concepts/精神分析.md",
+      "title": "精神分析",
+      "type": "concept",
+      "domain": [
+        "psychology",
+        "psychoanalysis"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "梦的解析",
+        "集体无意识",
+        "弗洛伊德",
+        "荣格",
+        "拉康",
+        "sources/2026-04-17-joyce-sisters.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/梦的解析.md",
+        "concepts/集体无意识.md",
+        "entities/弗洛伊德/profile.md",
+        "entities/拉康/profile.md",
+        "entities/荣格/profile.md",
+        "sources/2026-04-17-joyce-sisters.md"
+      ]
+    },
+    {
+      "path": "concepts/宇宙论证明.md",
+      "title": "宇宙论证明",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "theology"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "依赖性论题",
+        "本体论证明",
+        "第一因",
+        "阿奎那",
+        "康德",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/依赖性论题.md",
+        "concepts/本体论证明.md",
+        "entities/康德/profile.md",
+        "entities/阿奎那/profile.md",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ]
+    },
+    {
+      "path": "concepts/规训与惩罚.md",
+      "title": "规训与惩罚",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "critical-theory"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "话语权力",
+        "全景敞视主义",
+        "性史",
+        "福柯",
+        "sources/2026-04-17-yudafu-sinking.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/全景敞视主义.md",
+        "concepts/性史.md",
+        "concepts/话语权力.md",
+        "entities/福柯/profile.md",
+        "sources/2026-04-17-yudafu-sinking.md"
+      ]
+    },
+    {
+      "path": "concepts/梦的解析.md",
+      "title": "梦的解析",
+      "type": "concept",
+      "domain": [
+        "psychology",
+        "psychoanalysis"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "精神分析",
+        "集体无意识",
+        "弗洛伊德",
+        "sources/2026-04-17-joyce-sisters.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/精神分析.md",
+        "concepts/集体无意识.md",
+        "entities/弗洛伊德/profile.md",
+        "sources/2026-04-17-joyce-sisters.md"
+      ]
+    },
+    {
+      "path": "concepts/能指与所指.md",
+      "title": "能指与所指",
+      "type": "concept",
+      "domain": [
+        "linguistics",
+        "semiotics"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "索绪尔",
+        "庄子",
+        "sources/2026-04-17-zhuangzi-language-philosophy.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/庄子/profile.md",
+        "entities/索绪尔/profile.md",
+        "sources/2026-04-17-zhuangzi-language-philosophy.md"
+      ]
+    },
+    {
+      "path": "concepts/本体论证明.md",
+      "title": "本体论证明",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "theology"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "宇宙论证明",
+        "依赖性论题",
+        "安瑟伦",
+        "笛卡尔",
+        "康德",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/依赖性论题.md",
+        "concepts/宇宙论证明.md",
+        "entities/安瑟伦/profile.md",
+        "entities/康德/profile.md",
+        "entities/笛卡尔/profile.md",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ]
+    },
+    {
+      "path": "concepts/现象学神学转向.md",
+      "title": "现象学神学转向",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "theology",
+        "phenomenology"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "满溢现象",
+        "还原与给予",
+        "他者",
+        "马里翁",
+        "胡塞尔",
+        "莱维纳斯",
+        "sources/2026-04-17-husserl-theological-turn.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/满溢现象.md",
+        "concepts/还原与给予.md",
+        "entities/胡塞尔/profile.md",
+        "entities/莱维纳斯/profile.md",
+        "entities/马里翁/profile.md",
+        "sources/2026-04-17-husserl-theological-turn.md"
+      ]
+    },
+    {
+      "path": "concepts/零余者.md",
+      "title": "零余者",
+      "type": "concept",
+      "domain": [
+        "literature",
+        "chinese-literature"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "沉沦",
+        "他者",
+        "话语权力",
+        "郁达夫",
+        "屠格涅夫",
+        "sources/2026-04-17-yudafu-sinking.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/话语权力.md",
+        "entities/郁达夫/profile.md",
+        "sources/2026-04-17-yudafu-sinking.md"
+      ]
+    },
+    {
       "path": "concepts/上下文工程.md",
       "title": "上下文工程",
       "type": "concept",
@@ -599,6 +1008,28 @@
       ]
     },
     {
+      "path": "concepts/集体无意识.md",
+      "title": "集体无意识",
+      "type": "concept",
+      "domain": [
+        "psychology",
+        "analytical-psychology"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "精神分析",
+        "荣格",
+        "sources/2026-04-17-joyce-sisters.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/精神分析.md",
+        "entities/荣格/profile.md",
+        "sources/2026-04-17-joyce-sisters.md"
+      ]
+    },
+    {
       "path": "concepts/质量检验agent.md",
       "title": "质量检验agent",
       "type": "concept",
@@ -619,6 +1050,32 @@
         "entities/常天喆/profile.md",
         "entities/抖音/profile.md",
         "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/全景敞视主义.md",
+      "title": "全景敞视主义",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "critical-theory"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "规训与惩罚",
+        "话语权力",
+        "福柯",
+        "边沁",
+        "sources/2026-04-17-yudafu-sinking.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/规训与惩罚.md",
+        "concepts/话语权力.md",
+        "entities/福柯/profile.md",
+        "entities/边沁/profile.md",
+        "sources/2026-04-17-yudafu-sinking.md"
       ]
     },
     {
@@ -698,6 +1155,55 @@
       ]
     },
     {
+      "path": "concepts/话语权力.md",
+      "title": "话语权力",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "critical-theory"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "规训与惩罚",
+        "性史",
+        "全景敞视主义",
+        "福柯",
+        "sources/2026-04-17-yudafu-sinking.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/全景敞视主义.md",
+        "concepts/性史.md",
+        "concepts/规训与惩罚.md",
+        "entities/福柯/profile.md",
+        "sources/2026-04-17-yudafu-sinking.md"
+      ]
+    },
+    {
+      "path": "concepts/先验幻相.md",
+      "title": "先验幻相",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "kant"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "二律背反",
+        "纯粹理性批判",
+        "康德",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/二律背反.md",
+        "entities/康德/profile.md",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ]
+    },
+    {
       "path": "sources/2026-04-16-hallucination-is-all-you-need.md",
       "title": "Hallucination Is All You Need",
       "type": "source-summary",
@@ -738,6 +1244,7 @@
       "resolved_outbound_links": [
         "entities/changsview/profile.md",
         "entities/常天喆/profile.md",
+        "entities/索绪尔/profile.md",
         "sources/2026-04-16-hallucination-is-all-you-need.md"
       ]
     },
@@ -765,7 +1272,11 @@
         "分离转换障碍",
         "歇斯底里"
       ],
-      "resolved_outbound_links": []
+      "resolved_outbound_links": [
+        "concepts/梦的解析.md",
+        "concepts/精神分析.md",
+        "concepts/集体无意识.md"
+      ]
     },
     {
       "path": "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
@@ -821,7 +1332,10 @@
         "三言",
         "道言悖论"
       ],
-      "resolved_outbound_links": []
+      "resolved_outbound_links": [
+        "concepts/三言.md",
+        "concepts/能指与所指.md"
+      ]
     },
     {
       "path": "sources/2026-04-15-chang-tianzhe-resume.md",
@@ -947,7 +1461,15 @@
         "本质直观",
         "满溢现象"
       ],
-      "resolved_outbound_links": []
+      "resolved_outbound_links": [
+        "concepts/二律背反.md",
+        "concepts/依赖性论题.md",
+        "concepts/先验幻相.md",
+        "concepts/宇宙论证明.md",
+        "concepts/本体论证明.md",
+        "concepts/本质直观.md",
+        "concepts/满溢现象.md"
+      ]
     },
     {
       "path": "sources/2026-04-17-yudafu-sinking.md",
@@ -972,7 +1494,13 @@
         "生物权力",
         "告解规训"
       ],
-      "resolved_outbound_links": []
+      "resolved_outbound_links": [
+        "concepts/全景敞视主义.md",
+        "concepts/性史.md",
+        "concepts/规训与惩罚.md",
+        "concepts/话语权力.md",
+        "concepts/零余者.md"
+      ]
     },
     {
       "path": "sources/EXAMPLE-source-summary.md",
@@ -1020,7 +1548,13 @@
         "可及的显现的彼岸",
         "现象学神学转向"
       ],
-      "resolved_outbound_links": []
+      "resolved_outbound_links": [
+        "concepts/本质直观.md",
+        "concepts/满溢现象.md",
+        "concepts/现象学神学转向.md",
+        "concepts/观念对象.md",
+        "concepts/还原与给予.md"
+      ]
     },
     {
       "path": "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
@@ -1086,6 +1620,61 @@
       "resolved_outbound_links": []
     },
     {
+      "path": "entities/马里翁/profile.md",
+      "title": "马里翁",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "phenomenology",
+        "theology"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "满溢现象",
+        "还原与给予",
+        "现象学神学转向",
+        "胡塞尔",
+        "莱维纳斯",
+        "米歇尔·亨利",
+        "sources/2026-04-17-husserl-theological-turn.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/满溢现象.md",
+        "concepts/现象学神学转向.md",
+        "concepts/还原与给予.md",
+        "entities/米歇尔·亨利/profile.md",
+        "entities/胡塞尔/profile.md",
+        "entities/莱维纳斯/profile.md",
+        "sources/2026-04-17-husserl-theological-turn.md"
+      ]
+    },
+    {
+      "path": "entities/笛卡尔/profile.md",
+      "title": "笛卡尔",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "mathematics"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "本体论证明",
+        "安瑟伦",
+        "康德",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/本体论证明.md",
+        "entities/安瑟伦/profile.md",
+        "entities/康德/profile.md",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ]
+    },
+    {
       "path": "entities/华中科技大学/profile.md",
       "title": "华中科技大学",
       "type": "entity",
@@ -1105,6 +1694,48 @@
         "entities/常天喆/profile.md",
         "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
         "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "entities/叶芝/profile.md",
+      "title": "叶芝",
+      "type": "entity",
+      "domain": [
+        "literature",
+        "irish-literature"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "乔伊斯",
+        "sources/2026-04-17-joyce-sisters.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/乔伊斯/profile.md",
+        "sources/2026-04-17-joyce-sisters.md"
+      ]
+    },
+    {
+      "path": "entities/帕特森·布朗/profile.md",
+      "title": "帕特森·布朗",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "kant"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "康德",
+        "阿奎那",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/康德/profile.md",
+        "entities/阿奎那/profile.md",
+        "sources/2026-04-17-kant-dependency-thesis.md"
       ]
     },
     {
@@ -1162,6 +1793,28 @@
       ]
     },
     {
+      "path": "entities/艾伦·伍德/profile.md",
+      "title": "艾伦·伍德",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "kant"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "康德",
+        "乔纳森·班尼特",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/乔纳森·班尼特/profile.md",
+        "entities/康德/profile.md",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ]
+    },
+    {
       "path": "entities/百度/profile.md",
       "title": "百度",
       "type": "entity",
@@ -1182,6 +1835,28 @@
         "concepts/System-Engineer.md",
         "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
         "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "entities/边沁/profile.md",
+      "title": "边沁",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "utilitarianism"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "全景敞视主义",
+        "福柯",
+        "sources/2026-04-17-yudafu-sinking.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/全景敞视主义.md",
+        "entities/福柯/profile.md",
+        "sources/2026-04-17-yudafu-sinking.md"
       ]
     },
     {
@@ -1226,6 +1901,27 @@
       ]
     },
     {
+      "path": "entities/索绪尔/profile.md",
+      "title": "索绪尔",
+      "type": "entity",
+      "domain": [
+        "linguistics",
+        "semiotics"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "能指与所指",
+        "结构主义",
+        "sources/2026-04-17-zhuangzi-language-philosophy.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/能指与所指.md",
+        "sources/2026-04-17-zhuangzi-language-philosophy.md"
+      ]
+    },
+    {
       "path": "entities/郁达夫/profile.md",
       "title": "郁达夫",
       "type": "entity",
@@ -1250,6 +1946,12 @@
         "sources/2026-04-17-yudafu-sinking.md"
       ],
       "resolved_outbound_links": [
+        "concepts/全景敞视主义.md",
+        "concepts/性史.md",
+        "concepts/规训与惩罚.md",
+        "concepts/话语权力.md",
+        "concepts/零余者.md",
+        "entities/福柯/profile.md",
         "sources/2026-04-17-yudafu-sinking.md"
       ]
     },
@@ -1269,6 +1971,30 @@
       ],
       "resolved_outbound_links": [
         "concepts/EXAMPLE-concept.md"
+      ]
+    },
+    {
+      "path": "entities/杨尼考/profile.md",
+      "title": "杨尼考",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "phenomenology"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "胡塞尔",
+        "马里翁",
+        "莱维纳斯",
+        "sources/2026-04-17-husserl-theological-turn.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/胡塞尔/profile.md",
+        "entities/莱维纳斯/profile.md",
+        "entities/马里翁/profile.md",
+        "sources/2026-04-17-husserl-theological-turn.md"
       ]
     },
     {
@@ -1299,6 +2025,14 @@
         "sources/2026-04-17-joyce-sisters.md"
       ],
       "resolved_outbound_links": [
+        "concepts/梦的解析.md",
+        "concepts/精神分析.md",
+        "concepts/集体无意识.md",
+        "entities/伍尔夫/profile.md",
+        "entities/叶芝/profile.md",
+        "entities/弗洛伊德/profile.md",
+        "entities/拉康/profile.md",
+        "entities/荣格/profile.md",
         "sources/2026-04-17-joyce-sisters.md"
       ]
     },
@@ -1328,6 +2062,9 @@
         "sources/2026-04-17-zhuangzi-language-philosophy.md"
       ],
       "resolved_outbound_links": [
+        "concepts/三言.md",
+        "concepts/能指与所指.md",
+        "entities/索绪尔/profile.md",
         "sources/2026-04-17-zhuangzi-language-philosophy.md"
       ]
     },
@@ -1405,6 +2142,11 @@
         "sources/2026-04-17-kant-dependency-thesis.md"
       ],
       "resolved_outbound_links": [
+        "concepts/二律背反.md",
+        "concepts/依赖性论题.md",
+        "concepts/先验幻相.md",
+        "concepts/宇宙论证明.md",
+        "concepts/本体论证明.md",
         "entities/胡塞尔/profile.md",
         "entities/赵林/profile.md",
         "sources/2026-04-17-kant-dependency-thesis.md"
@@ -1435,6 +2177,83 @@
       ]
     },
     {
+      "path": "entities/安瑟伦/profile.md",
+      "title": "安瑟伦",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "theology"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "本体论证明",
+        "康德",
+        "笛卡尔",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/本体论证明.md",
+        "entities/康德/profile.md",
+        "entities/笛卡尔/profile.md",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ]
+    },
+    {
+      "path": "entities/福柯/profile.md",
+      "title": "福柯",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "critical-theory"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "话语权力",
+        "规训与惩罚",
+        "全景敞视主义",
+        "性史",
+        "边沁",
+        "sources/2026-04-17-yudafu-sinking.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/全景敞视主义.md",
+        "concepts/性史.md",
+        "concepts/规训与惩罚.md",
+        "concepts/话语权力.md",
+        "entities/边沁/profile.md",
+        "sources/2026-04-17-yudafu-sinking.md"
+      ]
+    },
+    {
+      "path": "entities/莱维纳斯/profile.md",
+      "title": "莱维纳斯",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "phenomenology",
+        "ethics"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "现象学神学转向",
+        "胡塞尔",
+        "马里翁",
+        "sources/2026-04-17-husserl-theological-turn.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/现象学神学转向.md",
+        "entities/胡塞尔/profile.md",
+        "entities/马里翁/profile.md",
+        "sources/2026-04-17-husserl-theological-turn.md"
+      ]
+    },
+    {
       "path": "entities/文心一言/profile.md",
       "title": "文心一言",
       "type": "entity",
@@ -1458,6 +2277,56 @@
       ]
     },
     {
+      "path": "entities/弗洛伊德/profile.md",
+      "title": "弗洛伊德",
+      "type": "entity",
+      "domain": [
+        "psychology",
+        "psychoanalysis"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "精神分析",
+        "梦的解析",
+        "荣格",
+        "拉康",
+        "sources/2026-04-17-joyce-sisters.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/梦的解析.md",
+        "concepts/精神分析.md",
+        "entities/拉康/profile.md",
+        "entities/荣格/profile.md",
+        "sources/2026-04-17-joyce-sisters.md"
+      ]
+    },
+    {
+      "path": "entities/米歇尔·亨利/profile.md",
+      "title": "米歇尔·亨利",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "phenomenology"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "现象学神学转向",
+        "胡塞尔",
+        "马里翁",
+        "sources/2026-04-17-husserl-theological-turn.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/现象学神学转向.md",
+        "entities/胡塞尔/profile.md",
+        "entities/马里翁/profile.md",
+        "sources/2026-04-17-husserl-theological-turn.md"
+      ]
+    },
+    {
       "path": "entities/姚舜禹/profile.md",
       "title": "姚舜禹",
       "type": "entity",
@@ -1477,6 +2346,26 @@
       "resolved_outbound_links": [
         "entities/常天喆/profile.md",
         "entities/混元/profile.md"
+      ]
+    },
+    {
+      "path": "entities/伍尔夫/profile.md",
+      "title": "伍尔夫",
+      "type": "entity",
+      "domain": [
+        "literature",
+        "modernism"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "乔伊斯",
+        "sources/2026-04-17-joyce-sisters.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/乔伊斯/profile.md",
+        "sources/2026-04-17-joyce-sisters.md"
       ]
     },
     {
@@ -1612,7 +2501,14 @@
         "sources/2026-04-17-husserl-theological-turn.md"
       ],
       "resolved_outbound_links": [
+        "concepts/本质直观.md",
+        "concepts/满溢现象.md",
+        "concepts/现象学神学转向.md",
+        "concepts/观念对象.md",
+        "concepts/还原与给予.md",
         "entities/康德/profile.md",
+        "entities/米歇尔·亨利/profile.md",
+        "entities/马里翁/profile.md",
         "sources/2026-04-17-husserl-theological-turn.md"
       ]
     },
@@ -1702,6 +2598,54 @@
         "sources/2026-04-17-kant-dependency-thesis.md",
         "sources/2026-04-17-yudafu-sinking.md",
         "sources/2026-04-17-zhuangzi-language-philosophy.md"
+      ]
+    },
+    {
+      "path": "entities/荣格/profile.md",
+      "title": "荣格",
+      "type": "entity",
+      "domain": [
+        "psychology",
+        "analytical-psychology"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "集体无意识",
+        "精神分析",
+        "弗洛伊德",
+        "sources/2026-04-17-joyce-sisters.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/精神分析.md",
+        "concepts/集体无意识.md",
+        "entities/弗洛伊德/profile.md",
+        "sources/2026-04-17-joyce-sisters.md"
+      ]
+    },
+    {
+      "path": "entities/阿奎那/profile.md",
+      "title": "阿奎那",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "theology"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "宇宙论证明",
+        "依赖性论题",
+        "康德",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/依赖性论题.md",
+        "concepts/宇宙论证明.md",
+        "entities/康德/profile.md",
+        "sources/2026-04-17-kant-dependency-thesis.md"
       ]
     },
     {
@@ -1812,6 +2756,28 @@
       ]
     },
     {
+      "path": "entities/乔纳森·班尼特/profile.md",
+      "title": "乔纳森·班尼特",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "kant"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "康德",
+        "艾伦·伍德",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/康德/profile.md",
+        "entities/艾伦·伍德/profile.md",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ]
+    },
+    {
       "path": "entities/AI求真/profile.md",
       "title": "AI求真",
       "type": "entity",
@@ -1859,6 +2825,28 @@
         "entities/字节跳动/profile.md",
         "entities/常天喆/profile.md",
         "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "entities/拉康/profile.md",
+      "title": "拉康",
+      "type": "entity",
+      "domain": [
+        "psychology",
+        "psychoanalysis"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "精神分析",
+        "弗洛伊德",
+        "sources/2026-04-17-joyce-sisters.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/精神分析.md",
+        "entities/弗洛伊德/profile.md",
+        "sources/2026-04-17-joyce-sisters.md"
       ]
     },
     {
@@ -1982,24 +2970,44 @@
       "timelines/2026.md"
     ],
     "concept": [
+      "concepts/观念对象.md",
       "concepts/RAG.md",
       "concepts/跨学科.md",
+      "concepts/本质直观.md",
       "concepts/Superalignment.md",
+      "concepts/三言.md",
+      "concepts/满溢现象.md",
       "concepts/动态上下文路由.md",
       "concepts/System-Engineer.md",
       "concepts/模型对齐.md",
       "concepts/LLM革命.md",
       "concepts/SFT.md",
+      "concepts/依赖性论题.md",
       "concepts/Fact-checking Agent.md",
+      "concepts/还原与给予.md",
       "concepts/价值观对齐.md",
+      "concepts/二律背反.md",
       "concepts/AI-Native.md",
       "concepts/AI产品经理.md",
       "concepts/内容安全治理.md",
+      "concepts/性史.md",
+      "concepts/精神分析.md",
+      "concepts/宇宙论证明.md",
+      "concepts/规训与惩罚.md",
+      "concepts/梦的解析.md",
+      "concepts/能指与所指.md",
+      "concepts/本体论证明.md",
+      "concepts/现象学神学转向.md",
+      "concepts/零余者.md",
       "concepts/上下文工程.md",
+      "concepts/集体无意识.md",
       "concepts/质量检验agent.md",
+      "concepts/全景敞视主义.md",
       "concepts/多源校验.md",
       "concepts/Orchestration Workflow.md",
-      "concepts/EXAMPLE-concept.md"
+      "concepts/EXAMPLE-concept.md",
+      "concepts/话语权力.md",
+      "concepts/先验幻相.md"
     ],
     "source-summary": [
       "sources/2026-04-16-hallucination-is-all-you-need.md",
@@ -2019,22 +3027,36 @@
     ],
     "entity": [
       "entities/AAPL/profile.md",
+      "entities/马里翁/profile.md",
+      "entities/笛卡尔/profile.md",
       "entities/华中科技大学/profile.md",
+      "entities/叶芝/profile.md",
+      "entities/帕特森·布朗/profile.md",
       "entities/抖音AI求真功能/profile.md",
       "entities/AI智选资讯/profile.md",
+      "entities/艾伦·伍德/profile.md",
       "entities/百度/profile.md",
+      "entities/边沁/profile.md",
       "entities/腾讯/profile.md",
       "entities/腾讯会议智能助手/profile.md",
+      "entities/索绪尔/profile.md",
       "entities/郁达夫/profile.md",
       "entities/EXAMPLE/profile.md",
+      "entities/杨尼考/profile.md",
       "entities/乔伊斯/profile.md",
       "entities/庄子/profile.md",
       "entities/科大讯飞/profile.md",
       "entities/混元/profile.md",
       "entities/康德/profile.md",
       "entities/qwen/profile.md",
+      "entities/安瑟伦/profile.md",
+      "entities/福柯/profile.md",
+      "entities/莱维纳斯/profile.md",
       "entities/文心一言/profile.md",
+      "entities/弗洛伊德/profile.md",
+      "entities/米歇尔·亨利/profile.md",
       "entities/姚舜禹/profile.md",
+      "entities/伍尔夫/profile.md",
       "entities/字节跳动/profile.md",
       "entities/刘庆峰/profile.md",
       "entities/changsview/profile.md",
@@ -2042,13 +3064,17 @@
       "entities/林俊暘/profile.md",
       "entities/胡塞尔/profile.md",
       "entities/常天喆/profile.md",
+      "entities/荣格/profile.md",
+      "entities/阿奎那/profile.md",
       "entities/邓晓芒/profile.md",
       "entities/赵林/profile.md",
       "entities/梁汝波/profile.md",
       "entities/Amanda-Askell/profile.md",
       "entities/微软亚洲研究院/profile.md",
+      "entities/乔纳森·班尼特/profile.md",
       "entities/AI求真/profile.md",
       "entities/抖音AI资讯总结页/profile.md",
+      "entities/拉康/profile.md",
       "entities/Contextual Query Suggestion/profile.md",
       "entities/武汉大学/profile.md",
       "entities/AI热点/profile.md",
@@ -2081,6 +3107,57 @@
       "timelines/2026.md",
       "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
       "entities/卫茂平/profile.md"
+    ],
+    "philosophy": [
+      "concepts/观念对象.md",
+      "concepts/本质直观.md",
+      "concepts/满溢现象.md",
+      "concepts/依赖性论题.md",
+      "concepts/还原与给予.md",
+      "concepts/二律背反.md",
+      "concepts/性史.md",
+      "concepts/宇宙论证明.md",
+      "concepts/规训与惩罚.md",
+      "concepts/本体论证明.md",
+      "concepts/现象学神学转向.md",
+      "concepts/全景敞视主义.md",
+      "concepts/话语权力.md",
+      "concepts/先验幻相.md",
+      "sources/2026-04-16-hallucination-is-all-you-need.md",
+      "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
+      "sources/2026-04-17-zhuangzi-language-philosophy.md",
+      "sources/2026-04-17-kant-dependency-thesis.md",
+      "sources/2026-04-17-husserl-theological-turn.md",
+      "entities/马里翁/profile.md",
+      "entities/笛卡尔/profile.md",
+      "entities/帕特森·布朗/profile.md",
+      "entities/艾伦·伍德/profile.md",
+      "entities/边沁/profile.md",
+      "entities/杨尼考/profile.md",
+      "entities/庄子/profile.md",
+      "entities/康德/profile.md",
+      "entities/安瑟伦/profile.md",
+      "entities/福柯/profile.md",
+      "entities/莱维纳斯/profile.md",
+      "entities/米歇尔·亨利/profile.md",
+      "entities/胡塞尔/profile.md",
+      "entities/阿奎那/profile.md",
+      "entities/邓晓芒/profile.md",
+      "entities/赵林/profile.md",
+      "entities/乔纳森·班尼特/profile.md"
+    ],
+    "phenomenology": [
+      "concepts/观念对象.md",
+      "concepts/本质直观.md",
+      "concepts/满溢现象.md",
+      "concepts/还原与给予.md",
+      "concepts/现象学神学转向.md",
+      "sources/2026-04-17-husserl-theological-turn.md",
+      "entities/马里翁/profile.md",
+      "entities/杨尼考/profile.md",
+      "entities/莱维纳斯/profile.md",
+      "entities/米歇尔·亨利/profile.md",
+      "entities/胡塞尔/profile.md"
     ],
     "education": [
       "concepts/跨学科.md",
@@ -2123,6 +3200,33 @@
       "concepts/Superalignment.md",
       "concepts/价值观对齐.md",
       "entities/微软亚洲研究院/profile.md"
+    ],
+    "chinese-philosophy": [
+      "concepts/三言.md",
+      "sources/2026-04-17-zhuangzi-language-philosophy.md",
+      "entities/庄子/profile.md"
+    ],
+    "literature": [
+      "concepts/三言.md",
+      "concepts/零余者.md",
+      "sources/2026-04-17-joyce-sisters.md",
+      "sources/2026-04-17-yudafu-sinking.md",
+      "entities/叶芝/profile.md",
+      "entities/郁达夫/profile.md",
+      "entities/乔伊斯/profile.md",
+      "entities/伍尔夫/profile.md"
+    ],
+    "theology": [
+      "concepts/满溢现象.md",
+      "concepts/依赖性论题.md",
+      "concepts/宇宙论证明.md",
+      "concepts/本体论证明.md",
+      "concepts/现象学神学转向.md",
+      "sources/2026-04-17-kant-dependency-thesis.md",
+      "sources/2026-04-17-husserl-theological-turn.md",
+      "entities/马里翁/profile.md",
+      "entities/安瑟伦/profile.md",
+      "entities/阿奎那/profile.md"
     ],
     "tech": [
       "concepts/System-Engineer.md",
@@ -2172,8 +3276,58 @@
     "history": [
       "concepts/LLM革命.md"
     ],
+    "kant": [
+      "concepts/依赖性论题.md",
+      "concepts/二律背反.md",
+      "concepts/先验幻相.md",
+      "sources/2026-04-17-kant-dependency-thesis.md",
+      "entities/帕特森·布朗/profile.md",
+      "entities/艾伦·伍德/profile.md",
+      "entities/康德/profile.md",
+      "entities/乔纳森·班尼特/profile.md"
+    ],
     "ethics": [
-      "concepts/价值观对齐.md"
+      "concepts/价值观对齐.md",
+      "entities/莱维纳斯/profile.md"
+    ],
+    "critical-theory": [
+      "concepts/性史.md",
+      "concepts/规训与惩罚.md",
+      "concepts/全景敞视主义.md",
+      "concepts/话语权力.md",
+      "entities/福柯/profile.md"
+    ],
+    "psychology": [
+      "concepts/精神分析.md",
+      "concepts/梦的解析.md",
+      "concepts/集体无意识.md",
+      "entities/弗洛伊德/profile.md",
+      "entities/荣格/profile.md",
+      "entities/拉康/profile.md"
+    ],
+    "psychoanalysis": [
+      "concepts/精神分析.md",
+      "concepts/梦的解析.md",
+      "sources/2026-04-17-joyce-sisters.md",
+      "entities/弗洛伊德/profile.md",
+      "entities/拉康/profile.md"
+    ],
+    "linguistics": [
+      "concepts/能指与所指.md",
+      "entities/索绪尔/profile.md"
+    ],
+    "semiotics": [
+      "concepts/能指与所指.md",
+      "entities/索绪尔/profile.md"
+    ],
+    "chinese-literature": [
+      "concepts/零余者.md",
+      "sources/2026-04-17-yudafu-sinking.md",
+      "entities/郁达夫/profile.md"
+    ],
+    "analytical-psychology": [
+      "concepts/集体无意识.md",
+      "entities/荣格/profile.md"
     ],
     "investing": [
       "concepts/EXAMPLE-concept.md",
@@ -2181,37 +3335,13 @@
       "entities/AAPL/profile.md",
       "entities/EXAMPLE/profile.md"
     ],
-    "philosophy": [
-      "sources/2026-04-16-hallucination-is-all-you-need.md",
-      "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
-      "sources/2026-04-17-zhuangzi-language-philosophy.md",
-      "sources/2026-04-17-kant-dependency-thesis.md",
-      "sources/2026-04-17-husserl-theological-turn.md",
-      "entities/庄子/profile.md",
-      "entities/康德/profile.md",
-      "entities/胡塞尔/profile.md",
-      "entities/邓晓芒/profile.md",
-      "entities/赵林/profile.md"
-    ],
-    "literature": [
-      "sources/2026-04-17-joyce-sisters.md",
-      "sources/2026-04-17-yudafu-sinking.md",
-      "entities/郁达夫/profile.md",
-      "entities/乔伊斯/profile.md"
-    ],
     "irish-literature": [
       "sources/2026-04-17-joyce-sisters.md",
+      "entities/叶芝/profile.md",
       "entities/乔伊斯/profile.md"
-    ],
-    "psychoanalysis": [
-      "sources/2026-04-17-joyce-sisters.md"
     ],
     "joyce": [
       "sources/2026-04-17-joyce-sisters.md"
-    ],
-    "chinese-philosophy": [
-      "sources/2026-04-17-zhuangzi-language-philosophy.md",
-      "entities/庄子/profile.md"
     ],
     "language-philosophy": [
       "sources/2026-04-17-zhuangzi-language-philosophy.md"
@@ -2219,27 +3349,11 @@
     "zhuangzi": [
       "sources/2026-04-17-zhuangzi-language-philosophy.md"
     ],
-    "kant": [
-      "sources/2026-04-17-kant-dependency-thesis.md",
-      "entities/康德/profile.md"
-    ],
-    "theology": [
-      "sources/2026-04-17-kant-dependency-thesis.md",
-      "sources/2026-04-17-husserl-theological-turn.md"
-    ],
-    "chinese-literature": [
-      "sources/2026-04-17-yudafu-sinking.md",
-      "entities/郁达夫/profile.md"
-    ],
     "feminism": [
       "sources/2026-04-17-yudafu-sinking.md"
     ],
     "foucault": [
       "sources/2026-04-17-yudafu-sinking.md"
-    ],
-    "phenomenology": [
-      "sources/2026-04-17-husserl-theological-turn.md",
-      "entities/胡塞尔/profile.md"
     ],
     "husserl": [
       "sources/2026-04-17-husserl-theological-turn.md"
@@ -2253,6 +3367,9 @@
     "职业经历": [
       "sources/2026-04-16-key-meetings.md"
     ],
+    "mathematics": [
+      "entities/笛卡尔/profile.md"
+    ],
     "business": [
       "entities/百度/profile.md",
       "entities/腾讯/profile.md",
@@ -2261,8 +3378,12 @@
       "entities/刘庆峰/profile.md",
       "entities/梁汝波/profile.md"
     ],
+    "utilitarianism": [
+      "entities/边沁/profile.md"
+    ],
     "modernism": [
-      "entities/乔伊斯/profile.md"
+      "entities/乔伊斯/profile.md",
+      "entities/伍尔夫/profile.md"
     ],
     "taoism": [
       "entities/庄子/profile.md"
@@ -2643,6 +3764,35 @@
       "timelines/2026.md",
       "entities/常天喆/profile.md"
     ],
+    "concepts/本质直观.md": [
+      "concepts/观念对象.md",
+      "sources/2026-04-17-kant-dependency-thesis.md",
+      "sources/2026-04-17-husserl-theological-turn.md",
+      "entities/胡塞尔/profile.md"
+    ],
+    "entities/胡塞尔/profile.md": [
+      "concepts/观念对象.md",
+      "concepts/本质直观.md",
+      "concepts/现象学神学转向.md",
+      "entities/马里翁/profile.md",
+      "entities/杨尼考/profile.md",
+      "entities/康德/profile.md",
+      "entities/莱维纳斯/profile.md",
+      "entities/米歇尔·亨利/profile.md"
+    ],
+    "sources/2026-04-17-husserl-theological-turn.md": [
+      "concepts/观念对象.md",
+      "concepts/本质直观.md",
+      "concepts/满溢现象.md",
+      "concepts/还原与给予.md",
+      "concepts/现象学神学转向.md",
+      "entities/马里翁/profile.md",
+      "entities/杨尼考/profile.md",
+      "entities/莱维纳斯/profile.md",
+      "entities/米歇尔·亨利/profile.md",
+      "entities/胡塞尔/profile.md",
+      "entities/常天喆/profile.md"
+    ],
     "concepts/动态上下文路由.md": [
       "concepts/RAG.md",
       "concepts/Orchestration Workflow.md",
@@ -2664,6 +3814,47 @@
       "concepts/System-Engineer.md",
       "concepts/LLM革命.md",
       "entities/常天喆/profile.md"
+    ],
+    "concepts/观念对象.md": [
+      "concepts/本质直观.md",
+      "sources/2026-04-17-husserl-theological-turn.md",
+      "entities/胡塞尔/profile.md"
+    ],
+    "entities/庄子/profile.md": [
+      "concepts/三言.md",
+      "concepts/能指与所指.md"
+    ],
+    "sources/2026-04-17-zhuangzi-language-philosophy.md": [
+      "concepts/三言.md",
+      "concepts/能指与所指.md",
+      "entities/索绪尔/profile.md",
+      "entities/庄子/profile.md",
+      "entities/常天喆/profile.md"
+    ],
+    "concepts/还原与给予.md": [
+      "concepts/满溢现象.md",
+      "concepts/现象学神学转向.md",
+      "sources/2026-04-17-husserl-theological-turn.md",
+      "entities/马里翁/profile.md",
+      "entities/胡塞尔/profile.md"
+    ],
+    "concepts/现象学神学转向.md": [
+      "concepts/满溢现象.md",
+      "concepts/还原与给予.md",
+      "sources/2026-04-17-husserl-theological-turn.md",
+      "entities/马里翁/profile.md",
+      "entities/莱维纳斯/profile.md",
+      "entities/米歇尔·亨利/profile.md",
+      "entities/胡塞尔/profile.md"
+    ],
+    "entities/马里翁/profile.md": [
+      "concepts/满溢现象.md",
+      "concepts/还原与给予.md",
+      "concepts/现象学神学转向.md",
+      "entities/杨尼考/profile.md",
+      "entities/莱维纳斯/profile.md",
+      "entities/米歇尔·亨利/profile.md",
+      "entities/胡塞尔/profile.md"
     ],
     "concepts/Fact-checking Agent.md": [
       "concepts/动态上下文路由.md",
@@ -2691,11 +3882,91 @@
       "entities/抖音AI求真功能/profile.md",
       "entities/常天喆/profile.md"
     ],
+    "concepts/宇宙论证明.md": [
+      "concepts/依赖性论题.md",
+      "concepts/本体论证明.md",
+      "sources/2026-04-17-kant-dependency-thesis.md",
+      "entities/康德/profile.md",
+      "entities/阿奎那/profile.md"
+    ],
+    "concepts/本体论证明.md": [
+      "concepts/依赖性论题.md",
+      "concepts/宇宙论证明.md",
+      "sources/2026-04-17-kant-dependency-thesis.md",
+      "entities/笛卡尔/profile.md",
+      "entities/康德/profile.md",
+      "entities/安瑟伦/profile.md"
+    ],
+    "concepts/二律背反.md": [
+      "concepts/依赖性论题.md",
+      "concepts/先验幻相.md",
+      "sources/2026-04-17-kant-dependency-thesis.md",
+      "entities/康德/profile.md"
+    ],
+    "concepts/先验幻相.md": [
+      "concepts/依赖性论题.md",
+      "concepts/二律背反.md",
+      "sources/2026-04-17-kant-dependency-thesis.md",
+      "entities/康德/profile.md"
+    ],
+    "entities/康德/profile.md": [
+      "concepts/依赖性论题.md",
+      "concepts/二律背反.md",
+      "concepts/宇宙论证明.md",
+      "concepts/本体论证明.md",
+      "concepts/先验幻相.md",
+      "entities/笛卡尔/profile.md",
+      "entities/帕特森·布朗/profile.md",
+      "entities/艾伦·伍德/profile.md",
+      "entities/安瑟伦/profile.md",
+      "entities/胡塞尔/profile.md",
+      "entities/阿奎那/profile.md",
+      "entities/乔纳森·班尼特/profile.md"
+    ],
+    "entities/阿奎那/profile.md": [
+      "concepts/依赖性论题.md",
+      "concepts/宇宙论证明.md",
+      "entities/帕特森·布朗/profile.md"
+    ],
+    "entities/帕特森·布朗/profile.md": [
+      "concepts/依赖性论题.md"
+    ],
+    "entities/乔纳森·班尼特/profile.md": [
+      "concepts/依赖性论题.md",
+      "entities/艾伦·伍德/profile.md"
+    ],
+    "entities/艾伦·伍德/profile.md": [
+      "concepts/依赖性论题.md",
+      "entities/乔纳森·班尼特/profile.md"
+    ],
+    "sources/2026-04-17-kant-dependency-thesis.md": [
+      "concepts/依赖性论题.md",
+      "concepts/二律背反.md",
+      "concepts/宇宙论证明.md",
+      "concepts/本体论证明.md",
+      "concepts/先验幻相.md",
+      "entities/笛卡尔/profile.md",
+      "entities/帕特森·布朗/profile.md",
+      "entities/艾伦·伍德/profile.md",
+      "entities/康德/profile.md",
+      "entities/安瑟伦/profile.md",
+      "entities/常天喆/profile.md",
+      "entities/阿奎那/profile.md",
+      "entities/乔纳森·班尼特/profile.md"
+    ],
     "concepts/模型对齐.md": [
       "concepts/Fact-checking Agent.md",
       "concepts/内容安全治理.md",
       "concepts/多源校验.md",
       "entities/AI求真/profile.md"
+    ],
+    "concepts/满溢现象.md": [
+      "concepts/还原与给予.md",
+      "concepts/现象学神学转向.md",
+      "sources/2026-04-17-kant-dependency-thesis.md",
+      "sources/2026-04-17-husserl-theological-turn.md",
+      "entities/马里翁/profile.md",
+      "entities/胡塞尔/profile.md"
     ],
     "entities/抖音AI求真功能/profile.md": [
       "concepts/AI-Native.md"
@@ -2714,6 +3985,141 @@
       "concepts/AI产品经理.md",
       "entities/常天喆/profile.md"
     ],
+    "concepts/话语权力.md": [
+      "concepts/性史.md",
+      "concepts/规训与惩罚.md",
+      "concepts/零余者.md",
+      "concepts/全景敞视主义.md",
+      "sources/2026-04-17-yudafu-sinking.md",
+      "entities/郁达夫/profile.md",
+      "entities/福柯/profile.md"
+    ],
+    "concepts/规训与惩罚.md": [
+      "concepts/性史.md",
+      "concepts/全景敞视主义.md",
+      "concepts/话语权力.md",
+      "sources/2026-04-17-yudafu-sinking.md",
+      "entities/郁达夫/profile.md",
+      "entities/福柯/profile.md"
+    ],
+    "entities/福柯/profile.md": [
+      "concepts/性史.md",
+      "concepts/规训与惩罚.md",
+      "concepts/全景敞视主义.md",
+      "concepts/话语权力.md",
+      "entities/边沁/profile.md",
+      "entities/郁达夫/profile.md"
+    ],
+    "sources/2026-04-17-yudafu-sinking.md": [
+      "concepts/性史.md",
+      "concepts/规训与惩罚.md",
+      "concepts/零余者.md",
+      "concepts/全景敞视主义.md",
+      "concepts/话语权力.md",
+      "entities/边沁/profile.md",
+      "entities/郁达夫/profile.md",
+      "entities/福柯/profile.md",
+      "entities/常天喆/profile.md"
+    ],
+    "concepts/梦的解析.md": [
+      "concepts/精神分析.md",
+      "sources/2026-04-17-joyce-sisters.md",
+      "entities/乔伊斯/profile.md",
+      "entities/弗洛伊德/profile.md"
+    ],
+    "concepts/集体无意识.md": [
+      "concepts/精神分析.md",
+      "concepts/梦的解析.md",
+      "sources/2026-04-17-joyce-sisters.md",
+      "entities/乔伊斯/profile.md",
+      "entities/荣格/profile.md"
+    ],
+    "entities/弗洛伊德/profile.md": [
+      "concepts/精神分析.md",
+      "concepts/梦的解析.md",
+      "entities/乔伊斯/profile.md",
+      "entities/荣格/profile.md",
+      "entities/拉康/profile.md"
+    ],
+    "entities/荣格/profile.md": [
+      "concepts/精神分析.md",
+      "concepts/集体无意识.md",
+      "entities/乔伊斯/profile.md",
+      "entities/弗洛伊德/profile.md"
+    ],
+    "entities/拉康/profile.md": [
+      "concepts/精神分析.md",
+      "entities/乔伊斯/profile.md",
+      "entities/弗洛伊德/profile.md"
+    ],
+    "sources/2026-04-17-joyce-sisters.md": [
+      "concepts/精神分析.md",
+      "concepts/梦的解析.md",
+      "concepts/集体无意识.md",
+      "entities/叶芝/profile.md",
+      "entities/乔伊斯/profile.md",
+      "entities/弗洛伊德/profile.md",
+      "entities/伍尔夫/profile.md",
+      "entities/常天喆/profile.md",
+      "entities/荣格/profile.md",
+      "entities/拉康/profile.md"
+    ],
+    "concepts/依赖性论题.md": [
+      "concepts/宇宙论证明.md",
+      "concepts/本体论证明.md",
+      "sources/2026-04-17-kant-dependency-thesis.md",
+      "entities/康德/profile.md",
+      "entities/阿奎那/profile.md"
+    ],
+    "concepts/全景敞视主义.md": [
+      "concepts/规训与惩罚.md",
+      "concepts/话语权力.md",
+      "sources/2026-04-17-yudafu-sinking.md",
+      "entities/边沁/profile.md",
+      "entities/郁达夫/profile.md",
+      "entities/福柯/profile.md"
+    ],
+    "concepts/性史.md": [
+      "concepts/规训与惩罚.md",
+      "concepts/话语权力.md",
+      "sources/2026-04-17-yudafu-sinking.md",
+      "entities/郁达夫/profile.md",
+      "entities/福柯/profile.md"
+    ],
+    "concepts/精神分析.md": [
+      "concepts/梦的解析.md",
+      "concepts/集体无意识.md",
+      "sources/2026-04-17-joyce-sisters.md",
+      "entities/乔伊斯/profile.md",
+      "entities/弗洛伊德/profile.md",
+      "entities/荣格/profile.md",
+      "entities/拉康/profile.md"
+    ],
+    "entities/索绪尔/profile.md": [
+      "concepts/能指与所指.md",
+      "sources/2026-04-16-hallucination-is-all-you-need.md",
+      "entities/庄子/profile.md"
+    ],
+    "entities/安瑟伦/profile.md": [
+      "concepts/本体论证明.md",
+      "entities/笛卡尔/profile.md"
+    ],
+    "entities/笛卡尔/profile.md": [
+      "concepts/本体论证明.md",
+      "entities/安瑟伦/profile.md"
+    ],
+    "entities/莱维纳斯/profile.md": [
+      "concepts/现象学神学转向.md",
+      "entities/马里翁/profile.md",
+      "entities/杨尼考/profile.md"
+    ],
+    "entities/郁达夫/profile.md": [
+      "concepts/零余者.md"
+    ],
+    "entities/边沁/profile.md": [
+      "concepts/全景敞视主义.md",
+      "entities/福柯/profile.md"
+    ],
     "entities/EXAMPLE/profile.md": [
       "concepts/EXAMPLE-concept.md",
       "concepts/EXAMPLE-concept.md",
@@ -2725,6 +4131,15 @@
       "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
       "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
       "entities/常天喆/profile.md"
+    ],
+    "concepts/能指与所指.md": [
+      "sources/2026-04-17-zhuangzi-language-philosophy.md",
+      "entities/索绪尔/profile.md",
+      "entities/庄子/profile.md"
+    ],
+    "concepts/三言.md": [
+      "sources/2026-04-17-zhuangzi-language-philosophy.md",
+      "entities/庄子/profile.md"
     ],
     "entities/赵林/profile.md": [
       "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
@@ -2739,6 +4154,10 @@
       "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
       "entities/常天喆/profile.md"
     ],
+    "concepts/零余者.md": [
+      "sources/2026-04-17-yudafu-sinking.md",
+      "entities/郁达夫/profile.md"
+    ],
     "concepts/EXAMPLE-concept.md": [
       "sources/EXAMPLE-source-summary.md",
       "sources/EXAMPLE-source-summary.md",
@@ -2746,31 +4165,19 @@
       "entities/EXAMPLE/profile.md",
       "entities/EXAMPLE/profile.md"
     ],
-    "sources/2026-04-17-yudafu-sinking.md": [
-      "entities/郁达夫/profile.md",
-      "entities/常天喆/profile.md"
-    ],
-    "sources/2026-04-17-joyce-sisters.md": [
-      "entities/乔伊斯/profile.md",
-      "entities/常天喆/profile.md"
-    ],
-    "sources/2026-04-17-zhuangzi-language-philosophy.md": [
-      "entities/庄子/profile.md",
-      "entities/常天喆/profile.md"
-    ],
-    "entities/胡塞尔/profile.md": [
-      "entities/康德/profile.md"
-    ],
-    "sources/2026-04-17-kant-dependency-thesis.md": [
-      "entities/康德/profile.md",
-      "entities/常天喆/profile.md"
-    ],
-    "entities/康德/profile.md": [
+    "entities/米歇尔·亨利/profile.md": [
+      "entities/马里翁/profile.md",
       "entities/胡塞尔/profile.md"
     ],
-    "sources/2026-04-17-husserl-theological-turn.md": [
-      "entities/胡塞尔/profile.md",
-      "entities/常天喆/profile.md"
+    "entities/乔伊斯/profile.md": [
+      "entities/叶芝/profile.md",
+      "entities/伍尔夫/profile.md"
+    ],
+    "entities/叶芝/profile.md": [
+      "entities/乔伊斯/profile.md"
+    ],
+    "entities/伍尔夫/profile.md": [
+      "entities/乔伊斯/profile.md"
     ]
   }
 }
