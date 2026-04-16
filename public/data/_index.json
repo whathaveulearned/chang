@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-16T20:36:25",
-  "total_pages": 55,
+  "generated_at": "2026-04-17T00:20:34",
+  "total_pages": 72,
   "pages": [
     {
       "path": "rules.md",
@@ -53,13 +53,16 @@
       "updated": "2026-04-16",
       "confidence": "high",
       "outbound_links": [
-        "常天喆",
         "字节跳动",
         "抖音",
         "AI热点",
+        "林俊暘",
+        "qwen",
         "RAG",
         "上下文工程",
         "AI求真",
+        "刘庆峰",
+        "科大讯飞",
         "多源校验",
         "changsview",
         "Hallucination Is All You Need",
@@ -80,9 +83,12 @@
         "entities/AI求真/profile.md",
         "entities/AI热点/profile.md",
         "entities/changsview/profile.md",
+        "entities/qwen/profile.md",
+        "entities/刘庆峰/profile.md",
         "entities/字节跳动/profile.md",
-        "entities/常天喆/profile.md",
         "entities/抖音/profile.md",
+        "entities/林俊暘/profile.md",
+        "entities/科大讯飞/profile.md",
         "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
         "sources/2026-04-16-hallucination-is-all-you-need.md"
       ]
@@ -188,12 +194,16 @@
       "updated": "2026-04-16",
       "confidence": "high",
       "outbound_links": [
-        "常天喆",
-        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+        "姚舜禹",
+        "混元",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+        "sources/2026-04-16-key-meetings.md"
       ],
       "resolved_outbound_links": [
-        "entities/常天喆/profile.md",
-        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+        "entities/姚舜禹/profile.md",
+        "entities/混元/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+        "sources/2026-04-16-key-meetings.md"
       ]
     },
     {
@@ -732,6 +742,32 @@
       ]
     },
     {
+      "path": "sources/2026-04-17-joyce-sisters.md",
+      "title": "梦境与自白下被压抑的疾病书写——乔伊斯《姐妹们》中娈童情节的超文学解读",
+      "type": "source-summary",
+      "domain": [
+        "literature",
+        "irish-literature",
+        "psychoanalysis",
+        "joyce"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "都柏林人",
+        "姐妹们",
+        "精神分析",
+        "梦的解析",
+        "集体无意识",
+        "恋童癖",
+        "梅毒",
+        "分离转换障碍",
+        "歇斯底里"
+      ],
+      "resolved_outbound_links": []
+    },
+    {
       "path": "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
       "title": "承认之斗争及其和解——黑格尔《法哲学原理》中的紧急避难权与所有权问题",
       "type": "source-summary",
@@ -764,6 +800,28 @@
         "entities/常天喆/profile.md",
         "entities/邓晓芒/profile.md"
       ]
+    },
+    {
+      "path": "sources/2026-04-17-zhuangzi-language-philosophy.md",
+      "title": "最早自觉的语言批判——关于《庄子》中的语言哲学鉴赏",
+      "type": "source-summary",
+      "domain": [
+        "philosophy",
+        "chinese-philosophy",
+        "language-philosophy",
+        "zhuangzi"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "语言哲学",
+        "能指与所指",
+        "得意忘言",
+        "三言",
+        "道言悖论"
+      ],
+      "resolved_outbound_links": []
     },
     {
       "path": "sources/2026-04-15-chang-tianzhe-resume.md",
@@ -868,6 +926,55 @@
       ]
     },
     {
+      "path": "sources/2026-04-17-kant-dependency-thesis.md",
+      "title": "依赖性论题是康德对于上帝存在宇宙论证明的充分反驳吗？",
+      "type": "source-summary",
+      "domain": [
+        "philosophy",
+        "kant",
+        "theology"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "依赖性论题",
+        "宇宙论证明",
+        "本体论证明",
+        "二律背反",
+        "先验幻相",
+        "现象学",
+        "本质直观",
+        "满溢现象"
+      ],
+      "resolved_outbound_links": []
+    },
+    {
+      "path": "sources/2026-04-17-yudafu-sinking.md",
+      "title": "双重话语权力下的性苦闷生成与变化——重探郁达夫《沉沦》中零余者的身体压抑",
+      "type": "source-summary",
+      "domain": [
+        "literature",
+        "chinese-literature",
+        "feminism",
+        "foucault"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "零余者",
+        "沉沦",
+        "话语权力",
+        "规训与惩罚",
+        "性史",
+        "全景敞视主义",
+        "生物权力",
+        "告解规训"
+      ],
+      "resolved_outbound_links": []
+    },
+    {
       "path": "sources/EXAMPLE-source-summary.md",
       "title": "EXAMPLE Source Summary",
       "type": "source-summary",
@@ -891,6 +998,31 @@
       ]
     },
     {
+      "path": "sources/2026-04-17-husserl-theological-turn.md",
+      "title": "现代抽象理论与神圣存在的领域——胡塞尔《逻辑研究》第二研究为现象学神学转向留出的理论空间",
+      "type": "source-summary",
+      "domain": [
+        "philosophy",
+        "phenomenology",
+        "husserl",
+        "theology"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "现象学",
+        "本质直观",
+        "观念对象",
+        "满溢现象",
+        "还原与给予",
+        "大全直观",
+        "可及的显现的彼岸",
+        "现象学神学转向"
+      ],
+      "resolved_outbound_links": []
+    },
+    {
       "path": "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
       "title": "常天喆就业经验：从哲学到百度AI产品经理的转型之路",
       "type": "source-summary",
@@ -904,6 +1036,41 @@
       "confidence": "high",
       "outbound_links": [],
       "resolved_outbound_links": []
+    },
+    {
+      "path": "sources/2026-04-16-key-meetings.md",
+      "title": "关键会面记录（刘庆峰、林俊暘、姚舜禹）",
+      "type": "source",
+      "domain": [
+        "人脉",
+        "AI行业",
+        "职业经历"
+      ],
+      "created": "",
+      "updated": "",
+      "confidence": "unknown",
+      "outbound_links": [
+        "刘庆峰",
+        "刘庆峰",
+        "科大讯飞",
+        "林俊暘",
+        "林俊暘",
+        "qwen",
+        "姚舜禹",
+        "姚舜禹",
+        "混元",
+        "林俊暘",
+        "刘庆峰",
+        "姚舜禹"
+      ],
+      "resolved_outbound_links": [
+        "entities/qwen/profile.md",
+        "entities/刘庆峰/profile.md",
+        "entities/姚舜禹/profile.md",
+        "entities/林俊暘/profile.md",
+        "entities/混元/profile.md",
+        "entities/科大讯飞/profile.md"
+      ]
     },
     {
       "path": "entities/AAPL/profile.md",
@@ -1059,6 +1226,34 @@
       ]
     },
     {
+      "path": "entities/郁达夫/profile.md",
+      "title": "郁达夫",
+      "type": "entity",
+      "domain": [
+        "literature",
+        "chinese-literature"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "福柯",
+        "屠格涅夫",
+        "鲁迅",
+        "郭沫若",
+        "零余者",
+        "沉沦",
+        "话语权力",
+        "规训与惩罚",
+        "性史",
+        "全景敞视主义",
+        "sources/2026-04-17-yudafu-sinking.md"
+      ],
+      "resolved_outbound_links": [
+        "sources/2026-04-17-yudafu-sinking.md"
+      ]
+    },
+    {
       "path": "entities/EXAMPLE/profile.md",
       "title": "EXAMPLE Inc.",
       "type": "entity",
@@ -1074,6 +1269,169 @@
       ],
       "resolved_outbound_links": [
         "concepts/EXAMPLE-concept.md"
+      ]
+    },
+    {
+      "path": "entities/乔伊斯/profile.md",
+      "title": "乔伊斯",
+      "type": "entity",
+      "domain": [
+        "literature",
+        "irish-literature",
+        "modernism"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "弗洛伊德",
+        "荣格",
+        "拉康",
+        "叶芝",
+        "伍尔夫",
+        "都柏林人",
+        "姐妹们",
+        "精神分析",
+        "梦的解析",
+        "集体无意识",
+        "恋童癖",
+        "梅毒",
+        "sources/2026-04-17-joyce-sisters.md"
+      ],
+      "resolved_outbound_links": [
+        "sources/2026-04-17-joyce-sisters.md"
+      ]
+    },
+    {
+      "path": "entities/庄子/profile.md",
+      "title": "庄子",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "chinese-philosophy",
+        "taoism"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "老子",
+        "维特根斯坦",
+        "海德格尔",
+        "索绪尔",
+        "乔姆斯基",
+        "语言哲学",
+        "能指与所指",
+        "得意忘言",
+        "三言",
+        "道言悖论",
+        "sources/2026-04-17-zhuangzi-language-philosophy.md"
+      ],
+      "resolved_outbound_links": [
+        "sources/2026-04-17-zhuangzi-language-philosophy.md"
+      ]
+    },
+    {
+      "path": "entities/科大讯飞/profile.md",
+      "title": "科大讯飞",
+      "type": "entity",
+      "domain": [
+        "ai",
+        "business",
+        "china",
+        "tech"
+      ],
+      "created": "2026-04-16",
+      "updated": "2026-04-16",
+      "confidence": "high",
+      "outbound_links": [
+        "刘庆峰",
+        "常天喆",
+        "刘庆峰",
+        "常天喆"
+      ],
+      "resolved_outbound_links": [
+        "entities/刘庆峰/profile.md",
+        "entities/常天喆/profile.md"
+      ]
+    },
+    {
+      "path": "entities/混元/profile.md",
+      "title": "混元",
+      "type": "entity",
+      "domain": [
+        "ai",
+        "tech",
+        "llm",
+        "tencent"
+      ],
+      "created": "2026-04-16",
+      "updated": "2026-04-16",
+      "confidence": "high",
+      "outbound_links": [
+        "姚舜禹",
+        "常天喆",
+        "姚舜禹",
+        "常天喆",
+        "腾讯"
+      ],
+      "resolved_outbound_links": [
+        "entities/姚舜禹/profile.md",
+        "entities/常天喆/profile.md",
+        "entities/腾讯/profile.md"
+      ]
+    },
+    {
+      "path": "entities/康德/profile.md",
+      "title": "康德",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "german-philosophy",
+        "kant"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "黑格尔",
+        "胡塞尔",
+        "赵林",
+        "二律背反",
+        "先验幻相",
+        "依赖性论题",
+        "宇宙论证明",
+        "本体论证明",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/胡塞尔/profile.md",
+        "entities/赵林/profile.md",
+        "sources/2026-04-17-kant-dependency-thesis.md"
+      ]
+    },
+    {
+      "path": "entities/qwen/profile.md",
+      "title": "qwen",
+      "type": "entity",
+      "domain": [
+        "ai",
+        "tech",
+        "llm",
+        "alibaba"
+      ],
+      "created": "2026-04-16",
+      "updated": "2026-04-16",
+      "confidence": "high",
+      "outbound_links": [
+        "林俊暘",
+        "常天喆",
+        "林俊暘",
+        "常天喆"
+      ],
+      "resolved_outbound_links": [
+        "entities/常天喆/profile.md",
+        "entities/林俊暘/profile.md"
       ]
     },
     {
@@ -1100,6 +1458,28 @@
       ]
     },
     {
+      "path": "entities/姚舜禹/profile.md",
+      "title": "姚舜禹",
+      "type": "entity",
+      "domain": [
+        "ai",
+        "tech",
+        "tencent"
+      ],
+      "created": "2026-04-16",
+      "updated": "2026-04-16",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "混元",
+        "常天喆"
+      ],
+      "resolved_outbound_links": [
+        "entities/常天喆/profile.md",
+        "entities/混元/profile.md"
+      ]
+    },
+    {
       "path": "entities/字节跳动/profile.md",
       "title": "字节跳动",
       "type": "entity",
@@ -1117,6 +1497,28 @@
       "resolved_outbound_links": [
         "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
         "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "entities/刘庆峰/profile.md",
+      "title": "刘庆峰",
+      "type": "entity",
+      "domain": [
+        "ai",
+        "business",
+        "china"
+      ],
+      "created": "2026-04-16",
+      "updated": "2026-04-16",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "科大讯飞",
+        "常天喆"
+      ],
+      "resolved_outbound_links": [
+        "entities/常天喆/profile.md",
+        "entities/科大讯飞/profile.md"
       ]
     },
     {
@@ -1163,6 +1565,58 @@
       ]
     },
     {
+      "path": "entities/林俊暘/profile.md",
+      "title": "林俊暘",
+      "type": "entity",
+      "domain": [
+        "ai",
+        "tech",
+        "alibaba"
+      ],
+      "created": "2026-04-16",
+      "updated": "2026-04-16",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "qwen",
+        "常天喆"
+      ],
+      "resolved_outbound_links": [
+        "entities/qwen/profile.md",
+        "entities/常天喆/profile.md"
+      ]
+    },
+    {
+      "path": "entities/胡塞尔/profile.md",
+      "title": "胡塞尔",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "phenomenology"
+      ],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "康德",
+        "马里翁",
+        "海德格尔",
+        "让·海林",
+        "米歇尔·亨利",
+        "现象学",
+        "本质直观",
+        "观念对象",
+        "满溢现象",
+        "还原与给予",
+        "现象学神学转向",
+        "sources/2026-04-17-husserl-theological-turn.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/康德/profile.md",
+        "sources/2026-04-17-husserl-theological-turn.md"
+      ]
+    },
+    {
       "path": "entities/常天喆/profile.md",
       "title": "常天喆",
       "type": "entity",
@@ -1172,7 +1626,7 @@
         "ai"
       ],
       "created": "2026-04-15",
-      "updated": "2026-04-15",
+      "updated": "2026-04-17",
       "confidence": "high",
       "outbound_links": [
         "赵林",
@@ -1184,6 +1638,9 @@
         "周礼栋",
         "梁汝波",
         "Amanda Askell",
+        "刘庆峰",
+        "林俊暘",
+        "姚舜禹",
         "跨学科",
         "AI产品经理",
         "System Engineer",
@@ -1205,7 +1662,13 @@
         "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
         "sources/2026-04-15-chang-tianzhe-resume.md",
         "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
-        "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md"
+        "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
+        "sources/2026-04-16-key-meetings.md",
+        "sources/2026-04-17-kant-dependency-thesis.md",
+        "sources/2026-04-17-zhuangzi-language-philosophy.md",
+        "sources/2026-04-17-husserl-theological-turn.md",
+        "sources/2026-04-17-yudafu-sinking.md",
+        "sources/2026-04-17-joyce-sisters.md"
       ],
       "resolved_outbound_links": [
         "concepts/AI-Native.md",
@@ -1222,14 +1685,23 @@
         "concepts/质量检验agent.md",
         "concepts/跨学科.md",
         "entities/Amanda-Askell/profile.md",
+        "entities/刘庆峰/profile.md",
         "entities/卫茂平/profile.md",
+        "entities/姚舜禹/profile.md",
+        "entities/林俊暘/profile.md",
         "entities/梁汝波/profile.md",
         "entities/赵林/profile.md",
         "entities/邓晓芒/profile.md",
         "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
         "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
         "sources/2026-04-15-chang-tianzhe-resume.md",
-        "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md"
+        "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
+        "sources/2026-04-16-key-meetings.md",
+        "sources/2026-04-17-husserl-theological-turn.md",
+        "sources/2026-04-17-joyce-sisters.md",
+        "sources/2026-04-17-kant-dependency-thesis.md",
+        "sources/2026-04-17-yudafu-sinking.md",
+        "sources/2026-04-17-zhuangzi-language-philosophy.md"
       ]
     },
     {
@@ -1531,11 +2003,19 @@
     ],
     "source-summary": [
       "sources/2026-04-16-hallucination-is-all-you-need.md",
+      "sources/2026-04-17-joyce-sisters.md",
       "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
+      "sources/2026-04-17-zhuangzi-language-philosophy.md",
       "sources/2026-04-15-chang-tianzhe-resume.md",
       "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "sources/2026-04-17-kant-dependency-thesis.md",
+      "sources/2026-04-17-yudafu-sinking.md",
       "sources/EXAMPLE-source-summary.md",
+      "sources/2026-04-17-husserl-theological-turn.md",
       "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md"
+    ],
+    "source": [
+      "sources/2026-04-16-key-meetings.md"
     ],
     "entity": [
       "entities/AAPL/profile.md",
@@ -1545,11 +2025,22 @@
       "entities/百度/profile.md",
       "entities/腾讯/profile.md",
       "entities/腾讯会议智能助手/profile.md",
+      "entities/郁达夫/profile.md",
       "entities/EXAMPLE/profile.md",
+      "entities/乔伊斯/profile.md",
+      "entities/庄子/profile.md",
+      "entities/科大讯飞/profile.md",
+      "entities/混元/profile.md",
+      "entities/康德/profile.md",
+      "entities/qwen/profile.md",
       "entities/文心一言/profile.md",
+      "entities/姚舜禹/profile.md",
       "entities/字节跳动/profile.md",
+      "entities/刘庆峰/profile.md",
       "entities/changsview/profile.md",
       "entities/卫茂平/profile.md",
+      "entities/林俊暘/profile.md",
+      "entities/胡塞尔/profile.md",
       "entities/常天喆/profile.md",
       "entities/邓晓芒/profile.md",
       "entities/赵林/profile.md",
@@ -1613,7 +2104,13 @@
       "entities/AI智选资讯/profile.md",
       "entities/百度/profile.md",
       "entities/腾讯会议智能助手/profile.md",
+      "entities/科大讯飞/profile.md",
+      "entities/混元/profile.md",
+      "entities/qwen/profile.md",
       "entities/文心一言/profile.md",
+      "entities/姚舜禹/profile.md",
+      "entities/刘庆峰/profile.md",
+      "entities/林俊暘/profile.md",
       "entities/常天喆/profile.md",
       "entities/Amanda-Askell/profile.md",
       "entities/微软亚洲研究院/profile.md",
@@ -1642,8 +2139,13 @@
       "entities/百度/profile.md",
       "entities/腾讯/profile.md",
       "entities/腾讯会议智能助手/profile.md",
+      "entities/科大讯飞/profile.md",
+      "entities/混元/profile.md",
+      "entities/qwen/profile.md",
       "entities/文心一言/profile.md",
+      "entities/姚舜禹/profile.md",
       "entities/字节跳动/profile.md",
+      "entities/林俊暘/profile.md",
       "entities/常天喆/profile.md",
       "entities/梁汝波/profile.md",
       "entities/Amanda-Askell/profile.md",
@@ -1682,14 +2184,107 @@
     "philosophy": [
       "sources/2026-04-16-hallucination-is-all-you-need.md",
       "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
+      "sources/2026-04-17-zhuangzi-language-philosophy.md",
+      "sources/2026-04-17-kant-dependency-thesis.md",
+      "sources/2026-04-17-husserl-theological-turn.md",
+      "entities/庄子/profile.md",
+      "entities/康德/profile.md",
+      "entities/胡塞尔/profile.md",
       "entities/邓晓芒/profile.md",
       "entities/赵林/profile.md"
+    ],
+    "literature": [
+      "sources/2026-04-17-joyce-sisters.md",
+      "sources/2026-04-17-yudafu-sinking.md",
+      "entities/郁达夫/profile.md",
+      "entities/乔伊斯/profile.md"
+    ],
+    "irish-literature": [
+      "sources/2026-04-17-joyce-sisters.md",
+      "entities/乔伊斯/profile.md"
+    ],
+    "psychoanalysis": [
+      "sources/2026-04-17-joyce-sisters.md"
+    ],
+    "joyce": [
+      "sources/2026-04-17-joyce-sisters.md"
+    ],
+    "chinese-philosophy": [
+      "sources/2026-04-17-zhuangzi-language-philosophy.md",
+      "entities/庄子/profile.md"
+    ],
+    "language-philosophy": [
+      "sources/2026-04-17-zhuangzi-language-philosophy.md"
+    ],
+    "zhuangzi": [
+      "sources/2026-04-17-zhuangzi-language-philosophy.md"
+    ],
+    "kant": [
+      "sources/2026-04-17-kant-dependency-thesis.md",
+      "entities/康德/profile.md"
+    ],
+    "theology": [
+      "sources/2026-04-17-kant-dependency-thesis.md",
+      "sources/2026-04-17-husserl-theological-turn.md"
+    ],
+    "chinese-literature": [
+      "sources/2026-04-17-yudafu-sinking.md",
+      "entities/郁达夫/profile.md"
+    ],
+    "feminism": [
+      "sources/2026-04-17-yudafu-sinking.md"
+    ],
+    "foucault": [
+      "sources/2026-04-17-yudafu-sinking.md"
+    ],
+    "phenomenology": [
+      "sources/2026-04-17-husserl-theological-turn.md",
+      "entities/胡塞尔/profile.md"
+    ],
+    "husserl": [
+      "sources/2026-04-17-husserl-theological-turn.md"
+    ],
+    "人脉": [
+      "sources/2026-04-16-key-meetings.md"
+    ],
+    "AI行业": [
+      "sources/2026-04-16-key-meetings.md"
+    ],
+    "职业经历": [
+      "sources/2026-04-16-key-meetings.md"
     ],
     "business": [
       "entities/百度/profile.md",
       "entities/腾讯/profile.md",
+      "entities/科大讯飞/profile.md",
       "entities/字节跳动/profile.md",
+      "entities/刘庆峰/profile.md",
       "entities/梁汝波/profile.md"
+    ],
+    "modernism": [
+      "entities/乔伊斯/profile.md"
+    ],
+    "taoism": [
+      "entities/庄子/profile.md"
+    ],
+    "china": [
+      "entities/科大讯飞/profile.md",
+      "entities/刘庆峰/profile.md"
+    ],
+    "llm": [
+      "entities/混元/profile.md",
+      "entities/qwen/profile.md"
+    ],
+    "tencent": [
+      "entities/混元/profile.md",
+      "entities/姚舜禹/profile.md"
+    ],
+    "german-philosophy": [
+      "entities/康德/profile.md"
+    ],
+    "alibaba": [
+      "entities/qwen/profile.md",
+      "entities/林俊暘/profile.md"
     ],
     "media": [
       "entities/changsview/profile.md"
@@ -1705,49 +2300,6 @@
     "sources/EXAMPLE-source-summary.md": [
       "explorations/EXAMPLE-exploration.md",
       "explorations/EXAMPLE-exploration.md"
-    ],
-    "entities/常天喆/profile.md": [
-      "timelines/2025.md",
-      "timelines/2024.md",
-      "timelines/2023.md",
-      "timelines/2026.md",
-      "concepts/RAG.md",
-      "concepts/跨学科.md",
-      "concepts/Superalignment.md",
-      "concepts/动态上下文路由.md",
-      "concepts/System-Engineer.md",
-      "concepts/模型对齐.md",
-      "concepts/LLM革命.md",
-      "concepts/SFT.md",
-      "concepts/Fact-checking Agent.md",
-      "concepts/价值观对齐.md",
-      "concepts/AI产品经理.md",
-      "concepts/内容安全治理.md",
-      "concepts/质量检验agent.md",
-      "concepts/多源校验.md",
-      "concepts/Orchestration Workflow.md",
-      "sources/2026-04-16-hallucination-is-all-you-need.md",
-      "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
-      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
-      "entities/华中科技大学/profile.md",
-      "entities/华中科技大学/profile.md",
-      "entities/AI智选资讯/profile.md",
-      "entities/changsview/profile.md",
-      "entities/changsview/profile.md",
-      "entities/changsview/profile.md",
-      "entities/changsview/profile.md",
-      "entities/卫茂平/profile.md",
-      "entities/卫茂平/profile.md",
-      "entities/邓晓芒/profile.md",
-      "entities/邓晓芒/profile.md",
-      "entities/赵林/profile.md",
-      "entities/梁汝波/profile.md",
-      "entities/梁汝波/profile.md",
-      "entities/AI求真/profile.md",
-      "entities/抖音AI资讯总结页/profile.md",
-      "entities/Contextual Query Suggestion/profile.md",
-      "entities/AI热点/profile.md",
-      "entities/抖音/profile.md"
     ],
     "entities/字节跳动/profile.md": [
       "timelines/2025.md",
@@ -1783,6 +2335,20 @@
       "entities/抖音/profile.md",
       "entities/抖音/profile.md"
     ],
+    "entities/林俊暘/profile.md": [
+      "timelines/2025.md",
+      "sources/2026-04-16-key-meetings.md",
+      "sources/2026-04-16-key-meetings.md",
+      "sources/2026-04-16-key-meetings.md",
+      "entities/qwen/profile.md",
+      "entities/qwen/profile.md",
+      "entities/常天喆/profile.md"
+    ],
+    "entities/qwen/profile.md": [
+      "timelines/2025.md",
+      "sources/2026-04-16-key-meetings.md",
+      "entities/林俊暘/profile.md"
+    ],
     "concepts/RAG.md": [
       "timelines/2025.md",
       "timelines/2024.md",
@@ -1813,6 +2379,20 @@
       "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
       "entities/抖音/profile.md",
       "entities/抖音/profile.md"
+    ],
+    "entities/刘庆峰/profile.md": [
+      "timelines/2025.md",
+      "sources/2026-04-16-key-meetings.md",
+      "sources/2026-04-16-key-meetings.md",
+      "sources/2026-04-16-key-meetings.md",
+      "entities/科大讯飞/profile.md",
+      "entities/科大讯飞/profile.md",
+      "entities/常天喆/profile.md"
+    ],
+    "entities/科大讯飞/profile.md": [
+      "timelines/2025.md",
+      "sources/2026-04-16-key-meetings.md",
+      "entities/刘庆峰/profile.md"
     ],
     "concepts/多源校验.md": [
       "timelines/2025.md",
@@ -1871,6 +2451,59 @@
       "entities/卫茂平/profile.md",
       "entities/常天喆/profile.md",
       "entities/AI求真/profile.md",
+      "entities/Contextual Query Suggestion/profile.md",
+      "entities/AI热点/profile.md",
+      "entities/抖音/profile.md"
+    ],
+    "entities/常天喆/profile.md": [
+      "timelines/2024.md",
+      "timelines/2023.md",
+      "concepts/RAG.md",
+      "concepts/跨学科.md",
+      "concepts/Superalignment.md",
+      "concepts/动态上下文路由.md",
+      "concepts/System-Engineer.md",
+      "concepts/模型对齐.md",
+      "concepts/LLM革命.md",
+      "concepts/SFT.md",
+      "concepts/Fact-checking Agent.md",
+      "concepts/价值观对齐.md",
+      "concepts/AI产品经理.md",
+      "concepts/内容安全治理.md",
+      "concepts/质量检验agent.md",
+      "concepts/多源校验.md",
+      "concepts/Orchestration Workflow.md",
+      "sources/2026-04-16-hallucination-is-all-you-need.md",
+      "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/华中科技大学/profile.md",
+      "entities/华中科技大学/profile.md",
+      "entities/AI智选资讯/profile.md",
+      "entities/科大讯飞/profile.md",
+      "entities/科大讯飞/profile.md",
+      "entities/混元/profile.md",
+      "entities/混元/profile.md",
+      "entities/qwen/profile.md",
+      "entities/qwen/profile.md",
+      "entities/姚舜禹/profile.md",
+      "entities/姚舜禹/profile.md",
+      "entities/刘庆峰/profile.md",
+      "entities/刘庆峰/profile.md",
+      "entities/changsview/profile.md",
+      "entities/changsview/profile.md",
+      "entities/changsview/profile.md",
+      "entities/changsview/profile.md",
+      "entities/卫茂平/profile.md",
+      "entities/卫茂平/profile.md",
+      "entities/林俊暘/profile.md",
+      "entities/林俊暘/profile.md",
+      "entities/邓晓芒/profile.md",
+      "entities/邓晓芒/profile.md",
+      "entities/赵林/profile.md",
+      "entities/梁汝波/profile.md",
+      "entities/梁汝波/profile.md",
+      "entities/AI求真/profile.md",
+      "entities/抖音AI资讯总结页/profile.md",
       "entities/Contextual Query Suggestion/profile.md",
       "entities/AI热点/profile.md",
       "entities/抖音/profile.md"
@@ -1960,7 +2593,8 @@
     ],
     "entities/腾讯/profile.md": [
       "timelines/2023.md",
-      "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/混元/profile.md"
     ],
     "entities/微软亚洲研究院/profile.md": [
       "timelines/2023.md",
@@ -1989,6 +2623,24 @@
     "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md": [
       "timelines/2023.md",
       "timelines/2023.md",
+      "entities/常天喆/profile.md"
+    ],
+    "entities/姚舜禹/profile.md": [
+      "timelines/2026.md",
+      "sources/2026-04-16-key-meetings.md",
+      "sources/2026-04-16-key-meetings.md",
+      "sources/2026-04-16-key-meetings.md",
+      "entities/混元/profile.md",
+      "entities/混元/profile.md",
+      "entities/常天喆/profile.md"
+    ],
+    "entities/混元/profile.md": [
+      "timelines/2026.md",
+      "sources/2026-04-16-key-meetings.md",
+      "entities/姚舜禹/profile.md"
+    ],
+    "sources/2026-04-16-key-meetings.md": [
+      "timelines/2026.md",
       "entities/常天喆/profile.md"
     ],
     "concepts/动态上下文路由.md": [
@@ -2076,6 +2728,7 @@
     ],
     "entities/赵林/profile.md": [
       "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/康德/profile.md",
       "entities/常天喆/profile.md"
     ],
     "entities/卫茂平/profile.md": [
@@ -2092,6 +2745,32 @@
       "sources/EXAMPLE-source-summary.md",
       "entities/EXAMPLE/profile.md",
       "entities/EXAMPLE/profile.md"
+    ],
+    "sources/2026-04-17-yudafu-sinking.md": [
+      "entities/郁达夫/profile.md",
+      "entities/常天喆/profile.md"
+    ],
+    "sources/2026-04-17-joyce-sisters.md": [
+      "entities/乔伊斯/profile.md",
+      "entities/常天喆/profile.md"
+    ],
+    "sources/2026-04-17-zhuangzi-language-philosophy.md": [
+      "entities/庄子/profile.md",
+      "entities/常天喆/profile.md"
+    ],
+    "entities/胡塞尔/profile.md": [
+      "entities/康德/profile.md"
+    ],
+    "sources/2026-04-17-kant-dependency-thesis.md": [
+      "entities/康德/profile.md",
+      "entities/常天喆/profile.md"
+    ],
+    "entities/康德/profile.md": [
+      "entities/胡塞尔/profile.md"
+    ],
+    "sources/2026-04-17-husserl-theological-turn.md": [
+      "entities/胡塞尔/profile.md",
+      "entities/常天喆/profile.md"
     ]
   }
 }
