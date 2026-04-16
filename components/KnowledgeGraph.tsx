@@ -258,17 +258,19 @@ export default function KnowledgeGraph() {
         .on('end', dragended) as any)
 
     const simulation = d3.forceSimulation(graphData.nodes)
+      .velocityDecay(0.4)
       .force('link', d3.forceLink(graphData.links).id((d: any) => d.id).distance((d: any) => {
         const sourceNode = typeof d.source === 'object' ? d.source : nodeMap.get(d.source as string)
         const targetNode = typeof d.target === 'object' ? d.target : nodeMap.get(d.target as string)
         if (sourceNode?.title === '常天喆' || targetNode?.title === '常天喆') {
-          return 100
+          return 120
         }
-        return 150
-      }))
-      .force('charge', d3.forceManyBody().strength((d: any) => d.title === '常天喆' ? -1000 : -300))
-      .force('center', d3.forceCenter(width / 2, height / 2))
-      .force('collision', d3.forceCollide().radius((d: any) => d.title === '常天喆' ? 50 : 25))
+        return 100
+      }).strength(1.5))
+      .force('charge', d3.forceManyBody().strength((d: any) => d.title === '常天喆' ? -800 : -150))
+      .force('center', d3.forceCenter(width / 2, height / 2).strength(0.02))
+      .force('collision', d3.forceCollide().radius((d: any) => d.title === '常天喆' ? 45 : 20))
+      .alphaMin(0.001)
       .on('tick', ticked)
 
     simulationRef.current = simulation
