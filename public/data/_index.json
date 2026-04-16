@@ -1,0 +1,2097 @@
+{
+  "generated_at": "2026-04-16T20:36:25",
+  "total_pages": 55,
+  "pages": [
+    {
+      "path": "rules.md",
+      "title": "Validated Rules",
+      "type": "meta",
+      "domain": [],
+      "created": "",
+      "updated": "2026-04-07",
+      "confidence": "unknown",
+      "outbound_links": [],
+      "resolved_outbound_links": []
+    },
+    {
+      "path": "false-beliefs.md",
+      "title": "False Beliefs",
+      "type": "meta",
+      "domain": [],
+      "created": "",
+      "updated": "2026-04-07",
+      "confidence": "unknown",
+      "outbound_links": [],
+      "resolved_outbound_links": []
+    },
+    {
+      "path": "explorations/EXAMPLE-exploration.md",
+      "title": "EXAMPLE Exploration",
+      "type": "exploration",
+      "domain": [],
+      "created": "2026-04-07",
+      "updated": "2026-04-07",
+      "confidence": "medium",
+      "outbound_links": [
+        "EXAMPLE-source-summary",
+        "EXAMPLE-source-summary"
+      ],
+      "resolved_outbound_links": [
+        "sources/EXAMPLE-source-summary.md"
+      ]
+    },
+    {
+      "path": "timelines/2025.md",
+      "title": "2025 Timeline",
+      "type": "timeline",
+      "domain": [
+        "life",
+        "career",
+        "academic"
+      ],
+      "created": "2026-04-16",
+      "updated": "2026-04-16",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "字节跳动",
+        "抖音",
+        "AI热点",
+        "RAG",
+        "上下文工程",
+        "AI求真",
+        "多源校验",
+        "changsview",
+        "Hallucination Is All You Need",
+        "AI智选资讯",
+        "质量检验agent",
+        "AI热点",
+        "AI求真",
+        "AI智选资讯",
+        "质量检验agent",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/RAG.md",
+        "concepts/上下文工程.md",
+        "concepts/多源校验.md",
+        "concepts/质量检验agent.md",
+        "entities/AI智选资讯/profile.md",
+        "entities/AI求真/profile.md",
+        "entities/AI热点/profile.md",
+        "entities/changsview/profile.md",
+        "entities/字节跳动/profile.md",
+        "entities/常天喆/profile.md",
+        "entities/抖音/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+        "sources/2026-04-16-hallucination-is-all-you-need.md"
+      ]
+    },
+    {
+      "path": "timelines/2024.md",
+      "title": "2024 Timeline",
+      "type": "timeline",
+      "domain": [
+        "life",
+        "career",
+        "academic"
+      ],
+      "created": "2026-04-16",
+      "updated": "2026-04-16",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "Contextual Query Suggestion",
+        "SFT",
+        "DPO",
+        "RAG",
+        "DeepSeek",
+        "System Engineer",
+        "文心一言",
+        "Contextual Query Suggestion",
+        "DeepSeek",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/RAG.md",
+        "concepts/SFT.md",
+        "concepts/System-Engineer.md",
+        "entities/Contextual Query Suggestion/profile.md",
+        "entities/常天喆/profile.md",
+        "entities/文心一言/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "timelines/2023.md",
+      "title": "2023 Timeline",
+      "type": "timeline",
+      "domain": [
+        "life",
+        "career",
+        "academic"
+      ],
+      "created": "2026-04-16",
+      "updated": "2026-04-16",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "腾讯",
+        "腾讯会议",
+        "微软亚洲研究院",
+        "矣晓沅",
+        "谢幸",
+        "价值观对齐",
+        "Superalignment",
+        "百度",
+        "文心一言",
+        "德国哲学",
+        "承认",
+        "黑格尔",
+        "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
+        "腾讯会议",
+        "微软亚洲研究院",
+        "文心一言",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+        "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/Superalignment.md",
+        "concepts/价值观对齐.md",
+        "entities/常天喆/profile.md",
+        "entities/微软亚洲研究院/profile.md",
+        "entities/文心一言/profile.md",
+        "entities/百度/profile.md",
+        "entities/腾讯/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md"
+      ]
+    },
+    {
+      "path": "timelines/2026.md",
+      "title": "2026 Timeline",
+      "type": "timeline",
+      "domain": [
+        "life",
+        "career",
+        "academic"
+      ],
+      "created": "2026-04-16",
+      "updated": "2026-04-16",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/常天喆/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/RAG.md",
+      "title": "RAG",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "AI智选资讯",
+        "上下文工程",
+        "动态上下文路由",
+        "Orchestration Workflow",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/Orchestration Workflow.md",
+        "concepts/上下文工程.md",
+        "concepts/动态上下文路由.md",
+        "entities/AI智选资讯/profile.md",
+        "entities/常天喆/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/跨学科.md",
+      "title": "跨学科",
+      "type": "concept",
+      "domain": [
+        "education",
+        "career"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "常天喆",
+        "AI产品经理",
+        "AI产品经理"
+      ],
+      "resolved_outbound_links": [
+        "concepts/AI产品经理.md",
+        "entities/常天喆/profile.md",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/Superalignment.md",
+      "title": "Superalignment",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "research"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "medium",
+      "outbound_links": [
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "微软亚洲研究院",
+        "常天喆",
+        "价值观对齐"
+      ],
+      "resolved_outbound_links": [
+        "concepts/价值观对齐.md",
+        "entities/常天喆/profile.md",
+        "entities/微软亚洲研究院/profile.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/动态上下文路由.md",
+      "title": "动态上下文路由",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "AI智选资讯",
+        "字节跳动",
+        "抖音",
+        "RAG",
+        "上下文工程",
+        "Fact-checking Agent",
+        "Orchestration Workflow",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/Fact-checking Agent.md",
+        "concepts/Orchestration Workflow.md",
+        "concepts/RAG.md",
+        "concepts/上下文工程.md",
+        "entities/AI智选资讯/profile.md",
+        "entities/字节跳动/profile.md",
+        "entities/常天喆/profile.md",
+        "entities/抖音/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/System-Engineer.md",
+      "title": "System Engineer",
+      "type": "concept",
+      "domain": [
+        "tech",
+        "ai",
+        "product"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "常天喆",
+        "Amanda Askell",
+        "百度",
+        "文心一言",
+        "AI产品经理"
+      ],
+      "resolved_outbound_links": [
+        "concepts/AI产品经理.md",
+        "entities/Amanda-Askell/profile.md",
+        "entities/常天喆/profile.md",
+        "entities/文心一言/profile.md",
+        "entities/百度/profile.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/模型对齐.md",
+      "title": "模型对齐",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "AI求真",
+        "字节跳动",
+        "抖音",
+        "价值观对齐",
+        "内容安全治理",
+        "多源校验",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/价值观对齐.md",
+        "concepts/内容安全治理.md",
+        "concepts/多源校验.md",
+        "entities/AI求真/profile.md",
+        "entities/字节跳动/profile.md",
+        "entities/常天喆/profile.md",
+        "entities/抖音/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/LLM革命.md",
+      "title": "LLM革命",
+      "type": "concept",
+      "domain": [
+        "tech",
+        "ai",
+        "history"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "常天喆",
+        "AI产品经理",
+        "AI Native"
+      ],
+      "resolved_outbound_links": [
+        "concepts/AI-Native.md",
+        "concepts/AI产品经理.md",
+        "entities/常天喆/profile.md",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/SFT.md",
+      "title": "SFT",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "DPO",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/常天喆/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/Fact-checking Agent.md",
+      "title": "Fact-checking Agent",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "AI求真",
+        "字节跳动",
+        "抖音",
+        "多源校验",
+        "内容安全治理",
+        "模型对齐",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/内容安全治理.md",
+        "concepts/多源校验.md",
+        "concepts/模型对齐.md",
+        "entities/AI求真/profile.md",
+        "entities/字节跳动/profile.md",
+        "entities/常天喆/profile.md",
+        "entities/抖音/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/价值观对齐.md",
+      "title": "价值观对齐",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "ethics",
+        "research"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "微软亚洲研究院",
+        "常天喆",
+        "Superalignment"
+      ],
+      "resolved_outbound_links": [
+        "concepts/Superalignment.md",
+        "entities/常天喆/profile.md",
+        "entities/微软亚洲研究院/profile.md",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/AI-Native.md",
+      "title": "AI Native",
+      "type": "concept",
+      "domain": [
+        "tech",
+        "ai",
+        "product"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "字节跳动",
+        "抖音AI求真功能",
+        "抖音AI资讯总结页",
+        "LLM革命",
+        "上下文工程",
+        "质量检验agent"
+      ],
+      "resolved_outbound_links": [
+        "concepts/LLM革命.md",
+        "concepts/上下文工程.md",
+        "concepts/质量检验agent.md",
+        "entities/字节跳动/profile.md",
+        "entities/抖音AI求真功能/profile.md",
+        "entities/抖音AI资讯总结页/profile.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/AI产品经理.md",
+      "title": "AI产品经理",
+      "type": "concept",
+      "domain": [
+        "tech",
+        "career",
+        "ai"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "常天喆",
+        "Amanda Askell",
+        "文心一言",
+        "腾讯会议智能助手",
+        "System Engineer",
+        "跨学科",
+        "LLM革命"
+      ],
+      "resolved_outbound_links": [
+        "concepts/LLM革命.md",
+        "concepts/System-Engineer.md",
+        "concepts/跨学科.md",
+        "entities/Amanda-Askell/profile.md",
+        "entities/常天喆/profile.md",
+        "entities/文心一言/profile.md",
+        "entities/腾讯会议智能助手/profile.md",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/内容安全治理.md",
+      "title": "内容安全治理",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "AI求真",
+        "字节跳动",
+        "抖音",
+        "模型对齐",
+        "多源校验",
+        "Fact-checking Agent",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/Fact-checking Agent.md",
+        "concepts/多源校验.md",
+        "concepts/模型对齐.md",
+        "entities/AI求真/profile.md",
+        "entities/字节跳动/profile.md",
+        "entities/常天喆/profile.md",
+        "entities/抖音/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/上下文工程.md",
+      "title": "上下文工程",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "tech"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "字节跳动",
+        "AI Native",
+        "质量检验agent"
+      ],
+      "resolved_outbound_links": [
+        "concepts/AI-Native.md",
+        "concepts/质量检验agent.md",
+        "entities/字节跳动/profile.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/质量检验agent.md",
+      "title": "质量检验agent",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "AI智选资讯",
+        "字节跳动",
+        "抖音",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/AI智选资讯/profile.md",
+        "entities/字节跳动/profile.md",
+        "entities/常天喆/profile.md",
+        "entities/抖音/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/多源校验.md",
+      "title": "多源校验",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "AI求真",
+        "字节跳动",
+        "抖音",
+        "Fact-checking Agent",
+        "内容安全治理",
+        "模型对齐",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/Fact-checking Agent.md",
+        "concepts/内容安全治理.md",
+        "concepts/模型对齐.md",
+        "entities/AI求真/profile.md",
+        "entities/字节跳动/profile.md",
+        "entities/常天喆/profile.md",
+        "entities/抖音/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/Orchestration Workflow.md",
+      "title": "Orchestration Workflow",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "AI智选资讯",
+        "字节跳动",
+        "抖音",
+        "动态上下文路由",
+        "RAG",
+        "Fact-checking Agent",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/Fact-checking Agent.md",
+        "concepts/RAG.md",
+        "concepts/动态上下文路由.md",
+        "entities/AI智选资讯/profile.md",
+        "entities/字节跳动/profile.md",
+        "entities/常天喆/profile.md",
+        "entities/抖音/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/EXAMPLE-concept.md",
+      "title": "EXAMPLE Concept",
+      "type": "concept",
+      "domain": [
+        "investing"
+      ],
+      "created": "2026-04-07",
+      "updated": "2026-04-07",
+      "confidence": "low",
+      "outbound_links": [
+        "EXAMPLE",
+        "EXAMPLE"
+      ],
+      "resolved_outbound_links": [
+        "entities/EXAMPLE/profile.md"
+      ]
+    },
+    {
+      "path": "sources/2026-04-16-hallucination-is-all-you-need.md",
+      "title": "Hallucination Is All You Need",
+      "type": "source-summary",
+      "domain": [
+        "philosophy",
+        "ai",
+        "tech"
+      ],
+      "created": "2026-04-16",
+      "updated": "2026-04-16",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "柏拉图",
+        "维特根斯坦",
+        "索绪尔",
+        "休谟",
+        "普特南",
+        "LeCun",
+        "乔姆斯基",
+        "赫拉利",
+        "尼采",
+        "哥德尔",
+        "图灵",
+        "changsview",
+        "幻觉",
+        "符号世界",
+        "感官世界",
+        "世界模型",
+        "MoE架构",
+        "softmax",
+        "哥德尔不完备定理",
+        "停机问题",
+        "叙事范式",
+        "虚构",
+        "Hallucination Is All You Need"
+      ],
+      "resolved_outbound_links": [
+        "entities/changsview/profile.md",
+        "entities/常天喆/profile.md",
+        "sources/2026-04-16-hallucination-is-all-you-need.md"
+      ]
+    },
+    {
+      "path": "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
+      "title": "承认之斗争及其和解——黑格尔《法哲学原理》中的紧急避难权与所有权问题",
+      "type": "source-summary",
+      "domain": [
+        "philosophy",
+        "academic"
+      ],
+      "created": "2026-04-16",
+      "updated": "2026-04-16",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "黑格尔",
+        "霍耐特",
+        "洛苏尔多",
+        "迪特·亨利希",
+        "邓晓芒",
+        "德国哲学",
+        "法哲学原理",
+        "精神现象学",
+        "承认",
+        "所有权",
+        "紧急避难权",
+        "为承认而斗争",
+        "Notrecht",
+        "Eigentum",
+        "内在的造反"
+      ],
+      "resolved_outbound_links": [
+        "entities/常天喆/profile.md",
+        "entities/邓晓芒/profile.md"
+      ]
+    },
+    {
+      "path": "sources/2026-04-15-chang-tianzhe-resume.md",
+      "title": "常天喆个人简历：从哲学到AI产品经理的完整职业路径",
+      "type": "source-summary",
+      "domain": [
+        "career",
+        "tech",
+        "ai"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [],
+      "resolved_outbound_links": []
+    },
+    {
+      "path": "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "title": "常天喆-AI产品经理-简历-对内版",
+      "type": "source-summary",
+      "domain": [
+        "career",
+        "tech",
+        "ai"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "https://mp.weixin.qq.com/s/4ub5jcnwDy9IJyJQ_Ukl_Q",
+        "https://www.zhihu.com/people/chang-tian-zhe-74",
+        "https://space.bilibili.com/8196480?spm_id_from=333.337.0.0",
+        "常天喆",
+        "字节跳动",
+        "抖音",
+        "百度",
+        "文心一言",
+        "微软亚洲研究院",
+        "腾讯",
+        "腾讯会议",
+        "腾讯混元",
+        "赵林",
+        "邓晓芒",
+        "卫茂平",
+        "章永乐",
+        "矣晓沅",
+        "谢幸",
+        "周礼栋",
+        "梁汝波",
+        "DeepSeek",
+        "Doubao",
+        "微博智搜",
+        "36kr",
+        "AI求真",
+        "AI智选资讯",
+        "AI热点",
+        "Contextual Query Suggestion",
+        "质量检验agent",
+        "动态上下文路由",
+        "价值观对齐",
+        "System Engineer",
+        "RAG",
+        "上下文工程",
+        "多模态融合",
+        "事实一致性",
+        "可解释性",
+        "SFT",
+        "DPO",
+        "Prompt工程",
+        "质量检验agent",
+        "动态上下文路由",
+        "Fact-checking Agent",
+        "Orchestration Workflow",
+        "多源校验"
+      ],
+      "resolved_outbound_links": [
+        "concepts/Fact-checking Agent.md",
+        "concepts/Orchestration Workflow.md",
+        "concepts/RAG.md",
+        "concepts/SFT.md",
+        "concepts/System-Engineer.md",
+        "concepts/上下文工程.md",
+        "concepts/价值观对齐.md",
+        "concepts/动态上下文路由.md",
+        "concepts/多源校验.md",
+        "concepts/质量检验agent.md",
+        "entities/AI智选资讯/profile.md",
+        "entities/AI求真/profile.md",
+        "entities/AI热点/profile.md",
+        "entities/Contextual Query Suggestion/profile.md",
+        "entities/卫茂平/profile.md",
+        "entities/字节跳动/profile.md",
+        "entities/常天喆/profile.md",
+        "entities/微软亚洲研究院/profile.md",
+        "entities/抖音/profile.md",
+        "entities/文心一言/profile.md",
+        "entities/梁汝波/profile.md",
+        "entities/百度/profile.md",
+        "entities/腾讯/profile.md",
+        "entities/赵林/profile.md",
+        "entities/邓晓芒/profile.md"
+      ]
+    },
+    {
+      "path": "sources/EXAMPLE-source-summary.md",
+      "title": "EXAMPLE Source Summary",
+      "type": "source-summary",
+      "domain": [
+        "investing"
+      ],
+      "created": "2026-04-07",
+      "updated": "2026-04-07",
+      "confidence": "medium",
+      "outbound_links": [
+        "EXAMPLE",
+        "EXAMPLE-concept",
+        "EXAMPLE",
+        "EXAMPLE-concept",
+        "EXAMPLE",
+        "EXAMPLE-concept"
+      ],
+      "resolved_outbound_links": [
+        "concepts/EXAMPLE-concept.md",
+        "entities/EXAMPLE/profile.md"
+      ]
+    },
+    {
+      "path": "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+      "title": "常天喆就业经验：从哲学到百度AI产品经理的转型之路",
+      "type": "source-summary",
+      "domain": [
+        "career",
+        "education",
+        "tech"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [],
+      "resolved_outbound_links": []
+    },
+    {
+      "path": "entities/AAPL/profile.md",
+      "title": "AAPL",
+      "type": "entity",
+      "domain": [
+        "investing"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "low",
+      "outbound_links": [],
+      "resolved_outbound_links": []
+    },
+    {
+      "path": "entities/华中科技大学/profile.md",
+      "title": "华中科技大学",
+      "type": "entity",
+      "domain": [
+        "education"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "常天喆",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/常天喆/profile.md",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "entities/抖音AI求真功能/profile.md",
+      "title": "抖音AI求真功能",
+      "type": "entity",
+      "domain": [
+        "tech",
+        "ai",
+        "product"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "AI Native",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/AI-Native.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "entities/AI智选资讯/profile.md",
+      "title": "AI智选资讯",
+      "type": "entity",
+      "domain": [
+        "ai",
+        "product",
+        "tech"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "动态上下文路由",
+        "Fact-checking Agent",
+        "Orchestration Workflow",
+        "质量检验agent",
+        "RAG",
+        "上下文工程",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/Fact-checking Agent.md",
+        "concepts/Orchestration Workflow.md",
+        "concepts/RAG.md",
+        "concepts/上下文工程.md",
+        "concepts/动态上下文路由.md",
+        "concepts/质量检验agent.md",
+        "entities/常天喆/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    },
+    {
+      "path": "entities/百度/profile.md",
+      "title": "百度",
+      "type": "entity",
+      "domain": [
+        "tech",
+        "ai",
+        "business"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "System Engineer",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/System-Engineer.md",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "entities/腾讯/profile.md",
+      "title": "腾讯",
+      "type": "entity",
+      "domain": [
+        "tech",
+        "business"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "entities/腾讯会议智能助手/profile.md",
+      "title": "腾讯会议智能助手",
+      "type": "entity",
+      "domain": [
+        "tech",
+        "ai",
+        "product"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "entities/EXAMPLE/profile.md",
+      "title": "EXAMPLE Inc.",
+      "type": "entity",
+      "domain": [
+        "investing"
+      ],
+      "created": "2026-04-07",
+      "updated": "2026-04-07",
+      "confidence": "low",
+      "outbound_links": [
+        "EXAMPLE-concept",
+        "EXAMPLE-concept"
+      ],
+      "resolved_outbound_links": [
+        "concepts/EXAMPLE-concept.md"
+      ]
+    },
+    {
+      "path": "entities/文心一言/profile.md",
+      "title": "文心一言",
+      "type": "entity",
+      "domain": [
+        "tech",
+        "ai",
+        "product"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "System Engineer",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/System-Engineer.md",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "entities/字节跳动/profile.md",
+      "title": "字节跳动",
+      "type": "entity",
+      "domain": [
+        "tech",
+        "business"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "entities/changsview/profile.md",
+      "title": "changsview",
+      "type": "entity",
+      "domain": [
+        "media",
+        "writing"
+      ],
+      "created": "2026-04-16",
+      "updated": "2026-04-16",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "常天喆",
+        "常天喆",
+        "常天喆",
+        "sources/2026-04-16-hallucination-is-all-you-need.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/常天喆/profile.md",
+        "sources/2026-04-16-hallucination-is-all-you-need.md"
+      ]
+    },
+    {
+      "path": "entities/卫茂平/profile.md",
+      "title": "卫茂平",
+      "type": "entity",
+      "domain": [
+        "academic"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "medium",
+      "outbound_links": [
+        "常天喆",
+        "常天喆",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/常天喆/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    },
+    {
+      "path": "entities/常天喆/profile.md",
+      "title": "常天喆",
+      "type": "entity",
+      "domain": [
+        "career",
+        "tech",
+        "ai"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "赵林",
+        "邓晓芒",
+        "卫茂平",
+        "章永乐",
+        "矣晓沅",
+        "谢幸",
+        "周礼栋",
+        "梁汝波",
+        "Amanda Askell",
+        "跨学科",
+        "AI产品经理",
+        "System Engineer",
+        "价值观对齐",
+        "Superalignment",
+        "AI Native",
+        "质量检验agent",
+        "上下文工程",
+        "多模态融合",
+        "事实一致性",
+        "可解释性",
+        "SFT",
+        "DPO",
+        "Prompt工程",
+        "动态上下文路由",
+        "Fact-checking Agent",
+        "Orchestration Workflow",
+        "多源校验",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+        "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/AI-Native.md",
+        "concepts/AI产品经理.md",
+        "concepts/Fact-checking Agent.md",
+        "concepts/Orchestration Workflow.md",
+        "concepts/SFT.md",
+        "concepts/Superalignment.md",
+        "concepts/System-Engineer.md",
+        "concepts/上下文工程.md",
+        "concepts/价值观对齐.md",
+        "concepts/动态上下文路由.md",
+        "concepts/多源校验.md",
+        "concepts/质量检验agent.md",
+        "concepts/跨学科.md",
+        "entities/Amanda-Askell/profile.md",
+        "entities/卫茂平/profile.md",
+        "entities/梁汝波/profile.md",
+        "entities/赵林/profile.md",
+        "entities/邓晓芒/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md",
+        "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md"
+      ]
+    },
+    {
+      "path": "entities/邓晓芒/profile.md",
+      "title": "邓晓芒",
+      "type": "entity",
+      "domain": [
+        "philosophy"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "medium",
+      "outbound_links": [
+        "常天喆",
+        "常天喆",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/常天喆/profile.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "entities/赵林/profile.md",
+      "title": "赵林",
+      "type": "entity",
+      "domain": [
+        "education",
+        "philosophy"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "medium",
+      "outbound_links": [
+        "常天喆",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/常天喆/profile.md",
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "entities/梁汝波/profile.md",
+      "title": "梁汝波",
+      "type": "entity",
+      "domain": [
+        "tech",
+        "business"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "medium",
+      "outbound_links": [
+        "常天喆",
+        "字节跳动",
+        "常天喆",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/字节跳动/profile.md",
+        "entities/常天喆/profile.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "entities/Amanda-Askell/profile.md",
+      "title": "Amanda Askell",
+      "type": "entity",
+      "domain": [
+        "ai",
+        "tech"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "medium",
+      "outbound_links": [
+        "System Engineer",
+        "System Engineer",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/System-Engineer.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "entities/微软亚洲研究院/profile.md",
+      "title": "微软亚洲研究院",
+      "type": "entity",
+      "domain": [
+        "tech",
+        "ai",
+        "research"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "entities/AI求真/profile.md",
+      "title": "AI求真",
+      "type": "entity",
+      "domain": [
+        "ai",
+        "product",
+        "tech"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "模型对齐",
+        "多源校验",
+        "内容安全治理",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/内容安全治理.md",
+        "concepts/多源校验.md",
+        "concepts/模型对齐.md",
+        "entities/常天喆/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    },
+    {
+      "path": "entities/抖音AI资讯总结页/profile.md",
+      "title": "抖音AI资讯总结页",
+      "type": "entity",
+      "domain": [
+        "tech",
+        "ai",
+        "product"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "字节跳动",
+        "常天喆",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/字节跳动/profile.md",
+        "entities/常天喆/profile.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "entities/Contextual Query Suggestion/profile.md",
+      "title": "Contextual Query Suggestion",
+      "type": "entity",
+      "domain": [
+        "ai",
+        "product",
+        "tech"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "SFT",
+        "DPO",
+        "RAG",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/RAG.md",
+        "concepts/SFT.md",
+        "entities/常天喆/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    },
+    {
+      "path": "entities/武汉大学/profile.md",
+      "title": "武汉大学",
+      "type": "entity",
+      "domain": [
+        "education"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+        "sources/2026-04-15-chang-tianzhe-resume.md"
+      ]
+    },
+    {
+      "path": "entities/AI热点/profile.md",
+      "title": "AI热点",
+      "type": "entity",
+      "domain": [
+        "ai",
+        "product",
+        "tech"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "多模态融合",
+        "事实一致性",
+        "可解释性",
+        "上下文工程",
+        "RAG",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "concepts/RAG.md",
+        "concepts/上下文工程.md",
+        "entities/常天喆/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    },
+    {
+      "path": "entities/抖音/profile.md",
+      "title": "抖音",
+      "type": "entity",
+      "domain": [
+        "tech",
+        "product",
+        "company"
+      ],
+      "created": "2026-04-15",
+      "updated": "2026-04-15",
+      "confidence": "high",
+      "outbound_links": [
+        "AI求真",
+        "AI智选资讯",
+        "AI热点",
+        "常天喆",
+        "字节跳动",
+        "AI求真",
+        "AI智选资讯",
+        "AI热点",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ],
+      "resolved_outbound_links": [
+        "entities/AI智选资讯/profile.md",
+        "entities/AI求真/profile.md",
+        "entities/AI热点/profile.md",
+        "entities/字节跳动/profile.md",
+        "entities/常天喆/profile.md",
+        "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    }
+  ],
+  "by_type": {
+    "meta": [
+      "rules.md",
+      "false-beliefs.md"
+    ],
+    "exploration": [
+      "explorations/EXAMPLE-exploration.md"
+    ],
+    "timeline": [
+      "timelines/2025.md",
+      "timelines/2024.md",
+      "timelines/2023.md",
+      "timelines/2026.md"
+    ],
+    "concept": [
+      "concepts/RAG.md",
+      "concepts/跨学科.md",
+      "concepts/Superalignment.md",
+      "concepts/动态上下文路由.md",
+      "concepts/System-Engineer.md",
+      "concepts/模型对齐.md",
+      "concepts/LLM革命.md",
+      "concepts/SFT.md",
+      "concepts/Fact-checking Agent.md",
+      "concepts/价值观对齐.md",
+      "concepts/AI-Native.md",
+      "concepts/AI产品经理.md",
+      "concepts/内容安全治理.md",
+      "concepts/上下文工程.md",
+      "concepts/质量检验agent.md",
+      "concepts/多源校验.md",
+      "concepts/Orchestration Workflow.md",
+      "concepts/EXAMPLE-concept.md"
+    ],
+    "source-summary": [
+      "sources/2026-04-16-hallucination-is-all-you-need.md",
+      "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
+      "sources/2026-04-15-chang-tianzhe-resume.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "sources/EXAMPLE-source-summary.md",
+      "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md"
+    ],
+    "entity": [
+      "entities/AAPL/profile.md",
+      "entities/华中科技大学/profile.md",
+      "entities/抖音AI求真功能/profile.md",
+      "entities/AI智选资讯/profile.md",
+      "entities/百度/profile.md",
+      "entities/腾讯/profile.md",
+      "entities/腾讯会议智能助手/profile.md",
+      "entities/EXAMPLE/profile.md",
+      "entities/文心一言/profile.md",
+      "entities/字节跳动/profile.md",
+      "entities/changsview/profile.md",
+      "entities/卫茂平/profile.md",
+      "entities/常天喆/profile.md",
+      "entities/邓晓芒/profile.md",
+      "entities/赵林/profile.md",
+      "entities/梁汝波/profile.md",
+      "entities/Amanda-Askell/profile.md",
+      "entities/微软亚洲研究院/profile.md",
+      "entities/AI求真/profile.md",
+      "entities/抖音AI资讯总结页/profile.md",
+      "entities/Contextual Query Suggestion/profile.md",
+      "entities/武汉大学/profile.md",
+      "entities/AI热点/profile.md",
+      "entities/抖音/profile.md"
+    ]
+  },
+  "by_domain": {
+    "life": [
+      "timelines/2025.md",
+      "timelines/2024.md",
+      "timelines/2023.md",
+      "timelines/2026.md"
+    ],
+    "career": [
+      "timelines/2025.md",
+      "timelines/2024.md",
+      "timelines/2023.md",
+      "timelines/2026.md",
+      "concepts/跨学科.md",
+      "concepts/AI产品经理.md",
+      "sources/2026-04-15-chang-tianzhe-resume.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+      "entities/常天喆/profile.md"
+    ],
+    "academic": [
+      "timelines/2025.md",
+      "timelines/2024.md",
+      "timelines/2023.md",
+      "timelines/2026.md",
+      "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
+      "entities/卫茂平/profile.md"
+    ],
+    "education": [
+      "concepts/跨学科.md",
+      "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+      "entities/华中科技大学/profile.md",
+      "entities/赵林/profile.md",
+      "entities/武汉大学/profile.md"
+    ],
+    "ai": [
+      "concepts/Superalignment.md",
+      "concepts/System-Engineer.md",
+      "concepts/LLM革命.md",
+      "concepts/价值观对齐.md",
+      "concepts/AI-Native.md",
+      "concepts/AI产品经理.md",
+      "concepts/上下文工程.md",
+      "sources/2026-04-16-hallucination-is-all-you-need.md",
+      "sources/2026-04-15-chang-tianzhe-resume.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/抖音AI求真功能/profile.md",
+      "entities/AI智选资讯/profile.md",
+      "entities/百度/profile.md",
+      "entities/腾讯会议智能助手/profile.md",
+      "entities/文心一言/profile.md",
+      "entities/常天喆/profile.md",
+      "entities/Amanda-Askell/profile.md",
+      "entities/微软亚洲研究院/profile.md",
+      "entities/AI求真/profile.md",
+      "entities/抖音AI资讯总结页/profile.md",
+      "entities/Contextual Query Suggestion/profile.md",
+      "entities/AI热点/profile.md"
+    ],
+    "research": [
+      "concepts/Superalignment.md",
+      "concepts/价值观对齐.md",
+      "entities/微软亚洲研究院/profile.md"
+    ],
+    "tech": [
+      "concepts/System-Engineer.md",
+      "concepts/LLM革命.md",
+      "concepts/AI-Native.md",
+      "concepts/AI产品经理.md",
+      "concepts/上下文工程.md",
+      "sources/2026-04-16-hallucination-is-all-you-need.md",
+      "sources/2026-04-15-chang-tianzhe-resume.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
+      "entities/抖音AI求真功能/profile.md",
+      "entities/AI智选资讯/profile.md",
+      "entities/百度/profile.md",
+      "entities/腾讯/profile.md",
+      "entities/腾讯会议智能助手/profile.md",
+      "entities/文心一言/profile.md",
+      "entities/字节跳动/profile.md",
+      "entities/常天喆/profile.md",
+      "entities/梁汝波/profile.md",
+      "entities/Amanda-Askell/profile.md",
+      "entities/微软亚洲研究院/profile.md",
+      "entities/AI求真/profile.md",
+      "entities/抖音AI资讯总结页/profile.md",
+      "entities/Contextual Query Suggestion/profile.md",
+      "entities/AI热点/profile.md",
+      "entities/抖音/profile.md"
+    ],
+    "product": [
+      "concepts/System-Engineer.md",
+      "concepts/AI-Native.md",
+      "entities/抖音AI求真功能/profile.md",
+      "entities/AI智选资讯/profile.md",
+      "entities/腾讯会议智能助手/profile.md",
+      "entities/文心一言/profile.md",
+      "entities/AI求真/profile.md",
+      "entities/抖音AI资讯总结页/profile.md",
+      "entities/Contextual Query Suggestion/profile.md",
+      "entities/AI热点/profile.md",
+      "entities/抖音/profile.md"
+    ],
+    "history": [
+      "concepts/LLM革命.md"
+    ],
+    "ethics": [
+      "concepts/价值观对齐.md"
+    ],
+    "investing": [
+      "concepts/EXAMPLE-concept.md",
+      "sources/EXAMPLE-source-summary.md",
+      "entities/AAPL/profile.md",
+      "entities/EXAMPLE/profile.md"
+    ],
+    "philosophy": [
+      "sources/2026-04-16-hallucination-is-all-you-need.md",
+      "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
+      "entities/邓晓芒/profile.md",
+      "entities/赵林/profile.md"
+    ],
+    "business": [
+      "entities/百度/profile.md",
+      "entities/腾讯/profile.md",
+      "entities/字节跳动/profile.md",
+      "entities/梁汝波/profile.md"
+    ],
+    "media": [
+      "entities/changsview/profile.md"
+    ],
+    "writing": [
+      "entities/changsview/profile.md"
+    ],
+    "company": [
+      "entities/抖音/profile.md"
+    ]
+  },
+  "inbound_links": {
+    "sources/EXAMPLE-source-summary.md": [
+      "explorations/EXAMPLE-exploration.md",
+      "explorations/EXAMPLE-exploration.md"
+    ],
+    "entities/常天喆/profile.md": [
+      "timelines/2025.md",
+      "timelines/2024.md",
+      "timelines/2023.md",
+      "timelines/2026.md",
+      "concepts/RAG.md",
+      "concepts/跨学科.md",
+      "concepts/Superalignment.md",
+      "concepts/动态上下文路由.md",
+      "concepts/System-Engineer.md",
+      "concepts/模型对齐.md",
+      "concepts/LLM革命.md",
+      "concepts/SFT.md",
+      "concepts/Fact-checking Agent.md",
+      "concepts/价值观对齐.md",
+      "concepts/AI产品经理.md",
+      "concepts/内容安全治理.md",
+      "concepts/质量检验agent.md",
+      "concepts/多源校验.md",
+      "concepts/Orchestration Workflow.md",
+      "sources/2026-04-16-hallucination-is-all-you-need.md",
+      "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/华中科技大学/profile.md",
+      "entities/华中科技大学/profile.md",
+      "entities/AI智选资讯/profile.md",
+      "entities/changsview/profile.md",
+      "entities/changsview/profile.md",
+      "entities/changsview/profile.md",
+      "entities/changsview/profile.md",
+      "entities/卫茂平/profile.md",
+      "entities/卫茂平/profile.md",
+      "entities/邓晓芒/profile.md",
+      "entities/邓晓芒/profile.md",
+      "entities/赵林/profile.md",
+      "entities/梁汝波/profile.md",
+      "entities/梁汝波/profile.md",
+      "entities/AI求真/profile.md",
+      "entities/抖音AI资讯总结页/profile.md",
+      "entities/Contextual Query Suggestion/profile.md",
+      "entities/AI热点/profile.md",
+      "entities/抖音/profile.md"
+    ],
+    "entities/字节跳动/profile.md": [
+      "timelines/2025.md",
+      "concepts/动态上下文路由.md",
+      "concepts/模型对齐.md",
+      "concepts/Fact-checking Agent.md",
+      "concepts/AI-Native.md",
+      "concepts/内容安全治理.md",
+      "concepts/上下文工程.md",
+      "concepts/质量检验agent.md",
+      "concepts/多源校验.md",
+      "concepts/Orchestration Workflow.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/梁汝波/profile.md",
+      "entities/抖音AI资讯总结页/profile.md",
+      "entities/抖音/profile.md"
+    ],
+    "entities/抖音/profile.md": [
+      "timelines/2025.md",
+      "concepts/动态上下文路由.md",
+      "concepts/模型对齐.md",
+      "concepts/Fact-checking Agent.md",
+      "concepts/内容安全治理.md",
+      "concepts/质量检验agent.md",
+      "concepts/多源校验.md",
+      "concepts/Orchestration Workflow.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+    ],
+    "entities/AI热点/profile.md": [
+      "timelines/2025.md",
+      "timelines/2025.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/抖音/profile.md",
+      "entities/抖音/profile.md"
+    ],
+    "concepts/RAG.md": [
+      "timelines/2025.md",
+      "timelines/2024.md",
+      "concepts/动态上下文路由.md",
+      "concepts/Orchestration Workflow.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/AI智选资讯/profile.md",
+      "entities/Contextual Query Suggestion/profile.md",
+      "entities/AI热点/profile.md"
+    ],
+    "concepts/上下文工程.md": [
+      "timelines/2025.md",
+      "concepts/RAG.md",
+      "concepts/动态上下文路由.md",
+      "concepts/AI-Native.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/AI智选资讯/profile.md",
+      "entities/常天喆/profile.md",
+      "entities/AI热点/profile.md"
+    ],
+    "entities/AI求真/profile.md": [
+      "timelines/2025.md",
+      "timelines/2025.md",
+      "concepts/模型对齐.md",
+      "concepts/Fact-checking Agent.md",
+      "concepts/内容安全治理.md",
+      "concepts/多源校验.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/抖音/profile.md",
+      "entities/抖音/profile.md"
+    ],
+    "concepts/多源校验.md": [
+      "timelines/2025.md",
+      "concepts/模型对齐.md",
+      "concepts/Fact-checking Agent.md",
+      "concepts/内容安全治理.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/常天喆/profile.md",
+      "entities/AI求真/profile.md"
+    ],
+    "entities/changsview/profile.md": [
+      "timelines/2025.md",
+      "sources/2026-04-16-hallucination-is-all-you-need.md"
+    ],
+    "sources/2026-04-16-hallucination-is-all-you-need.md": [
+      "timelines/2025.md",
+      "sources/2026-04-16-hallucination-is-all-you-need.md",
+      "entities/changsview/profile.md"
+    ],
+    "entities/AI智选资讯/profile.md": [
+      "timelines/2025.md",
+      "timelines/2025.md",
+      "concepts/RAG.md",
+      "concepts/动态上下文路由.md",
+      "concepts/质量检验agent.md",
+      "concepts/Orchestration Workflow.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/抖音/profile.md",
+      "entities/抖音/profile.md"
+    ],
+    "concepts/质量检验agent.md": [
+      "timelines/2025.md",
+      "timelines/2025.md",
+      "concepts/AI-Native.md",
+      "concepts/上下文工程.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/AI智选资讯/profile.md",
+      "entities/常天喆/profile.md"
+    ],
+    "sources/2026-04-15-chang-tianzhe-feishu-resume.md": [
+      "timelines/2025.md",
+      "timelines/2024.md",
+      "timelines/2023.md",
+      "timelines/2026.md",
+      "concepts/RAG.md",
+      "concepts/动态上下文路由.md",
+      "concepts/模型对齐.md",
+      "concepts/SFT.md",
+      "concepts/Fact-checking Agent.md",
+      "concepts/内容安全治理.md",
+      "concepts/质量检验agent.md",
+      "concepts/多源校验.md",
+      "concepts/Orchestration Workflow.md",
+      "entities/AI智选资讯/profile.md",
+      "entities/卫茂平/profile.md",
+      "entities/常天喆/profile.md",
+      "entities/AI求真/profile.md",
+      "entities/Contextual Query Suggestion/profile.md",
+      "entities/AI热点/profile.md",
+      "entities/抖音/profile.md"
+    ],
+    "entities/Contextual Query Suggestion/profile.md": [
+      "timelines/2024.md",
+      "timelines/2024.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+    ],
+    "concepts/SFT.md": [
+      "timelines/2024.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/常天喆/profile.md",
+      "entities/Contextual Query Suggestion/profile.md"
+    ],
+    "concepts/System-Engineer.md": [
+      "timelines/2024.md",
+      "concepts/AI产品经理.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/百度/profile.md",
+      "entities/文心一言/profile.md",
+      "entities/常天喆/profile.md",
+      "entities/Amanda-Askell/profile.md",
+      "entities/Amanda-Askell/profile.md"
+    ],
+    "entities/文心一言/profile.md": [
+      "timelines/2024.md",
+      "timelines/2023.md",
+      "timelines/2023.md",
+      "concepts/System-Engineer.md",
+      "concepts/AI产品经理.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+    ],
+    "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md": [
+      "timelines/2024.md",
+      "timelines/2023.md",
+      "concepts/跨学科.md",
+      "concepts/LLM革命.md",
+      "concepts/LLM革命.md",
+      "concepts/价值观对齐.md",
+      "concepts/AI产品经理.md",
+      "entities/华中科技大学/profile.md",
+      "entities/百度/profile.md",
+      "entities/腾讯/profile.md",
+      "entities/腾讯会议智能助手/profile.md",
+      "entities/文心一言/profile.md",
+      "entities/字节跳动/profile.md",
+      "entities/常天喆/profile.md",
+      "entities/赵林/profile.md",
+      "entities/微软亚洲研究院/profile.md",
+      "entities/武汉大学/profile.md"
+    ],
+    "sources/2026-04-15-chang-tianzhe-resume.md": [
+      "timelines/2024.md",
+      "timelines/2023.md",
+      "concepts/跨学科.md",
+      "concepts/跨学科.md",
+      "concepts/Superalignment.md",
+      "concepts/System-Engineer.md",
+      "concepts/System-Engineer.md",
+      "concepts/System-Engineer.md",
+      "concepts/System-Engineer.md",
+      "concepts/LLM革命.md",
+      "concepts/价值观对齐.md",
+      "concepts/价值观对齐.md",
+      "concepts/AI-Native.md",
+      "concepts/AI-Native.md",
+      "concepts/AI-Native.md",
+      "concepts/AI产品经理.md",
+      "concepts/AI产品经理.md",
+      "concepts/上下文工程.md",
+      "entities/华中科技大学/profile.md",
+      "entities/抖音AI求真功能/profile.md",
+      "entities/百度/profile.md",
+      "entities/腾讯/profile.md",
+      "entities/腾讯会议智能助手/profile.md",
+      "entities/文心一言/profile.md",
+      "entities/字节跳动/profile.md",
+      "entities/常天喆/profile.md",
+      "entities/邓晓芒/profile.md",
+      "entities/赵林/profile.md",
+      "entities/梁汝波/profile.md",
+      "entities/Amanda-Askell/profile.md",
+      "entities/微软亚洲研究院/profile.md",
+      "entities/抖音AI资讯总结页/profile.md",
+      "entities/武汉大学/profile.md"
+    ],
+    "entities/腾讯/profile.md": [
+      "timelines/2023.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+    ],
+    "entities/微软亚洲研究院/profile.md": [
+      "timelines/2023.md",
+      "timelines/2023.md",
+      "concepts/Superalignment.md",
+      "concepts/价值观对齐.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+    ],
+    "concepts/价值观对齐.md": [
+      "timelines/2023.md",
+      "concepts/Superalignment.md",
+      "concepts/模型对齐.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/常天喆/profile.md"
+    ],
+    "concepts/Superalignment.md": [
+      "timelines/2023.md",
+      "concepts/价值观对齐.md",
+      "entities/常天喆/profile.md"
+    ],
+    "entities/百度/profile.md": [
+      "timelines/2023.md",
+      "concepts/System-Engineer.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+    ],
+    "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md": [
+      "timelines/2023.md",
+      "timelines/2023.md",
+      "entities/常天喆/profile.md"
+    ],
+    "concepts/动态上下文路由.md": [
+      "concepts/RAG.md",
+      "concepts/Orchestration Workflow.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/AI智选资讯/profile.md",
+      "entities/常天喆/profile.md"
+    ],
+    "concepts/Orchestration Workflow.md": [
+      "concepts/RAG.md",
+      "concepts/动态上下文路由.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/AI智选资讯/profile.md",
+      "entities/常天喆/profile.md"
+    ],
+    "concepts/AI产品经理.md": [
+      "concepts/跨学科.md",
+      "concepts/跨学科.md",
+      "concepts/System-Engineer.md",
+      "concepts/LLM革命.md",
+      "entities/常天喆/profile.md"
+    ],
+    "concepts/Fact-checking Agent.md": [
+      "concepts/动态上下文路由.md",
+      "concepts/内容安全治理.md",
+      "concepts/多源校验.md",
+      "concepts/Orchestration Workflow.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/AI智选资讯/profile.md",
+      "entities/常天喆/profile.md"
+    ],
+    "entities/Amanda-Askell/profile.md": [
+      "concepts/System-Engineer.md",
+      "concepts/AI产品经理.md",
+      "entities/常天喆/profile.md"
+    ],
+    "concepts/内容安全治理.md": [
+      "concepts/模型对齐.md",
+      "concepts/Fact-checking Agent.md",
+      "concepts/多源校验.md",
+      "entities/AI求真/profile.md"
+    ],
+    "concepts/AI-Native.md": [
+      "concepts/LLM革命.md",
+      "concepts/上下文工程.md",
+      "entities/抖音AI求真功能/profile.md",
+      "entities/常天喆/profile.md"
+    ],
+    "concepts/模型对齐.md": [
+      "concepts/Fact-checking Agent.md",
+      "concepts/内容安全治理.md",
+      "concepts/多源校验.md",
+      "entities/AI求真/profile.md"
+    ],
+    "entities/抖音AI求真功能/profile.md": [
+      "concepts/AI-Native.md"
+    ],
+    "entities/抖音AI资讯总结页/profile.md": [
+      "concepts/AI-Native.md"
+    ],
+    "concepts/LLM革命.md": [
+      "concepts/AI-Native.md",
+      "concepts/AI产品经理.md"
+    ],
+    "entities/腾讯会议智能助手/profile.md": [
+      "concepts/AI产品经理.md"
+    ],
+    "concepts/跨学科.md": [
+      "concepts/AI产品经理.md",
+      "entities/常天喆/profile.md"
+    ],
+    "entities/EXAMPLE/profile.md": [
+      "concepts/EXAMPLE-concept.md",
+      "concepts/EXAMPLE-concept.md",
+      "sources/EXAMPLE-source-summary.md",
+      "sources/EXAMPLE-source-summary.md",
+      "sources/EXAMPLE-source-summary.md"
+    ],
+    "entities/邓晓芒/profile.md": [
+      "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/常天喆/profile.md"
+    ],
+    "entities/赵林/profile.md": [
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/常天喆/profile.md"
+    ],
+    "entities/卫茂平/profile.md": [
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/常天喆/profile.md"
+    ],
+    "entities/梁汝波/profile.md": [
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/常天喆/profile.md"
+    ],
+    "concepts/EXAMPLE-concept.md": [
+      "sources/EXAMPLE-source-summary.md",
+      "sources/EXAMPLE-source-summary.md",
+      "sources/EXAMPLE-source-summary.md",
+      "entities/EXAMPLE/profile.md",
+      "entities/EXAMPLE/profile.md"
+    ]
+  }
+}
