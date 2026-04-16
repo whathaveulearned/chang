@@ -30,12 +30,12 @@ interface GraphData {
 }
 
 const typeColors = {
-  entity: '#60a5fa',
-  concept: '#a78bfa',
-  source: '#f472b6',
-  timeline: '#fbbf24',
-  meta: '#94a3b8',
-  exploration: '#34d399',
+  entity: '#ffffff',
+  concept: '#a5f3fc',
+  source: '#67e8f9',
+  timeline: '#22d3ee',
+  meta: '#0ea5e9',
+  exploration: '#0891b2',
 }
 
 const typeLabels = {
@@ -158,7 +158,7 @@ export default function KnowledgeGraph() {
         return Math.max(4, Math.min(18, 5 + (d.type === 'entity' ? 3 : d.type === 'concept' ? 2 : 1.5)))
       })
       .attr('fill', (d) => typeColors[d.type as keyof typeof typeColors] || '#6b7280')
-      .attr('stroke', (d) => d.title === '常天喆' ? '#fbbf24' : '#fff')
+      .attr('stroke', (d) => d.title === '常天喆' ? '#67e8f9' : '#fff')
       .attr('stroke-width', (d) => d.title === '常天喆' ? 4 : 2)
       .style('cursor', 'pointer')
       .style('filter', (d) => d.title === '常天喆' ? 'url(#glow-center)' : 'url(#glow)')
@@ -222,7 +222,7 @@ export default function KnowledgeGraph() {
             if (d.title === '常天喆') return 32
             return Math.max(8, Math.min(25, 10 + (d.type === 'entity' ? 5 : d.type === 'concept' ? 4 : 3)))
           })
-          .attr('stroke', '#fbbf24')
+          .attr('stroke', '#67e8f9')
           .attr('stroke-width', (d: any) => d.title === '常天喆' ? 5 : 3)
         
         label.filter((l: any) => l.id === d.id)
@@ -239,7 +239,7 @@ export default function KnowledgeGraph() {
             if (d.title === '常天喆') return 25
             return Math.max(4, Math.min(18, 5 + (d.type === 'entity' ? 3 : d.type === 'concept' ? 2 : 1.5)))
           })
-          .attr('stroke', (d: any) => d.title === '常天喆' ? '#fbbf24' : '#fff')
+          .attr('stroke', (d: any) => d.title === '常天喆' ? '#67e8f9' : '#fff')
           .attr('stroke-width', (d: any) => d.title === '常天喆' ? 4 : 2)
         
         label.filter((l: any) => l.id === d.id)
@@ -348,18 +348,18 @@ export default function KnowledgeGraph() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950">
+      <div className="flex items-center justify-center h-screen bg-slate-950">
         <div className="text-xl text-slate-300 animate-pulse">🌌 加载知识星图...</div>
       </div>
     )
   }
 
   return (
-    <div className="relative w-full h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/30 via-slate-950 to-slate-950 pointer-events-none" />
+    <div className="relative w-full h-screen bg-slate-950 overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-900/20 via-slate-950 to-slate-950 pointer-events-none" />
       
       <div className="absolute top-4 left-4 z-10 bg-slate-900/80 backdrop-blur-xl rounded-2xl shadow-2xl p-5 border border-slate-700/50">
-        <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
+        <h1 className="text-2xl font-bold text-white mb-4">
           🌟 Chang&apos;s Wiki 知识星图
         </h1>
         <div className="space-y-2">
@@ -410,7 +410,7 @@ export default function KnowledgeGraph() {
             >
               ✕
             </button>
-            <h2 className="text-xl font-bold bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent mb-4">
+            <h2 className="text-xl font-bold text-white mb-4">
               {selectedNode.title}
             </h2>
             <div className="space-y-3 text-sm">
