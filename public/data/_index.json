@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-17T11:50:02",
-  "total_pages": 115,
+  "generated_at": "2026-04-17T11:54:03",
+  "total_pages": 117,
   "pages": [
     {
       "path": "rules.md",
@@ -1204,6 +1204,37 @@
       ]
     },
     {
+      "path": "sources/2026-04-17-reconstructing-nationality.md",
+      "title": "重构民族性——互文性视域中的《彼时一个遥远的地方》",
+      "type": "source",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "阿摩司·奥兹",
+        "克里斯特娃",
+        "马克思",
+        "阿伦特",
+        "列奥·施特劳斯",
+        "卡夫卡",
+        "民族性",
+        "互文性",
+        "内互文性",
+        "外互文性",
+        "犹太复国主义",
+        "两国方案",
+        "文化锡安主义",
+        "语言民族主义",
+        "文本民族性",
+        "犹太人问题"
+      ],
+      "resolved_outbound_links": [
+        "entities/常天喆/profile.md"
+      ]
+    },
+    {
       "path": "sources/2026-04-17-prometheus-athena.md",
       "title": "普罗米修斯与雅典娜：双向开放时间观的两种决断",
       "type": "source",
@@ -1583,6 +1614,36 @@
         "文字学",
         "常羲",
         "五常"
+      ],
+      "resolved_outbound_links": [
+        "entities/常天喆/profile.md"
+      ]
+    },
+    {
+      "path": "sources/2026-04-17-love-faith-existential-dialectics.md",
+      "title": "爱与信仰的生存辩证法：论《婚姻在审美上的有效性》对黑格尔婚姻观的真正批判所在",
+      "type": "source",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "克尔凯郭尔",
+        "黑格尔",
+        "谢林",
+        "雷吉娜",
+        "生存辩证法",
+        "爱的悖谬",
+        "自我中介问题",
+        "情欲之爱",
+        "最初的爱",
+        "内向性",
+        "虚无",
+        "罪",
+        "瞬间",
+        "重复",
+        "那宗教的"
       ],
       "resolved_outbound_links": [
         "entities/常天喆/profile.md"
@@ -3139,9 +3200,11 @@
       "concepts/先验幻相.md"
     ],
     "source": [
+      "sources/2026-04-17-reconstructing-nationality.md",
       "sources/2026-04-17-prometheus-athena.md",
       "sources/2026-04-17-irishman-banshee.md",
       "sources/2026-04-17-chang-zi-kao.md",
+      "sources/2026-04-17-love-faith-existential-dialectics.md",
       "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md",
       "sources/2026-04-16-key-meetings.md",
       "sources/2026-04-17-chang-tianzhe-media-articles.md"
@@ -3728,11 +3791,13 @@
       "concepts/质量检验agent.md",
       "concepts/多源校验.md",
       "concepts/Orchestration Workflow.md",
+      "sources/2026-04-17-reconstructing-nationality.md",
       "sources/2026-04-17-prometheus-athena.md",
       "sources/2026-04-16-hallucination-is-all-you-need.md",
       "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
       "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
       "sources/2026-04-17-chang-zi-kao.md",
+      "sources/2026-04-17-love-faith-existential-dialectics.md",
       "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md",
       "sources/2026-04-17-chang-tianzhe-media-articles.md",
       "entities/华中科技大学/profile.md",
