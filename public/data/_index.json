@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-17T00:41:45",
-  "total_pages": 110,
+  "generated_at": "2026-04-17T11:50:02",
+  "total_pages": 115,
   "pages": [
     {
       "path": "rules.md",
@@ -1204,6 +1204,42 @@
       ]
     },
     {
+      "path": "sources/2026-04-17-prometheus-athena.md",
+      "title": "普罗米修斯与雅典娜：双向开放时间观的两种决断",
+      "type": "source",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "海德格尔",
+        "马克思",
+        "黑格尔",
+        "谢林",
+        "荷尔德林",
+        "本雅明",
+        "诺瓦利斯",
+        "加约·彼得洛维奇",
+        "哈贝马斯",
+        "恩斯特·布洛赫",
+        "时间观",
+        "现代性",
+        "线性时间观",
+        "双向开放的时间观",
+        "无家可归状态",
+        "历史终结论",
+        "庸常时间观",
+        "密涅瓦的猫头鹰",
+        "弥赛亚主义",
+        "家园（Heimat）",
+        "乌托邦（Utopia）"
+      ],
+      "resolved_outbound_links": [
+        "entities/常天喆/profile.md"
+      ]
+    },
+    {
       "path": "sources/2026-04-16-hallucination-is-all-you-need.md",
       "title": "Hallucination Is All You Need",
       "type": "source-summary",
@@ -1246,6 +1282,33 @@
         "entities/常天喆/profile.md",
         "entities/索绪尔/profile.md",
         "sources/2026-04-16-hallucination-is-all-you-need.md"
+      ]
+    },
+    {
+      "path": "sources/2026-04-17-irishman-banshee.md",
+      "title": "【五公斤】爱尔兰人",
+      "type": "source",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "马丁·麦克多纳",
+        "乔伊斯",
+        "叶芝",
+        "加缪",
+        "克尔凯郭尔",
+        "鲍德里亚",
+        "存在主义",
+        "现象学",
+        "内部性与外部性",
+        "瘫痪",
+        "现代性",
+        "无家可归状态"
+      ],
+      "resolved_outbound_links": [
+        "entities/乔伊斯/profile.md",
+        "entities/叶芝/profile.md"
       ]
     },
     {
@@ -1503,6 +1566,29 @@
       ]
     },
     {
+      "path": "sources/2026-04-17-chang-zi-kao.md",
+      "title": "【投稿】\"常\"字攷",
+      "type": "source",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "许慎",
+        "老子",
+        "段玉裁",
+        "说文解字",
+        "训诂学",
+        "文字学",
+        "常羲",
+        "五常"
+      ],
+      "resolved_outbound_links": [
+        "entities/常天喆/profile.md"
+      ]
+    },
+    {
       "path": "sources/EXAMPLE-source-summary.md",
       "title": "EXAMPLE Source Summary",
       "type": "source-summary",
@@ -1572,6 +1658,31 @@
       "resolved_outbound_links": []
     },
     {
+      "path": "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md",
+      "title": "常天喆国奖答辩稿",
+      "type": "source",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "华中科技大学",
+        "武汉大学",
+        "李俊国",
+        "卫茂平",
+        "李元元",
+        "国家奖学金",
+        "多向度的人"
+      ],
+      "resolved_outbound_links": [
+        "entities/华中科技大学/profile.md",
+        "entities/卫茂平/profile.md",
+        "entities/常天喆/profile.md",
+        "entities/武汉大学/profile.md"
+      ]
+    },
+    {
       "path": "sources/2026-04-16-key-meetings.md",
       "title": "关键会面记录（刘庆峰、林俊暘、姚舜禹）",
       "type": "source",
@@ -1604,6 +1715,24 @@
         "entities/林俊暘/profile.md",
         "entities/混元/profile.md",
         "entities/科大讯飞/profile.md"
+      ]
+    },
+    {
+      "path": "sources/2026-04-17-chang-tianzhe-media-articles.md",
+      "title": "常天喆部分新媒体文章链接",
+      "type": "source",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "浪潮工作室",
+        "陶崇园",
+        "勒庞"
+      ],
+      "resolved_outbound_links": [
+        "entities/常天喆/profile.md"
       ]
     },
     {
@@ -3009,6 +3138,14 @@
       "concepts/话语权力.md",
       "concepts/先验幻相.md"
     ],
+    "source": [
+      "sources/2026-04-17-prometheus-athena.md",
+      "sources/2026-04-17-irishman-banshee.md",
+      "sources/2026-04-17-chang-zi-kao.md",
+      "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md",
+      "sources/2026-04-16-key-meetings.md",
+      "sources/2026-04-17-chang-tianzhe-media-articles.md"
+    ],
     "source-summary": [
       "sources/2026-04-16-hallucination-is-all-you-need.md",
       "sources/2026-04-17-joyce-sisters.md",
@@ -3021,9 +3158,6 @@
       "sources/EXAMPLE-source-summary.md",
       "sources/2026-04-17-husserl-theological-turn.md",
       "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md"
-    ],
-    "source": [
-      "sources/2026-04-16-key-meetings.md"
     ],
     "entity": [
       "entities/AAPL/profile.md",
@@ -3594,9 +3728,13 @@
       "concepts/质量检验agent.md",
       "concepts/多源校验.md",
       "concepts/Orchestration Workflow.md",
+      "sources/2026-04-17-prometheus-athena.md",
       "sources/2026-04-16-hallucination-is-all-you-need.md",
       "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
       "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "sources/2026-04-17-chang-zi-kao.md",
+      "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md",
+      "sources/2026-04-17-chang-tianzhe-media-articles.md",
       "entities/华中科技大学/profile.md",
       "entities/华中科技大学/profile.md",
       "entities/AI智选资讯/profile.md",
@@ -4127,6 +4265,15 @@
       "sources/EXAMPLE-source-summary.md",
       "sources/EXAMPLE-source-summary.md"
     ],
+    "entities/乔伊斯/profile.md": [
+      "sources/2026-04-17-irishman-banshee.md",
+      "entities/叶芝/profile.md",
+      "entities/伍尔夫/profile.md"
+    ],
+    "entities/叶芝/profile.md": [
+      "sources/2026-04-17-irishman-banshee.md",
+      "entities/乔伊斯/profile.md"
+    ],
     "entities/邓晓芒/profile.md": [
       "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
       "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
@@ -4148,6 +4295,7 @@
     ],
     "entities/卫茂平/profile.md": [
       "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md",
       "entities/常天喆/profile.md"
     ],
     "entities/梁汝波/profile.md": [
@@ -4165,16 +4313,15 @@
       "entities/EXAMPLE/profile.md",
       "entities/EXAMPLE/profile.md"
     ],
+    "entities/华中科技大学/profile.md": [
+      "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md"
+    ],
+    "entities/武汉大学/profile.md": [
+      "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md"
+    ],
     "entities/米歇尔·亨利/profile.md": [
       "entities/马里翁/profile.md",
       "entities/胡塞尔/profile.md"
-    ],
-    "entities/乔伊斯/profile.md": [
-      "entities/叶芝/profile.md",
-      "entities/伍尔夫/profile.md"
-    ],
-    "entities/叶芝/profile.md": [
-      "entities/乔伊斯/profile.md"
     ],
     "entities/伍尔夫/profile.md": [
       "entities/乔伊斯/profile.md"
