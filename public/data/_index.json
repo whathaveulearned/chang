@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-17T12:07:07",
-  "total_pages": 146,
+  "generated_at": "2026-04-17T12:13:23",
+  "total_pages": 166,
   "pages": [
     {
       "path": "rules.md",
@@ -207,6 +207,31 @@
       ]
     },
     {
+      "path": "concepts/时间.md",
+      "title": "时间",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "克尔凯郭尔",
+        "瞬间",
+        "永恒",
+        "内向性",
+        "虚无",
+        "罪",
+        "信仰"
+      ],
+      "resolved_outbound_links": [
+        "concepts/内向性.md",
+        "concepts/永恒.md",
+        "concepts/瞬间.md",
+        "concepts/罪.md",
+        "concepts/虚无.md"
+      ]
+    },
+    {
       "path": "concepts/观念对象.md",
       "title": "观念对象",
       "type": "concept",
@@ -272,6 +297,7 @@
       ],
       "resolved_outbound_links": [
         "concepts/忧惧.md",
+        "concepts/永恒.md",
         "concepts/罪.md"
       ]
     },
@@ -318,7 +344,9 @@
         "反思"
       ],
       "resolved_outbound_links": [
-        "concepts/最初的爱.md"
+        "concepts/时间.md",
+        "concepts/最初的爱.md",
+        "concepts/永恒.md"
       ]
     },
     {
@@ -360,9 +388,32 @@
       ],
       "resolved_outbound_links": [
         "concepts/情欲之爱.md",
+        "concepts/永恒.md",
         "concepts/瞬间.md",
         "concepts/那宗教的.md",
         "concepts/重复.md"
+      ]
+    },
+    {
+      "path": "concepts/永恒.md",
+      "title": "永恒",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "克尔凯郭尔",
+        "瞬间",
+        "时间",
+        "最初的爱",
+        "虚无"
+      ],
+      "resolved_outbound_links": [
+        "concepts/时间.md",
+        "concepts/最初的爱.md",
+        "concepts/瞬间.md",
+        "concepts/虚无.md"
       ]
     },
     {
@@ -392,24 +443,33 @@
       "path": "concepts/Superalignment.md",
       "title": "Superalignment",
       "type": "concept",
-      "domain": [
-        "ai",
-        "research"
-      ],
-      "created": "2026-04-15",
-      "updated": "2026-04-15",
-      "confidence": "medium",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
       "outbound_links": [
-        "sources/2026-04-15-chang-tianzhe-resume.md",
-        "微软亚洲研究院",
-        "常天喆",
-        "价值观对齐"
+        "Ilya Sutskever",
+        "Jan Leike",
+        "OpenAI",
+        "超级对齐",
+        "AGI",
+        "RLHF",
+        "人类反馈强化学习",
+        "泛化",
+        "弱到强的泛化",
+        "未来考古学"
       ],
       "resolved_outbound_links": [
-        "concepts/价值观对齐.md",
-        "entities/常天喆/profile.md",
-        "entities/微软亚洲研究院/profile.md",
-        "sources/2026-04-15-chang-tianzhe-resume.md"
+        "concepts/AGI.md",
+        "concepts/RLHF.md",
+        "concepts/人类反馈强化学习.md",
+        "concepts/弱到强的泛化.md",
+        "concepts/未来考古学.md",
+        "concepts/泛化.md",
+        "concepts/超级对齐.md",
+        "entities/Ilya Sutskever.md",
+        "entities/Jan Leike.md",
+        "entities/OpenAI.md"
       ]
     },
     {
@@ -497,7 +557,9 @@
         "历史性"
       ],
       "resolved_outbound_links": [
-        "concepts/最初的爱.md"
+        "concepts/历史性.md",
+        "concepts/最初的爱.md",
+        "concepts/永恒.md"
       ]
     },
     {
@@ -564,6 +626,35 @@
       ]
     },
     {
+      "path": "concepts/AGI.md",
+      "title": "AGI",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "OpenAI",
+        "Ilya Sutskever",
+        "Superalignment",
+        "超级对齐",
+        "RLHF",
+        "人类反馈强化学习",
+        "泛化",
+        "弱到强的泛化"
+      ],
+      "resolved_outbound_links": [
+        "concepts/RLHF.md",
+        "concepts/Superalignment.md",
+        "concepts/人类反馈强化学习.md",
+        "concepts/弱到强的泛化.md",
+        "concepts/泛化.md",
+        "concepts/超级对齐.md",
+        "entities/Ilya Sutskever.md",
+        "entities/OpenAI.md"
+      ]
+    },
+    {
       "path": "concepts/模型对齐.md",
       "title": "模型对齐",
       "type": "concept",
@@ -590,6 +681,31 @@
         "entities/常天喆/profile.md",
         "entities/抖音/profile.md",
         "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/婚姻观.md",
+      "title": "婚姻观",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "黑格尔",
+        "克尔凯郭尔",
+        "法哲学原理",
+        "爱的悖谬",
+        "情欲之爱",
+        "最初的爱",
+        "那宗教的"
+      ],
+      "resolved_outbound_links": [
+        "concepts/情欲之爱.md",
+        "concepts/最初的爱.md",
+        "concepts/法哲学原理.md",
+        "concepts/爱的悖谬.md",
+        "concepts/那宗教的.md"
       ]
     },
     {
@@ -985,6 +1101,7 @@
         "那宗教的"
       ],
       "resolved_outbound_links": [
+        "concepts/历史性.md",
         "concepts/最初的爱.md",
         "concepts/那宗教的.md"
       ]
@@ -1051,7 +1168,34 @@
         "永恒"
       ],
       "resolved_outbound_links": [
+        "concepts/永恒.md",
         "concepts/虚无.md"
+      ]
+    },
+    {
+      "path": "concepts/那审美的.md",
+      "title": "那审美的",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "克尔凯郭尔",
+        "那伦理的",
+        "那宗教的",
+        "生存境界",
+        "非此即彼",
+        "最初的爱",
+        "内在目的性"
+      ],
+      "resolved_outbound_links": [
+        "concepts/内在目的性.md",
+        "concepts/最初的爱.md",
+        "concepts/生存境界.md",
+        "concepts/那伦理的.md",
+        "concepts/那宗教的.md",
+        "concepts/非此即彼.md"
       ]
     },
     {
@@ -1147,6 +1291,27 @@
       ]
     },
     {
+      "path": "concepts/法哲学原理.md",
+      "title": "法哲学原理",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "黑格尔",
+        "克尔凯郭尔",
+        "爱的悖谬",
+        "自我中介问题",
+        "婚姻观"
+      ],
+      "resolved_outbound_links": [
+        "concepts/婚姻观.md",
+        "concepts/爱的悖谬.md",
+        "concepts/自我中介问题.md"
+      ]
+    },
+    {
       "path": "concepts/规训与惩罚.md",
       "title": "规训与惩罚",
       "type": "concept",
@@ -1166,6 +1331,53 @@
         "concepts/性史.md",
         "concepts/话语权力.md",
         "entities/福柯/profile.md"
+      ]
+    },
+    {
+      "path": "concepts/内在目的性.md",
+      "title": "内在目的性",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "克尔凯郭尔",
+        "那审美的",
+        "那伦理的",
+        "那宗教的",
+        "生存境界"
+      ],
+      "resolved_outbound_links": [
+        "concepts/生存境界.md",
+        "concepts/那伦理的.md",
+        "concepts/那宗教的.md",
+        "concepts/那审美的.md"
+      ]
+    },
+    {
+      "path": "concepts/人类反馈强化学习.md",
+      "title": "人类反馈强化学习",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "OpenAI",
+        "RLHF",
+        "Superalignment",
+        "超级对齐",
+        "AGI",
+        "泛化"
+      ],
+      "resolved_outbound_links": [
+        "concepts/AGI.md",
+        "concepts/RLHF.md",
+        "concepts/Superalignment.md",
+        "concepts/泛化.md",
+        "concepts/超级对齐.md",
+        "entities/OpenAI.md"
       ]
     },
     {
@@ -1253,6 +1465,24 @@
       ]
     },
     {
+      "path": "concepts/感觉.md",
+      "title": "感觉",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "黑格尔",
+        "爱的悖谬",
+        "婚姻观"
+      ],
+      "resolved_outbound_links": [
+        "concepts/婚姻观.md",
+        "concepts/爱的悖谬.md"
+      ]
+    },
+    {
       "path": "concepts/自我中介问题.md",
       "title": "自我中介问题",
       "type": "concept",
@@ -1270,6 +1500,7 @@
         "法哲学原理"
       ],
       "resolved_outbound_links": [
+        "concepts/法哲学原理.md",
         "concepts/爱的悖谬.md"
       ]
     },
@@ -1297,6 +1528,29 @@
       ]
     },
     {
+      "path": "concepts/历史性.md",
+      "title": "历史性",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "克尔凯郭尔",
+        "黑格尔",
+        "最初的爱",
+        "信仰之跃",
+        "瞬间",
+        "时间"
+      ],
+      "resolved_outbound_links": [
+        "concepts/信仰之跃.md",
+        "concepts/时间.md",
+        "concepts/最初的爱.md",
+        "concepts/瞬间.md"
+      ]
+    },
+    {
       "path": "concepts/情欲之爱.md",
       "title": "情欲之爱",
       "type": "concept",
@@ -1316,6 +1570,30 @@
       "resolved_outbound_links": [
         "concepts/最初的爱.md",
         "concepts/重复.md"
+      ]
+    },
+    {
+      "path": "concepts/那伦理的.md",
+      "title": "那伦理的",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "克尔凯郭尔",
+        "那审美的",
+        "那宗教的",
+        "生存境界",
+        "非此即彼",
+        "内在目的性"
+      ],
+      "resolved_outbound_links": [
+        "concepts/内在目的性.md",
+        "concepts/生存境界.md",
+        "concepts/那宗教的.md",
+        "concepts/那审美的.md",
+        "concepts/非此即彼.md"
       ]
     },
     {
@@ -1526,15 +1804,19 @@
       "confidence": "high",
       "outbound_links": [
         "克尔凯郭尔",
+        "那审美的",
+        "那伦理的",
         "那宗教的",
-        "信仰之跃",
         "非此即彼",
-        "审美境界",
-        "伦理境界"
+        "信仰之跃",
+        "内在目的性"
       ],
       "resolved_outbound_links": [
         "concepts/信仰之跃.md",
+        "concepts/内在目的性.md",
+        "concepts/那伦理的.md",
         "concepts/那宗教的.md",
+        "concepts/那审美的.md",
         "concepts/非此即彼.md"
       ]
     },
@@ -1619,6 +1901,29 @@
       ]
     },
     {
+      "path": "concepts/泛化.md",
+      "title": "泛化",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "Superalignment",
+        "超级对齐",
+        "弱到强的泛化",
+        "AGI",
+        "RLHF"
+      ],
+      "resolved_outbound_links": [
+        "concepts/AGI.md",
+        "concepts/RLHF.md",
+        "concepts/Superalignment.md",
+        "concepts/弱到强的泛化.md",
+        "concepts/超级对齐.md"
+      ]
+    },
+    {
       "path": "concepts/EXAMPLE-concept.md",
       "title": "EXAMPLE Concept",
       "type": "concept",
@@ -1655,6 +1960,77 @@
       ]
     },
     {
+      "path": "concepts/弱到强的泛化.md",
+      "title": "弱到强的泛化",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "Superalignment",
+        "超级对齐",
+        "泛化",
+        "AGI",
+        "RLHF"
+      ],
+      "resolved_outbound_links": [
+        "concepts/AGI.md",
+        "concepts/RLHF.md",
+        "concepts/Superalignment.md",
+        "concepts/泛化.md",
+        "concepts/超级对齐.md"
+      ]
+    },
+    {
+      "path": "concepts/未来考古学.md",
+      "title": "未来考古学",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "Ilya Sutskever",
+        "OpenAI",
+        "Superalignment",
+        "超级对齐",
+        "AGI"
+      ],
+      "resolved_outbound_links": [
+        "concepts/AGI.md",
+        "concepts/Superalignment.md",
+        "concepts/超级对齐.md",
+        "entities/Ilya Sutskever.md",
+        "entities/OpenAI.md"
+      ]
+    },
+    {
+      "path": "concepts/RLHF.md",
+      "title": "RLHF",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "OpenAI",
+        "人类反馈强化学习",
+        "Superalignment",
+        "超级对齐",
+        "AGI",
+        "泛化"
+      ],
+      "resolved_outbound_links": [
+        "concepts/AGI.md",
+        "concepts/Superalignment.md",
+        "concepts/人类反馈强化学习.md",
+        "concepts/泛化.md",
+        "concepts/超级对齐.md",
+        "entities/OpenAI.md"
+      ]
+    },
+    {
       "path": "concepts/话语权力.md",
       "title": "话语权力",
       "type": "concept",
@@ -1674,6 +2050,39 @@
         "concepts/性史.md",
         "concepts/规训与惩罚.md",
         "entities/福柯/profile.md"
+      ]
+    },
+    {
+      "path": "concepts/超级对齐.md",
+      "title": "超级对齐",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "Ilya Sutskever",
+        "Jan Leike",
+        "OpenAI",
+        "Superalignment",
+        "AGI",
+        "RLHF",
+        "人类反馈强化学习",
+        "泛化",
+        "弱到强的泛化",
+        "未来考古学"
+      ],
+      "resolved_outbound_links": [
+        "concepts/AGI.md",
+        "concepts/RLHF.md",
+        "concepts/Superalignment.md",
+        "concepts/人类反馈强化学习.md",
+        "concepts/弱到强的泛化.md",
+        "concepts/未来考古学.md",
+        "concepts/泛化.md",
+        "entities/Ilya Sutskever.md",
+        "entities/Jan Leike.md",
+        "entities/OpenAI.md"
       ]
     },
     {
@@ -1904,6 +2313,7 @@
         "内在的造反"
       ],
       "resolved_outbound_links": [
+        "concepts/法哲学原理.md",
         "entities/常天喆/profile.md",
         "entities/邓晓芒/profile.md"
       ]
@@ -2217,6 +2627,43 @@
       ]
     },
     {
+      "path": "sources/2025-01-24-superalignment-future-archeology.md",
+      "title": "Superalignment：一门未来考古学",
+      "type": "source",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "Ilya Sutskever",
+        "Jan Leike",
+        "OpenAI",
+        "Superalignment",
+        "超级对齐",
+        "AGI",
+        "RLHF",
+        "人类反馈强化学习",
+        "泛化",
+        "弱到强的泛化",
+        "未来考古学"
+      ],
+      "resolved_outbound_links": [
+        "concepts/AGI.md",
+        "concepts/RLHF.md",
+        "concepts/Superalignment.md",
+        "concepts/人类反馈强化学习.md",
+        "concepts/弱到强的泛化.md",
+        "concepts/未来考古学.md",
+        "concepts/泛化.md",
+        "concepts/超级对齐.md",
+        "entities/Ilya Sutskever.md",
+        "entities/Jan Leike.md",
+        "entities/OpenAI.md",
+        "entities/常天喆/profile.md"
+      ]
+    },
+    {
       "path": "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
       "title": "常天喆就业经验：从哲学到百度AI产品经理的转型之路",
       "type": "source-summary",
@@ -2307,6 +2754,83 @@
       ],
       "resolved_outbound_links": [
         "entities/常天喆/profile.md"
+      ]
+    },
+    {
+      "path": "entities/Jan Leike.md",
+      "title": "Jan Leike",
+      "type": "entity",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "Ilya Sutskever",
+        "OpenAI",
+        "Superalignment",
+        "超级对齐",
+        "AGI"
+      ],
+      "resolved_outbound_links": [
+        "concepts/AGI.md",
+        "concepts/Superalignment.md",
+        "concepts/超级对齐.md",
+        "entities/Ilya Sutskever.md",
+        "entities/OpenAI.md"
+      ]
+    },
+    {
+      "path": "entities/OpenAI.md",
+      "title": "OpenAI",
+      "type": "entity",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "Ilya Sutskever",
+        "Jan Leike",
+        "Superalignment",
+        "超级对齐",
+        "AGI",
+        "RLHF",
+        "人类反馈强化学习",
+        "未来考古学"
+      ],
+      "resolved_outbound_links": [
+        "concepts/AGI.md",
+        "concepts/RLHF.md",
+        "concepts/Superalignment.md",
+        "concepts/人类反馈强化学习.md",
+        "concepts/未来考古学.md",
+        "concepts/超级对齐.md",
+        "entities/Ilya Sutskever.md",
+        "entities/Jan Leike.md"
+      ]
+    },
+    {
+      "path": "entities/Ilya Sutskever.md",
+      "title": "Ilya Sutskever",
+      "type": "entity",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "Jan Leike",
+        "OpenAI",
+        "Superalignment",
+        "超级对齐",
+        "AGI",
+        "未来考古学"
+      ],
+      "resolved_outbound_links": [
+        "concepts/AGI.md",
+        "concepts/Superalignment.md",
+        "concepts/未来考古学.md",
+        "concepts/超级对齐.md",
+        "entities/Jan Leike.md",
+        "entities/OpenAI.md"
       ]
     },
     {
@@ -3730,6 +4254,7 @@
       "timelines/2026.md"
     ],
     "concept": [
+      "concepts/时间.md",
       "concepts/观念对象.md",
       "concepts/RAG.md",
       "concepts/虚无.md",
@@ -3737,6 +4262,7 @@
       "concepts/瞬间.md",
       "concepts/内向性.md",
       "concepts/最初的爱.md",
+      "concepts/永恒.md",
       "concepts/本质直观.md",
       "concepts/Superalignment.md",
       "concepts/三言.md",
@@ -3745,7 +4271,9 @@
       "concepts/重复.md",
       "concepts/动态上下文路由.md",
       "concepts/System-Engineer.md",
+      "concepts/AGI.md",
       "concepts/模型对齐.md",
+      "concepts/婚姻观.md",
       "concepts/犹太人问题.md",
       "concepts/瘫痪.md",
       "concepts/LLM革命.md",
@@ -3765,18 +4293,25 @@
       "concepts/性史.md",
       "concepts/精神分析.md",
       "concepts/忧惧.md",
+      "concepts/那审美的.md",
       "concepts/思维辩证法.md",
       "concepts/宇宙论证明.md",
       "concepts/文本民族性.md",
       "concepts/互文性.md",
+      "concepts/法哲学原理.md",
       "concepts/规训与惩罚.md",
+      "concepts/内在目的性.md",
+      "concepts/人类反馈强化学习.md",
       "concepts/梦的解析.md",
       "concepts/爱的悖谬.md",
       "concepts/能指与所指.md",
       "concepts/文化锡安主义.md",
+      "concepts/感觉.md",
       "concepts/自我中介问题.md",
       "concepts/本体论证明.md",
+      "concepts/历史性.md",
       "concepts/情欲之爱.md",
+      "concepts/那伦理的.md",
       "concepts/现象学神学转向.md",
       "concepts/外互文性.md",
       "concepts/零余者.md",
@@ -3790,9 +4325,14 @@
       "concepts/多源校验.md",
       "concepts/那宗教的.md",
       "concepts/Orchestration Workflow.md",
+      "concepts/泛化.md",
       "concepts/EXAMPLE-concept.md",
       "concepts/寓言.md",
+      "concepts/弱到强的泛化.md",
+      "concepts/未来考古学.md",
+      "concepts/RLHF.md",
       "concepts/话语权力.md",
+      "concepts/超级对齐.md",
       "concepts/先验幻相.md"
     ],
     "source": [
@@ -3801,6 +4341,7 @@
       "sources/2026-04-17-irishman-banshee.md",
       "sources/2026-04-17-chang-zi-kao.md",
       "sources/2026-04-17-love-faith-existential-dialectics.md",
+      "sources/2025-01-24-superalignment-future-archeology.md",
       "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md",
       "sources/2026-04-16-key-meetings.md",
       "sources/2026-04-17-chang-tianzhe-media-articles.md"
@@ -3819,6 +4360,9 @@
       "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md"
     ],
     "entity": [
+      "entities/Jan Leike.md",
+      "entities/OpenAI.md",
+      "entities/Ilya Sutskever.md",
       "entities/朱莉亚·克里斯特娃.md",
       "entities/瓦尔特·本雅明.md",
       "entities/雷吉娜·奥尔森.md",
@@ -3949,41 +4493,6 @@
       "entities/赵林/profile.md",
       "entities/武汉大学/profile.md"
     ],
-    "ai": [
-      "concepts/Superalignment.md",
-      "concepts/System-Engineer.md",
-      "concepts/LLM革命.md",
-      "concepts/价值观对齐.md",
-      "concepts/AI-Native.md",
-      "concepts/AI产品经理.md",
-      "concepts/上下文工程.md",
-      "sources/2026-04-16-hallucination-is-all-you-need.md",
-      "sources/2026-04-15-chang-tianzhe-resume.md",
-      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
-      "entities/抖音AI求真功能/profile.md",
-      "entities/AI智选资讯/profile.md",
-      "entities/百度/profile.md",
-      "entities/腾讯会议智能助手/profile.md",
-      "entities/科大讯飞/profile.md",
-      "entities/混元/profile.md",
-      "entities/qwen/profile.md",
-      "entities/文心一言/profile.md",
-      "entities/姚舜禹/profile.md",
-      "entities/刘庆峰/profile.md",
-      "entities/林俊暘/profile.md",
-      "entities/常天喆/profile.md",
-      "entities/Amanda-Askell/profile.md",
-      "entities/微软亚洲研究院/profile.md",
-      "entities/AI求真/profile.md",
-      "entities/抖音AI资讯总结页/profile.md",
-      "entities/Contextual Query Suggestion/profile.md",
-      "entities/AI热点/profile.md"
-    ],
-    "research": [
-      "concepts/Superalignment.md",
-      "concepts/价值观对齐.md",
-      "entities/微软亚洲研究院/profile.md"
-    ],
     "tech": [
       "concepts/System-Engineer.md",
       "concepts/LLM革命.md",
@@ -4016,6 +4525,35 @@
       "entities/AI热点/profile.md",
       "entities/抖音/profile.md"
     ],
+    "ai": [
+      "concepts/System-Engineer.md",
+      "concepts/LLM革命.md",
+      "concepts/价值观对齐.md",
+      "concepts/AI-Native.md",
+      "concepts/AI产品经理.md",
+      "concepts/上下文工程.md",
+      "sources/2026-04-16-hallucination-is-all-you-need.md",
+      "sources/2026-04-15-chang-tianzhe-resume.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/抖音AI求真功能/profile.md",
+      "entities/AI智选资讯/profile.md",
+      "entities/百度/profile.md",
+      "entities/腾讯会议智能助手/profile.md",
+      "entities/科大讯飞/profile.md",
+      "entities/混元/profile.md",
+      "entities/qwen/profile.md",
+      "entities/文心一言/profile.md",
+      "entities/姚舜禹/profile.md",
+      "entities/刘庆峰/profile.md",
+      "entities/林俊暘/profile.md",
+      "entities/常天喆/profile.md",
+      "entities/Amanda-Askell/profile.md",
+      "entities/微软亚洲研究院/profile.md",
+      "entities/AI求真/profile.md",
+      "entities/抖音AI资讯总结页/profile.md",
+      "entities/Contextual Query Suggestion/profile.md",
+      "entities/AI热点/profile.md"
+    ],
     "product": [
       "concepts/System-Engineer.md",
       "concepts/AI-Native.md",
@@ -4035,6 +4573,10 @@
     "ethics": [
       "concepts/价值观对齐.md",
       "entities/莱维纳斯/profile.md"
+    ],
+    "research": [
+      "concepts/价值观对齐.md",
+      "entities/微软亚洲研究院/profile.md"
     ],
     "theology": [
       "concepts/现象学神学转向.md",
@@ -4341,7 +4883,6 @@
       "timelines/2023.md",
       "concepts/RAG.md",
       "concepts/跨学科.md",
-      "concepts/Superalignment.md",
       "concepts/动态上下文路由.md",
       "concepts/System-Engineer.md",
       "concepts/模型对齐.md",
@@ -4361,6 +4902,7 @@
       "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
       "sources/2026-04-17-chang-zi-kao.md",
       "sources/2026-04-17-love-faith-existential-dialectics.md",
+      "sources/2025-01-24-superalignment-future-archeology.md",
       "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md",
       "sources/2026-04-17-chang-tianzhe-media-articles.md",
       "entities/华中科技大学/profile.md",
@@ -4448,7 +4990,6 @@
       "timelines/2023.md",
       "concepts/跨学科.md",
       "concepts/跨学科.md",
-      "concepts/Superalignment.md",
       "concepts/System-Engineer.md",
       "concepts/System-Engineer.md",
       "concepts/System-Engineer.md",
@@ -4486,20 +5027,29 @@
     "entities/微软亚洲研究院/profile.md": [
       "timelines/2023.md",
       "timelines/2023.md",
-      "concepts/Superalignment.md",
       "concepts/价值观对齐.md",
       "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
     ],
     "concepts/价值观对齐.md": [
       "timelines/2023.md",
-      "concepts/Superalignment.md",
       "concepts/模型对齐.md",
       "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
       "entities/常天喆/profile.md"
     ],
     "concepts/Superalignment.md": [
       "timelines/2023.md",
+      "concepts/AGI.md",
       "concepts/价值观对齐.md",
+      "concepts/人类反馈强化学习.md",
+      "concepts/泛化.md",
+      "concepts/弱到强的泛化.md",
+      "concepts/未来考古学.md",
+      "concepts/RLHF.md",
+      "concepts/超级对齐.md",
+      "sources/2025-01-24-superalignment-future-archeology.md",
+      "entities/Jan Leike.md",
+      "entities/OpenAI.md",
+      "entities/Ilya Sutskever.md",
       "entities/常天喆/profile.md"
     ],
     "entities/百度/profile.md": [
@@ -4529,6 +5079,43 @@
     "sources/2026-04-16-key-meetings.md": [
       "timelines/2026.md",
       "entities/常天喆/profile.md"
+    ],
+    "concepts/瞬间.md": [
+      "concepts/时间.md",
+      "concepts/最初的爱.md",
+      "concepts/永恒.md",
+      "concepts/生存辩证法.md",
+      "concepts/历史性.md",
+      "sources/2026-04-17-love-faith-existential-dialectics.md"
+    ],
+    "concepts/永恒.md": [
+      "concepts/时间.md",
+      "concepts/虚无.md",
+      "concepts/瞬间.md",
+      "concepts/最初的爱.md",
+      "concepts/重复.md",
+      "concepts/忧惧.md"
+    ],
+    "concepts/内向性.md": [
+      "concepts/时间.md",
+      "concepts/生存辩证法.md",
+      "concepts/罪.md",
+      "sources/2026-04-17-love-faith-existential-dialectics.md"
+    ],
+    "concepts/虚无.md": [
+      "concepts/时间.md",
+      "concepts/内向性.md",
+      "concepts/永恒.md",
+      "concepts/罪.md",
+      "concepts/忧惧.md",
+      "sources/2026-04-17-love-faith-existential-dialectics.md"
+    ],
+    "concepts/罪.md": [
+      "concepts/时间.md",
+      "concepts/虚无.md",
+      "concepts/内向性.md",
+      "concepts/非此即彼.md",
+      "sources/2026-04-17-love-faith-existential-dialectics.md"
     ],
     "concepts/本质直观.md": [
       "concepts/观念对象.md",
@@ -4573,12 +5160,6 @@
       "entities/AI智选资讯/profile.md",
       "entities/常天喆/profile.md"
     ],
-    "concepts/罪.md": [
-      "concepts/虚无.md",
-      "concepts/内向性.md",
-      "concepts/非此即彼.md",
-      "sources/2026-04-17-love-faith-existential-dialectics.md"
-    ],
     "concepts/忧惧.md": [
       "concepts/虚无.md"
     ],
@@ -4589,28 +5170,34 @@
       "concepts/LLM革命.md",
       "entities/常天喆/profile.md"
     ],
+    "concepts/时间.md": [
+      "concepts/瞬间.md",
+      "concepts/永恒.md",
+      "concepts/历史性.md"
+    ],
     "concepts/最初的爱.md": [
       "concepts/瞬间.md",
+      "concepts/永恒.md",
       "concepts/重复.md",
+      "concepts/婚姻观.md",
       "concepts/信仰之跃.md",
+      "concepts/那审美的.md",
+      "concepts/历史性.md",
       "concepts/情欲之爱.md",
       "concepts/那宗教的.md",
       "sources/2026-04-17-love-faith-existential-dialectics.md",
       "entities/雷吉娜·奥尔森.md"
     ],
-    "concepts/虚无.md": [
-      "concepts/内向性.md",
-      "concepts/罪.md",
-      "concepts/忧惧.md",
-      "sources/2026-04-17-love-faith-existential-dialectics.md"
-    ],
     "concepts/非此即彼.md": [
       "concepts/内向性.md",
       "concepts/罪.md",
+      "concepts/那审美的.md",
+      "concepts/那伦理的.md",
       "concepts/生存境界.md"
     ],
     "concepts/情欲之爱.md": [
       "concepts/最初的爱.md",
+      "concepts/婚姻观.md",
       "sources/2026-04-17-love-faith-existential-dialectics.md"
     ],
     "concepts/重复.md": [
@@ -4619,15 +5206,14 @@
       "concepts/情欲之爱.md",
       "sources/2026-04-17-love-faith-existential-dialectics.md"
     ],
-    "concepts/瞬间.md": [
-      "concepts/最初的爱.md",
-      "concepts/生存辩证法.md",
-      "sources/2026-04-17-love-faith-existential-dialectics.md"
-    ],
     "concepts/那宗教的.md": [
       "concepts/最初的爱.md",
       "concepts/生存辩证法.md",
+      "concepts/婚姻观.md",
       "concepts/信仰之跃.md",
+      "concepts/那审美的.md",
+      "concepts/内在目的性.md",
+      "concepts/那伦理的.md",
       "concepts/生存境界.md",
       "sources/2026-04-17-love-faith-existential-dialectics.md"
     ],
@@ -4635,6 +5221,100 @@
       "concepts/本质直观.md",
       "sources/2026-04-17-husserl-theological-turn.md",
       "entities/胡塞尔/profile.md"
+    ],
+    "entities/Ilya Sutskever.md": [
+      "concepts/Superalignment.md",
+      "concepts/AGI.md",
+      "concepts/未来考古学.md",
+      "concepts/超级对齐.md",
+      "sources/2025-01-24-superalignment-future-archeology.md",
+      "entities/Jan Leike.md",
+      "entities/OpenAI.md"
+    ],
+    "entities/Jan Leike.md": [
+      "concepts/Superalignment.md",
+      "concepts/超级对齐.md",
+      "sources/2025-01-24-superalignment-future-archeology.md",
+      "entities/OpenAI.md",
+      "entities/Ilya Sutskever.md"
+    ],
+    "entities/OpenAI.md": [
+      "concepts/Superalignment.md",
+      "concepts/AGI.md",
+      "concepts/人类反馈强化学习.md",
+      "concepts/未来考古学.md",
+      "concepts/RLHF.md",
+      "concepts/超级对齐.md",
+      "sources/2025-01-24-superalignment-future-archeology.md",
+      "entities/Jan Leike.md",
+      "entities/Ilya Sutskever.md"
+    ],
+    "concepts/超级对齐.md": [
+      "concepts/Superalignment.md",
+      "concepts/AGI.md",
+      "concepts/人类反馈强化学习.md",
+      "concepts/泛化.md",
+      "concepts/弱到强的泛化.md",
+      "concepts/未来考古学.md",
+      "concepts/RLHF.md",
+      "sources/2025-01-24-superalignment-future-archeology.md",
+      "entities/Jan Leike.md",
+      "entities/OpenAI.md",
+      "entities/Ilya Sutskever.md"
+    ],
+    "concepts/AGI.md": [
+      "concepts/Superalignment.md",
+      "concepts/人类反馈强化学习.md",
+      "concepts/泛化.md",
+      "concepts/弱到强的泛化.md",
+      "concepts/未来考古学.md",
+      "concepts/RLHF.md",
+      "concepts/超级对齐.md",
+      "sources/2025-01-24-superalignment-future-archeology.md",
+      "entities/Jan Leike.md",
+      "entities/OpenAI.md",
+      "entities/Ilya Sutskever.md"
+    ],
+    "concepts/RLHF.md": [
+      "concepts/Superalignment.md",
+      "concepts/AGI.md",
+      "concepts/人类反馈强化学习.md",
+      "concepts/泛化.md",
+      "concepts/弱到强的泛化.md",
+      "concepts/超级对齐.md",
+      "sources/2025-01-24-superalignment-future-archeology.md",
+      "entities/OpenAI.md"
+    ],
+    "concepts/人类反馈强化学习.md": [
+      "concepts/Superalignment.md",
+      "concepts/AGI.md",
+      "concepts/RLHF.md",
+      "concepts/超级对齐.md",
+      "sources/2025-01-24-superalignment-future-archeology.md",
+      "entities/OpenAI.md"
+    ],
+    "concepts/泛化.md": [
+      "concepts/Superalignment.md",
+      "concepts/AGI.md",
+      "concepts/人类反馈强化学习.md",
+      "concepts/弱到强的泛化.md",
+      "concepts/RLHF.md",
+      "concepts/超级对齐.md",
+      "sources/2025-01-24-superalignment-future-archeology.md"
+    ],
+    "concepts/弱到强的泛化.md": [
+      "concepts/Superalignment.md",
+      "concepts/AGI.md",
+      "concepts/泛化.md",
+      "concepts/超级对齐.md",
+      "sources/2025-01-24-superalignment-future-archeology.md"
+    ],
+    "concepts/未来考古学.md": [
+      "concepts/Superalignment.md",
+      "concepts/超级对齐.md",
+      "sources/2025-01-24-superalignment-future-archeology.md",
+      "entities/OpenAI.md",
+      "entities/Ilya Sutskever.md"
     ],
     "entities/庄子/profile.md": [
       "concepts/三言.md"
@@ -4646,11 +5326,6 @@
     ],
     "concepts/思维辩证法.md": [
       "concepts/生存辩证法.md"
-    ],
-    "concepts/内向性.md": [
-      "concepts/生存辩证法.md",
-      "concepts/罪.md",
-      "sources/2026-04-17-love-faith-existential-dialectics.md"
     ],
     "entities/马里翁/profile.md": [
       "concepts/满溢现象.md",
@@ -4676,6 +5351,10 @@
       "entities/马里翁/profile.md",
       "entities/胡塞尔/profile.md"
     ],
+    "concepts/历史性.md": [
+      "concepts/重复.md",
+      "concepts/信仰之跃.md"
+    ],
     "concepts/Fact-checking Agent.md": [
       "concepts/动态上下文路由.md",
       "concepts/内容安全治理.md",
@@ -4695,6 +5374,18 @@
       "concepts/Fact-checking Agent.md",
       "concepts/多源校验.md",
       "entities/AI求真/profile.md"
+    ],
+    "concepts/法哲学原理.md": [
+      "concepts/婚姻观.md",
+      "concepts/自我中介问题.md",
+      "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md"
+    ],
+    "concepts/爱的悖谬.md": [
+      "concepts/婚姻观.md",
+      "concepts/法哲学原理.md",
+      "concepts/感觉.md",
+      "concepts/自我中介问题.md",
+      "sources/2026-04-17-love-faith-existential-dialectics.md"
     ],
     "concepts/民族性.md": [
       "concepts/犹太人问题.md",
@@ -4813,6 +5504,9 @@
     ],
     "concepts/生存境界.md": [
       "concepts/非此即彼.md",
+      "concepts/那审美的.md",
+      "concepts/内在目的性.md",
+      "concepts/那伦理的.md",
       "concepts/那宗教的.md"
     ],
     "concepts/生存辩证法.md": [
@@ -4824,6 +5518,7 @@
     ],
     "concepts/信仰之跃.md": [
       "concepts/非此即彼.md",
+      "concepts/历史性.md",
       "concepts/生存境界.md",
       "concepts/那宗教的.md"
     ],
@@ -4882,6 +5577,16 @@
       "entities/乔伊斯/profile.md",
       "entities/荣格/profile.md"
     ],
+    "concepts/那伦理的.md": [
+      "concepts/那审美的.md",
+      "concepts/内在目的性.md",
+      "concepts/生存境界.md"
+    ],
+    "concepts/内在目的性.md": [
+      "concepts/那审美的.md",
+      "concepts/那伦理的.md",
+      "concepts/生存境界.md"
+    ],
     "entities/阿奎那/profile.md": [
       "concepts/宇宙论证明.md",
       "entities/帕特森·布朗/profile.md"
@@ -4904,6 +5609,15 @@
       "sources/2026-04-17-reconstructing-nationality.md",
       "entities/朱莉亚·克里斯特娃.md"
     ],
+    "concepts/自我中介问题.md": [
+      "concepts/法哲学原理.md",
+      "concepts/爱的悖谬.md",
+      "sources/2026-04-17-love-faith-existential-dialectics.md"
+    ],
+    "concepts/婚姻观.md": [
+      "concepts/法哲学原理.md",
+      "concepts/感觉.md"
+    ],
     "concepts/全景敞视主义.md": [
       "concepts/规训与惩罚.md",
       "concepts/话语权力.md",
@@ -4919,6 +5633,11 @@
       "entities/郁达夫/profile.md",
       "entities/福柯/profile.md"
     ],
+    "concepts/那审美的.md": [
+      "concepts/内在目的性.md",
+      "concepts/那伦理的.md",
+      "concepts/生存境界.md"
+    ],
     "concepts/精神分析.md": [
       "concepts/梦的解析.md",
       "sources/2026-04-17-joyce-sisters.md",
@@ -4927,18 +5646,10 @@
       "entities/荣格/profile.md",
       "entities/拉康/profile.md"
     ],
-    "concepts/自我中介问题.md": [
-      "concepts/爱的悖谬.md",
-      "sources/2026-04-17-love-faith-existential-dialectics.md"
-    ],
     "entities/索绪尔/profile.md": [
       "concepts/能指与所指.md",
       "sources/2026-04-16-hallucination-is-all-you-need.md",
       "entities/庄子/profile.md"
-    ],
-    "concepts/爱的悖谬.md": [
-      "concepts/自我中介问题.md",
-      "sources/2026-04-17-love-faith-existential-dialectics.md"
     ],
     "entities/安瑟伦/profile.md": [
       "concepts/本体论证明.md",
