@@ -154,12 +154,12 @@ export default function KnowledgeGraph() {
       .join('circle')
       .attr('class', 'node')
       .attr('r', (d) => {
-        if (d.title === '常天喆') return 25
-        return Math.max(4, Math.min(18, 5 + (d.type === 'entity' ? 3 : d.type === 'concept' ? 2 : 1.5)))
+        if (d.title === '常天喆') return 18
+        return Math.max(3, Math.min(12, 3 + (d.type === 'entity' ? 2 : d.type === 'concept' ? 1.5 : 1)))
       })
       .attr('fill', (d) => typeColors[d.type as keyof typeof typeColors] || '#6b7280')
       .attr('stroke', (d) => d.title === '常天喆' ? '#67e8f9' : '#fff')
-      .attr('stroke-width', (d) => d.title === '常天喆' ? 4 : 2)
+      .attr('stroke-width', (d) => d.title === '常天喆' ? 3 : 1.5)
       .style('cursor', 'pointer')
       .style('filter', (d) => d.title === '常天喆' ? 'url(#glow-center)' : 'url(#glow)')
 
@@ -203,15 +203,15 @@ export default function KnowledgeGraph() {
       .data(graphData.nodes)
       .join('text')
       .attr('class', 'label')
-      .attr('dy', -15)
+      .attr('dy', -12)
       .attr('text-anchor', 'middle')
       .attr('fill', '#e2e8f0')
-      .attr('font-size', (d) => d.title === '常天喆' ? '14px' : '11px')
-      .attr('font-weight', (d) => d.title === '常天喆' ? '700' : '500')
-      .text((d) => d.title.length > 25 ? d.title.substring(0, 25) + '...' : d.title)
+      .attr('font-size', (d) => d.title === '常天喆' ? '11px' : '8px')
+      .attr('font-weight', (d) => d.title === '常天喆' ? '500' : '300')
+      .text((d) => d.title.length > 20 ? d.title.substring(0, 20) + '...' : d.title)
       .style('pointer-events', 'none')
       .style('opacity', 0.95)
-      .style('text-shadow', '0 2px 4px rgba(0,0,0,0.8)')
+      .style('text-shadow', '0 1px 2px rgba(0,0,0,0.8)')
 
     node
       .on('mouseover', (event, d) => {
@@ -219,16 +219,16 @@ export default function KnowledgeGraph() {
           .transition()
           .duration(200)
           .attr('r', (d: any) => {
-            if (d.title === '常天喆') return 32
-            return Math.max(8, Math.min(25, 10 + (d.type === 'entity' ? 5 : d.type === 'concept' ? 4 : 3)))
+            if (d.title === '常天喆') return 24
+            return Math.max(5, Math.min(16, 5 + (d.type === 'entity' ? 3 : d.type === 'concept' ? 2 : 1.5)))
           })
           .attr('stroke', '#67e8f9')
-          .attr('stroke-width', (d: any) => d.title === '常天喆' ? 5 : 3)
+          .attr('stroke-width', (d: any) => d.title === '常天喆' ? 4 : 2)
         
         label.filter((l: any) => l.id === d.id)
           .transition()
           .duration(200)
-          .attr('font-size', (l: any) => l.title === '常天喆' ? '16px' : '13px')
+          .attr('font-size', (l: any) => l.title === '常天喆' ? '13px' : '10px')
           .attr('opacity', 1)
       })
       .on('mouseout', (event, d) => {
@@ -236,16 +236,16 @@ export default function KnowledgeGraph() {
           .transition()
           .duration(200)
           .attr('r', (d: any) => {
-            if (d.title === '常天喆') return 25
-            return Math.max(4, Math.min(18, 5 + (d.type === 'entity' ? 3 : d.type === 'concept' ? 2 : 1.5)))
+            if (d.title === '常天喆') return 18
+            return Math.max(3, Math.min(12, 3 + (d.type === 'entity' ? 2 : d.type === 'concept' ? 1.5 : 1)))
           })
           .attr('stroke', (d: any) => d.title === '常天喆' ? '#67e8f9' : '#fff')
-          .attr('stroke-width', (d: any) => d.title === '常天喆' ? 4 : 2)
+          .attr('stroke-width', (d: any) => d.title === '常天喆' ? 3 : 1.5)
         
         label.filter((l: any) => l.id === d.id)
           .transition()
           .duration(200)
-          .attr('font-size', (l: any) => l.title === '常天喆' ? '14px' : '11px')
+          .attr('font-size', (l: any) => l.title === '常天喆' ? '11px' : '8px')
           .attr('opacity', 0.95)
       })
       .on('click', (event, d) => {
@@ -269,7 +269,7 @@ export default function KnowledgeGraph() {
       }).strength(1.5))
       .force('charge', d3.forceManyBody().strength((d: any) => d.title === '常天喆' ? -800 : -150))
       .force('center', d3.forceCenter(width / 2, height / 2).strength(0.02))
-      .force('collision', d3.forceCollide().radius((d: any) => d.title === '常天喆' ? 45 : 20))
+      .force('collision', d3.forceCollide().radius((d: any) => d.title === '常天喆' ? 30 : 15))
       .alphaMin(0.001)
       .on('tick', ticked)
 
