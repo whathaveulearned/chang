@@ -358,7 +358,7 @@ export default function KnowledgeGraph() {
 
   return (
     <div className="relative w-full h-screen bg-slate-950 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-900/20 via-slate-950 to-slate-950 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-900/15 via-slate-950/0 to-slate-950/0 pointer-events-none" />
       
       <div className="absolute top-4 left-4 z-10 bg-slate-900/80 backdrop-blur-xl rounded-2xl shadow-2xl p-5 border border-slate-700/50">
         <h1 className="text-2xl font-bold text-white mb-4">
