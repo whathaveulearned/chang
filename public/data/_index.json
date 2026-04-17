@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-17T12:13:23",
-  "total_pages": 166,
+  "generated_at": "2026-04-17T13:40:50",
+  "total_pages": 181,
   "pages": [
     {
       "path": "rules.md",
@@ -684,6 +684,26 @@
       ]
     },
     {
+      "path": "concepts/巴以问题.md",
+      "title": "巴以问题",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "阿摩司·奥兹",
+        "两国方案",
+        "现在就和平",
+        "犹太复国主义左翼"
+      ],
+      "resolved_outbound_links": [
+        "concepts/犹太复国主义左翼.md",
+        "concepts/现在就和平.md",
+        "entities/阿摩司·奥兹.md"
+      ]
+    },
+    {
       "path": "concepts/婚姻观.md",
       "title": "婚姻观",
       "type": "concept",
@@ -706,6 +726,59 @@
         "concepts/法哲学原理.md",
         "concepts/爱的悖谬.md",
         "concepts/那宗教的.md"
+      ]
+    },
+    {
+      "path": "concepts/重新语境化.md",
+      "title": "重新语境化",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "民族性"
+      ],
+      "resolved_outbound_links": [
+        "concepts/民族性.md"
+      ]
+    },
+    {
+      "path": "concepts/复调社会.md",
+      "title": "复调社会",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "互文性",
+        "多声部世界",
+        "民族性"
+      ],
+      "resolved_outbound_links": [
+        "concepts/互文性.md",
+        "concepts/多声部世界.md",
+        "concepts/民族性.md"
+      ]
+    },
+    {
+      "path": "concepts/犹太复国主义左翼.md",
+      "title": "犹太复国主义左翼",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "阿摩司·奥兹",
+        "犹太复国主义",
+        "两国方案",
+        "巴以问题"
+      ],
+      "resolved_outbound_links": [
+        "concepts/巴以问题.md",
+        "entities/阿摩司·奥兹.md"
       ]
     },
     {
@@ -732,7 +805,25 @@
         "concepts/文化锡安主义.md",
         "concepts/文本民族性.md",
         "concepts/民族性.md",
-        "concepts/语言民族主义.md"
+        "concepts/语言民族主义.md",
+        "entities/阿摩司·奥兹.md"
+      ]
+    },
+    {
+      "path": "concepts/斋月战争.md",
+      "title": "斋月战争",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "阿摩司·奥兹",
+        "六日战争"
+      ],
+      "resolved_outbound_links": [
+        "concepts/六日战争.md",
+        "entities/阿摩司·奥兹.md"
       ]
     },
     {
@@ -797,6 +888,24 @@
       "resolved_outbound_links": [
         "entities/常天喆/profile.md",
         "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/现在就和平.md",
+      "title": "现在就和平",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "阿摩司·奥兹",
+        "两国方案",
+        "巴以问题"
+      ],
+      "resolved_outbound_links": [
+        "concepts/巴以问题.md",
+        "entities/阿摩司·奥兹.md"
       ]
     },
     {
@@ -919,6 +1028,25 @@
       ]
     },
     {
+      "path": "concepts/多声部世界.md",
+      "title": "多声部世界",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "互文性",
+        "复调社会",
+        "民族性"
+      ],
+      "resolved_outbound_links": [
+        "concepts/互文性.md",
+        "concepts/复调社会.md",
+        "concepts/民族性.md"
+      ]
+    },
+    {
       "path": "concepts/AI-Native.md",
       "title": "AI Native",
       "type": "concept",
@@ -1030,7 +1158,8 @@
       "resolved_outbound_links": [
         "concepts/互文性.md",
         "concepts/文本民族性.md",
-        "concepts/犹太人问题.md"
+        "concepts/犹太人问题.md",
+        "entities/阿摩司·奥兹.md"
       ]
     },
     {
@@ -1107,6 +1236,23 @@
       ]
     },
     {
+      "path": "concepts/六日战争.md",
+      "title": "六日战争",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "阿摩司·奥兹",
+        "斋月战争"
+      ],
+      "resolved_outbound_links": [
+        "concepts/斋月战争.md",
+        "entities/阿摩司·奥兹.md"
+      ]
+    },
+    {
       "path": "concepts/性史.md",
       "title": "性史",
       "type": "concept",
@@ -1150,6 +1296,40 @@
         "entities/弗洛伊德/profile.md",
         "entities/拉康/profile.md",
         "entities/荣格/profile.md"
+      ]
+    },
+    {
+      "path": "concepts/基布兹.md",
+      "title": "基布兹",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "阿摩司·奥兹",
+        "胡尔达基布兹"
+      ],
+      "resolved_outbound_links": [
+        "concepts/胡尔达基布兹.md",
+        "entities/阿摩司·奥兹.md"
+      ]
+    },
+    {
+      "path": "concepts/乌托邦神话.md",
+      "title": "乌托邦神话",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "民族性",
+        "政治神话"
+      ],
+      "resolved_outbound_links": [
+        "concepts/政治神话.md",
+        "concepts/民族性.md"
       ]
     },
     {
@@ -1219,6 +1399,23 @@
       ]
     },
     {
+      "path": "concepts/政治神话.md",
+      "title": "政治神话",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "民族性",
+        "乌托邦神话"
+      ],
+      "resolved_outbound_links": [
+        "concepts/乌托邦神话.md",
+        "concepts/民族性.md"
+      ]
+    },
+    {
       "path": "concepts/宇宙论证明.md",
       "title": "宇宙论证明",
       "type": "concept",
@@ -1262,7 +1459,8 @@
         "concepts/文化锡安主义.md",
         "concepts/民族性.md",
         "concepts/犹太人问题.md",
-        "concepts/语言民族主义.md"
+        "concepts/语言民族主义.md",
+        "entities/阿摩司·奥兹.md"
       ]
     },
     {
@@ -1287,7 +1485,25 @@
         "concepts/外互文性.md",
         "concepts/寓言.md",
         "concepts/文本民族性.md",
-        "concepts/民族性.md"
+        "concepts/民族性.md",
+        "entities/阿摩司·奥兹.md"
+      ]
+    },
+    {
+      "path": "concepts/胡尔达基布兹.md",
+      "title": "胡尔达基布兹",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "阿摩司·奥兹",
+        "基布兹"
+      ],
+      "resolved_outbound_links": [
+        "concepts/基布兹.md",
+        "entities/阿摩司·奥兹.md"
       ]
     },
     {
@@ -1461,7 +1677,8 @@
       "resolved_outbound_links": [
         "concepts/文本民族性.md",
         "concepts/犹太人问题.md",
-        "concepts/语言民族主义.md"
+        "concepts/语言民族主义.md",
+        "entities/阿摩司·奥兹.md"
       ]
     },
     {
@@ -1707,7 +1924,8 @@
         "concepts/文化锡安主义.md",
         "concepts/文本民族性.md",
         "concepts/民族性.md",
-        "concepts/犹太人问题.md"
+        "concepts/犹太人问题.md",
+        "entities/阿摩司·奥兹.md"
       ]
     },
     {
@@ -1901,6 +2119,21 @@
       ]
     },
     {
+      "path": "concepts/爱与黑暗的故事.md",
+      "title": "爱与黑暗的故事",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "阿摩司·奥兹"
+      ],
+      "resolved_outbound_links": [
+        "entities/阿摩司·奥兹.md"
+      ]
+    },
+    {
       "path": "concepts/泛化.md",
       "title": "泛化",
       "type": "concept",
@@ -1980,6 +2213,21 @@
         "concepts/Superalignment.md",
         "concepts/泛化.md",
         "concepts/超级对齐.md"
+      ]
+    },
+    {
+      "path": "concepts/最高伦理实体.md",
+      "title": "最高伦理实体",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "民族性"
+      ],
+      "resolved_outbound_links": [
+        "concepts/民族性.md"
       ]
     },
     {
@@ -2141,7 +2389,8 @@
         "concepts/民族性.md",
         "concepts/犹太人问题.md",
         "concepts/语言民族主义.md",
-        "entities/常天喆/profile.md"
+        "entities/常天喆/profile.md",
+        "entities/阿摩司·奥兹.md"
       ]
     },
     {
@@ -2888,6 +3137,43 @@
       "resolved_outbound_links": [
         "concepts/最初的爱.md",
         "concepts/生存辩证法.md"
+      ]
+    },
+    {
+      "path": "entities/阿摩司·奥兹.md",
+      "title": "阿摩司·奥兹",
+      "type": "entity",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "民族性",
+        "互文性",
+        "文本民族性",
+        "犹太复国主义",
+        "两国方案",
+        "基布兹",
+        "胡尔达基布兹",
+        "六日战争",
+        "斋月战争",
+        "爱与黑暗的故事",
+        "现在就和平",
+        "犹太复国主义左翼",
+        "巴以问题"
+      ],
+      "resolved_outbound_links": [
+        "concepts/互文性.md",
+        "concepts/六日战争.md",
+        "concepts/基布兹.md",
+        "concepts/巴以问题.md",
+        "concepts/文本民族性.md",
+        "concepts/斋月战争.md",
+        "concepts/民族性.md",
+        "concepts/爱与黑暗的故事.md",
+        "concepts/犹太复国主义左翼.md",
+        "concepts/现在就和平.md",
+        "concepts/胡尔达基布兹.md"
       ]
     },
     {
@@ -4273,16 +4559,23 @@
       "concepts/System-Engineer.md",
       "concepts/AGI.md",
       "concepts/模型对齐.md",
+      "concepts/巴以问题.md",
       "concepts/婚姻观.md",
+      "concepts/重新语境化.md",
+      "concepts/复调社会.md",
+      "concepts/犹太复国主义左翼.md",
       "concepts/犹太人问题.md",
+      "concepts/斋月战争.md",
       "concepts/瘫痪.md",
       "concepts/LLM革命.md",
       "concepts/SFT.md",
+      "concepts/现在就和平.md",
       "concepts/依赖性论题.md",
       "concepts/Fact-checking Agent.md",
       "concepts/还原与给予.md",
       "concepts/价值观对齐.md",
       "concepts/二律背反.md",
+      "concepts/多声部世界.md",
       "concepts/AI-Native.md",
       "concepts/罪.md",
       "concepts/AI产品经理.md",
@@ -4290,14 +4583,19 @@
       "concepts/非此即彼.md",
       "concepts/内容安全治理.md",
       "concepts/信仰之跃.md",
+      "concepts/六日战争.md",
       "concepts/性史.md",
       "concepts/精神分析.md",
+      "concepts/基布兹.md",
+      "concepts/乌托邦神话.md",
       "concepts/忧惧.md",
       "concepts/那审美的.md",
       "concepts/思维辩证法.md",
+      "concepts/政治神话.md",
       "concepts/宇宙论证明.md",
       "concepts/文本民族性.md",
       "concepts/互文性.md",
+      "concepts/胡尔达基布兹.md",
       "concepts/法哲学原理.md",
       "concepts/规训与惩罚.md",
       "concepts/内在目的性.md",
@@ -4325,10 +4623,12 @@
       "concepts/多源校验.md",
       "concepts/那宗教的.md",
       "concepts/Orchestration Workflow.md",
+      "concepts/爱与黑暗的故事.md",
       "concepts/泛化.md",
       "concepts/EXAMPLE-concept.md",
       "concepts/寓言.md",
       "concepts/弱到强的泛化.md",
+      "concepts/最高伦理实体.md",
       "concepts/未来考古学.md",
       "concepts/RLHF.md",
       "concepts/话语权力.md",
@@ -4366,6 +4666,7 @@
       "entities/朱莉亚·克里斯特娃.md",
       "entities/瓦尔特·本雅明.md",
       "entities/雷吉娜·奥尔森.md",
+      "entities/阿摩司·奥兹.md",
       "entities/AAPL/profile.md",
       "entities/马里翁/profile.md",
       "entities/笛卡尔/profile.md",
@@ -5375,6 +5676,31 @@
       "concepts/多源校验.md",
       "entities/AI求真/profile.md"
     ],
+    "entities/阿摩司·奥兹.md": [
+      "concepts/巴以问题.md",
+      "concepts/犹太复国主义左翼.md",
+      "concepts/犹太人问题.md",
+      "concepts/斋月战争.md",
+      "concepts/现在就和平.md",
+      "concepts/民族性.md",
+      "concepts/六日战争.md",
+      "concepts/基布兹.md",
+      "concepts/文本民族性.md",
+      "concepts/互文性.md",
+      "concepts/胡尔达基布兹.md",
+      "concepts/文化锡安主义.md",
+      "concepts/语言民族主义.md",
+      "concepts/爱与黑暗的故事.md",
+      "sources/2026-04-17-reconstructing-nationality.md"
+    ],
+    "concepts/现在就和平.md": [
+      "concepts/巴以问题.md",
+      "entities/阿摩司·奥兹.md"
+    ],
+    "concepts/犹太复国主义左翼.md": [
+      "concepts/巴以问题.md",
+      "entities/阿摩司·奥兹.md"
+    ],
     "concepts/法哲学原理.md": [
       "concepts/婚姻观.md",
       "concepts/自我中介问题.md",
@@ -5388,11 +5714,38 @@
       "sources/2026-04-17-love-faith-existential-dialectics.md"
     ],
     "concepts/民族性.md": [
+      "concepts/重新语境化.md",
+      "concepts/复调社会.md",
       "concepts/犹太人问题.md",
+      "concepts/多声部世界.md",
+      "concepts/乌托邦神话.md",
+      "concepts/政治神话.md",
       "concepts/文本民族性.md",
       "concepts/互文性.md",
       "concepts/语言民族主义.md",
-      "sources/2026-04-17-reconstructing-nationality.md"
+      "concepts/最高伦理实体.md",
+      "sources/2026-04-17-reconstructing-nationality.md",
+      "entities/阿摩司·奥兹.md"
+    ],
+    "concepts/互文性.md": [
+      "concepts/复调社会.md",
+      "concepts/多声部世界.md",
+      "concepts/民族性.md",
+      "concepts/文本民族性.md",
+      "concepts/外互文性.md",
+      "concepts/内互文性.md",
+      "concepts/寓言.md",
+      "sources/2026-04-17-reconstructing-nationality.md",
+      "entities/朱莉亚·克里斯特娃.md",
+      "entities/阿摩司·奥兹.md"
+    ],
+    "concepts/多声部世界.md": [
+      "concepts/复调社会.md"
+    ],
+    "concepts/巴以问题.md": [
+      "concepts/犹太复国主义左翼.md",
+      "concepts/现在就和平.md",
+      "entities/阿摩司·奥兹.md"
     ],
     "concepts/文本民族性.md": [
       "concepts/犹太人问题.md",
@@ -5400,7 +5753,8 @@
       "concepts/互文性.md",
       "concepts/文化锡安主义.md",
       "concepts/语言民族主义.md",
-      "sources/2026-04-17-reconstructing-nationality.md"
+      "sources/2026-04-17-reconstructing-nationality.md",
+      "entities/阿摩司·奥兹.md"
     ],
     "concepts/文化锡安主义.md": [
       "concepts/犹太人问题.md",
@@ -5413,6 +5767,10 @@
       "concepts/文本民族性.md",
       "concepts/文化锡安主义.md",
       "sources/2026-04-17-reconstructing-nationality.md"
+    ],
+    "concepts/六日战争.md": [
+      "concepts/斋月战争.md",
+      "entities/阿摩司·奥兹.md"
     ],
     "entities/乔伊斯/profile.md": [
       "concepts/瘫痪.md",
@@ -5469,6 +5827,9 @@
       "entities/马里翁/profile.md",
       "entities/胡塞尔/profile.md"
     ],
+    "concepts/复调社会.md": [
+      "concepts/多声部世界.md"
+    ],
     "entities/抖音AI求真功能/profile.md": [
       "concepts/AI-Native.md"
     ],
@@ -5493,15 +5854,6 @@
       "concepts/语言民族主义.md",
       "sources/2026-04-17-reconstructing-nationality.md"
     ],
-    "concepts/互文性.md": [
-      "concepts/民族性.md",
-      "concepts/文本民族性.md",
-      "concepts/外互文性.md",
-      "concepts/内互文性.md",
-      "concepts/寓言.md",
-      "sources/2026-04-17-reconstructing-nationality.md",
-      "entities/朱莉亚·克里斯特娃.md"
-    ],
     "concepts/生存境界.md": [
       "concepts/非此即彼.md",
       "concepts/那审美的.md",
@@ -5521,6 +5873,10 @@
       "concepts/历史性.md",
       "concepts/生存境界.md",
       "concepts/那宗教的.md"
+    ],
+    "concepts/斋月战争.md": [
+      "concepts/六日战争.md",
+      "entities/阿摩司·奥兹.md"
     ],
     "entities/福柯/profile.md": [
       "concepts/性史.md",
@@ -5577,6 +5933,13 @@
       "entities/乔伊斯/profile.md",
       "entities/荣格/profile.md"
     ],
+    "concepts/胡尔达基布兹.md": [
+      "concepts/基布兹.md",
+      "entities/阿摩司·奥兹.md"
+    ],
+    "concepts/政治神话.md": [
+      "concepts/乌托邦神话.md"
+    ],
     "concepts/那伦理的.md": [
       "concepts/那审美的.md",
       "concepts/内在目的性.md",
@@ -5586,6 +5949,9 @@
       "concepts/那审美的.md",
       "concepts/那伦理的.md",
       "concepts/生存境界.md"
+    ],
+    "concepts/乌托邦神话.md": [
+      "concepts/政治神话.md"
     ],
     "entities/阿奎那/profile.md": [
       "concepts/宇宙论证明.md",
@@ -5608,6 +5974,10 @@
       "concepts/内互文性.md",
       "sources/2026-04-17-reconstructing-nationality.md",
       "entities/朱莉亚·克里斯特娃.md"
+    ],
+    "concepts/基布兹.md": [
+      "concepts/胡尔达基布兹.md",
+      "entities/阿摩司·奥兹.md"
     ],
     "concepts/自我中介问题.md": [
       "concepts/法哲学原理.md",
@@ -5734,6 +6104,9 @@
     ],
     "entities/武汉大学/profile.md": [
       "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md"
+    ],
+    "concepts/爱与黑暗的故事.md": [
+      "entities/阿摩司·奥兹.md"
     ],
     "entities/米歇尔·亨利/profile.md": [
       "entities/马里翁/profile.md",
