@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-17T13:40:50",
-  "total_pages": 181,
+  "generated_at": "2026-04-17T16:51:57",
+  "total_pages": 194,
   "pages": [
     {
       "path": "rules.md",
@@ -350,6 +350,21 @@
       ]
     },
     {
+      "path": "concepts/网易新闻浪潮工作室.md",
+      "title": "网易新闻浪潮工作室",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆"
+      ],
+      "resolved_outbound_links": [
+        "entities/常天喆/profile.md"
+      ]
+    },
+    {
       "path": "concepts/内向性.md",
       "title": "内向性",
       "type": "concept",
@@ -368,6 +383,46 @@
         "concepts/罪.md",
         "concepts/虚无.md",
         "concepts/非此即彼.md"
+      ]
+    },
+    {
+      "path": "concepts/精神疾病书写.md",
+      "title": "精神疾病书写",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "李俊国",
+        "省级大学生创业创新项目",
+        "《名作欣赏》"
+      ],
+      "resolved_outbound_links": [
+        "concepts/《名作欣赏》.md",
+        "concepts/省级大学生创业创新项目.md",
+        "entities/常天喆/profile.md",
+        "entities/李俊国.md"
+      ]
+    },
+    {
+      "path": "concepts/多向度的人.md",
+      "title": "多向度的人",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "马尔库塞",
+        "国家奖学金",
+        "《单向度的人》"
+      ],
+      "resolved_outbound_links": [
+        "concepts/国家奖学金.md",
+        "entities/常天喆/profile.md"
       ]
     },
     {
@@ -542,6 +597,27 @@
       ]
     },
     {
+      "path": "concepts/《名作欣赏》.md",
+      "title": "《名作欣赏》",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "李俊国",
+        "精神疾病书写",
+        "省级大学生创业创新项目"
+      ],
+      "resolved_outbound_links": [
+        "concepts/省级大学生创业创新项目.md",
+        "concepts/精神疾病书写.md",
+        "entities/常天喆/profile.md",
+        "entities/李俊国.md"
+      ]
+    },
+    {
       "path": "concepts/重复.md",
       "title": "重复",
       "type": "concept",
@@ -652,6 +728,26 @@
         "concepts/超级对齐.md",
         "entities/Ilya Sutskever.md",
         "entities/OpenAI.md"
+      ]
+    },
+    {
+      "path": "concepts/国家奖学金.md",
+      "title": "国家奖学金",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "多向度的人",
+        "华中科技大学",
+        "汉语言文学"
+      ],
+      "resolved_outbound_links": [
+        "concepts/多向度的人.md",
+        "entities/华中科技大学/profile.md",
+        "entities/常天喆/profile.md"
       ]
     },
     {
@@ -1572,6 +1668,26 @@
       ]
     },
     {
+      "path": "concepts/《歌德全集》.md",
+      "title": "《歌德全集》",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "卫茂平",
+        "国家社科基金重大项目"
+      ],
+      "resolved_outbound_links": [
+        "concepts/国家社科基金重大项目.md",
+        "entities/卫茂平.md",
+        "entities/卫茂平/profile.md",
+        "entities/常天喆/profile.md"
+      ]
+    },
+    {
       "path": "concepts/人类反馈强化学习.md",
       "title": "人类反馈强化学习",
       "type": "concept",
@@ -2068,6 +2184,27 @@
       ]
     },
     {
+      "path": "concepts/省级大学生创业创新项目.md",
+      "title": "省级大学生创业创新项目",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "李俊国",
+        "精神疾病书写",
+        "《名作欣赏》"
+      ],
+      "resolved_outbound_links": [
+        "concepts/《名作欣赏》.md",
+        "concepts/精神疾病书写.md",
+        "entities/常天喆/profile.md",
+        "entities/李俊国.md"
+      ]
+    },
+    {
       "path": "concepts/那宗教的.md",
       "title": "那宗教的",
       "type": "concept",
@@ -2087,6 +2224,26 @@
         "concepts/信仰之跃.md",
         "concepts/最初的爱.md",
         "concepts/生存境界.md"
+      ]
+    },
+    {
+      "path": "concepts/国家社科基金重大项目.md",
+      "title": "国家社科基金重大项目",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "卫茂平",
+        "《歌德全集》"
+      ],
+      "resolved_outbound_links": [
+        "concepts/《歌德全集》.md",
+        "entities/卫茂平.md",
+        "entities/卫茂平/profile.md",
+        "entities/常天喆/profile.md"
       ]
     },
     {
@@ -2116,6 +2273,24 @@
         "entities/常天喆/profile.md",
         "entities/抖音/profile.md",
         "sources/2026-04-15-chang-tianzhe-feishu-resume.md"
+      ]
+    },
+    {
+      "path": "concepts/经略综合研究项目.md",
+      "title": "经略综合研究项目",
+      "type": "concept",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "章永乐",
+        "北京大学"
+      ],
+      "resolved_outbound_links": [
+        "entities/常天喆/profile.md",
+        "entities/章永乐.md"
       ]
     },
     {
@@ -2681,6 +2856,7 @@
         "entities/AI求真/profile.md",
         "entities/AI热点/profile.md",
         "entities/Contextual Query Suggestion/profile.md",
+        "entities/卫茂平.md",
         "entities/卫茂平/profile.md",
         "entities/字节跳动/profile.md",
         "entities/常天喆/profile.md",
@@ -2689,7 +2865,9 @@
         "entities/文心一言/profile.md",
         "entities/梁汝波/profile.md",
         "entities/百度/profile.md",
+        "entities/章永乐.md",
         "entities/腾讯/profile.md",
+        "entities/赵林.md",
         "entities/赵林/profile.md",
         "entities/邓晓芒/profile.md"
       ]
@@ -2946,9 +3124,13 @@
         "多向度的人"
       ],
       "resolved_outbound_links": [
+        "concepts/国家奖学金.md",
+        "concepts/多向度的人.md",
         "entities/华中科技大学/profile.md",
+        "entities/卫茂平.md",
         "entities/卫茂平/profile.md",
         "entities/常天喆/profile.md",
+        "entities/李俊国.md",
         "entities/武汉大学/profile.md"
       ]
     },
@@ -3002,6 +3184,27 @@
         "勒庞"
       ],
       "resolved_outbound_links": [
+        "entities/常天喆/profile.md"
+      ]
+    },
+    {
+      "path": "entities/李俊国.md",
+      "title": "李俊国",
+      "type": "entity",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "省级大学生创业创新项目",
+        "精神疾病书写",
+        "《名作欣赏》"
+      ],
+      "resolved_outbound_links": [
+        "concepts/《名作欣赏》.md",
+        "concepts/省级大学生创业创新项目.md",
+        "concepts/精神疾病书写.md",
         "entities/常天喆/profile.md"
       ]
     },
@@ -3103,6 +3306,26 @@
       ]
     },
     {
+      "path": "entities/赵林.md",
+      "title": "赵林",
+      "type": "entity",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "武汉大学",
+        "哲学院",
+        "西方文化哲学",
+        "当代文化研究"
+      ],
+      "resolved_outbound_links": [
+        "entities/常天喆/profile.md",
+        "entities/武汉大学/profile.md"
+      ]
+    },
+    {
       "path": "entities/瓦尔特·本雅明.md",
       "title": "瓦尔特·本雅明",
       "type": "entity",
@@ -3117,6 +3340,43 @@
       ],
       "resolved_outbound_links": [
         "concepts/寓言.md"
+      ]
+    },
+    {
+      "path": "entities/卫茂平.md",
+      "title": "卫茂平",
+      "type": "entity",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "国家社科基金重大项目",
+        "《歌德全集》"
+      ],
+      "resolved_outbound_links": [
+        "concepts/《歌德全集》.md",
+        "concepts/国家社科基金重大项目.md",
+        "entities/常天喆/profile.md"
+      ]
+    },
+    {
+      "path": "entities/章永乐.md",
+      "title": "章永乐",
+      "type": "entity",
+      "domain": [],
+      "created": "2026-04-17",
+      "updated": "2026-04-17",
+      "confidence": "high",
+      "outbound_links": [
+        "常天喆",
+        "经略综合研究项目",
+        "北京大学"
+      ],
+      "resolved_outbound_links": [
+        "concepts/经略综合研究项目.md",
+        "entities/常天喆/profile.md"
       ]
     },
     {
@@ -3718,6 +3978,7 @@
         "concepts/宇宙论证明.md",
         "concepts/本体论证明.md",
         "entities/胡塞尔/profile.md",
+        "entities/赵林.md",
         "entities/赵林/profile.md",
         "sources/2026-04-17-kant-dependency-thesis.md"
       ]
@@ -4152,10 +4413,13 @@
         "concepts/跨学科.md",
         "entities/Amanda-Askell/profile.md",
         "entities/刘庆峰/profile.md",
+        "entities/卫茂平.md",
         "entities/卫茂平/profile.md",
         "entities/姚舜禹/profile.md",
         "entities/林俊暘/profile.md",
         "entities/梁汝波/profile.md",
+        "entities/章永乐.md",
+        "entities/赵林.md",
         "entities/赵林/profile.md",
         "entities/邓晓芒/profile.md",
         "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
@@ -4546,7 +4810,10 @@
       "concepts/虚无.md",
       "concepts/跨学科.md",
       "concepts/瞬间.md",
+      "concepts/网易新闻浪潮工作室.md",
       "concepts/内向性.md",
+      "concepts/精神疾病书写.md",
+      "concepts/多向度的人.md",
       "concepts/最初的爱.md",
       "concepts/永恒.md",
       "concepts/本质直观.md",
@@ -4554,10 +4821,12 @@
       "concepts/三言.md",
       "concepts/生存辩证法.md",
       "concepts/满溢现象.md",
+      "concepts/《名作欣赏》.md",
       "concepts/重复.md",
       "concepts/动态上下文路由.md",
       "concepts/System-Engineer.md",
       "concepts/AGI.md",
+      "concepts/国家奖学金.md",
       "concepts/模型对齐.md",
       "concepts/巴以问题.md",
       "concepts/婚姻观.md",
@@ -4599,6 +4868,7 @@
       "concepts/法哲学原理.md",
       "concepts/规训与惩罚.md",
       "concepts/内在目的性.md",
+      "concepts/《歌德全集》.md",
       "concepts/人类反馈强化学习.md",
       "concepts/梦的解析.md",
       "concepts/爱的悖谬.md",
@@ -4621,8 +4891,11 @@
       "concepts/全景敞视主义.md",
       "concepts/生存境界.md",
       "concepts/多源校验.md",
+      "concepts/省级大学生创业创新项目.md",
       "concepts/那宗教的.md",
+      "concepts/国家社科基金重大项目.md",
       "concepts/Orchestration Workflow.md",
+      "concepts/经略综合研究项目.md",
       "concepts/爱与黑暗的故事.md",
       "concepts/泛化.md",
       "concepts/EXAMPLE-concept.md",
@@ -4660,11 +4933,15 @@
       "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md"
     ],
     "entity": [
+      "entities/李俊国.md",
       "entities/Jan Leike.md",
       "entities/OpenAI.md",
       "entities/Ilya Sutskever.md",
       "entities/朱莉亚·克里斯特娃.md",
+      "entities/赵林.md",
       "entities/瓦尔特·本雅明.md",
+      "entities/卫茂平.md",
+      "entities/章永乐.md",
       "entities/雷吉娜·奥尔森.md",
       "entities/阿摩司·奥兹.md",
       "entities/AAPL/profile.md",
@@ -5184,8 +5461,13 @@
       "timelines/2023.md",
       "concepts/RAG.md",
       "concepts/跨学科.md",
+      "concepts/网易新闻浪潮工作室.md",
+      "concepts/精神疾病书写.md",
+      "concepts/多向度的人.md",
+      "concepts/《名作欣赏》.md",
       "concepts/动态上下文路由.md",
       "concepts/System-Engineer.md",
+      "concepts/国家奖学金.md",
       "concepts/模型对齐.md",
       "concepts/LLM革命.md",
       "concepts/SFT.md",
@@ -5193,9 +5475,13 @@
       "concepts/价值观对齐.md",
       "concepts/AI产品经理.md",
       "concepts/内容安全治理.md",
+      "concepts/《歌德全集》.md",
       "concepts/质量检验agent.md",
       "concepts/多源校验.md",
+      "concepts/省级大学生创业创新项目.md",
+      "concepts/国家社科基金重大项目.md",
       "concepts/Orchestration Workflow.md",
+      "concepts/经略综合研究项目.md",
       "sources/2026-04-17-reconstructing-nationality.md",
       "sources/2026-04-17-prometheus-athena.md",
       "sources/2026-04-16-hallucination-is-all-you-need.md",
@@ -5206,6 +5492,10 @@
       "sources/2025-01-24-superalignment-future-archeology.md",
       "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md",
       "sources/2026-04-17-chang-tianzhe-media-articles.md",
+      "entities/李俊国.md",
+      "entities/赵林.md",
+      "entities/卫茂平.md",
+      "entities/章永乐.md",
       "entities/华中科技大学/profile.md",
       "entities/华中科技大学/profile.md",
       "entities/AI智选资讯/profile.md",
@@ -5496,6 +5786,26 @@
       "concepts/那伦理的.md",
       "concepts/生存境界.md"
     ],
+    "entities/李俊国.md": [
+      "concepts/精神疾病书写.md",
+      "concepts/《名作欣赏》.md",
+      "concepts/省级大学生创业创新项目.md",
+      "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md"
+    ],
+    "concepts/省级大学生创业创新项目.md": [
+      "concepts/精神疾病书写.md",
+      "concepts/《名作欣赏》.md",
+      "entities/李俊国.md"
+    ],
+    "concepts/《名作欣赏》.md": [
+      "concepts/精神疾病书写.md",
+      "concepts/省级大学生创业创新项目.md",
+      "entities/李俊国.md"
+    ],
+    "concepts/国家奖学金.md": [
+      "concepts/多向度的人.md",
+      "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md"
+    ],
     "concepts/情欲之爱.md": [
       "concepts/最初的爱.md",
       "concepts/婚姻观.md",
@@ -5652,6 +5962,11 @@
       "entities/马里翁/profile.md",
       "entities/胡塞尔/profile.md"
     ],
+    "concepts/精神疾病书写.md": [
+      "concepts/《名作欣赏》.md",
+      "concepts/省级大学生创业创新项目.md",
+      "entities/李俊国.md"
+    ],
     "concepts/历史性.md": [
       "concepts/重复.md",
       "concepts/信仰之跃.md"
@@ -5669,6 +5984,14 @@
       "concepts/System-Engineer.md",
       "concepts/AI产品经理.md",
       "entities/常天喆/profile.md"
+    ],
+    "concepts/多向度的人.md": [
+      "concepts/国家奖学金.md",
+      "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md"
+    ],
+    "entities/华中科技大学/profile.md": [
+      "concepts/国家奖学金.md",
+      "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md"
     ],
     "concepts/内容安全治理.md": [
       "concepts/模型对齐.md",
@@ -6008,6 +6331,24 @@
       "concepts/那伦理的.md",
       "concepts/生存境界.md"
     ],
+    "entities/卫茂平.md": [
+      "concepts/《歌德全集》.md",
+      "concepts/国家社科基金重大项目.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md",
+      "entities/常天喆/profile.md"
+    ],
+    "entities/卫茂平/profile.md": [
+      "concepts/《歌德全集》.md",
+      "concepts/国家社科基金重大项目.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md",
+      "entities/常天喆/profile.md"
+    ],
+    "concepts/国家社科基金重大项目.md": [
+      "concepts/《歌德全集》.md",
+      "entities/卫茂平.md"
+    ],
     "concepts/精神分析.md": [
       "concepts/梦的解析.md",
       "sources/2026-04-17-joyce-sisters.md",
@@ -6036,6 +6377,15 @@
     ],
     "entities/郁达夫/profile.md": [
       "concepts/零余者.md"
+    ],
+    "concepts/《歌德全集》.md": [
+      "concepts/国家社科基金重大项目.md",
+      "entities/卫茂平.md"
+    ],
+    "entities/章永乐.md": [
+      "concepts/经略综合研究项目.md",
+      "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
+      "entities/常天喆/profile.md"
     ],
     "entities/EXAMPLE/profile.md": [
       "concepts/EXAMPLE-concept.md",
@@ -6070,14 +6420,14 @@
       "sources/2026-04-17-zhuangzi-language-philosophy.md",
       "entities/庄子/profile.md"
     ],
-    "entities/赵林/profile.md": [
+    "entities/赵林.md": [
       "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
       "entities/康德/profile.md",
       "entities/常天喆/profile.md"
     ],
-    "entities/卫茂平/profile.md": [
+    "entities/赵林/profile.md": [
       "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
-      "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md",
+      "entities/康德/profile.md",
       "entities/常天喆/profile.md"
     ],
     "entities/梁汝波/profile.md": [
@@ -6099,11 +6449,12 @@
       "entities/EXAMPLE/profile.md",
       "entities/EXAMPLE/profile.md"
     ],
-    "entities/华中科技大学/profile.md": [
-      "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md"
-    ],
     "entities/武汉大学/profile.md": [
-      "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md"
+      "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md",
+      "entities/赵林.md"
+    ],
+    "concepts/经略综合研究项目.md": [
+      "entities/章永乐.md"
     ],
     "concepts/爱与黑暗的故事.md": [
       "entities/阿摩司·奥兹.md"
