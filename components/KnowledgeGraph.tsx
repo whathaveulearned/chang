@@ -1,449 +1,1148 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import * as d3 from 'd3'
 import { motion, AnimatePresence } from 'framer-motion'
 
-interface Node {
+// ============================================================
+// Types
+// ============================================================
+
+interface GNode extends d3.SimulationNodeDatum {
   id: string
   title: string
   type: string
   domain: string[]
-  group: number
-  x?: number
-  y?: number
-  fx?: number | null
-  fy?: number | null
-  vx?: number
-  vy?: number
+  degree: number
+  radius: number
+  cluster: number
+  color: string
+  isCenter: boolean
+  virtual: boolean
+  phase: number
+  updated?: string
 }
 
-interface Link {
-  source: string | Node
-  target: string | Node
-  value: number
+interface GLink {
+  source: string | GNode
+  target: string | GNode
+  weight: number
 }
 
-interface GraphData {
-  nodes: Node[]
-  links: Link[]
+interface ClusterInfo {
+  id: number
+  name: string
+  color: string
+  count: number
 }
 
-const typeColors = {
-  entity: '#ffffff',
-  concept: '#a5f3fc',
-  source: '#67e8f9',
-  timeline: '#22d3ee',
-  meta: '#0ea5e9',
-  exploration: '#0891b2',
+interface Graph {
+  nodes: GNode[]
+  links: GLink[]
+  clusters: ClusterInfo[]
+  adjacency: Map<string, Set<string>>
+  nodeById: Map<string, GNode>
 }
 
-const typeLabels = {
+// ============================================================
+// Constants
+// ============================================================
+
+const CENTER_TITLE = '常天喆'
+const CENTER_COLOR = '#fbbf24'
+
+const TYPE_LABELS: Record<string, string> = {
   entity: '实体',
   concept: '概念',
   source: '来源',
   timeline: '时间线',
-  meta: '元数据',
-  exploration: '探索',
+  mention: '隐含',
 }
 
-export default function KnowledgeGraph() {
-  const svgRef = useRef<SVGSVGElement>(null)
-  const [selectedNode, setSelectedNode] = useState<Node | null>(null)
-  const [graphData, setGraphData] = useState<GraphData | null>(null)
-  const simulationRef = useRef<d3.Simulation<Node, Link> | null>(null)
-  const [loading, setLoading] = useState(true)
+const CLUSTER_PALETTE = [
+  '#22d3ee', // cyan
+  '#a78bfa', // violet
+  '#f472b6', // pink
+  '#34d399', // emerald
+  '#fb923c', // orange
+  '#60a5fa', // blue
+  '#e879f9', // fuchsia
+  '#2dd4bf', // teal
+  '#facc15', // yellow
+  '#f87171', // red
+]
+const MISC_COLOR = '#7c8aa0'
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('/data/_index.json')
-        const data = await response.json()
-        
-        const nodes: Node[] = data.pages.map((page: any, index: number) => ({
-          id: page.path,
-          title: page.title,
-          type: page.type,
-          domain: page.domain || [],
-          group: getGroupIndex(page.type),
-        }))
+// ============================================================
+// Data pipeline
+// ============================================================
 
-        const links: Link[] = []
-        const nodeMap = new Map(nodes.map(n => [n.id, n]))
+function normalizeType(t: string): string {
+  if (t === 'source-summary') return 'source'
+  if (t === 'exploration' || t === 'meta') return 'concept'
+  return t
+}
 
-        data.pages.forEach((page: any) => {
-          page.resolved_outbound_links?.forEach((targetId: string) => {
-            if (nodeMap.has(targetId) && nodeMap.has(page.path)) {
-              links.push({
-                source: page.path,
-                target: targetId,
-                value: 1,
-              })
-            }
-          })
-        })
+function buildGraph(data: any): Graph {
+  const rawPages = (data.pages as any[]).filter(
+    (p) => !p.path.includes('EXAMPLE') && !p.title.startsWith('EXAMPLE')
+  )
 
-        setGraphData({ nodes, links })
-        setLoading(false)
-      } catch (error) {
-        console.error('Error loading graph data:', error)
-        setLoading(false)
+  const pathSet = new Set(rawPages.map((p) => p.path))
+  const titleToPath = new Map<string, string>()
+  rawPages.forEach((p) => titleToPath.set(p.title, p.path))
+
+  const nodes: GNode[] = rawPages.map((p) => ({
+    id: p.path,
+    title: p.title,
+    type: normalizeType(p.type),
+    domain: p.domain || [],
+    degree: 0,
+    radius: 4,
+    cluster: -1,
+    color: MISC_COLOR,
+    isCenter: p.title === CENTER_TITLE,
+    virtual: false,
+    phase: Math.random() * Math.PI * 2,
+    updated: p.updated,
+  }))
+
+  // ---- Edges from resolved links (dedupe + weight) ----
+  const edgeMap = new Map<string, GLink>()
+  const addEdge = (a: string, b: string) => {
+    if (a === b) return
+    const key = a < b ? `${a}|${b}` : `${b}|${a}`
+    const e = edgeMap.get(key)
+    if (e) e.weight += 1
+    else edgeMap.set(key, { source: a, target: b, weight: 1 })
+  }
+
+  rawPages.forEach((p) => {
+    ;(p.resolved_outbound_links || []).forEach((t: string) => {
+      if (pathSet.has(t)) addEdge(p.path, t)
+    })
+  })
+
+  // ---- Virtual nodes from frequently mentioned but pageless names ----
+  const mentionCount = new Map<string, number>()
+  const mentionEdges: Array<[string, string]> = []
+  rawPages.forEach((p) => {
+    const seen = new Set<string>()
+    ;(p.outbound_links || []).forEach((name: string) => {
+      if (
+        name.endsWith('.md') ||
+        name.includes('/') ||
+        name.startsWith('EXAMPLE') ||
+        name.length > 24 ||
+        titleToPath.has(name) ||
+        seen.has(name)
+      )
+        return
+      seen.add(name)
+      mentionCount.set(name, (mentionCount.get(name) || 0) + 1)
+      mentionEdges.push([p.path, name])
+    })
+  })
+
+  const virtualIds = new Map<string, string>()
+  mentionCount.forEach((count, name) => {
+    if (count < 2) return
+    const id = `mention:${name}`
+    virtualIds.set(name, id)
+    nodes.push({
+      id,
+      title: name,
+      type: 'mention',
+      domain: [],
+      degree: 0,
+      radius: 3.5,
+      cluster: -1,
+      color: MISC_COLOR,
+      isCenter: false,
+      virtual: true,
+      phase: Math.random() * Math.PI * 2,
+    })
+  })
+  mentionEdges.forEach(([page, name]) => {
+    const vid = virtualIds.get(name)
+    if (vid) addEdge(page, vid)
+  })
+
+  // ---- Degree + prune isolated nodes ----
+  const degree = new Map<string, number>()
+  edgeMap.forEach((e) => {
+    degree.set(e.source as string, (degree.get(e.source as string) || 0) + 1)
+    degree.set(e.target as string, (degree.get(e.target as string) || 0) + 1)
+  })
+  const keptNodes = nodes.filter((n) => (degree.get(n.id) || 0) > 0)
+  const keptIds = new Set(keptNodes.map((n) => n.id))
+  const links = Array.from(edgeMap.values()).filter(
+    (e) => keptIds.has(e.source as string) && keptIds.has(e.target as string)
+  )
+  keptNodes.forEach((n) => (n.degree = degree.get(n.id) || 0))
+
+  // ---- Adjacency (with weights for clustering) ----
+  const adjacency = new Map<string, Set<string>>()
+  const wAdj = new Map<string, Array<[string, number]>>()
+  keptNodes.forEach((n) => {
+    adjacency.set(n.id, new Set())
+    wAdj.set(n.id, [])
+  })
+  links.forEach((e) => {
+    const s = e.source as string
+    const t = e.target as string
+    adjacency.get(s)!.add(t)
+    adjacency.get(t)!.add(s)
+    wAdj.get(s)!.push([t, e.weight])
+    wAdj.get(t)!.push([s, e.weight])
+  })
+
+  // ---- Community detection: weighted label propagation ----
+  // The center node and source/timeline pages bridge unrelated topics,
+  // so they sit out of voting and get assigned by neighborhood afterwards.
+  const nodeById = new Map(keptNodes.map((n) => [n.id, n]))
+  const isNeutral = (n: GNode) =>
+    n.isCenter || n.type === 'source' || n.type === 'timeline'
+
+  const labels = new Map<string, number>()
+  keptNodes.forEach((n, i) => labels.set(n.id, i))
+
+  const voters = keptNodes
+    .filter((n) => !isNeutral(n))
+    .sort((a, b) => b.degree - a.degree)
+
+  for (let iter = 0; iter < 20; iter++) {
+    let changed = 0
+    for (const n of voters) {
+      const tally = new Map<number, number>()
+      for (const [nb, w] of wAdj.get(n.id)!) {
+        const nbNode = nodeById.get(nb)!
+        if (isNeutral(nbNode)) continue
+        const l = labels.get(nb)!
+        tally.set(l, (tally.get(l) || 0) + w)
+      }
+      if (tally.size === 0) continue
+      let best = labels.get(n.id)!
+      let bestW = -1
+      tally.forEach((w, l) => {
+        if (w > bestW || (w === bestW && l === labels.get(n.id))) {
+          bestW = w
+          best = l
+        }
+      })
+      if (best !== labels.get(n.id)) {
+        labels.set(n.id, best)
+        changed++
       }
     }
+    if (changed === 0) break
+  }
 
-    fetchData()
+  // Neutral nodes adopt the majority label among their voting neighbors
+  keptNodes.forEach((n) => {
+    if (!isNeutral(n)) return
+    const tally = new Map<number, number>()
+    for (const [nb, w] of wAdj.get(n.id)!) {
+      const nbNode = nodeById.get(nb)!
+      if (isNeutral(nbNode)) continue
+      const l = labels.get(nb)!
+      tally.set(l, (tally.get(l) || 0) + w)
+    }
+    let best = -1
+    let bestW = -1
+    tally.forEach((w, l) => {
+      if (w > bestW) {
+        bestW = w
+        best = l
+      }
+    })
+    if (best >= 0) labels.set(n.id, best)
+  })
+
+  // ---- Rank clusters, name them after their biggest hub ----
+  const clusterMembers = new Map<number, GNode[]>()
+  keptNodes.forEach((n) => {
+    const l = labels.get(n.id)!
+    if (!clusterMembers.has(l)) clusterMembers.set(l, [])
+    clusterMembers.get(l)!.push(n)
+  })
+  const ranked = Array.from(clusterMembers.entries()).sort(
+    (a, b) => b[1].length - a[1].length
+  )
+
+  const clusters: ClusterInfo[] = []
+  ranked.forEach(([label, members], idx) => {
+    const color = idx < CLUSTER_PALETTE.length ? CLUSTER_PALETTE[idx] : MISC_COLOR
+    // Name the cluster after its biggest entity/concept hub; long source
+    // document titles make terrible constellation names.
+    const sorted = members
+      .filter((m) => !m.isCenter)
+      .sort((a, b) => b.degree - a.degree)
+    const hub =
+      sorted.find(
+        (m) => m.type !== 'source' && m.type !== 'timeline' && m.title.length <= 12
+      ) || sorted[0]
+    const clusterId = idx
+    if (idx < CLUSTER_PALETTE.length && members.length >= 3) {
+      clusters.push({
+        id: clusterId,
+        name: hub ? hub.title : `星系 ${idx + 1}`,
+        color,
+        count: members.length,
+      })
+    }
+    members.forEach((m) => {
+      m.cluster = clusterId
+      m.color = members.length >= 3 && idx < CLUSTER_PALETTE.length ? color : MISC_COLOR
+    })
+  })
+
+  // ---- Visual size: degree-driven ----
+  keptNodes.forEach((n) => {
+    const base = n.virtual ? 2.6 : n.type === 'timeline' ? 5 : 3.2
+    n.radius = Math.min(15, base + Math.sqrt(n.degree) * 1.15)
+    if (n.isCenter) {
+      n.radius = 19
+      n.color = CENTER_COLOR
+    }
+  })
+
+  return { nodes: keptNodes, links, clusters, adjacency, nodeById }
+}
+
+// ============================================================
+// Glow sprite cache (pre-rendered radial gradients)
+// ============================================================
+
+const spriteCache = new Map<string, HTMLCanvasElement>()
+function glowSprite(color: string): HTMLCanvasElement {
+  let c = spriteCache.get(color)
+  if (c) return c
+  c = document.createElement('canvas')
+  c.width = 64
+  c.height = 64
+  const ctx = c.getContext('2d')!
+  const g = ctx.createRadialGradient(32, 32, 0, 32, 32, 32)
+  g.addColorStop(0, color)
+  g.addColorStop(0.25, color + 'aa')
+  g.addColorStop(0.6, color + '33')
+  g.addColorStop(1, color + '00')
+  ctx.fillStyle = g
+  ctx.fillRect(0, 0, 64, 64)
+  spriteCache.set(color, c)
+  return c
+}
+
+// ============================================================
+// Component
+// ============================================================
+
+export default function KnowledgeGraph() {
+  const bgRef = useRef<HTMLCanvasElement>(null)
+  const mainRef = useRef<HTMLCanvasElement>(null)
+  const wrapRef = useRef<HTMLDivElement>(null)
+
+  const [graph, setGraph] = useState<Graph | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [selected, setSelected] = useState<GNode | null>(null)
+  const [query, setQuery] = useState('')
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [hiddenTypes, setHiddenTypes] = useState<Set<string>>(new Set())
+  const [panelOpen, setPanelOpen] = useState(true)
+
+  const graphRef = useRef<Graph | null>(null)
+  const transformRef = useRef(d3.zoomIdentity)
+  const hoverRef = useRef<GNode | null>(null)
+  const selectedRef = useRef<GNode | null>(null)
+  const hiddenRef = useRef<Set<string>>(new Set())
+  const zoomRef = useRef<d3.ZoomBehavior<HTMLCanvasElement, unknown> | null>(null)
+  const sizeRef = useRef({ w: 0, h: 0, dpr: 1 })
+  const searchInputRef = useRef<HTMLInputElement>(null)
+
+  selectedRef.current = selected
+  hiddenRef.current = hiddenTypes
+
+  // Collapse the legend by default on small screens
+  useEffect(() => {
+    if (window.innerWidth < 640) setPanelOpen(false)
   }, [])
 
+  // ---------- Load data ----------
   useEffect(() => {
-    if (!graphData || !svgRef.current) return
-
-    const svg = d3.select(svgRef.current)
-    const width = window.innerWidth
-    const height = window.innerHeight - 100
-
-    svg.selectAll('*').remove()
-
-    const g = svg.append('g')
-
-    const zoom = d3.zoom()
-      .scaleExtent([0.1, 4])
-      .on('zoom', (event: any) => {
-        g.attr('transform', event.transform)
+    fetch('/data/_index.json')
+      .then((r) => r.json())
+      .then((data) => {
+        const g = buildGraph(data)
+        graphRef.current = g
+        setGraph(g)
+        setLoading(false)
       })
-
-    svg.call(zoom as any)
-
-    const link = g.append('g')
-      .selectAll('line')
-      .data(graphData.links)
-      .join('line')
-      .attr('class', 'link')
-      .attr('stroke', '#64748b')
-      .attr('stroke-opacity', 0.3)
-      .attr('stroke-width', 1)
-      .style('filter', 'url(#glow-link)')
-
-    const defs = svg.append('defs')
-
-    defs.append('filter')
-      .attr('id', 'glow-link')
-      .append('feGaussianBlur')
-      .attr('stdDeviation', '2')
-      .attr('result', 'coloredBlur')
-
-    const defs2 = defs.node()
-    const glowLink = d3.select(defs2).select('#glow-link')
-    glowLink.append('feMerge')
-      .selectAll('feMergeNode')
-      .data(['coloredBlur', 'SourceGraphic'])
-      .enter()
-      .append('feMergeNode')
-      .attr('in', (d: any) => d)
-
-    const nodeMap = new Map(graphData.nodes.map(n => [n.id, n]))
-    const centerNode = graphData.nodes.find(n => n.title === '常天喆')
-
-    if (centerNode) {
-      centerNode.fx = width / 2
-      centerNode.fy = height / 2
-    }
-
-    const node = g.append('g')
-      .selectAll('circle')
-      .data(graphData.nodes)
-      .join('circle')
-      .attr('class', 'node')
-      .attr('r', (d) => {
-        if (d.title === '常天喆') return 18
-        return Math.max(3, Math.min(12, 3 + (d.type === 'entity' ? 2 : d.type === 'concept' ? 1.5 : 1)))
+      .catch((e) => {
+        console.error('Failed to load graph data:', e)
+        setLoading(false)
       })
-      .attr('fill', (d) => typeColors[d.type as keyof typeof typeColors] || '#6b7280')
-      .attr('stroke', (d) => d.title === '常天喆' ? '#67e8f9' : '#fff')
-      .attr('stroke-width', (d) => d.title === '常天喆' ? 3 : 1.5)
-      .style('cursor', 'pointer')
-      .style('filter', (d) => d.title === '常天喆' ? 'url(#glow-center)' : 'url(#glow)')
+  }, [])
 
-    const nodeFilter = defs.append('filter')
-      .attr('id', 'glow')
-    nodeFilter.append('feGaussianBlur')
-      .attr('stdDeviation', '3')
-      .attr('result', 'coloredBlur')
-    const glowMerge = nodeFilter.append('feMerge')
-    glowMerge.append('feMergeNode').attr('in', 'coloredBlur')
-    glowMerge.append('feMergeNode').attr('in', 'SourceGraphic')
+  // ---------- Search ----------
+  const searchResults = useMemo(() => {
+    if (!graph || !query.trim()) return []
+    const q = query.trim().toLowerCase()
+    return graph.nodes
+      .filter((n) => n.title.toLowerCase().includes(q))
+      .sort((a, b) => b.degree - a.degree)
+      .slice(0, 8)
+  }, [graph, query])
 
-    const centerFilter = defs.append('filter')
-      .attr('id', 'glow-center')
-    centerFilter.append('feGaussianBlur')
-      .attr('stdDeviation', '6')
-      .attr('result', 'coloredBlur')
-    const centerMerge = centerFilter.append('feMerge')
-    centerMerge.append('feMergeNode').attr('in', 'coloredBlur')
-    centerMerge.append('feMergeNode').attr('in', 'SourceGraphic')
-
-    const stars = g.append('g')
-      .selectAll('circle.star')
-      .data(Array.from({ length: 200 }, (_, i) => ({
-        id: `star-${i}`,
-        x: Math.random() * width,
-        y: Math.random() * height,
-        r: Math.random() * 1.5 + 0.5,
-        opacity: Math.random() * 0.5 + 0.3,
-      })))
-      .join('circle')
-      .attr('class', 'star')
-      .attr('cx', (d) => d.x)
-      .attr('cy', (d) => d.y)
-      .attr('r', (d) => d.r)
-      .attr('fill', '#ffffff')
-      .attr('opacity', (d) => d.opacity)
-
-    const label = g.append('g')
-      .selectAll('text')
-      .data(graphData.nodes)
-      .join('text')
-      .attr('class', 'label')
-      .attr('dy', -12)
-      .attr('text-anchor', 'middle')
-      .attr('fill', '#e2e8f0')
-      .attr('font-size', (d) => d.title === '常天喆' ? '11px' : '8px')
-      .attr('font-weight', (d) => d.title === '常天喆' ? '500' : '300')
-      .text((d) => d.title.length > 20 ? d.title.substring(0, 20) + '...' : d.title)
-      .style('pointer-events', 'none')
-      .style('opacity', 0.95)
-      .style('text-shadow', '0 1px 2px rgba(0,0,0,0.8)')
-
-    node
-      .on('mouseover', (event, d) => {
-        d3.select(event.currentTarget)
-          .transition()
-          .duration(200)
-          .attr('r', (d: any) => {
-            if (d.title === '常天喆') return 24
-            return Math.max(5, Math.min(16, 5 + (d.type === 'entity' ? 3 : d.type === 'concept' ? 2 : 1.5)))
-          })
-          .attr('stroke', '#67e8f9')
-          .attr('stroke-width', (d: any) => d.title === '常天喆' ? 4 : 2)
-        
-        label.filter((l: any) => l.id === d.id)
-          .transition()
-          .duration(200)
-          .attr('font-size', (l: any) => l.title === '常天喆' ? '13px' : '10px')
-          .attr('opacity', 1)
-      })
-      .on('mouseout', (event, d) => {
-        d3.select(event.currentTarget)
-          .transition()
-          .duration(200)
-          .attr('r', (d: any) => {
-            if (d.title === '常天喆') return 18
-            return Math.max(3, Math.min(12, 3 + (d.type === 'entity' ? 2 : d.type === 'concept' ? 1.5 : 1)))
-          })
-          .attr('stroke', (d: any) => d.title === '常天喆' ? '#67e8f9' : '#fff')
-          .attr('stroke-width', (d: any) => d.title === '常天喆' ? 3 : 1.5)
-        
-        label.filter((l: any) => l.id === d.id)
-          .transition()
-          .duration(200)
-          .attr('font-size', (l: any) => l.title === '常天喆' ? '11px' : '8px')
-          .attr('opacity', 0.95)
-      })
-      .on('click', (event, d) => {
-        event.stopPropagation()
-        setSelectedNode(d)
-      })
-      .call(d3.drag<SVGCircleElement, Node>()
-        .on('start', dragstarted)
-        .on('drag', dragged)
-        .on('end', dragended) as any)
-
-    const simulation = d3.forceSimulation(graphData.nodes)
-      .velocityDecay(0.4)
-      .force('link', d3.forceLink(graphData.links).id((d: any) => d.id).distance((d: any) => {
-        const sourceNode = typeof d.source === 'object' ? d.source : nodeMap.get(d.source as string)
-        const targetNode = typeof d.target === 'object' ? d.target : nodeMap.get(d.target as string)
-        if (sourceNode?.title === '常天喆' || targetNode?.title === '常天喆') {
-          return 120
-        }
-        return 100
-      }).strength(1.5))
-      .force('charge', d3.forceManyBody().strength((d: any) => d.title === '常天喆' ? -800 : -150))
-      .force('center', d3.forceCenter(width / 2, height / 2).strength(0.02))
-      .force('collision', d3.forceCollide().radius((d: any) => d.title === '常天喆' ? 30 : 15))
-      .alphaMin(0.001)
-      .on('tick', ticked)
-
-    simulationRef.current = simulation
-
-    function ticked() {
-      link
-        .attr('x1', (d: any) => d.source.x)
-        .attr('y1', (d: any) => d.source.y)
-        .attr('x2', (d: any) => d.target.x)
-        .attr('y2', (d: any) => d.target.y)
-
-      node
-        .attr('cx', (d) => d.x!)
-        .attr('cy', (d) => d.y!)
-
-      label
-        .attr('x', (d) => d.x!)
-        .attr('y', (d) => d.y!)
-    }
-
-    function dragstarted(event: any, d: Node) {
-      if (d.title !== '常天喆') {
-        if (!event.active) simulation.alphaTarget(0.3).restart()
-        d.fx = d.x
-        d.fy = d.y
-      }
-    }
-
-    function dragged(event: any, d: Node) {
-      if (d.title !== '常天喆') {
-        d.fx = event.x
-        d.fy = event.y
-      }
-    }
-
-    function dragended(event: any, d: Node) {
-      if (d.title !== '常天喆') {
-        if (!event.active) simulation.alphaTarget(0)
-        d.fx = null
-        d.fy = null
-      }
-    }
-
-    svg.on('click', () => {
-      setSelectedNode(null)
-    })
-
-    const handleResize = () => {
-      const newWidth = window.innerWidth
-      const newHeight = window.innerHeight - 100
-      simulation.force('center', d3.forceCenter(newWidth / 2, newHeight / 2))
-      
-      if (centerNode) {
-        centerNode.fx = newWidth / 2
-        centerNode.fy = newHeight / 2
-      }
-      
-      stars.each((d: any) => {
-        d.x = Math.random() * newWidth
-        d.y = Math.random() * newHeight
-      })
-      stars
-        .attr('cx', (d: any) => d.x)
-        .attr('cy', (d: any) => d.y)
-      
-      simulation.alpha(0.3).restart()
-    }
-
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [graphData])
-
-  function getGroupIndex(type: string): number {
-    const groups = ['entity', 'concept', 'source', 'timeline', 'meta', 'exploration']
-    return groups.indexOf(type)
+  // ---------- Fly to node ----------
+  const flyTo = (node: GNode, scale = 1.6) => {
+    const canvas = mainRef.current
+    const zoom = zoomRef.current
+    if (!canvas || !zoom || node.x == null) return
+    const { w, h } = sizeRef.current
+    const t = d3.zoomIdentity
+      .translate(w / 2, h / 2)
+      .scale(scale)
+      .translate(-node.x!, -node.y!)
+    d3.select(canvas).transition().duration(900).ease(d3.easeCubicInOut).call(zoom.transform as any, t)
   }
+
+  const selectNode = (node: GNode) => {
+    setSelected(node)
+    flyTo(node)
+  }
+
+  // ---------- Keyboard shortcuts ----------
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setSelected(null)
+        setSearchOpen(false)
+        setQuery('')
+      } else if (e.key === '/' && document.activeElement?.tagName !== 'INPUT') {
+        e.preventDefault()
+        searchInputRef.current?.focus()
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+
+  // ---------- Main canvas setup ----------
+  useEffect(() => {
+    if (!graph || !mainRef.current || !bgRef.current) return
+
+    const canvas = mainRef.current
+    const bgCanvas = bgRef.current
+    const ctx = canvas.getContext('2d')!
+    const bgCtx = bgCanvas.getContext('2d')!
+
+    const resize = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2)
+      const w = window.innerWidth
+      const h = window.innerHeight
+      sizeRef.current = { w, h, dpr }
+      ;[canvas, bgCanvas].forEach((c) => {
+        c.width = w * dpr
+        c.height = h * dpr
+        c.style.width = `${w}px`
+        c.style.height = `${h}px`
+      })
+    }
+    resize()
+
+    // ---- Starfield (screen-space, slight pan parallax) ----
+    const stars = Array.from({ length: 380 }, () => ({
+      x: Math.random(),
+      y: Math.random(),
+      r: Math.random() * 1.3 + 0.3,
+      base: Math.random() * 0.5 + 0.15,
+      amp: Math.random() * 0.35,
+      speed: Math.random() * 0.0015 + 0.0004,
+      phase: Math.random() * Math.PI * 2,
+      layer: Math.random() < 0.5 ? 0.03 : 0.07,
+    }))
+
+    interface Meteor {
+      x: number; y: number; vx: number; vy: number; life: number; max: number
+    }
+    let meteors: Meteor[] = []
+    let nextMeteor = performance.now() + 3000
+
+    // ---- Simulation ----
+    const { nodes, links, nodeById, adjacency } = graph
+    const center = nodes.find((n) => n.isCenter)
+    if (center) {
+      center.fx = 0
+      center.fy = 0
+    }
+
+    const simulation = d3
+      .forceSimulation<GNode>(nodes)
+      .velocityDecay(0.32)
+      .force(
+        'link',
+        d3
+          .forceLink<GNode, any>(links as any)
+          .id((d: any) => d.id)
+          .distance((l: any) => 95 - Math.min(l.weight, 4) * 10)
+          .strength((l: any) => Math.min(1, 0.35 + l.weight * 0.15))
+      )
+      .force(
+        'charge',
+        d3.forceManyBody<GNode>().strength((d) => (d.isCenter ? -1400 : -60 - d.radius * 18))
+      )
+      .force('x', d3.forceX(0).strength(0.025))
+      .force('y', d3.forceY(0).strength(0.03))
+      .force(
+        'collide',
+        d3.forceCollide<GNode>().radius((d) => d.radius + 5)
+      )
+      .alpha(1)
+      .alphaDecay(0.018)
+
+    // ---- Zoom ----
+    const findNode = (sx: number, sy: number): GNode | undefined => {
+      const t = transformRef.current
+      const [x, y] = t.invert([sx, sy])
+      const n = simulation.find(x, y, Math.max(18 / t.k, 14))
+      if (!n) return undefined
+      if (hiddenRef.current.has(n.type)) return undefined
+      return n
+    }
+
+    const zoom = d3
+      .zoom<HTMLCanvasElement, unknown>()
+      .scaleExtent([0.08, 6])
+      .filter((event: any) => {
+        if (event.type === 'mousedown' || event.type === 'touchstart') {
+          const [sx, sy] = d3.pointer(event, canvas)
+          if (findNode(sx, sy)) return false
+        }
+        return !event.button
+      })
+      .on('zoom', (event) => {
+        transformRef.current = event.transform
+      })
+    zoomRef.current = zoom
+
+    const sel = d3.select(canvas)
+    sel.call(zoom as any)
+
+    // Opening shot: drift in from deep space
+    const { w, h } = sizeRef.current
+    const start = d3.zoomIdentity.translate(w / 2, h / 2).scale(0.05)
+    const end = d3.zoomIdentity.translate(w / 2, h / 2).scale(0.55)
+    sel.call(zoom.transform as any, start)
+    sel
+      .transition()
+      .duration(2400)
+      .ease(d3.easeCubicOut)
+      .call(zoom.transform as any, end)
+
+    // ---- Drag ----
+    const drag = d3
+      .drag<HTMLCanvasElement, unknown>()
+      .subject((event: any) => {
+        const [sx, sy] = d3.pointer(event, canvas)
+        const n = findNode(sx, sy)
+        return n && !n.isCenter ? n : (null as any)
+      })
+      .on('start', (event: any) => {
+        if (!event.active) simulation.alphaTarget(0.25).restart()
+        const t = transformRef.current
+        event.subject.fx = t.invertX(event.x)
+        event.subject.fy = t.invertY(event.y)
+      })
+      .on('drag', (event: any) => {
+        const t = transformRef.current
+        event.subject.fx = t.invertX(event.x)
+        event.subject.fy = t.invertY(event.y)
+      })
+      .on('end', (event: any) => {
+        if (!event.active) simulation.alphaTarget(0)
+        event.subject.fx = null
+        event.subject.fy = null
+      })
+    sel.call(drag as any)
+
+    // ---- Hover / click ----
+    let moved = false
+    const onMove = (e: MouseEvent) => {
+      const [sx, sy] = d3.pointer(e, canvas)
+      const n = findNode(sx, sy)
+      hoverRef.current = n || null
+      canvas.style.cursor = n ? 'pointer' : 'grab'
+    }
+    const onDown = () => (moved = false)
+    const onMoveTrack = () => (moved = true)
+    const onClick = (e: MouseEvent) => {
+      if (moved) return
+      const [sx, sy] = d3.pointer(e, canvas)
+      const n = findNode(sx, sy)
+      if (n) {
+        setSelected(n)
+        flyTo(n)
+      } else {
+        setSelected(null)
+      }
+    }
+    canvas.addEventListener('mousemove', onMove)
+    canvas.addEventListener('mousedown', onDown)
+    canvas.addEventListener('mousemove', onMoveTrack)
+    canvas.addEventListener('click', onClick)
+
+    // ---- Render loop ----
+    let raf = 0
+
+    const drawBackground = (time: number) => {
+      const { w, h, dpr } = sizeRef.current
+      bgCtx.setTransform(dpr, 0, 0, dpr, 0, 0)
+      bgCtx.clearRect(0, 0, w, h)
+
+      const t = transformRef.current
+
+      // stars
+      for (const s of stars) {
+        const tw = s.base + Math.sin(time * s.speed + s.phase) * s.amp
+        if (tw <= 0.02) continue
+        const px = (s.x * w + t.x * s.layer + w) % w
+        const py = (s.y * h + t.y * s.layer + h) % h
+        bgCtx.globalAlpha = Math.max(0, Math.min(1, tw))
+        bgCtx.fillStyle = '#cfe2ff'
+        bgCtx.beginPath()
+        bgCtx.arc(px, py, s.r, 0, Math.PI * 2)
+        bgCtx.fill()
+      }
+      bgCtx.globalAlpha = 1
+
+      // meteors
+      if (time > nextMeteor) {
+        nextMeteor = time + 4000 + Math.random() * 6000
+        const fromTop = Math.random() < 0.7
+        meteors.push({
+          x: Math.random() * w * 0.8 + w * 0.2,
+          y: fromTop ? -20 : Math.random() * h * 0.3,
+          vx: -(2.5 + Math.random() * 3),
+          vy: 2 + Math.random() * 2.5,
+          life: 0,
+          max: 60 + Math.random() * 40,
+        })
+      }
+      meteors = meteors.filter((m) => m.life < m.max)
+      for (const m of meteors) {
+        m.x += m.vx
+        m.y += m.vy
+        m.life++
+        const fade = Math.sin((m.life / m.max) * Math.PI)
+        const grad = bgCtx.createLinearGradient(m.x, m.y, m.x - m.vx * 14, m.y - m.vy * 14)
+        grad.addColorStop(0, `rgba(190,225,255,${0.85 * fade})`)
+        grad.addColorStop(1, 'rgba(190,225,255,0)')
+        bgCtx.strokeStyle = grad
+        bgCtx.lineWidth = 1.4
+        bgCtx.beginPath()
+        bgCtx.moveTo(m.x, m.y)
+        bgCtx.lineTo(m.x - m.vx * 14, m.y - m.vy * 14)
+        bgCtx.stroke()
+      }
+    }
+
+    const draw = (time: number) => {
+      const { w, h, dpr } = sizeRef.current
+      const t = transformRef.current
+      const hidden = hiddenRef.current
+      const focus = hoverRef.current || selectedRef.current
+      const neighbors = focus ? adjacency.get(focus.id) : null
+
+      drawBackground(time)
+
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+      ctx.clearRect(0, 0, w, h)
+      ctx.translate(t.x, t.y)
+      ctx.scale(t.k, t.k)
+
+      const visible = (n: GNode) => !hidden.has(n.type)
+      // ambient drift offset, applied uniformly
+      const ox = (n: GNode) => n.x! + Math.sin(time * 0.00045 + n.phase) * 1.4
+      const oy = (n: GNode) => n.y! + Math.cos(time * 0.0004 + n.phase * 1.3) * 1.4
+
+      // ---- nebulas at cluster centroids ----
+      ctx.globalCompositeOperation = 'screen'
+      for (const c of graph.clusters.slice(0, 8)) {
+        let cx = 0, cy = 0, m = 0
+        for (const n of nodes) {
+          if (n.cluster !== c.id || n.x == null || n.y == null) continue
+          cx += n.x
+          cy += n.y
+          m++
+        }
+        if (m < 3) continue
+        cx /= m
+        cy /= m
+        const r = 70 + Math.sqrt(m) * 34
+        const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, r)
+        g.addColorStop(0, c.color + '14')
+        g.addColorStop(0.6, c.color + '0a')
+        g.addColorStop(1, c.color + '00')
+        ctx.fillStyle = g
+        ctx.beginPath()
+        ctx.arc(cx, cy, r, 0, Math.PI * 2)
+        ctx.fill()
+      }
+
+      // ---- links ----
+      ctx.globalCompositeOperation = 'lighter'
+      ctx.lineCap = 'round'
+      for (const l of links) {
+        const s = l.source as GNode
+        const tg = l.target as GNode
+        if (s.x == null || tg.x == null) continue
+        if (!visible(s) || !visible(tg)) continue
+
+        let alpha = 0.1 + Math.min(l.weight, 5) * 0.05
+        let width = 0.6 + Math.min(l.weight, 5) * 0.35
+        let color = s.cluster === tg.cluster ? s.color : '#8aa3c2'
+
+        if (focus) {
+          const touches = s.id === focus.id || tg.id === focus.id
+          if (touches) {
+            alpha = 0.85
+            width += 0.6
+            color = focus.color === MISC_COLOR ? '#b8cce8' : focus.color
+          } else {
+            alpha *= 0.12
+          }
+        }
+
+        const x1 = ox(s), y1 = oy(s), x2 = ox(tg), y2 = oy(tg)
+        const mx = (x1 + x2) / 2, my = (y1 + y2) / 2
+        const dx = x2 - x1, dy = y2 - y1
+        const bend = 0.14
+        ctx.globalAlpha = alpha
+        ctx.strokeStyle = color
+        ctx.lineWidth = width
+        ctx.beginPath()
+        ctx.moveTo(x1, y1)
+        ctx.quadraticCurveTo(mx - dy * bend, my + dx * bend, x2, y2)
+        ctx.stroke()
+      }
+
+      // ---- nodes ----
+      for (const n of nodes) {
+        if (n.x == null || !visible(n)) continue
+        let alpha = n.virtual ? 0.8 : 1
+        if (focus && focus.id !== n.id && !neighbors?.has(n.id)) alpha *= 0.13
+
+        const x = ox(n), y = oy(n)
+        const isFocus = focus?.id === n.id
+
+        // glow
+        const sprite = glowSprite(n.color)
+        const glowR = n.radius * (n.isCenter ? 4.2 + Math.sin(time / 480) * 0.5 : isFocus ? 4.4 : 3.2)
+        ctx.globalAlpha = alpha * (n.isCenter ? 0.95 : isFocus ? 0.9 : 0.55)
+        ctx.drawImage(sprite, x - glowR, y - glowR, glowR * 2, glowR * 2)
+
+        // core
+        ctx.globalAlpha = alpha
+        ctx.globalCompositeOperation = 'source-over'
+        ctx.fillStyle = n.isCenter ? '#fff7e0' : '#ffffff'
+        ctx.beginPath()
+        ctx.arc(x, y, Math.max(1.2, n.radius * 0.42), 0, Math.PI * 2)
+        ctx.fill()
+        ctx.fillStyle = n.color
+        ctx.globalAlpha = alpha * 0.85
+        ctx.beginPath()
+        ctx.arc(x, y, n.radius * (isFocus ? 1.18 : 1), 0, Math.PI * 2)
+        ctx.fill()
+        ctx.fillStyle = '#ffffff'
+        ctx.globalAlpha = alpha * 0.9
+        ctx.beginPath()
+        ctx.arc(x, y, Math.max(1, n.radius * 0.38), 0, Math.PI * 2)
+        ctx.fill()
+
+        // selection ring
+        if (selectedRef.current?.id === n.id) {
+          ctx.globalAlpha = 0.9
+          ctx.strokeStyle = '#ffffff'
+          ctx.lineWidth = 1.2 / t.k
+          ctx.setLineDash([4 / t.k, 4 / t.k])
+          ctx.lineDashOffset = -time / 60
+          ctx.beginPath()
+          ctx.arc(x, y, n.radius + 7 / t.k, 0, Math.PI * 2)
+          ctx.stroke()
+          ctx.setLineDash([])
+        }
+        ctx.globalCompositeOperation = 'lighter'
+      }
+
+      // ---- labels ----
+      ctx.globalCompositeOperation = 'source-over'
+      const k = t.k
+      const minX = -t.x / k, minY = -t.y / k
+      const maxX = (w - t.x) / k, maxY = (h - t.y) / k
+      for (const n of nodes) {
+        if (n.x == null || !visible(n)) continue
+        const x = ox(n), y = oy(n)
+        if (x < minX || x > maxX || y < minY || y > maxY) continue
+
+        const isFocusArea =
+          focus && (focus.id === n.id || neighbors?.has(n.id))
+        const show =
+          n.isCenter ||
+          isFocusArea ||
+          (!focus && (n.degree >= 10 || k > 2 || (k > 1.1 && n.degree >= 4)))
+        if (!show) continue
+        if (focus && !isFocusArea && !n.isCenter) continue
+
+        const fontSize = (n.isCenter ? 14 : focus?.id === n.id ? 13 : 11) / k
+        ctx.font = `${n.isCenter || focus?.id === n.id ? 600 : 400} ${fontSize}px -apple-system, "PingFang SC", sans-serif`
+        ctx.textAlign = 'center'
+        ctx.textBaseline = 'top'
+        const ty = y + n.radius + 4 / k
+        ctx.globalAlpha = focus && !isFocusArea ? 0.3 : 0.95
+        ctx.shadowColor = 'rgba(2,6,18,0.95)'
+        ctx.shadowBlur = 4
+        ctx.fillStyle = focus?.id === n.id ? '#ffffff' : '#c8d8ee'
+        const label = n.title.length > 14 ? n.title.slice(0, 14) + '…' : n.title
+        ctx.fillText(label, x, ty)
+        ctx.shadowBlur = 0
+      }
+      ctx.globalAlpha = 1
+    }
+
+    const loop = (time: number) => {
+      draw(time)
+      raf = requestAnimationFrame(loop)
+    }
+    raf = requestAnimationFrame(loop)
+
+    const onResize = () => {
+      resize()
+      simulation.alpha(0.2).restart()
+    }
+    window.addEventListener('resize', onResize)
+
+    return () => {
+      cancelAnimationFrame(raf)
+      simulation.stop()
+      window.removeEventListener('resize', onResize)
+      canvas.removeEventListener('mousemove', onMove)
+      canvas.removeEventListener('mousedown', onDown)
+      canvas.removeEventListener('mousemove', onMoveTrack)
+      canvas.removeEventListener('click', onClick)
+      sel.on('.zoom', null)
+      sel.on('.drag', null)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [graph])
+
+  // ---------- Derived: selected node's connections ----------
+  const connections = useMemo(() => {
+    if (!selected || !graph) return []
+    const ids = graph.adjacency.get(selected.id)
+    if (!ids) return []
+    return Array.from(ids)
+      .map((id) => graph.nodeById.get(id)!)
+      .filter(Boolean)
+      .sort((a, b) => b.degree - a.degree)
+  }, [selected, graph])
+
+  const toggleType = (type: string) => {
+    setHiddenTypes((prev) => {
+      const next = new Set(prev)
+      if (next.has(type)) next.delete(type)
+      else next.add(type)
+      return next
+    })
+  }
+
+  const resetView = () => {
+    const canvas = mainRef.current
+    const zoom = zoomRef.current
+    if (!canvas || !zoom) return
+    const { w, h } = sizeRef.current
+    setSelected(null)
+    d3.select(canvas)
+      .transition()
+      .duration(900)
+      .ease(d3.easeCubicInOut)
+      .call(zoom.transform as any, d3.zoomIdentity.translate(w / 2, h / 2).scale(0.55))
+  }
+
+  // ============================================================
+  // UI
+  // ============================================================
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-slate-950">
-        <div className="text-xl text-slate-300 animate-pulse">🌌 加载知识星图...</div>
+      <div className="flex flex-col items-center justify-center h-screen bg-[#030712] gap-6">
+        <div className="relative w-16 h-16">
+          <div className="absolute inset-0 rounded-full border-2 border-cyan-400/20" />
+          <div className="absolute inset-0 rounded-full border-t-2 border-cyan-300 animate-spin" />
+          <div className="absolute inset-[26px] rounded-full bg-amber-300 shadow-[0_0_24px_6px_rgba(251,191,36,0.6)]" />
+        </div>
+        <div className="text-sm tracking-[0.4em] text-slate-400">构建知识星图中</div>
       </div>
     )
   }
 
   return (
-    <div className="relative w-full h-screen bg-slate-950 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-900/15 via-slate-950/0 to-slate-950/0 pointer-events-none" />
-      
-      <div className="absolute top-4 left-4 z-10 bg-slate-900/80 backdrop-blur-xl rounded-2xl shadow-2xl p-5 border border-slate-700/50">
-        <h1 className="text-2xl font-bold text-white mb-4">
-          🌟 Chang&apos;s Wiki 知识星图
-        </h1>
-        <div className="space-y-2">
-          {Object.entries(typeLabels).map(([type, label]) => (
-            <div key={type} className="flex items-center gap-3 text-sm">
-              <div 
-                className="w-3.5 h-3.5 rounded-full shadow-lg"
-                style={{ 
-                  backgroundColor: typeColors[type as keyof typeof typeColors],
-                  boxShadow: `0 0 10px ${typeColors[type as keyof typeof typeColors]}`
-                }}
-              />
-              <span className="text-slate-300">{label}</span>
-            </div>
-          ))}
-        </div>
-        <div className="mt-5 pt-4 border-t border-slate-700/50 text-xs text-slate-400 space-y-1">
-          <p>🖱️ 拖拽节点 · 滚轮缩放 · 点击查看详情</p>
-          <p>⭐ 中心亮点：常天喆</p>
-        </div>
-      </div>
-
-      <div className="absolute top-4 right-4 z-10 bg-slate-900/80 backdrop-blur-xl rounded-2xl shadow-2xl p-5 border border-slate-700/50">
-        <div className="text-sm space-y-2">
-          <p className="text-slate-300"><strong>✨ 节点数：</strong>{graphData?.nodes.length}</p>
-          <p className="text-slate-300"><strong>🔗 链接数：</strong>{graphData?.links.length}</p>
-        </div>
-      </div>
-
-      <svg 
-        ref={svgRef}
-        width="100%"
-        height="100%"
-        className="cursor-move"
+    <div ref={wrapRef} className="relative w-full h-screen overflow-hidden bg-[#030712] select-none">
+      {/* deep space backdrop */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse 80% 60% at 30% 20%, rgba(34,60,110,0.25), transparent 60%),' +
+            'radial-gradient(ellipse 70% 60% at 75% 75%, rgba(60,30,90,0.22), transparent 65%),' +
+            'radial-gradient(ellipse 100% 80% at 50% 50%, rgba(8,15,35,0.5), #030712 100%)',
+        }}
+      />
+      <canvas ref={bgRef} className="absolute inset-0" />
+      <canvas ref={mainRef} className="absolute inset-0" />
+      {/* vignette */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse at center, transparent 55%, rgba(1,4,12,0.55) 100%)' }}
       />
 
-      <AnimatePresence>
-        {selectedNode && (
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 20 }}
-            className="absolute bottom-6 right-6 z-10 bg-slate-900/95 backdrop-blur-xl rounded-2xl shadow-2xl p-6 border border-slate-700/50 max-w-md"
+      {/* ===== Identity / control card ===== */}
+      <div className="absolute top-5 left-5 z-20 max-w-[300px]">
+        <motion.div
+          initial={{ opacity: 0, y: -16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="bg-[#0a1222]/70 backdrop-blur-2xl rounded-2xl border border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.5)] overflow-hidden"
+        >
+          <div className="p-5 pb-4">
+            <div className="flex items-center gap-3">
+              <div className="relative w-10 h-10 shrink-0">
+                <div className="absolute inset-0 rounded-full bg-amber-300/90 blur-[10px]" />
+                <div className="absolute inset-[7px] rounded-full bg-gradient-to-br from-amber-100 to-amber-400 shadow-[0_0_18px_4px_rgba(251,191,36,0.55)]" />
+              </div>
+              <div>
+                <h1 className="text-lg font-semibold text-white leading-tight">常天喆 · 知识星图</h1>
+                <p className="text-[11px] text-slate-400 mt-0.5 tracking-wide">
+                  AI 产品经理 · 文学 × 哲学 × AI
+                </p>
+              </div>
+            </div>
+            <p className="mt-3 text-[12px] leading-relaxed text-slate-400">
+              我读过的、想过的、做过的，都在这片星空里。每一簇星系是一个思想领域，连线是它们之间真实的引用关系。
+            </p>
+          </div>
+
+          <button
+            onClick={() => setPanelOpen((v) => !v)}
+            className="w-full px-5 py-2 text-[11px] text-slate-500 hover:text-slate-300 border-t border-white/5 flex items-center justify-between transition-colors"
           >
-            <button
-              onClick={() => setSelectedNode(null)}
-              className="absolute top-4 right-4 text-slate-400 hover:text-slate-200 transition-colors"
-            >
-              ✕
-            </button>
-            <h2 className="text-xl font-bold text-white mb-4">
-              {selectedNode.title}
-            </h2>
-            <div className="space-y-3 text-sm">
-              <p className="flex items-center gap-3">
-                <span className="text-slate-400">类型：</span>
-                <span className="inline-flex items-center gap-2">
-                  <div 
-                    className="w-2.5 h-2.5 rounded-full shadow-lg"
-                    style={{ 
-                      backgroundColor: typeColors[selectedNode.type as keyof typeof typeColors],
-                      boxShadow: `0 0 8px ${typeColors[selectedNode.type as keyof typeof typeColors]}`
-                    }}
-                  />
-                  <span className="text-slate-200">{typeLabels[selectedNode.type as keyof typeof typeLabels]}</span>
-                </span>
-              </p>
-              {selectedNode.domain.length > 0 && (
-                <p>
-                  <span className="text-slate-400">领域：</span>
-                  <span className="ml-2 flex flex-wrap gap-1.5">
-                    {selectedNode.domain.map((d, i) => (
-                      <span key={i} className="px-2.5 py-1 bg-slate-800 rounded-full text-slate-300 text-xs border border-slate-700">
-                        {d}
-                      </span>
+            <span>星系图例 & 筛选</span>
+            <span>{panelOpen ? '收起 ▲' : '展开 ▼'}</span>
+          </button>
+
+          <AnimatePresence initial={false}>
+            {panelOpen && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                className="overflow-hidden"
+              >
+                <div className="px-5 pb-4">
+                  {/* cluster legend */}
+                  <div className="space-y-1.5 max-h-[180px] overflow-y-auto pr-1 thin-scroll">
+                    {graph?.clusters.slice(0, 8).map((c) => (
+                      <div key={c.id} className="flex items-center gap-2.5 text-[12px]">
+                        <span
+                          className="w-2 h-2 rounded-full shrink-0"
+                          style={{ backgroundColor: c.color, boxShadow: `0 0 8px ${c.color}` }}
+                        />
+                        <span className="text-slate-300 truncate">{c.name} 星系</span>
+                        <span className="ml-auto text-slate-600 tabular-nums">{c.count}</span>
+                      </div>
                     ))}
+                  </div>
+
+                  {/* type filters */}
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {Object.entries(TYPE_LABELS).map(([type, label]) => {
+                      const off = hiddenTypes.has(type)
+                      return (
+                        <button
+                          key={type}
+                          onClick={() => toggleType(type)}
+                          className={`px-2.5 py-1 rounded-full text-[11px] border transition-all ${
+                            off
+                              ? 'border-white/5 text-slate-600 bg-transparent'
+                              : 'border-white/15 text-slate-200 bg-white/5'
+                          }`}
+                        >
+                          {label}
+                        </button>
+                      )
+                    })}
+                  </div>
+
+                  {/* stats */}
+                  <div className="mt-4 pt-3 border-t border-white/5 flex gap-4 text-[11px] text-slate-500">
+                    <span>✦ {graph?.nodes.length} 星体</span>
+                    <span>⟡ {graph?.links.length} 连线</span>
+                    <span>❖ {graph?.clusters.length} 星系</span>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
+      </div>
+
+      {/* ===== Search ===== */}
+      <div className="absolute top-5 left-1/2 -translate-x-1/2 z-20 w-[300px] hidden sm:block">
+        <motion.div
+          initial={{ opacity: 0, y: -16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          className="relative"
+        >
+          <input
+            ref={searchInputRef}
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value)
+              setSearchOpen(true)
+            }}
+            onFocus={() => setSearchOpen(true)}
+            placeholder="搜索星体…（按 / 聚焦）"
+            className="w-full px-4 py-2.5 rounded-xl bg-[#0a1222]/70 backdrop-blur-2xl border border-white/10 text-sm text-slate-200 placeholder-slate-500 outline-none focus:border-cyan-400/40 transition-colors shadow-[0_8px_40px_rgba(0,0,0,0.5)]"
+          />
+          <AnimatePresence>
+            {searchOpen && searchResults.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: -6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                className="absolute mt-2 w-full bg-[#0a1222]/90 backdrop-blur-2xl rounded-xl border border-white/10 overflow-hidden shadow-2xl"
+              >
+                {searchResults.map((n) => (
+                  <button
+                    key={n.id}
+                    onClick={() => {
+                      selectNode(n)
+                      setSearchOpen(false)
+                      setQuery('')
+                    }}
+                    className="w-full px-4 py-2.5 flex items-center gap-2.5 text-left hover:bg-white/5 transition-colors"
+                  >
+                    <span
+                      className="w-2 h-2 rounded-full shrink-0"
+                      style={{ backgroundColor: n.color, boxShadow: `0 0 6px ${n.color}` }}
+                    />
+                    <span className="text-sm text-slate-200 truncate">{n.title}</span>
+                    <span className="ml-auto text-[10px] text-slate-500">
+                      {TYPE_LABELS[n.type] || n.type} · {n.degree}
+                    </span>
+                  </button>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
+      </div>
+
+      {/* ===== Reset view ===== */}
+      <div className="absolute bottom-5 left-5 z-20 flex items-center gap-3">
+        <button
+          onClick={resetView}
+          className="px-3.5 py-2 rounded-xl bg-[#0a1222]/70 backdrop-blur-2xl border border-white/10 text-[12px] text-slate-300 hover:text-white hover:border-white/25 transition-all"
+        >
+          ⊙ 回到全景
+        </button>
+        <span className="text-[11px] text-slate-600 hidden md:inline">
+          拖拽星体 · 滚轮缩放 · 点击查看 · Esc 取消
+        </span>
+      </div>
+
+      {/* ===== Detail panel ===== */}
+      <AnimatePresence>
+        {selected && (
+          <motion.div
+            key={selected.id}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 40 }}
+            transition={{ type: 'spring', damping: 26, stiffness: 300 }}
+            className="absolute top-5 right-5 bottom-5 z-20 w-[320px] max-w-[calc(100vw-40px)] flex flex-col bg-[#0a1222]/75 backdrop-blur-2xl rounded-2xl border border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.5)] overflow-hidden"
+          >
+            <div className="p-5 pb-4 border-b border-white/5">
+              <button
+                onClick={() => setSelected(null)}
+                className="absolute top-4 right-4 w-7 h-7 rounded-lg flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/10 transition-all"
+              >
+                ✕
+              </button>
+              <div className="flex items-center gap-2.5 pr-8">
+                <span
+                  className="w-3 h-3 rounded-full shrink-0"
+                  style={{ backgroundColor: selected.color, boxShadow: `0 0 12px ${selected.color}` }}
+                />
+                <h2 className="text-lg font-semibold text-white leading-snug">{selected.title}</h2>
+              </div>
+              <div className="mt-3 flex flex-wrap items-center gap-1.5">
+                <span className="px-2 py-0.5 rounded-full text-[11px] bg-white/5 border border-white/10 text-slate-300">
+                  {TYPE_LABELS[selected.type] || selected.type}
+                </span>
+                {graph?.clusters.find((c) => c.id === selected.cluster) && (
+                  <span
+                    className="px-2 py-0.5 rounded-full text-[11px] border"
+                    style={{
+                      color: selected.color,
+                      borderColor: selected.color + '55',
+                      backgroundColor: selected.color + '14',
+                    }}
+                  >
+                    {graph.clusters.find((c) => c.id === selected.cluster)!.name} 星系
                   </span>
+                )}
+                {selected.domain.map((d) => (
+                  <span
+                    key={d}
+                    className="px-2 py-0.5 rounded-full text-[11px] bg-white/5 border border-white/10 text-slate-400"
+                  >
+                    {d}
+                  </span>
+                ))}
+              </div>
+              {selected.virtual && (
+                <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
+                  这是一颗「隐含星体」—— 被 {selected.degree} 个页面引用，但尚未拥有自己的页面。
                 </p>
               )}
-              <p className="text-slate-500 text-xs mt-4 pt-3 border-t border-slate-700/50">
-                路径：{selectedNode.id}
-              </p>
+            </div>
+
+            <div className="px-5 py-3 text-[11px] text-slate-500 flex items-center justify-between">
+              <span>{connections.length} 条关联</span>
+              {selected.updated && <span>更新于 {selected.updated}</span>}
+            </div>
+
+            <div className="flex-1 overflow-y-auto px-3 pb-3 thin-scroll">
+              {connections.map((n) => (
+                <button
+                  key={n.id}
+                  onClick={() => selectNode(n)}
+                  className="w-full px-3 py-2 rounded-xl flex items-center gap-2.5 text-left hover:bg-white/5 transition-colors group"
+                >
+                  <span
+                    className="w-2 h-2 rounded-full shrink-0"
+                    style={{ backgroundColor: n.color, boxShadow: `0 0 6px ${n.color}` }}
+                  />
+                  <span className="text-[13px] text-slate-300 group-hover:text-white truncate transition-colors">
+                    {n.title}
+                  </span>
+                  <span className="ml-auto text-[10px] text-slate-600 shrink-0">
+                    {TYPE_LABELS[n.type] || n.type}
+                  </span>
+                </button>
+              ))}
             </div>
           </motion.div>
         )}

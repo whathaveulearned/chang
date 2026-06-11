@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Chang's Wiki - Knowledge Graph",
-  description: "常天喆的个人知识库知识图谱",
+  title: "常天喆 · 知识星图",
+  description: "常天喆的个人知识宇宙 —— 文学 × 哲学 × AI，每一簇星系是一个思想领域",
 };
 
 export default function RootLayout({
