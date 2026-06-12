@@ -5,28 +5,55 @@ import * as d3 from 'd3'
 import { motion, AnimatePresence } from 'framer-motion'
 
 // ============================================================
-// Types
+// Types — mirror public/data/graph.json (built by scripts/build_graph.py)
 // ============================================================
+
+interface RawNode {
+  id: string
+  title: string
+  type: string
+  domain: string[]
+  tags: string[]
+  judgment: string
+  confidence: string
+  updated: string
+  summary: string
+  degree: number
+  ghost: boolean
+}
+
+interface RawLink {
+  source: string
+  target: string
+  weight: number
+  kinds: string[]
+}
 
 interface GNode extends d3.SimulationNodeDatum {
   id: string
   title: string
   type: string
   domain: string[]
+  tags: string[]
+  judgment: string
+  confidence: string
+  updated: string
+  summary: string
   degree: number
+  ghost: boolean
   radius: number
   cluster: number
   color: string
   isCenter: boolean
-  virtual: boolean
   phase: number
-  updated?: string
 }
 
 interface GLink {
   source: string | GNode
   target: string | GNode
   weight: number
+  kinds: string[]
+  primaryKind: string
 }
 
 interface ClusterInfo {
@@ -50,14 +77,25 @@ interface Graph {
 
 const CENTER_TITLE = '常天喆'
 const CENTER_COLOR = '#fbbf24'
+const MISC_COLOR = '#7c8aa0'
 
 const TYPE_LABELS: Record<string, string> = {
   entity: '实体',
   concept: '概念',
   source: '来源',
+  'source-summary': '来源',
   timeline: '时间线',
-  mention: '隐含',
 }
+
+const KIND_LABELS: Record<string, string> = {
+  related: '关联',
+  link: '引用',
+  source: '出处',
+  tag: '同主题',
+}
+
+// edge priority: which kind defines an edge's look when it has several
+const KIND_PRIORITY = ['related', 'source', 'link', 'tag']
 
 const CLUSTER_PALETTE = [
   '#22d3ee', // cyan
@@ -70,154 +108,68 @@ const CLUSTER_PALETTE = [
   '#2dd4bf', // teal
   '#facc15', // yellow
   '#f87171', // red
+  '#c084fc', // purple
+  '#4ade80', // green
 ]
-const MISC_COLOR = '#7c8aa0'
 
 // ============================================================
-// Data pipeline
+// Data pipeline — consume graph.json, cluster, lay out
 // ============================================================
 
-function normalizeType(t: string): string {
-  if (t === 'source-summary') return 'source'
-  if (t === 'exploration' || t === 'meta') return 'concept'
-  return t
-}
-
-function buildGraph(data: any): Graph {
-  const rawPages = (data.pages as any[]).filter(
-    (p) => !p.path.includes('EXAMPLE') && !p.title.startsWith('EXAMPLE')
-  )
-
-  const pathSet = new Set(rawPages.map((p) => p.path))
-  const titleToPath = new Map<string, string>()
-  rawPages.forEach((p) => titleToPath.set(p.title, p.path))
-
-  const nodes: GNode[] = rawPages.map((p) => ({
-    id: p.path,
-    title: p.title,
-    type: normalizeType(p.type),
-    domain: p.domain || [],
-    degree: 0,
+function buildGraph(data: { nodes: RawNode[]; links: RawLink[] }): Graph {
+  const nodes: GNode[] = data.nodes.map((n) => ({
+    ...n,
     radius: 4,
     cluster: -1,
     color: MISC_COLOR,
-    isCenter: p.title === CENTER_TITLE,
-    virtual: false,
+    isCenter: n.title === CENTER_TITLE,
     phase: Math.random() * Math.PI * 2,
-    updated: p.updated,
   }))
 
-  // ---- Edges from resolved links (dedupe + weight) ----
-  const edgeMap = new Map<string, GLink>()
-  const addEdge = (a: string, b: string) => {
-    if (a === b) return
-    const key = a < b ? `${a}|${b}` : `${b}|${a}`
-    const e = edgeMap.get(key)
-    if (e) e.weight += 1
-    else edgeMap.set(key, { source: a, target: b, weight: 1 })
-  }
+  const nodeById = new Map(nodes.map((n) => [n.id, n]))
 
-  rawPages.forEach((p) => {
-    ;(p.resolved_outbound_links || []).forEach((t: string) => {
-      if (pathSet.has(t)) addEdge(p.path, t)
-    })
-  })
+  const links: GLink[] = data.links
+    .filter((l) => nodeById.has(l.source) && nodeById.has(l.target))
+    .map((l) => ({
+      source: l.source,
+      target: l.target,
+      weight: l.weight,
+      kinds: l.kinds,
+      primaryKind: KIND_PRIORITY.find((k) => l.kinds.includes(k)) || 'link',
+    }))
 
-  // ---- Virtual nodes from frequently mentioned but pageless names ----
-  const mentionCount = new Map<string, number>()
-  const mentionEdges: Array<[string, string]> = []
-  rawPages.forEach((p) => {
-    const seen = new Set<string>()
-    ;(p.outbound_links || []).forEach((name: string) => {
-      if (
-        name.endsWith('.md') ||
-        name.includes('/') ||
-        name.startsWith('EXAMPLE') ||
-        name.length > 24 ||
-        titleToPath.has(name) ||
-        seen.has(name)
-      )
-        return
-      seen.add(name)
-      mentionCount.set(name, (mentionCount.get(name) || 0) + 1)
-      mentionEdges.push([p.path, name])
-    })
-  })
-
-  const virtualIds = new Map<string, string>()
-  mentionCount.forEach((count, name) => {
-    if (count < 2) return
-    const id = `mention:${name}`
-    virtualIds.set(name, id)
-    nodes.push({
-      id,
-      title: name,
-      type: 'mention',
-      domain: [],
-      degree: 0,
-      radius: 3.5,
-      cluster: -1,
-      color: MISC_COLOR,
-      isCenter: false,
-      virtual: true,
-      phase: Math.random() * Math.PI * 2,
-    })
-  })
-  mentionEdges.forEach(([page, name]) => {
-    const vid = virtualIds.get(name)
-    if (vid) addEdge(page, vid)
-  })
-
-  // ---- Degree + prune isolated nodes ----
-  const degree = new Map<string, number>()
-  edgeMap.forEach((e) => {
-    degree.set(e.source as string, (degree.get(e.source as string) || 0) + 1)
-    degree.set(e.target as string, (degree.get(e.target as string) || 0) + 1)
-  })
-  const keptNodes = nodes.filter((n) => (degree.get(n.id) || 0) > 0)
-  const keptIds = new Set(keptNodes.map((n) => n.id))
-  const links = Array.from(edgeMap.values()).filter(
-    (e) => keptIds.has(e.source as string) && keptIds.has(e.target as string)
-  )
-  keptNodes.forEach((n) => (n.degree = degree.get(n.id) || 0))
-
-  // ---- Adjacency (with weights for clustering) ----
+  // ---- adjacency + weighted adjacency ----
   const adjacency = new Map<string, Set<string>>()
   const wAdj = new Map<string, Array<[string, number]>>()
-  keptNodes.forEach((n) => {
+  nodes.forEach((n) => {
     adjacency.set(n.id, new Set())
     wAdj.set(n.id, [])
   })
-  links.forEach((e) => {
-    const s = e.source as string
-    const t = e.target as string
+  links.forEach((l) => {
+    const s = l.source as string
+    const t = l.target as string
     adjacency.get(s)!.add(t)
     adjacency.get(t)!.add(s)
-    wAdj.get(s)!.push([t, e.weight])
-    wAdj.get(t)!.push([s, e.weight])
+    wAdj.get(s)!.push([t, l.weight])
+    wAdj.get(t)!.push([s, l.weight])
   })
 
-  // ---- Community detection: weighted label propagation ----
-  // The center node and source/timeline pages bridge unrelated topics,
-  // so they sit out of voting and get assigned by neighborhood afterwards.
-  const nodeById = new Map(keptNodes.map((n) => [n.id, n]))
+  // ---- community detection: weighted label propagation ----
+  // Center + source/timeline pages bridge unrelated topics, so they sit out
+  // of voting and adopt a neighborhood label afterwards.
   const isNeutral = (n: GNode) =>
-    n.isCenter || n.type === 'source' || n.type === 'timeline'
+    n.isCenter || n.type === 'source' || n.type === 'source-summary' || n.type === 'timeline'
 
   const labels = new Map<string, number>()
-  keptNodes.forEach((n, i) => labels.set(n.id, i))
+  nodes.forEach((n, i) => labels.set(n.id, i))
+  const voters = nodes.filter((n) => !isNeutral(n)).sort((a, b) => b.degree - a.degree)
 
-  const voters = keptNodes
-    .filter((n) => !isNeutral(n))
-    .sort((a, b) => b.degree - a.degree)
-
-  for (let iter = 0; iter < 20; iter++) {
+  for (let iter = 0; iter < 24; iter++) {
     let changed = 0
     for (const n of voters) {
       const tally = new Map<number, number>()
       for (const [nb, w] of wAdj.get(n.id)!) {
-        const nbNode = nodeById.get(nb)!
-        if (isNeutral(nbNode)) continue
+        if (isNeutral(nodeById.get(nb)!)) continue
         const l = labels.get(nb)!
         tally.set(l, (tally.get(l) || 0) + w)
       }
@@ -238,13 +190,11 @@ function buildGraph(data: any): Graph {
     if (changed === 0) break
   }
 
-  // Neutral nodes adopt the majority label among their voting neighbors
-  keptNodes.forEach((n) => {
+  nodes.forEach((n) => {
     if (!isNeutral(n)) return
     const tally = new Map<number, number>()
     for (const [nb, w] of wAdj.get(n.id)!) {
-      const nbNode = nodeById.get(nb)!
-      if (isNeutral(nbNode)) continue
+      if (isNeutral(nodeById.get(nb)!)) continue
       const l = labels.get(nb)!
       tally.set(l, (tally.get(l) || 0) + w)
     }
@@ -259,59 +209,48 @@ function buildGraph(data: any): Graph {
     if (best >= 0) labels.set(n.id, best)
   })
 
-  // ---- Rank clusters, name them after their biggest hub ----
-  const clusterMembers = new Map<number, GNode[]>()
-  keptNodes.forEach((n) => {
+  // ---- rank + name clusters ----
+  const members = new Map<number, GNode[]>()
+  nodes.forEach((n) => {
     const l = labels.get(n.id)!
-    if (!clusterMembers.has(l)) clusterMembers.set(l, [])
-    clusterMembers.get(l)!.push(n)
+    if (!members.has(l)) members.set(l, [])
+    members.get(l)!.push(n)
   })
-  const ranked = Array.from(clusterMembers.entries()).sort(
-    (a, b) => b[1].length - a[1].length
-  )
+  const ranked = Array.from(members.entries()).sort((a, b) => b[1].length - a[1].length)
 
   const clusters: ClusterInfo[] = []
-  ranked.forEach(([label, members], idx) => {
-    const color = idx < CLUSTER_PALETTE.length ? CLUSTER_PALETTE[idx] : MISC_COLOR
-    // Name the cluster after its biggest entity/concept hub; long source
-    // document titles make terrible constellation names.
-    const sorted = members
-      .filter((m) => !m.isCenter)
-      .sort((a, b) => b.degree - a.degree)
+  ranked.forEach(([, mem], idx) => {
+    const usePalette = idx < CLUSTER_PALETTE.length && mem.length >= 3
+    const color = usePalette ? CLUSTER_PALETTE[idx] : MISC_COLOR
+    const sorted = mem.filter((m) => !m.isCenter).sort((a, b) => b.degree - a.degree)
     const hub =
-      sorted.find(
-        (m) => m.type !== 'source' && m.type !== 'timeline' && m.title.length <= 12
-      ) || sorted[0]
-    const clusterId = idx
-    if (idx < CLUSTER_PALETTE.length && members.length >= 3) {
-      clusters.push({
-        id: clusterId,
-        name: hub ? hub.title : `星系 ${idx + 1}`,
-        color,
-        count: members.length,
-      })
+      sorted.find((m) => m.type === 'entity' && m.title.length <= 10) ||
+      sorted.find((m) => m.type !== 'source' && m.type !== 'source-summary' && m.type !== 'timeline' && m.title.length <= 12) ||
+      sorted[0]
+    if (usePalette) {
+      clusters.push({ id: idx, name: hub ? hub.title : `星系 ${idx + 1}`, color, count: mem.length })
     }
-    members.forEach((m) => {
-      m.cluster = clusterId
-      m.color = members.length >= 3 && idx < CLUSTER_PALETTE.length ? color : MISC_COLOR
+    mem.forEach((m) => {
+      m.cluster = idx
+      m.color = usePalette ? color : MISC_COLOR
     })
   })
 
-  // ---- Visual size: degree-driven ----
-  keptNodes.forEach((n) => {
-    const base = n.virtual ? 2.6 : n.type === 'timeline' ? 5 : 3.2
-    n.radius = Math.min(15, base + Math.sqrt(n.degree) * 1.15)
+  // ---- visual size ----
+  nodes.forEach((n) => {
+    const base = n.ghost ? 3 : n.type === 'timeline' ? 5 : 3.4
+    n.radius = Math.min(16, base + Math.sqrt(n.degree) * 1.2)
     if (n.isCenter) {
-      n.radius = 19
+      n.radius = 20
       n.color = CENTER_COLOR
     }
   })
 
-  return { nodes: keptNodes, links, clusters, adjacency, nodeById }
+  return { nodes, links, clusters, adjacency, nodeById }
 }
 
 // ============================================================
-// Glow sprite cache (pre-rendered radial gradients)
+// Glow sprite cache
 // ============================================================
 
 const spriteCache = new Map<string, HTMLCanvasElement>()
@@ -347,7 +286,7 @@ export default function KnowledgeGraph() {
   const [selected, setSelected] = useState<GNode | null>(null)
   const [query, setQuery] = useState('')
   const [searchOpen, setSearchOpen] = useState(false)
-  const [hiddenTypes, setHiddenTypes] = useState<Set<string>>(new Set())
+  const [hiddenKinds, setHiddenKinds] = useState<Set<string>>(new Set())
   const [panelOpen, setPanelOpen] = useState(true)
 
   const graphRef = useRef<Graph | null>(null)
@@ -360,16 +299,15 @@ export default function KnowledgeGraph() {
   const searchInputRef = useRef<HTMLInputElement>(null)
 
   selectedRef.current = selected
-  hiddenRef.current = hiddenTypes
+  hiddenRef.current = hiddenKinds
 
-  // Collapse the legend by default on small screens
   useEffect(() => {
     if (window.innerWidth < 640) setPanelOpen(false)
   }, [])
 
   // ---------- Load data ----------
   useEffect(() => {
-    fetch('/data/_index.json')
+    fetch('/data/graph.json')
       .then((r) => r.json())
       .then((data) => {
         const g = buildGraph(data)
@@ -388,21 +326,18 @@ export default function KnowledgeGraph() {
     if (!graph || !query.trim()) return []
     const q = query.trim().toLowerCase()
     return graph.nodes
-      .filter((n) => n.title.toLowerCase().includes(q))
+      .filter((n) => n.title.toLowerCase().includes(q) || n.tags.some((t) => t.toLowerCase().includes(q)))
       .sort((a, b) => b.degree - a.degree)
       .slice(0, 8)
   }, [graph, query])
 
-  // ---------- Fly to node ----------
+  // ---------- Fly-to ----------
   const flyTo = (node: GNode, scale = 1.6) => {
     const canvas = mainRef.current
     const zoom = zoomRef.current
     if (!canvas || !zoom || node.x == null) return
     const { w, h } = sizeRef.current
-    const t = d3.zoomIdentity
-      .translate(w / 2, h / 2)
-      .scale(scale)
-      .translate(-node.x!, -node.y!)
+    const t = d3.zoomIdentity.translate(w / 2, h / 2).scale(scale).translate(-node.x!, -node.y!)
     d3.select(canvas).transition().duration(900).ease(d3.easeCubicInOut).call(zoom.transform as any, t)
   }
 
@@ -411,7 +346,7 @@ export default function KnowledgeGraph() {
     flyTo(node)
   }
 
-  // ---------- Keyboard shortcuts ----------
+  // ---------- Keyboard ----------
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -427,7 +362,7 @@ export default function KnowledgeGraph() {
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
-  // ---------- Main canvas setup ----------
+  // ---------- Canvas ----------
   useEffect(() => {
     if (!graph || !mainRef.current || !bgRef.current) return
 
@@ -450,8 +385,7 @@ export default function KnowledgeGraph() {
     }
     resize()
 
-    // ---- Starfield (screen-space, slight pan parallax) ----
-    const stars = Array.from({ length: 380 }, () => ({
+    const stars = Array.from({ length: 420 }, () => ({
       x: Math.random(),
       y: Math.random(),
       r: Math.random() * 1.3 + 0.3,
@@ -462,13 +396,10 @@ export default function KnowledgeGraph() {
       layer: Math.random() < 0.5 ? 0.03 : 0.07,
     }))
 
-    interface Meteor {
-      x: number; y: number; vx: number; vy: number; life: number; max: number
-    }
+    interface Meteor { x: number; y: number; vx: number; vy: number; life: number; max: number }
     let meteors: Meteor[] = []
-    let nextMeteor = performance.now() + 3000
+    let nextMeteor = performance.now() + 2500
 
-    // ---- Simulation ----
     const { nodes, links, nodeById, adjacency } = graph
     const center = nodes.find((n) => n.isCenter)
     if (center) {
@@ -484,29 +415,20 @@ export default function KnowledgeGraph() {
         d3
           .forceLink<GNode, any>(links as any)
           .id((d: any) => d.id)
-          .distance((l: any) => 95 - Math.min(l.weight, 4) * 10)
-          .strength((l: any) => Math.min(1, 0.35 + l.weight * 0.15))
+          .distance((l: any) => (l.primaryKind === 'tag' ? 150 : 110) - Math.min(l.weight, 5) * 7)
+          .strength((l: any) => Math.min(0.9, (l.primaryKind === 'tag' ? 0.12 : 0.32) + l.weight * 0.1))
       )
-      .force(
-        'charge',
-        d3.forceManyBody<GNode>().strength((d) => (d.isCenter ? -1400 : -60 - d.radius * 18))
-      )
-      .force('x', d3.forceX(0).strength(0.025))
-      .force('y', d3.forceY(0).strength(0.03))
-      .force(
-        'collide',
-        d3.forceCollide<GNode>().radius((d) => d.radius + 5)
-      )
+      .force('charge', d3.forceManyBody<GNode>().strength((d) => (d.isCenter ? -2200 : -120 - d.radius * 26)).distanceMax(900))
+      .force('x', d3.forceX(0).strength(0.012))
+      .force('y', d3.forceY(0).strength(0.016))
+      .force('collide', d3.forceCollide<GNode>().radius((d) => d.radius + 7).strength(0.9))
       .alpha(1)
-      .alphaDecay(0.018)
+      .alphaDecay(0.015)
 
-    // ---- Zoom ----
     const findNode = (sx: number, sy: number): GNode | undefined => {
       const t = transformRef.current
       const [x, y] = t.invert([sx, sy])
       const n = simulation.find(x, y, Math.max(18 / t.k, 14))
-      if (!n) return undefined
-      if (hiddenRef.current.has(n.type)) return undefined
       return n
     }
 
@@ -528,18 +450,12 @@ export default function KnowledgeGraph() {
     const sel = d3.select(canvas)
     sel.call(zoom as any)
 
-    // Opening shot: drift in from deep space
     const { w, h } = sizeRef.current
-    const start = d3.zoomIdentity.translate(w / 2, h / 2).scale(0.05)
-    const end = d3.zoomIdentity.translate(w / 2, h / 2).scale(0.55)
-    sel.call(zoom.transform as any, start)
-    sel
-      .transition()
-      .duration(2400)
-      .ease(d3.easeCubicOut)
-      .call(zoom.transform as any, end)
+    const startT = d3.zoomIdentity.translate(w / 2, h / 2).scale(0.05)
+    const endT = d3.zoomIdentity.translate(w / 2, h / 2).scale(0.5)
+    sel.call(zoom.transform as any, startT)
+    sel.transition().duration(2400).ease(d3.easeCubicOut).call(zoom.transform as any, endT)
 
-    // ---- Drag ----
     const drag = d3
       .drag<HTMLCanvasElement, unknown>()
       .subject((event: any) => {
@@ -565,7 +481,6 @@ export default function KnowledgeGraph() {
       })
     sel.call(drag as any)
 
-    // ---- Hover / click ----
     let moved = false
     const onMove = (e: MouseEvent) => {
       const [sx, sy] = d3.pointer(e, canvas)
@@ -591,17 +506,14 @@ export default function KnowledgeGraph() {
     canvas.addEventListener('mousemove', onMoveTrack)
     canvas.addEventListener('click', onClick)
 
-    // ---- Render loop ----
     let raf = 0
 
     const drawBackground = (time: number) => {
       const { w, h, dpr } = sizeRef.current
       bgCtx.setTransform(dpr, 0, 0, dpr, 0, 0)
       bgCtx.clearRect(0, 0, w, h)
-
       const t = transformRef.current
 
-      // stars
       for (const s of stars) {
         const tw = s.base + Math.sin(time * s.speed + s.phase) * s.amp
         if (tw <= 0.02) continue
@@ -615,7 +527,6 @@ export default function KnowledgeGraph() {
       }
       bgCtx.globalAlpha = 1
 
-      // meteors
       if (time > nextMeteor) {
         nextMeteor = time + 4000 + Math.random() * 6000
         const fromTop = Math.random() < 0.7
@@ -660,14 +571,13 @@ export default function KnowledgeGraph() {
       ctx.translate(t.x, t.y)
       ctx.scale(t.k, t.k)
 
-      const visible = (n: GNode) => !hidden.has(n.type)
-      // ambient drift offset, applied uniformly
+      const linkVisible = (l: GLink) => !hidden.has(l.primaryKind)
       const ox = (n: GNode) => n.x! + Math.sin(time * 0.00045 + n.phase) * 1.4
       const oy = (n: GNode) => n.y! + Math.cos(time * 0.0004 + n.phase * 1.3) * 1.4
 
-      // ---- nebulas at cluster centroids ----
+      // nebulas
       ctx.globalCompositeOperation = 'screen'
-      for (const c of graph.clusters.slice(0, 8)) {
+      for (const c of graph.clusters.slice(0, 10)) {
         let cx = 0, cy = 0, m = 0
         for (const n of nodes) {
           if (n.cluster !== c.id || n.x == null || n.y == null) continue
@@ -689,17 +599,18 @@ export default function KnowledgeGraph() {
         ctx.fill()
       }
 
-      // ---- links ----
+      // links
       ctx.globalCompositeOperation = 'lighter'
       ctx.lineCap = 'round'
       for (const l of links) {
+        if (!linkVisible(l)) continue
         const s = l.source as GNode
         const tg = l.target as GNode
         if (s.x == null || tg.x == null) continue
-        if (!visible(s) || !visible(tg)) continue
 
-        let alpha = 0.1 + Math.min(l.weight, 5) * 0.05
-        let width = 0.6 + Math.min(l.weight, 5) * 0.35
+        const isTag = l.primaryKind === 'tag'
+        let alpha = (isTag ? 0.06 : 0.1) + Math.min(l.weight, 5) * 0.04
+        let width = (l.primaryKind === 'related' ? 0.9 : 0.5) + Math.min(l.weight, 5) * 0.3
         let color = s.cluster === tg.cluster ? s.color : '#8aa3c2'
 
         if (focus) {
@@ -709,7 +620,7 @@ export default function KnowledgeGraph() {
             width += 0.6
             color = focus.color === MISC_COLOR ? '#b8cce8' : focus.color
           } else {
-            alpha *= 0.12
+            alpha *= 0.1
           }
         }
 
@@ -720,46 +631,61 @@ export default function KnowledgeGraph() {
         ctx.globalAlpha = alpha
         ctx.strokeStyle = color
         ctx.lineWidth = width
+        if (isTag && !(focus && (s.id === focus.id || tg.id === focus.id))) {
+          ctx.setLineDash([2, 4])
+        }
         ctx.beginPath()
         ctx.moveTo(x1, y1)
         ctx.quadraticCurveTo(mx - dy * bend, my + dx * bend, x2, y2)
         ctx.stroke()
+        ctx.setLineDash([])
       }
 
-      // ---- nodes ----
+      // nodes
       for (const n of nodes) {
-        if (n.x == null || !visible(n)) continue
-        let alpha = n.virtual ? 0.8 : 1
-        if (focus && focus.id !== n.id && !neighbors?.has(n.id)) alpha *= 0.13
+        if (n.x == null) continue
+        let alpha = n.ghost ? 0.92 : 1
+        if (focus && focus.id !== n.id && !neighbors?.has(n.id)) alpha *= 0.12
 
         const x = ox(n), y = oy(n)
         const isFocus = focus?.id === n.id
 
-        // glow
         const sprite = glowSprite(n.color)
         const glowR = n.radius * (n.isCenter ? 4.2 + Math.sin(time / 480) * 0.5 : isFocus ? 4.4 : 3.2)
-        ctx.globalAlpha = alpha * (n.isCenter ? 0.95 : isFocus ? 0.9 : 0.55)
+        ctx.globalAlpha = alpha * (n.isCenter ? 0.95 : isFocus ? 0.9 : n.ghost ? 0.4 : 0.55)
         ctx.drawImage(sprite, x - glowR, y - glowR, glowR * 2, glowR * 2)
 
-        // core
-        ctx.globalAlpha = alpha
         ctx.globalCompositeOperation = 'source-over'
-        ctx.fillStyle = n.isCenter ? '#fff7e0' : '#ffffff'
-        ctx.beginPath()
-        ctx.arc(x, y, Math.max(1.2, n.radius * 0.42), 0, Math.PI * 2)
-        ctx.fill()
-        ctx.fillStyle = n.color
-        ctx.globalAlpha = alpha * 0.85
-        ctx.beginPath()
-        ctx.arc(x, y, n.radius * (isFocus ? 1.18 : 1), 0, Math.PI * 2)
-        ctx.fill()
-        ctx.fillStyle = '#ffffff'
-        ctx.globalAlpha = alpha * 0.9
-        ctx.beginPath()
-        ctx.arc(x, y, Math.max(1, n.radius * 0.38), 0, Math.PI * 2)
-        ctx.fill()
+        if (n.ghost) {
+          // hollow star: a ring + faint core marks an un-built page
+          ctx.globalAlpha = alpha
+          ctx.beginPath()
+          ctx.arc(x, y, n.radius, 0, Math.PI * 2)
+          ctx.fillStyle = '#0a1222'
+          ctx.fill()
+          ctx.lineWidth = 1.4
+          ctx.strokeStyle = n.color
+          ctx.setLineDash([2.5, 2.5])
+          ctx.stroke()
+          ctx.setLineDash([])
+          ctx.globalAlpha = alpha * 0.85
+          ctx.fillStyle = n.color
+          ctx.beginPath()
+          ctx.arc(x, y, Math.max(1, n.radius * 0.4), 0, Math.PI * 2)
+          ctx.fill()
+        } else {
+          ctx.globalAlpha = alpha
+          ctx.fillStyle = n.color
+          ctx.beginPath()
+          ctx.arc(x, y, n.radius * (isFocus ? 1.18 : 1), 0, Math.PI * 2)
+          ctx.fill()
+          ctx.fillStyle = n.isCenter ? '#fff7e0' : '#ffffff'
+          ctx.globalAlpha = alpha * 0.9
+          ctx.beginPath()
+          ctx.arc(x, y, Math.max(1, n.radius * 0.4), 0, Math.PI * 2)
+          ctx.fill()
+        }
 
-        // selection ring
         if (selectedRef.current?.id === n.id) {
           ctx.globalAlpha = 0.9
           ctx.strokeStyle = '#ffffff'
@@ -774,22 +700,21 @@ export default function KnowledgeGraph() {
         ctx.globalCompositeOperation = 'lighter'
       }
 
-      // ---- labels ----
+      // labels
       ctx.globalCompositeOperation = 'source-over'
       const k = t.k
       const minX = -t.x / k, minY = -t.y / k
       const maxX = (w - t.x) / k, maxY = (h - t.y) / k
       for (const n of nodes) {
-        if (n.x == null || !visible(n)) continue
+        if (n.x == null) continue
         const x = ox(n), y = oy(n)
         if (x < minX || x > maxX || y < minY || y > maxY) continue
 
-        const isFocusArea =
-          focus && (focus.id === n.id || neighbors?.has(n.id))
+        const isFocusArea = focus && (focus.id === n.id || neighbors?.has(n.id))
         const show =
           n.isCenter ||
           isFocusArea ||
-          (!focus && (n.degree >= 10 || k > 2 || (k > 1.1 && n.degree >= 4)))
+          (!focus && (n.degree >= 9 || k > 2 || (k > 1.1 && n.degree >= 4)))
         if (!show) continue
         if (focus && !isFocusArea && !n.isCenter) continue
 
@@ -801,7 +726,7 @@ export default function KnowledgeGraph() {
         ctx.globalAlpha = focus && !isFocusArea ? 0.3 : 0.95
         ctx.shadowColor = 'rgba(2,6,18,0.95)'
         ctx.shadowBlur = 4
-        ctx.fillStyle = focus?.id === n.id ? '#ffffff' : '#c8d8ee'
+        ctx.fillStyle = focus?.id === n.id ? '#ffffff' : n.ghost ? '#9fb2cf' : '#c8d8ee'
         const label = n.title.length > 14 ? n.title.slice(0, 14) + '…' : n.title
         ctx.fillText(label, x, ty)
         ctx.shadowBlur = 0
@@ -835,22 +760,28 @@ export default function KnowledgeGraph() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [graph])
 
-  // ---------- Derived: selected node's connections ----------
+  // ---------- selected node's connections, grouped ----------
   const connections = useMemo(() => {
     if (!selected || !graph) return []
-    const ids = graph.adjacency.get(selected.id)
-    if (!ids) return []
-    return Array.from(ids)
-      .map((id) => graph.nodeById.get(id)!)
-      .filter(Boolean)
-      .sort((a, b) => b.degree - a.degree)
+    const out: Array<{ node: GNode; kinds: string[] }> = []
+    graph.links.forEach((l) => {
+      const s = (typeof l.source === 'object' ? l.source.id : l.source) as string
+      const t = (typeof l.target === 'object' ? l.target.id : l.target) as string
+      let otherId: string | null = null
+      if (s === selected.id) otherId = t
+      else if (t === selected.id) otherId = s
+      if (!otherId) return
+      const node = graph.nodeById.get(otherId)
+      if (node) out.push({ node, kinds: l.kinds })
+    })
+    return out.sort((a, b) => b.node.degree - a.node.degree)
   }, [selected, graph])
 
-  const toggleType = (type: string) => {
-    setHiddenTypes((prev) => {
+  const toggleKind = (kind: string) => {
+    setHiddenKinds((prev) => {
       const next = new Set(prev)
-      if (next.has(type)) next.delete(type)
-      else next.add(type)
+      if (next.has(kind)) next.delete(kind)
+      else next.add(kind)
       return next
     })
   }
@@ -865,7 +796,7 @@ export default function KnowledgeGraph() {
       .transition()
       .duration(900)
       .ease(d3.easeCubicInOut)
-      .call(zoom.transform as any, d3.zoomIdentity.translate(w / 2, h / 2).scale(0.55))
+      .call(zoom.transform as any, d3.zoomIdentity.translate(w / 2, h / 2).scale(0.5))
   }
 
   // ============================================================
@@ -885,9 +816,10 @@ export default function KnowledgeGraph() {
     )
   }
 
+  const ghostCount = graph?.nodes.filter((n) => n.ghost).length || 0
+
   return (
     <div ref={wrapRef} className="relative w-full h-screen overflow-hidden bg-[#030712] select-none">
-      {/* deep space backdrop */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -899,13 +831,12 @@ export default function KnowledgeGraph() {
       />
       <canvas ref={bgRef} className="absolute inset-0" />
       <canvas ref={mainRef} className="absolute inset-0" />
-      {/* vignette */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at center, transparent 55%, rgba(1,4,12,0.55) 100%)' }}
       />
 
-      {/* ===== Identity / control card ===== */}
+      {/* Identity / control card */}
       <div className="absolute top-5 left-5 z-20 max-w-[300px]">
         <motion.div
           initial={{ opacity: 0, y: -16 }}
@@ -921,13 +852,11 @@ export default function KnowledgeGraph() {
               </div>
               <div>
                 <h1 className="text-lg font-semibold text-white leading-tight">常天喆 · 知识星图</h1>
-                <p className="text-[11px] text-slate-400 mt-0.5 tracking-wide">
-                  AI 产品经理 · 文学 × 哲学 × AI
-                </p>
+                <p className="text-[11px] text-slate-400 mt-0.5 tracking-wide">AI 产品经理 · 文学 × 哲学 × AI</p>
               </div>
             </div>
             <p className="mt-3 text-[12px] leading-relaxed text-slate-400">
-              我读过的、想过的、做过的，都在这片星空里。每一簇星系是一个思想领域，连线是它们之间真实的引用关系。
+              我读过的、想过的、做过的，都在这片星空里。每一簇星系是一个思想领域，连线是它们之间真实的关联。
             </p>
           </div>
 
@@ -935,7 +864,7 @@ export default function KnowledgeGraph() {
             onClick={() => setPanelOpen((v) => !v)}
             className="w-full px-5 py-2 text-[11px] text-slate-500 hover:text-slate-300 border-t border-white/5 flex items-center justify-between transition-colors"
           >
-            <span>星系图例 & 筛选</span>
+            <span>星系图例 & 连线筛选</span>
             <span>{panelOpen ? '收起 ▲' : '展开 ▼'}</span>
           </button>
 
@@ -949,9 +878,8 @@ export default function KnowledgeGraph() {
                 className="overflow-hidden"
               >
                 <div className="px-5 pb-4">
-                  {/* cluster legend */}
-                  <div className="space-y-1.5 max-h-[180px] overflow-y-auto pr-1 thin-scroll">
-                    {graph?.clusters.slice(0, 8).map((c) => (
+                  <div className="space-y-1.5 max-h-[170px] overflow-y-auto pr-1 thin-scroll">
+                    {graph?.clusters.slice(0, 10).map((c) => (
                       <div key={c.id} className="flex items-center gap-2.5 text-[12px]">
                         <span
                           className="w-2 h-2 rounded-full shrink-0"
@@ -963,31 +891,31 @@ export default function KnowledgeGraph() {
                     ))}
                   </div>
 
-                  {/* type filters */}
-                  <div className="mt-4 flex flex-wrap gap-1.5">
-                    {Object.entries(TYPE_LABELS).map(([type, label]) => {
-                      const off = hiddenTypes.has(type)
-                      return (
-                        <button
-                          key={type}
-                          onClick={() => toggleType(type)}
-                          className={`px-2.5 py-1 rounded-full text-[11px] border transition-all ${
-                            off
-                              ? 'border-white/5 text-slate-600 bg-transparent'
-                              : 'border-white/15 text-slate-200 bg-white/5'
-                          }`}
-                        >
-                          {label}
-                        </button>
-                      )
-                    })}
+                  <div className="mt-3 pt-3 border-t border-white/5">
+                    <p className="text-[10px] text-slate-500 mb-1.5">连线类型（点击隐藏）</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {Object.entries(KIND_LABELS).map(([kind, label]) => {
+                        const off = hiddenKinds.has(kind)
+                        return (
+                          <button
+                            key={kind}
+                            onClick={() => toggleKind(kind)}
+                            className={`px-2.5 py-1 rounded-full text-[11px] border transition-all ${
+                              off ? 'border-white/5 text-slate-600' : 'border-white/15 text-slate-200 bg-white/5'
+                            }`}
+                          >
+                            {label}
+                          </button>
+                        )
+                      })}
+                    </div>
                   </div>
 
-                  {/* stats */}
-                  <div className="mt-4 pt-3 border-t border-white/5 flex gap-4 text-[11px] text-slate-500">
+                  <div className="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-slate-500">
                     <span>✦ {graph?.nodes.length} 星体</span>
                     <span>⟡ {graph?.links.length} 连线</span>
                     <span>❖ {graph?.clusters.length} 星系</span>
+                    <span>◌ {ghostCount} 未建页</span>
                   </div>
                 </div>
               </motion.div>
@@ -996,7 +924,7 @@ export default function KnowledgeGraph() {
         </motion.div>
       </div>
 
-      {/* ===== Search ===== */}
+      {/* Search */}
       <div className="absolute top-5 left-1/2 -translate-x-1/2 z-20 w-[300px] hidden sm:block">
         <motion.div
           initial={{ opacity: 0, y: -16 }}
@@ -1012,7 +940,7 @@ export default function KnowledgeGraph() {
               setSearchOpen(true)
             }}
             onFocus={() => setSearchOpen(true)}
-            placeholder="搜索星体…（按 / 聚焦）"
+            placeholder="搜索星体 / 标签…（按 / 聚焦）"
             className="w-full px-4 py-2.5 rounded-xl bg-[#0a1222]/70 backdrop-blur-2xl border border-white/10 text-sm text-slate-200 placeholder-slate-500 outline-none focus:border-cyan-400/40 transition-colors shadow-[0_8px_40px_rgba(0,0,0,0.5)]"
           />
           <AnimatePresence>
@@ -1039,7 +967,7 @@ export default function KnowledgeGraph() {
                     />
                     <span className="text-sm text-slate-200 truncate">{n.title}</span>
                     <span className="ml-auto text-[10px] text-slate-500">
-                      {TYPE_LABELS[n.type] || n.type} · {n.degree}
+                      {n.ghost ? '未建页' : TYPE_LABELS[n.type] || n.type} · {n.degree}
                     </span>
                   </button>
                 ))}
@@ -1049,7 +977,7 @@ export default function KnowledgeGraph() {
         </motion.div>
       </div>
 
-      {/* ===== Reset view ===== */}
+      {/* Reset */}
       <div className="absolute bottom-5 left-5 z-20 flex items-center gap-3">
         <button
           onClick={resetView}
@@ -1062,7 +990,7 @@ export default function KnowledgeGraph() {
         </span>
       </div>
 
-      {/* ===== Detail panel ===== */}
+      {/* Detail panel */}
       <AnimatePresence>
         {selected && (
           <motion.div
@@ -1071,7 +999,7 @@ export default function KnowledgeGraph() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 40 }}
             transition={{ type: 'spring', damping: 26, stiffness: 300 }}
-            className="absolute top-5 right-5 bottom-5 z-20 w-[320px] max-w-[calc(100vw-40px)] flex flex-col bg-[#0a1222]/75 backdrop-blur-2xl rounded-2xl border border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.5)] overflow-hidden"
+            className="absolute top-5 right-5 bottom-5 z-20 w-[340px] max-w-[calc(100vw-40px)] flex flex-col bg-[#0a1222]/75 backdrop-blur-2xl rounded-2xl border border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.5)] overflow-hidden"
           >
             <div className="p-5 pb-4 border-b border-white/5">
               <button
@@ -1089,7 +1017,7 @@ export default function KnowledgeGraph() {
               </div>
               <div className="mt-3 flex flex-wrap items-center gap-1.5">
                 <span className="px-2 py-0.5 rounded-full text-[11px] bg-white/5 border border-white/10 text-slate-300">
-                  {TYPE_LABELS[selected.type] || selected.type}
+                  {selected.ghost ? '未建页' : TYPE_LABELS[selected.type] || selected.type}
                 </span>
                 {graph?.clusters.find((c) => c.id === selected.cluster) && (
                   <span
@@ -1103,19 +1031,34 @@ export default function KnowledgeGraph() {
                     {graph.clusters.find((c) => c.id === selected.cluster)!.name} 星系
                   </span>
                 )}
+                {selected.judgment && (
+                  <span className="px-2 py-0.5 rounded-full text-[11px] bg-emerald-500/10 border border-emerald-400/30 text-emerald-300">
+                    {selected.judgment}
+                  </span>
+                )}
                 {selected.domain.map((d) => (
-                  <span
-                    key={d}
-                    className="px-2 py-0.5 rounded-full text-[11px] bg-white/5 border border-white/10 text-slate-400"
-                  >
+                  <span key={d} className="px-2 py-0.5 rounded-full text-[11px] bg-white/5 border border-white/10 text-slate-400">
                     {d}
                   </span>
                 ))}
               </div>
-              {selected.virtual && (
+
+              {selected.summary && (
+                <p className="mt-3 text-[12.5px] leading-relaxed text-slate-300">{selected.summary}</p>
+              )}
+              {selected.ghost && (
                 <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
-                  这是一颗「隐含星体」—— 被 {selected.degree} 个页面引用，但尚未拥有自己的页面。
+                  这是一颗「未建页星体」—— 被 {selected.degree} 处引用，但还没有独立页面。一个等待书写的节点。
                 </p>
+              )}
+              {selected.tags.length > 0 && (
+                <div className="mt-3 flex flex-wrap gap-1">
+                  {selected.tags.slice(0, 8).map((tg) => (
+                    <span key={tg} className="px-1.5 py-0.5 rounded text-[10px] text-slate-500 bg-white/[0.03]">
+                      #{tg}
+                    </span>
+                  ))}
+                </div>
               )}
             </div>
 
@@ -1125,21 +1068,21 @@ export default function KnowledgeGraph() {
             </div>
 
             <div className="flex-1 overflow-y-auto px-3 pb-3 thin-scroll">
-              {connections.map((n) => (
+              {connections.map(({ node, kinds }, i) => (
                 <button
-                  key={n.id}
-                  onClick={() => selectNode(n)}
+                  key={node.id + i}
+                  onClick={() => selectNode(node)}
                   className="w-full px-3 py-2 rounded-xl flex items-center gap-2.5 text-left hover:bg-white/5 transition-colors group"
                 >
                   <span
                     className="w-2 h-2 rounded-full shrink-0"
-                    style={{ backgroundColor: n.color, boxShadow: `0 0 6px ${n.color}` }}
+                    style={{ backgroundColor: node.color, boxShadow: `0 0 6px ${node.color}` }}
                   />
                   <span className="text-[13px] text-slate-300 group-hover:text-white truncate transition-colors">
-                    {n.title}
+                    {node.title}
                   </span>
                   <span className="ml-auto text-[10px] text-slate-600 shrink-0">
-                    {TYPE_LABELS[n.type] || n.type}
+                    {KIND_LABELS[kinds[0]] || kinds[0]}
                   </span>
                 </button>
               ))}
