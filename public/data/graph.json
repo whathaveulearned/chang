@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-12T18:17:22",
-  "node_count": 278,
-  "edge_count": 1138,
-  "ghost_count": 60,
+  "generated_at": "2026-06-12T21:31:35",
+  "node_count": 287,
+  "edge_count": 1312,
+  "ghost_count": 44,
   "nodes": [
     {
       "id": "concepts/AGI.md",
@@ -79,6 +79,28 @@
       "updated": "2026-06-12",
       "summary": "用智能体评估智能体的范式（arXiv:2410.10934），性能优于 LLM-as-a-Judge，为可扩展的自我改进提供丰富奖励信号",
       "degree": 8,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/DPO.md",
+      "title": "DPO",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "llm"
+      ],
+      "tags": [
+        "对齐",
+        "偏好优化",
+        "RLHF",
+        "训练方法"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "Direct Preference Optimization——绕过显式奖励模型、直接在偏好对上优化策略的对齐方法；RLHF 的轻量替代",
+      "degree": 11,
       "ghost": false,
       "private": false
     },
@@ -214,7 +236,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "Reinforcement Learning from Human Feedback的缩写，人类反馈强化学习",
-      "degree": 10,
+      "degree": 11,
       "ghost": false,
       "private": false
     },
@@ -238,7 +260,7 @@
       "confidence": "high",
       "updated": "2026-06-12",
       "summary": "Karpathy 的论点——RLHF 训练的奖励模型只是「vibe check」式代理目标，不是真正解决问题的目标，因此 RLHF 不等于真正的强化学习",
-      "degree": 12,
+      "degree": 15,
       "ghost": false,
       "private": false
     },
@@ -298,7 +320,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "OpenAI的超级对齐项目，目标是引导和控制比人类更聪明的人工智能系统",
-      "degree": 17,
+      "degree": 18,
       "ghost": false,
       "private": false
     },
@@ -363,7 +385,7 @@
       "confidence": "high",
       "updated": "2026-06-12",
       "summary": "intelligence 一词在 OED 中兼有「智能·资讯·情报」三义，其拉丁词根 intelligere（inter「之间」+legere「选择/阅读」）暗合 LLM 挑选词语生成 token 的原理",
-      "degree": 9,
+      "degree": 10,
       "ghost": false,
       "private": false
     },
@@ -419,7 +441,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "庄子哲学中的概念，指寓言、重言、卮言三种言说方式",
-      "degree": 4,
+      "degree": 6,
       "ghost": false,
       "private": false
     },
@@ -437,6 +459,29 @@
       "updated": "2026-04-15",
       "summary": "上下文工程（Context Engineering）是指通过精心设计 System prompt 和 user prompt，将它们改造为模块化、动态化的结构，配合各类信源资源和辅助标签、信号，科学构建高效上下文的技术。",
       "degree": 19,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/上帝存在证明.md",
+      "title": "上帝存在证明",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "theology"
+      ],
+      "tags": [
+        "康德",
+        "安瑟伦",
+        "阿奎那",
+        "本体论证明",
+        "宇宙论证明"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "从安瑟伦的本体论证明、阿奎那的宇宙论证明到康德的总批判——本图谱中该问题群是常天喆康德研究（依赖性论题）的论域",
+      "degree": 11,
       "ghost": false,
       "private": false
     },
@@ -474,7 +519,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "康德批判哲学中的核心概念，指理性在追求无条件者时必然陷入的矛盾",
-      "degree": 14,
+      "degree": 13,
       "ghost": false,
       "private": false
     },
@@ -493,7 +538,31 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "法国文论家朱莉亚·克里斯特娃最早提出的理论术语，用于描述\"同一个文本内部的文本互动作用",
-      "degree": 13,
+      "degree": 16,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/人是绳索.md",
+      "title": "人是绳索",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "ai"
+      ],
+      "tags": [
+        "尼采",
+        "超人",
+        "人机关系",
+        "实践",
+        "欲望",
+        "桥接"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "化用尼采「人是系在兽与超人之间的绳索」——常天喆将超人替换为 AI：人是连接兽与 AI 的绳索。人的位置不在两端，而在过渡与张力之中",
+      "degree": 14,
       "ghost": false,
       "private": false
     },
@@ -512,7 +581,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "RLHF的中文翻译，Reinforcement Learning from Human Feedback",
-      "degree": 10,
+      "degree": 12,
       "ghost": false,
       "private": false
     },
@@ -530,7 +599,7 @@
       "confidence": "high",
       "updated": "2026-04-15",
       "summary": "价值观对齐（Value Alignment）是AI研究领域的重要方向，旨在确保大语言模型等AI系统的行为与人类的价值观和道德准则保持一致。",
-      "degree": 15,
+      "degree": 17,
       "ghost": false,
       "private": false
     },
@@ -574,6 +643,28 @@
       "updated": "2026-04-17",
       "summary": "康德批判哲学中的核心论题之一，涉及理性对存在的依赖关系",
       "degree": 12,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/信仰.md",
+      "title": "信仰",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "theology"
+      ],
+      "tags": [
+        "克尔凯郭尔",
+        "信仰之跃",
+        "那宗教的",
+        "激情"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "克尔凯郭尔意义上的信仰——不是教义认同而是生存的最高激情；凭借荒谬，在客观不确定性中以无限激情持守",
+      "degree": 9,
       "ghost": false,
       "private": false
     },
@@ -634,7 +725,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "康德批判哲学中的核心概念，指理性在追求无条件者时产生的幻相",
-      "degree": 10,
+      "degree": 8,
       "ghost": false,
       "private": false
     },
@@ -653,7 +744,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "福柯在《规训与惩罚》中提出的概念，指一种通过监视来实现规训的权力技术",
-      "degree": 8,
+      "degree": 9,
       "ghost": false,
       "private": false
     },
@@ -709,7 +800,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的核心概念，指个人面向自己的一种严肃关切的态度，一种充满了\"无限激情\"的态度",
-      "degree": 7,
+      "degree": 8,
       "ghost": false,
       "private": false
     },
@@ -784,7 +875,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的概念，\"去成为历史性的东西\"在本质上应当是属于那最初的爱",
-      "degree": 10,
+      "degree": 11,
       "ghost": false,
       "private": false
     },
@@ -821,7 +912,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "卫茂平教授主持的《歌德全集》研究项目，常天喆参与了部分文献的翻译与整理工作",
-      "degree": 6,
+      "degree": 5,
       "ghost": false,
       "private": false
     },
@@ -845,6 +936,32 @@
       "private": false
     },
     {
+      "id": "concepts/复调与对齐.md",
+      "title": "复调与对齐",
+      "type": "concept",
+      "domain": [
+        "literature",
+        "ai",
+        "ethics",
+        "news"
+      ],
+      "tags": [
+        "巴赫金",
+        "复调",
+        "多声部",
+        "价值观对齐",
+        "思想性",
+        "桥接"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "桥接概念——巴赫金的复调与价值观对齐的张力：模型既被要求容纳多声部世界，又被要求在某些事件中不持「过于多样」的立场；对齐难题在思想性维度的文学显形",
+      "degree": 14,
+      "ghost": false,
+      "private": false
+    },
+    {
       "id": "concepts/复调社会.md",
       "title": "复调社会",
       "type": "concept",
@@ -858,7 +975,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "由互文性开出的多声部世界与复调社会",
-      "degree": 7,
+      "degree": 9,
       "ghost": false,
       "private": false
     },
@@ -913,7 +1030,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "由互文性开出的多声部世界与复调社会",
-      "degree": 7,
+      "degree": 9,
       "ghost": false,
       "private": false
     },
@@ -970,7 +1087,33 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "证明上帝存在的一种方式，从世界的存在推导出上帝的存在",
-      "degree": 11,
+      "degree": 9,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/实践世界与欲望.md",
+      "title": "实践世界与欲望",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "ai",
+        "psychoanalysis"
+      ],
+      "tags": [
+        "实践",
+        "欲望",
+        "弗洛伊德",
+        "马克思",
+        "黑格尔",
+        "人机关系",
+        "桥接"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "常天喆对「人为何尚能胜过 AI」的回答：不是更聪明，而是人拥有无限丰富的实践世界与欲望——人在实践不满足处「感知到」AI 的盲区，而非靠理解「意识到」它",
+      "degree": 17,
       "ghost": false,
       "private": false
     },
@@ -990,6 +1133,31 @@
       "updated": "2026-04-17",
       "summary": "一种文体，借非现实的寓言世界表达人类真实情境",
       "degree": 7,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/对齐即承认.md",
+      "title": "对齐即承认",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "ai",
+        "ethics"
+      ],
+      "tags": [
+        "黑格尔",
+        "承认",
+        "RLHF",
+        "价值观对齐",
+        "主奴辩证法",
+        "桥接"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "桥接概念——黑格尔的承认理论与 AI 对齐问题同构：RLHF 让模型在「人类承认」中形成自我，正是主奴辩证法的结构；reward hacking 则是奴隶的狡计",
+      "degree": 17,
       "ghost": false,
       "private": false
     },
@@ -1032,7 +1200,7 @@
       "confidence": "high",
       "updated": "2026-06-12",
       "summary": "Hallucination——大模型生成的、脱离现实世界的符号生产剩余物；常天喆主张幻觉不可根除，没有幻觉就没有泛化",
-      "degree": 12,
+      "degree": 17,
       "ghost": false,
       "private": false
     },
@@ -1090,7 +1258,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "黑格尔提出的辩证法，强调概念的自否定运动，通过辩证运动调和主客二分的矛盾",
-      "degree": 8,
+      "degree": 9,
       "ghost": false,
       "private": false
     },
@@ -1109,7 +1277,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "福柯的重要著作，探讨性话语与权力的关系",
-      "degree": 8,
+      "degree": 9,
       "ghost": false,
       "private": false
     },
@@ -1148,6 +1316,28 @@
       "updated": "2026-04-17",
       "summary": "黑格尔将爱在种属上归为\"感觉\"，认为其不自由、也无直接的伦理内容可言",
       "degree": 4,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/承认.md",
+      "title": "承认",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "german-philosophy"
+      ],
+      "tags": [
+        "黑格尔",
+        "主奴辩证法",
+        "自我意识",
+        "法哲学原理"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "Anerkennung——黑格尔哲学的枢纽概念：自我意识只有在被另一个自我意识承认时才成其为自我意识；主奴辩证法、为承认而斗争由此展开",
+      "degree": 8,
       "ghost": false,
       "private": false
     },
@@ -1246,7 +1436,29 @@
       "confidence": "high",
       "updated": "2026-06-12",
       "summary": "经典新闻学将新闻的根本属性概括为真实性、时效性、思想性——恰好对应大模型当下三大挑战（幻觉、时序、伦理）",
-      "degree": 9,
+      "degree": 10,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/无意识.md",
+      "title": "无意识",
+      "type": "concept",
+      "domain": [
+        "psychoanalysis",
+        "philosophy"
+      ],
+      "tags": [
+        "弗洛伊德",
+        "精神分析",
+        "压抑",
+        "欲望"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "弗洛伊德的奠基概念——心理生活的绝大部分在意识之外运作；在本图谱中与「实践世界与欲望」相连：没有无意识的系统也没有发现自身裂缝的引擎",
+      "degree": 8,
       "ghost": false,
       "private": false
     },
@@ -1270,7 +1482,7 @@
       "confidence": "high",
       "updated": "2026-06-12",
       "summary": "Temporal Generalization Challenge——让训练于固定时间快照的「静态」模型理解分秒必争的动态事实所带来的根本困难",
-      "degree": 9,
+      "degree": 10,
       "ghost": false,
       "private": false
     },
@@ -1290,7 +1502,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的概念，瞬间是永恒与时间的相互触摸",
-      "degree": 9,
+      "degree": 10,
       "ghost": false,
       "private": false
     },
@@ -1327,7 +1539,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "个体的多样性症状的解决归于最高伦理实体",
-      "degree": 2,
+      "degree": 4,
       "ghost": false,
       "private": false
     },
@@ -1347,7 +1559,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "对Superalignment的回看，因为在此之前人类认为Superalignment是一个属于未来的项目，在此之后认为它是一个属于过去的项目",
-      "degree": 6,
+      "degree": 8,
       "ghost": false,
       "private": false
     },
@@ -1367,7 +1579,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "证明上帝存在的一种方式，从上帝的概念推导出上帝的存在",
-      "degree": 13,
+      "degree": 11,
       "ghost": false,
       "private": false
     },
@@ -1394,6 +1606,31 @@
       "private": false
     },
     {
+      "id": "concepts/机器的时间性.md",
+      "title": "机器的时间性",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "ai",
+        "news"
+      ],
+      "tags": [
+        "克尔凯郭尔",
+        "时间",
+        "瞬间",
+        "时序泛化",
+        "知识截止",
+        "桥接"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "桥接概念——克尔凯郭尔的时间哲学与 LLM 时序难题的对读：模型活在参数冻结的凝固过去里，把时间空间化为坐标，恰恰错过了作为质变的「瞬间」；RAG 是回忆，而资讯要求重复",
+      "degree": 17,
+      "ghost": false,
+      "private": false
+    },
+    {
       "id": "concepts/梦的解析.md",
       "title": "梦的解析",
       "type": "concept",
@@ -1408,7 +1645,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "弗洛伊德的重要著作，也是精神分析的核心概念，指对梦的解释",
-      "degree": 8,
+      "degree": 9,
       "ghost": false,
       "private": false
     },
@@ -1431,7 +1668,7 @@
       "confidence": "high",
       "updated": "2026-06-12",
       "summary": "Retrieval-Induced Hallucination——错误的检索结果污染生成、甚至导致更严重幻觉，因为模型倾向于完全相信被喂入的上下文",
-      "degree": 11,
+      "degree": 13,
       "ghost": false,
       "private": false
     },
@@ -1471,7 +1708,7 @@
       "confidence": "high",
       "updated": "2026-04-15",
       "summary": "模型对齐（Alignment）是AI求真项目中采用的平台价值的模型对齐策略，用于确保AI模型的输出与平台的价值观和目标保持一致，同时兼顾平台沟通的形象、信息治理的效果和规避偏信风险的考虑。",
-      "degree": 10,
+      "degree": 12,
       "ghost": false,
       "private": false
     },
@@ -1490,7 +1727,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "一个民族所具有的独特的、相对稳定的性格、文化、精神等特征的总和",
-      "degree": 17,
+      "degree": 18,
       "ghost": false,
       "private": false
     },
@@ -1510,7 +1747,30 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的概念，那永恒的在时间中的出场恰恰是借助于\"瞬间\"来得以呈现",
-      "degree": 8,
+      "degree": 9,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/沉沦.md",
+      "title": "沉沦",
+      "type": "concept",
+      "domain": [
+        "literature",
+        "philosophy"
+      ],
+      "tags": [
+        "郁达夫",
+        "海德格尔",
+        "零余者",
+        "此在",
+        "翻译"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "一词的双重生命——郁达夫的小说《沉沦》（零余者的自戕）与海德格尔的沉沦（Verfallen，此在消散于常人）；汉语在此意外地接通了两个传统",
+      "degree": 10,
       "ghost": false,
       "private": false
     },
@@ -1529,7 +1789,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "黑格尔的著作，在其中阐述了婚姻观",
-      "degree": 8,
+      "degree": 9,
       "ghost": false,
       "private": false
     },
@@ -1549,6 +1809,29 @@
       "updated": "2026-04-17",
       "summary": "generalization，机器学习中的概念，指模型将监督拓展到人工无法监督的任务的能力",
       "degree": 11,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/洞穴喻.md",
+      "title": "洞穴喻",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "ai"
+      ],
+      "tags": [
+        "柏拉图",
+        "理想国",
+        "幻觉",
+        "洞穴",
+        "模仿"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "柏拉图《理想国》洞穴比喻；常天喆以 515b 作《Hallucination Is All You Need》题词——LLM 是只见过文本之影、从未走出洞穴的囚徒，但「没有幻觉就没有泛化」恰好倒转了柏拉图的判决",
+      "degree": 8,
       "ghost": false,
       "private": false
     },
@@ -1626,7 +1909,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "19世纪以来最为重大的人文学科命题之一，关乎犹太民族的生存、认同、地位等问题",
-      "degree": 13,
+      "degree": 14,
       "ghost": false,
       "private": false
     },
@@ -1669,6 +1952,29 @@
       "private": false
     },
     {
+      "id": "concepts/现象学.md",
+      "title": "现象学",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "phenomenology"
+      ],
+      "tags": [
+        "胡塞尔",
+        "海德格尔",
+        "马里翁",
+        "还原",
+        "意向性"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "胡塞尔开创的「回到事情本身」的哲学运动；本图谱中经由本质直观、还原与给予、满溢现象延展至神学转向，是常天喆哲学训练的方法论底座",
+      "degree": 16,
+      "ghost": false,
+      "private": false
+    },
+    {
       "id": "concepts/现象学神学转向.md",
       "title": "现象学神学转向",
       "type": "concept",
@@ -1687,7 +1993,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "现象学神学转向（Theological turn in phenomenology）是20世纪后半叶现象学发展中的重要事件，指现象学从严格科学转向神学关怀。",
-      "degree": 10,
+      "degree": 13,
       "ghost": false,
       "private": false
     },
@@ -1709,7 +2015,7 @@
       "confidence": "high",
       "updated": "2026-06-12",
       "summary": "AI 领域中创造或带火关键概念、为快速变动的工程实践赋予可传播理念形式的人",
-      "degree": 6,
+      "degree": 8,
       "ghost": false,
       "private": false
     },
@@ -1730,7 +2036,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的概念，指审美的、伦理的、宗教的三种生存境界",
-      "degree": 7,
+      "degree": 8,
       "ghost": false,
       "private": false
     },
@@ -1749,7 +2055,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔提出的一种辩证法，与黑格尔的思维辩证法相对，强调生存的个体性、历史性和内在性",
-      "degree": 16,
+      "degree": 17,
       "ghost": false,
       "private": false
     },
@@ -1773,7 +2079,7 @@
       "confidence": "high",
       "updated": "2026-06-12",
       "summary": "用大语言模型生成新闻资讯内容的产品方向；其内容生成挑战几乎等同于大模型当下面临的根本挑战本身",
-      "degree": 21,
+      "degree": 23,
       "ghost": false,
       "private": false
     },
@@ -1852,7 +2158,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔生存论时间观中的核心概念，那永恒的在时间中的出场恰恰是借助于\"瞬间\"来得以呈现",
-      "degree": 9,
+      "degree": 11,
       "ghost": false,
       "private": false
     },
@@ -1874,7 +2180,7 @@
       "confidence": "high",
       "updated": "2026-06-12",
       "summary": "Knowledge Cut-off——模型参数冻结的时间点成为其知识边界，面对此后的新事件倾向于拒答或生成幻觉",
-      "degree": 7,
+      "degree": 10,
       "ghost": false,
       "private": false
     },
@@ -1893,7 +2199,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "弗洛伊德创立的心理学流派，强调无意识的重要性",
-      "degree": 9,
+      "degree": 10,
       "ghost": false,
       "private": false
     },
@@ -1912,7 +2218,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "常天喆研究的学术领域，省级项目《审视与洞察：精神疾病书写的两种视域》的主题",
-      "degree": 5,
+      "degree": 6,
       "ghost": false,
       "private": false
     },
@@ -1936,7 +2242,7 @@
       "confidence": "high",
       "updated": "2026-06-12",
       "summary": "Karpathy 提出的学习范式（System Prompt Learning）——让大模型为自己撰写、编辑系统提示词，把经验以显式文本而非权重的方式积累",
-      "degree": 9,
+      "degree": 13,
       "ghost": false,
       "private": false
     },
@@ -2031,7 +2337,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "索绪尔语言学中的核心概念，能指是符号的音响形象，所指是符号的概念",
-      "degree": 6,
+      "degree": 8,
       "ghost": false,
       "private": false
     },
@@ -2069,7 +2375,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的核心概念，虚无是生存的规定性，指代的是生存的可能性、将来性也就是永恒性",
-      "degree": 10,
+      "degree": 11,
       "ghost": false,
       "private": false
     },
@@ -2110,7 +2416,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "福柯的重要著作，探讨现代社会的规训权力",
-      "degree": 7,
+      "degree": 8,
       "ghost": false,
       "private": false
     },
@@ -2151,7 +2457,33 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "福柯哲学中的核心概念，指话语与权力的结合",
-      "degree": 7,
+      "degree": 8,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/语言与世界.md",
+      "title": "语言与世界",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "ai",
+        "linguistics"
+      ],
+      "tags": [
+        "语言哲学",
+        "符号",
+        "幻觉",
+        "庄子",
+        "索绪尔",
+        "维特根斯坦",
+        "母题"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "贯穿整个图谱的母题——语言/符号系统与现实世界的关系。从庄子「道不可言」到索绪尔的符号切割，从维特根斯坦的语言界限到 LLM 的幻觉，同一个问题在不同时代以不同面目重现",
+      "degree": 16,
       "ghost": false,
       "private": false
     },
@@ -2171,6 +2503,29 @@
       "updated": "2026-04-17",
       "summary": "强调语言在民族认同和民族建构中的重要作用的思想",
       "degree": 7,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/谱系学.md",
+      "title": "谱系学",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "meta"
+      ],
+      "tags": [
+        "尼采",
+        "福柯",
+        "方法论",
+        "自我认知",
+        "元概念"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "尼采开创、福柯发扬的方法——不问「它是什么」而问「它如何形成」；本知识星图正是一次自我谱系学实践：通过呈现概念的来路与亲缘，认识自己",
+      "degree": 11,
       "ghost": false,
       "private": false
     },
@@ -2227,6 +2582,28 @@
       "updated": "2026-04-15",
       "summary": "跨学科是指结合多个不同学科领域的知识、方法和思维方式来解决问题或进行研究。在职业发展中，跨学科背景意味着拥有多个不同领域的教育或工作经历。",
       "degree": 4,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/辩证法.md",
+      "title": "辩证法",
+      "type": "concept",
+      "domain": [
+        "philosophy"
+      ],
+      "tags": [
+        "黑格尔",
+        "克尔凯郭尔",
+        "康德",
+        "矛盾",
+        "方法论"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "从康德的二律背反到黑格尔的思维辩证法再到克尔凯郭尔的生存辩证法——本图谱中辩证法是一条完整的批判承继链",
+      "degree": 8,
       "ghost": false,
       "private": false
     },
@@ -2307,7 +2684,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的核心概念，指宗教境界，是克尔凯郭尔生存境界的最高阶段",
-      "degree": 11,
+      "degree": 12,
       "ghost": false,
       "private": false
     },
@@ -2332,6 +2709,29 @@
       "private": false
     },
     {
+      "id": "concepts/都柏林人.md",
+      "title": "都柏林人",
+      "type": "concept",
+      "domain": [
+        "literature",
+        "modernism"
+      ],
+      "tags": [
+        "乔伊斯",
+        "瘫痪",
+        "顿悟",
+        "爱尔兰",
+        "现代主义"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "乔伊斯的短篇集——以「瘫痪」为总主题、以顿悟（epiphany）为方法的现代主义起点；《姐妹们》为开篇",
+      "degree": 9,
+      "ghost": false,
+      "private": false
+    },
+    {
       "id": "concepts/重复.md",
       "title": "重复",
       "type": "concept",
@@ -2346,7 +2746,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的核心范畴，意味着一种\"与回忆方向相反的运动",
-      "degree": 9,
+      "degree": 11,
       "ghost": false,
       "private": false
     },
@@ -2421,7 +2821,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔的重要著作，也是其哲学中的核心概念，表达了生存选择的终极矛盾",
-      "degree": 8,
+      "degree": 9,
       "ghost": false,
       "private": false
     },
@@ -2535,7 +2935,7 @@
       "confidence": "high",
       "updated": "2026-06-12",
       "summary": "Andrej Karpathy 是当代 AI 领域最重要的「理念创造家」之一——带火重要概念、为快速变动的大模型实践赋予可传播的理念形式的人。在常天喆看来，AI 领域思想极其密集却异样「贫瘠」，缺乏思想图谱式的梳理，而 Karpathy 正是少数把高速变动的工程实践提炼为「思想」而非零散「知识」的人。",
-      "degree": 15,
+      "degree": 18,
       "ghost": false,
       "private": false
     },
@@ -2730,7 +3130,7 @@
       "confidence": "high",
       "updated": "2026-04-16",
       "summary": "changsview 是常天喆的个人微信公众号，用于发表关于AI、哲学、社会、文化等主题的深度文章。",
-      "degree": 5,
+      "degree": 6,
       "ghost": false,
       "private": false
     },
@@ -2782,6 +3182,28 @@
       "private": false
     },
     {
+      "id": "entities/乔姆斯基/profile.md",
+      "title": "乔姆斯基",
+      "type": "entity",
+      "domain": [
+        "linguistics",
+        "ai"
+      ],
+      "tags": [
+        "语言学",
+        "生成语法",
+        "普遍语法",
+        "语言习得"
+      ],
+      "judgment": "watching",
+      "confidence": "medium",
+      "updated": "2026-06-12",
+      "summary": "诺姆·乔姆斯基（Noam Chomsky, 1928–），生成语法与普遍语法的提出者。在本图谱的语言与世界母题中，他代表与 LLM 针锋相对的一极：",
+      "degree": 9,
+      "ghost": false,
+      "private": false
+    },
+    {
       "id": "entities/乔纳森·班尼特/profile.md",
       "title": "乔纳森·班尼特",
       "type": "entity",
@@ -2798,7 +3220,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "乔纳森·班尼特（Jonathan Bennett）是英国哲学家、康德学者，以对康德《纯粹理性批判》的诠释而闻名。",
-      "degree": 6,
+      "degree": 7,
       "ghost": false,
       "private": false
     },
@@ -2820,7 +3242,30 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "弗吉尼亚·伍尔夫（Virginia Woolf，1882年1月25日－1941年3月28日）是英国作家、文学批评家、女性主义者，意识流文学的代表人物之一。",
-      "degree": 4,
+      "degree": 5,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "entities/克尔凯郭尔/profile.md",
+      "title": "克尔凯郭尔",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "existentialism"
+      ],
+      "tags": [
+        "存在主义",
+        "丹麦哲学",
+        "生存辩证法",
+        "非此即彼",
+        "信仰"
+      ],
+      "judgment": "positive",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "索伦·克尔凯郭尔（Søren Kierkegaard, 1813–1855），丹麦哲学家、存在主义先驱，本图谱被引用最多的思想家——常天喆硕士论文的研究对象（《爱与信仰的生存辩证法：论〈婚姻在审美上的有效性〉对黑格尔婚姻观的真正批判所在》）。",
+      "degree": 38,
       "ghost": false,
       "private": false
     },
@@ -2877,32 +3322,14 @@
       "tags": [
         "学者",
         "德语",
-        "歌德"
+        "歌德",
+        "上海外国语大学"
       ],
       "judgment": "watching",
-      "confidence": "medium",
-      "updated": "2026-04-15",
-      "summary": "卫茂平是上海外国语大学德语系主任，主持国家级社科基金项目《歌德全集》研究。常天喆曾参与该项目。",
-      "degree": 4,
-      "ghost": false,
-      "private": false
-    },
-    {
-      "id": "entities/卫茂平.md",
-      "title": "卫茂平",
-      "type": "entity",
-      "domain": [],
-      "tags": [
-        "教授",
-        "上海外国语大学",
-        "德语系",
-        "国家社科基金"
-      ],
-      "judgment": "",
       "confidence": "high",
-      "updated": "2026-04-17",
-      "summary": "上海外国语大学德语系主任，主持国家社科基金重大项目《歌德全集》研究。",
-      "degree": 7,
+      "updated": "2026-06-12",
+      "summary": "上海外国语大学德语系教授、系主任，主持国家社科基金重大项目《歌德全集》翻译与研究。常天喆曾参与相关项目工作。",
+      "degree": 5,
       "ghost": false,
       "private": false
     },
@@ -2924,7 +3351,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "威廉·巴特勒·叶芝（William Butler Yeats，1865年6月13日－1939年1月28日）是爱尔兰诗人、剧作家，1923年诺贝尔文学奖得主，爱尔兰文艺复兴运动的领袖。",
-      "degree": 4,
+      "degree": 5,
       "ghost": false,
       "private": false
     },
@@ -2988,6 +3415,52 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "安瑟伦（Anselm of Canterbury，约1033年－1109年4月21日）是意大利神学家、哲学家，经院哲学的先驱者，被称为\"最后一位教父和第一位经院哲学家\"。",
+      "degree": 7,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "entities/尼采/profile.md",
+      "title": "尼采",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "german-philosophy"
+      ],
+      "tags": [
+        "德国哲学",
+        "超人",
+        "谱系学",
+        "价值重估",
+        "查拉图斯特拉"
+      ],
+      "judgment": "positive",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "弗里德里希·尼采（Friedrich Nietzsche, 1844–1900）。在本图谱中通过两条线成为关键节点：",
+      "degree": 8,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "entities/巴赫金/profile.md",
+      "title": "巴赫金",
+      "type": "entity",
+      "domain": [
+        "literature",
+        "philosophy"
+      ],
+      "tags": [
+        "复调",
+        "对话主义",
+        "狂欢化",
+        "文论",
+        "俄国思想"
+      ],
+      "judgment": "watching",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "米哈伊尔·巴赫金（Mikhail Bakhtin, 1895–1975），俄国文论家。其「复调小说」理论（陀思妥耶夫斯基研究）主张作品中诸声音各自独立、不被作者独白收编；「对话主义」认为一切话语本质上是对既有话语的应答。",
       "degree": 6,
       "ghost": false,
       "private": false
@@ -3009,7 +3482,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "帕特森·布朗（Patterson Brown）是当代康德学者，以质疑康德依赖性论题（DT）的充分性而闻名。",
-      "degree": 7,
+      "degree": 8,
       "ghost": false,
       "private": false
     },
@@ -3031,7 +3504,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "常天喆是国内首批LLM产品经理之一，拥有汉语言文学、法学、外国哲学的跨学科教育背景，从2023年开始进入AI产品领域，先后在腾讯会议、微软亚洲研究院、百度文心一言、字节跳动抖音工作，主导多个AI产品功能落地，拥有多项AI专利。",
-      "degree": 137,
+      "degree": 148,
       "ghost": false,
       "private": false
     },
@@ -3054,7 +3527,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "庄子（约公元前369年－公元前286年），名周，是中国战国时期的哲学家，道家学派的代表人物之一。他的语言哲学思想被认为是\"最早自觉的语言批判\"，比维特根斯坦的《逻辑哲学论》早了两千多年。",
-      "degree": 12,
+      "degree": 13,
       "ghost": false,
       "private": false
     },
@@ -3077,7 +3550,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "伊曼努尔·康德（Immanuel Kant，1724年4月22日－1804年2月12日）是德国古典哲学的创始人，其学说深深影响近代西方哲学，并开启了德国唯心主义和康德主义等诸多流派。",
-      "degree": 18,
+      "degree": 20,
       "ghost": false,
       "private": false
     },
@@ -3099,7 +3572,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "西格蒙德·弗洛伊德（Sigmund Freud，1856年5月6日－1939年9月23日）是奥地利心理学家、神经科学家，精神分析学的创始人。",
-      "degree": 9,
+      "degree": 11,
       "ghost": false,
       "private": false
     },
@@ -3230,7 +3703,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "雅克·拉康（Jacques Lacan，1901年4月13日－1981年9月9日）是法国精神分析学家、精神病学家，结构主义精神分析的代表人物。",
-      "degree": 7,
+      "degree": 10,
       "ghost": false,
       "private": false
     },
@@ -3272,7 +3745,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "法国文论家、哲学家、女性主义者，最早提出了\"互文性\"这一理论术语。",
-      "degree": 11,
+      "degree": 12,
       "ghost": false,
       "private": false
     },
@@ -3290,7 +3763,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "华中科技大学教授，常天喆的导师，指导了省级项目《审视与洞察：精神疾病书写的两种视域》。",
-      "degree": 7,
+      "degree": 6,
       "ghost": false,
       "private": false
     },
@@ -3339,6 +3812,29 @@
       "private": false
     },
     {
+      "id": "entities/柏拉图/profile.md",
+      "title": "柏拉图",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "greek-philosophy"
+      ],
+      "tags": [
+        "古希腊哲学",
+        "理想国",
+        "洞穴喻",
+        "回忆说",
+        "理念论"
+      ],
+      "judgment": "positive",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "柏拉图（Plato, 约前 428–前 348）。在本图谱中经由两条线进入：",
+      "degree": 8,
+      "ghost": false,
+      "private": false
+    },
+    {
       "id": "entities/梁汝波/profile.md",
       "title": "梁汝波",
       "type": "entity",
@@ -3374,7 +3870,30 @@
       "confidence": "high",
       "updated": "2026-04-15",
       "summary": "武汉大学是中国顶尖综合性大学，985、211、双一流高校，常天喆的硕士就读院校，外国哲学专业。",
-      "degree": 7,
+      "degree": 6,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "entities/海德格尔/profile.md",
+      "title": "海德格尔",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "phenomenology"
+      ],
+      "tags": [
+        "现象学",
+        "存在论",
+        "时间性",
+        "此在",
+        "德国哲学"
+      ],
+      "judgment": "watching",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "马丁·海德格尔（Martin Heidegger, 1889–1976），胡塞尔的学生与现象学的转折者。《存在与时间》将存在问题奠基于此在的时间性——此在总已先行于自身、向死而在；沉沦（Verfallen）则是此在消散于常人的非本真样式。",
+      "degree": 15,
       "ghost": false,
       "private": false
     },
@@ -3420,7 +3939,7 @@
       "confidence": "medium",
       "updated": "2026-06-12",
       "summary": "菲利克斯·瓜塔里（Félix Guattari），法国精神分析学家、哲学家，与 德勒兹 长期合作，合著《什么是哲学？》《反俄狄浦斯》《千高原》等。在本 wiki 中主要作为《什么是哲学？》关于 概念创造 论断的共同作者出现。",
-      "degree": 4,
+      "degree": 5,
       "ghost": false,
       "private": false
     },
@@ -3482,7 +4001,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "米歇尔·福柯（Michel Foucault，1926年10月15日－1984年6月25日）是法国哲学家、思想史家、社会理论家，对权力、话语、性等议题有深刻探讨。",
-      "degree": 9,
+      "degree": 11,
       "ghost": false,
       "private": false
     },
@@ -3568,7 +4087,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "米歇尔·亨利（Michel Henry，1922年1月10日－2002年7月3日）是法国哲学家、现象学家，生命现象学的创始人。",
-      "degree": 8,
+      "degree": 9,
       "ghost": false,
       "private": false
     },
@@ -3589,7 +4108,29 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "费尔迪南·德·索绪尔（Ferdinand de Saussure，1857年11月26日－1913年2月22日）是瑞士语言学家，结构主义语言学的创始人，被称为\"现代语言学之父\"。",
-      "degree": 7,
+      "degree": 10,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "entities/维特根斯坦/profile.md",
+      "title": "维特根斯坦",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "linguistics"
+      ],
+      "tags": [
+        "语言哲学",
+        "逻辑哲学论",
+        "语言游戏",
+        "界限"
+      ],
+      "judgment": "watching",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "路德维希·维特根斯坦（Ludwig Wittgenstein, 1889–1951），20 世纪语言哲学的双峰（前期《逻辑哲学论》、后期《哲学研究》）。",
+      "degree": 9,
       "ghost": false,
       "private": false
     },
@@ -3673,7 +4214,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "艾伦·伍德（Allen Wood）是美国哲学家、康德学者，以研究康德的理性神学而闻名。",
-      "degree": 6,
+      "degree": 8,
       "ghost": false,
       "private": false
     },
@@ -3718,7 +4259,29 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "埃马纽埃尔·莱维纳斯（Emmanuel Levinas，1906年1月12日－1995年12月25日）是法国哲学家、犹太思想家，他者伦理学的创始人。",
-      "degree": 6,
+      "degree": 7,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "entities/谢林/profile.md",
+      "title": "谢林",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "german-philosophy"
+      ],
+      "tags": [
+        "德国古典哲学",
+        "观念论",
+        "启示哲学",
+        "晚期谢林"
+      ],
+      "judgment": "watching",
+      "confidence": "medium",
+      "updated": "2026-06-12",
+      "summary": "弗里德里希·谢林（F.W.J. Schelling, 1775–1854），德国古典哲学「四巨头」之一。其中晚期哲学（肯定哲学/启示哲学）对黑格尔观念论的批判——纯思维无法推出实存（Existenz）——为克尔凯郭尔提供了直接的批判路线：克氏曾赴柏林听谢林讲课，其生存辩证法对黑格尔体系的突破与谢林路线具有家族相似性（这是常天喆硕士论文的论证要点之一）。",
+      "degree": 8,
       "ghost": false,
       "private": false
     },
@@ -3732,32 +4295,15 @@
       ],
       "tags": [
         "哲学家",
-        "武汉大学"
-      ],
-      "judgment": "watching",
-      "confidence": "medium",
-      "updated": "2026-04-15",
-      "summary": "赵林是武汉大学教授，国务院特殊津贴专家，常天喆的硕士导师，研究方向为西方文化哲学与当代文化研究。",
-      "degree": 8,
-      "ghost": false,
-      "private": false
-    },
-    {
-      "id": "entities/赵林.md",
-      "title": "赵林",
-      "type": "entity",
-      "domain": [],
-      "tags": [
-        "教授",
         "武汉大学",
-        "哲学院",
+        "西方文化哲学",
         "导师"
       ],
-      "judgment": "",
+      "judgment": "positive",
       "confidence": "high",
-      "updated": "2026-04-17",
-      "summary": "武汉大学哲学院教授，常天喆的硕士导师，方向为西方文化哲学与当代文化研究。",
-      "degree": 7,
+      "updated": "2026-06-12",
+      "summary": "武汉大学哲学学院教授，常天喆的硕士导师，研究方向为西方文化哲学与基督教思想史，以西方哲学史讲授著称。常天喆在其门下完成外国哲学硕士（2021–2024，专业排名 1/11），论文方向涉及黑格尔、克尔凯郭尔与德国古典哲学。",
+      "degree": 10,
       "ghost": false,
       "private": false
     },
@@ -3796,7 +4342,7 @@
       "confidence": "medium",
       "updated": "2026-04-15",
       "summary": "邓晓芒是中国著名哲学家，认可常天喆的学术能力，支持其以硕士研究生身份破格发表CSSCI/AMI核心论文。",
-      "degree": 7,
+      "degree": 8,
       "ghost": false,
       "private": false
     },
@@ -3818,7 +4364,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "郁达夫（1896年12月7日－1945年9月17日）是中国现代作家、诗人，创造社的发起人之一。他的小说《沉沦》是中国现代文学史上的重要作品，塑造了\"零余者\"的经典形象。",
-      "degree": 12,
+      "degree": 13,
       "ghost": false,
       "private": false
     },
@@ -3840,7 +4386,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "托马斯·阿奎那（Thomas Aquinas，约1225年－1274年3月7日）是意大利神学家、哲学家，经院哲学的集大成者。",
-      "degree": 8,
+      "degree": 9,
       "ghost": false,
       "private": false
     },
@@ -3860,7 +4406,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "阿摩司·奥兹（Amos Oz，原名阿摩司·克劳斯纳，1939-2018），以色列作家、社会活动家，被称为\"以色列的良心\"。",
-      "degree": 17,
+      "degree": 20,
       "ghost": false,
       "private": false
     },
@@ -3883,6 +4429,29 @@
       "private": false
     },
     {
+      "id": "entities/马克思/profile.md",
+      "title": "马克思",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "german-philosophy"
+      ],
+      "tags": [
+        "实践",
+        "政治哲学",
+        "犹太人问题",
+        "异化",
+        "德国哲学"
+      ],
+      "judgment": "watching",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "卡尔·马克思（Karl Marx, 1818–1883）。在本图谱中经由两条线进入：",
+      "degree": 11,
+      "ghost": false,
+      "private": false
+    },
+    {
       "id": "entities/马里翁/profile.md",
       "title": "马里翁",
       "type": "entity",
@@ -3901,7 +4470,30 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "让-吕克·马里翁（Jean-Luc Marion，1946年7月3日－）是法国哲学家、现象学家、天主教神学家，现象学神学转向的代表人物。",
-      "degree": 10,
+      "degree": 12,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "entities/黑格尔/profile.md",
+      "title": "黑格尔",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "german-philosophy"
+      ],
+      "tags": [
+        "德国古典哲学",
+        "辩证法",
+        "承认",
+        "法哲学原理",
+        "观念论"
+      ],
+      "judgment": "positive",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "格奥尔格·威廉·弗里德里希·黑格尔（G.W.F. Hegel, 1770–1831），德国古典哲学的集大成者。在本图谱中是第二被引的思想枢纽，地位双重：既是常天喆已发表论文的研究对象，又是克尔凯郭尔星系的「对手戏」主角。",
+      "degree": 27,
       "ghost": false,
       "private": false
     },
@@ -3942,7 +4534,7 @@
       "confidence": "high",
       "updated": "2026-04-15",
       "summary": "这是常天喆的一份详细的AI产品经理简历，涵盖了从2023年至今在字节跳动、百度、微软亚洲研究院、腾讯的工作经历，以及教育背景、学术成就、专利、自媒体影响力等。",
-      "degree": 45,
+      "degree": 44,
       "ghost": false,
       "private": true
     },
@@ -3960,7 +4552,7 @@
       "confidence": "high",
       "updated": "2026-04-15",
       "summary": "1. 跨学科背景是优势：汉语言文学、法学、哲学的组合看似与AI产品经理不直接相关，但实际上培养了批判性思维、跨领域理解能力和沟通能力",
-      "degree": 16,
+      "degree": 15,
       "ghost": false,
       "private": true
     },
@@ -3978,7 +4570,7 @@
       "confidence": "high",
       "updated": "2026-04-15",
       "summary": "1. 跨学科背景是AI PM的核心竞争力：汉语言文学（语言理解）+ 哲学（逻辑思维、价值观对齐）+ 法学（规则意识）的组合，在AI产品领域具有独特优势",
-      "degree": 24,
+      "degree": 23,
       "ghost": false,
       "private": true
     },
@@ -4013,7 +4605,7 @@
       "confidence": "high",
       "updated": "2026-04-16",
       "summary": "常天喆发表在 changsview 公众号的深度文章，从哲学和技术角度探讨大模型幻觉的本质。核心论点：幻觉不是病理性的错误，而是不可避免的规定性；没有幻觉就没有泛化能力；语言是独立于现实生产意义的符号系统。",
-      "degree": 7,
+      "degree": 10,
       "ghost": false,
       "private": true
     },
@@ -4139,7 +4731,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "对电影《伊尼舍林的报丧女妖》的深度影评，从存在主义、现象学、爱尔兰历史等角度进行分析",
-      "degree": 9,
+      "degree": 10,
       "ghost": false,
       "private": true
     },
@@ -4221,7 +4813,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "探讨时间观作为现代性问题之嚆矢，分析海德格尔和马克思主义中包含的两种双向开放时间观作为抵御线性时间观的神圣化出路",
-      "degree": 12,
+      "degree": 15,
       "ghost": false,
       "private": true
     },
@@ -4412,20 +5004,6 @@
       "private": true
     },
     {
-      "id": "ghost:DPO",
-      "title": "DPO",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 5,
-      "ghost": true,
-      "private": false
-    },
-    {
       "id": "ghost:得意忘言",
       "title": "得意忘言",
       "type": "concept",
@@ -4435,41 +5013,13 @@
       "confidence": "ghost",
       "updated": "",
       "summary": "",
-      "degree": 3,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:辩证法",
-      "title": "辩证法",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
+      "degree": 4,
       "ghost": true,
       "private": false
     },
     {
       "id": "ghost:现象与物自体",
       "title": "现象与物自体",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 2,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:纯粹理性批判",
-      "title": "纯粹理性批判",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -4496,6 +5046,20 @@
       "private": false
     },
     {
+      "id": "ghost:纯粹理性批判",
+      "title": "纯粹理性批判",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 2,
+      "ghost": true,
+      "private": false
+    },
+    {
       "id": "ghost:克里斯特娃",
       "title": "克里斯特娃",
       "type": "entity",
@@ -4510,20 +5074,6 @@
       "private": false
     },
     {
-      "id": "ghost:上帝存在证明",
-      "title": "上帝存在证明",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 5,
-      "ghost": true,
-      "private": false
-    },
-    {
       "id": "ghost:自由",
       "title": "自由",
       "type": "concept",
@@ -4534,34 +5084,6 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:克尔凯郭尔",
-      "title": "克尔凯郭尔",
-      "type": "entity",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 27,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:信仰",
-      "title": "信仰",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
       "ghost": true,
       "private": false
     },
@@ -4594,22 +5116,8 @@
       "private": false
     },
     {
-      "id": "ghost:黑格尔",
-      "title": "黑格尔",
-      "type": "entity",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 15,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:多义性",
-      "title": "多义性",
+      "id": "ghost:本雅明",
+      "title": "本雅明",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -4622,8 +5130,8 @@
       "private": false
     },
     {
-      "id": "ghost:本雅明",
-      "title": "本雅明",
+      "id": "ghost:多义性",
+      "title": "多义性",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -4664,20 +5172,6 @@
       "private": false
     },
     {
-      "id": "ghost:婚姻",
-      "title": "婚姻",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
-      "ghost": true,
-      "private": false
-    },
-    {
       "id": "ghost:爱",
       "title": "爱",
       "type": "concept",
@@ -4692,22 +5186,8 @@
       "private": false
     },
     {
-      "id": "ghost:现象学",
-      "title": "现象学",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 9,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:无意识",
-      "title": "无意识",
+      "id": "ghost:婚姻",
+      "title": "婚姻",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -4720,8 +5200,8 @@
       "private": false
     },
     {
-      "id": "ghost:卡夫卡",
-      "title": "卡夫卡",
+      "id": "ghost:列奥·施特劳斯",
+      "title": "列奥·施特劳斯",
       "type": "entity",
       "domain": [],
       "tags": [],
@@ -4748,8 +5228,8 @@
       "private": false
     },
     {
-      "id": "ghost:列奥·施特劳斯",
-      "title": "列奥·施特劳斯",
+      "id": "ghost:卡夫卡",
+      "title": "卡夫卡",
       "type": "entity",
       "domain": [],
       "tags": [],
@@ -4758,20 +5238,6 @@
       "updated": "",
       "summary": "",
       "degree": 3,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:马克思",
-      "title": "马克思",
-      "type": "entity",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 4,
       "ghost": true,
       "private": false
     },
@@ -4832,20 +5298,6 @@
       "private": false
     },
     {
-      "id": "ghost:都柏林人",
-      "title": "都柏林人",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 4,
-      "ghost": true,
-      "private": false
-    },
-    {
       "id": "ghost:北京大学",
       "title": "北京大学",
       "type": "concept",
@@ -4869,41 +5321,13 @@
       "confidence": "ghost",
       "updated": "",
       "summary": "",
-      "degree": 3,
+      "degree": 4,
       "ghost": true,
       "private": false
     },
     {
-      "id": "ghost:谢林",
-      "title": "谢林",
-      "type": "entity",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:海德格尔",
-      "title": "海德格尔",
-      "type": "entity",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 6,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:沉沦",
-      "title": "沉沦",
+      "id": "ghost:事实一致性",
+      "title": "事实一致性",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -4911,7 +5335,7 @@
       "confidence": "ghost",
       "updated": "",
       "summary": "",
-      "degree": 4,
+      "degree": 3,
       "ghost": true,
       "private": false
     },
@@ -4944,8 +5368,8 @@
       "private": false
     },
     {
-      "id": "ghost:事实一致性",
-      "title": "事实一致性",
+      "id": "ghost:多模态融合",
+      "title": "多模态融合",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -4958,8 +5382,8 @@
       "private": false
     },
     {
-      "id": "ghost:多模态融合",
-      "title": "多模态融合",
+      "id": "ghost:恋童癖",
+      "title": "恋童癖",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -4967,7 +5391,7 @@
       "confidence": "ghost",
       "updated": "",
       "summary": "",
-      "degree": 3,
+      "degree": 2,
       "ghost": true,
       "private": false
     },
@@ -5000,20 +5424,6 @@
       "private": false
     },
     {
-      "id": "ghost:恋童癖",
-      "title": "恋童癖",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 2,
-      "ghost": true,
-      "private": false
-    },
-    {
       "id": "ghost:矣晓沅",
       "title": "矣晓沅",
       "type": "entity",
@@ -5028,8 +5438,8 @@
       "private": false
     },
     {
-      "id": "ghost:语言哲学",
-      "title": "语言哲学",
+      "id": "ghost:老子",
+      "title": "老子",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -5042,8 +5452,22 @@
       "private": false
     },
     {
-      "id": "ghost:周礼栋",
-      "title": "周礼栋",
+      "id": "ghost:郭沫若",
+      "title": "郭沫若",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 2,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:腾讯会议",
+      "title": "腾讯会议",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -5070,23 +5494,9 @@
       "private": false
     },
     {
-      "id": "ghost:Prompt工程",
-      "title": "Prompt工程",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 2,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:乔姆斯基",
-      "title": "乔姆斯基",
-      "type": "concept",
+      "id": "ghost:谢幸",
+      "title": "谢幸",
+      "type": "entity",
       "domain": [],
       "tags": [],
       "judgment": "",
@@ -5094,20 +5504,6 @@
       "updated": "",
       "summary": "",
       "degree": 4,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:老子",
-      "title": "老子",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
       "ghost": true,
       "private": false
     },
@@ -5126,36 +5522,22 @@
       "private": false
     },
     {
-      "id": "ghost:谢幸",
-      "title": "谢幸",
-      "type": "entity",
+      "id": "ghost:语言哲学",
+      "title": "语言哲学",
+      "type": "concept",
       "domain": [],
       "tags": [],
       "judgment": "",
       "confidence": "ghost",
       "updated": "",
       "summary": "",
-      "degree": 4,
+      "degree": 3,
       "ghost": true,
       "private": false
     },
     {
-      "id": "ghost:维特根斯坦",
-      "title": "维特根斯坦",
-      "type": "entity",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 4,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:郭沫若",
-      "title": "郭沫若",
+      "id": "ghost:Prompt工程",
+      "title": "Prompt工程",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -5168,8 +5550,8 @@
       "private": false
     },
     {
-      "id": "ghost:腾讯会议",
-      "title": "腾讯会议",
+      "id": "ghost:周礼栋",
+      "title": "周礼栋",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -5212,20 +5594,6 @@
     {
       "id": "ghost:德国哲学",
       "title": "德国哲学",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 2,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:承认",
-      "title": "承认",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -5487,6 +5855,62 @@
       "weight": 1.0,
       "kinds": [
         "link"
+      ]
+    },
+    {
+      "source": "concepts/DPO.md",
+      "target": "concepts/SFT.md",
+      "weight": 8.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/DPO.md",
+      "target": "concepts/RLHF.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/DPO.md",
+      "target": "concepts/人类反馈强化学习.md",
+      "weight": 4.05,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/DPO.md",
+      "target": "concepts/模型对齐.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/DPO.md",
+      "target": "concepts/RLHF不是RL.md",
+      "weight": 4.05,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/DPO.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 7.0,
+      "kinds": [
+        "link",
+        "related"
       ]
     },
     {
@@ -5818,7 +6242,7 @@
     {
       "source": "concepts/RLHF不是RL.md",
       "target": "concepts/系统提示词学习.md",
-      "weight": 10.45,
+      "weight": 10.1,
       "kinds": [
         "link",
         "related",
@@ -5828,7 +6252,7 @@
     {
       "source": "concepts/RLHF不是RL.md",
       "target": "concepts/人类反馈强化学习.md",
-      "weight": 4.95,
+      "weight": 4.6,
       "kinds": [
         "link",
         "related",
@@ -5874,15 +6298,6 @@
       "source": "concepts/SFT.md",
       "target": "entities/常天喆/profile.md",
       "weight": 7.0,
-      "kinds": [
-        "link",
-        "related"
-      ]
-    },
-    {
-      "source": "concepts/SFT.md",
-      "target": "ghost:DPO",
-      "weight": 3.5,
       "kinds": [
         "link",
         "related"
@@ -6131,10 +6546,11 @@
     },
     {
       "source": "concepts/《歌德全集》.md",
-      "target": "entities/卫茂平.md",
-      "weight": 2.9,
+      "target": "entities/卫茂平/profile.md",
+      "weight": 5.4,
       "kinds": [
         "link",
+        "related",
         "tag"
       ]
     },
@@ -6150,7 +6566,7 @@
     {
       "source": "concepts/三言.md",
       "target": "entities/庄子/profile.md",
-      "weight": 3.8,
+      "weight": 3.45,
       "kinds": [
         "link",
         "tag"
@@ -6195,6 +6611,73 @@
       "weight": 1.0,
       "kinds": [
         "link"
+      ]
+    },
+    {
+      "source": "concepts/上帝存在证明.md",
+      "target": "entities/康德/profile.md",
+      "weight": 7.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/上帝存在证明.md",
+      "target": "entities/安瑟伦/profile.md",
+      "weight": 5.4,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/上帝存在证明.md",
+      "target": "entities/阿奎那/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/上帝存在证明.md",
+      "target": "concepts/本体论证明.md",
+      "weight": 6.4,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/上帝存在证明.md",
+      "target": "concepts/宇宙论证明.md",
+      "weight": 6.4,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/上帝存在证明.md",
+      "target": "concepts/依赖性论题.md",
+      "weight": 6.05,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/上帝存在证明.md",
+      "target": "concepts/现象学神学转向.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
       ]
     },
     {
@@ -6250,10 +6733,11 @@
     },
     {
       "source": "concepts/二律背反.md",
-      "target": "ghost:辩证法",
-      "weight": 1.0,
+      "target": "concepts/辩证法.md",
+      "weight": 5.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
@@ -6310,6 +6794,70 @@
       "weight": 2.0,
       "kinds": [
         "link"
+      ]
+    },
+    {
+      "source": "concepts/人是绳索.md",
+      "target": "entities/尼采/profile.md",
+      "weight": 9.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/人是绳索.md",
+      "target": "concepts/实践世界与欲望.md",
+      "weight": 10.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/人是绳索.md",
+      "target": "entities/Andrej-Karpathy/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/人是绳索.md",
+      "target": "concepts/系统提示词学习.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/人是绳索.md",
+      "target": "concepts/理念创造家.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/人是绳索.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/人是绳索.md",
+      "target": "entities/海德格尔/profile.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
       ]
     },
     {
@@ -6436,7 +6984,7 @@
     {
       "source": "concepts/依赖性论题.md",
       "target": "concepts/宇宙论证明.md",
-      "weight": 3.1,
+      "weight": 2.55,
       "kinds": [
         "link",
         "tag"
@@ -6445,18 +6993,10 @@
     {
       "source": "concepts/依赖性论题.md",
       "target": "concepts/本体论证明.md",
-      "weight": 2.1,
+      "weight": 1.55,
       "kinds": [
         "link",
         "tag"
-      ]
-    },
-    {
-      "source": "concepts/依赖性论题.md",
-      "target": "ghost:上帝存在证明",
-      "weight": 1.0,
-      "kinds": [
-        "link"
       ]
     },
     {
@@ -6468,19 +7008,76 @@
       ]
     },
     {
-      "source": "concepts/信仰之跃.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "source": "concepts/信仰.md",
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 7.0,
       "kinds": [
-        "link"
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/信仰.md",
+      "target": "concepts/信仰之跃.md",
+      "weight": 5.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/信仰.md",
+      "target": "concepts/那宗教的.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/信仰.md",
+      "target": "concepts/罪.md",
+      "weight": 5.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/信仰.md",
+      "target": "concepts/虚无.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/信仰.md",
+      "target": "concepts/瞬间.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/信仰.md",
+      "target": "concepts/内向性.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
       ]
     },
     {
       "source": "concepts/信仰之跃.md",
-      "target": "ghost:信仰",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 5.05,
       "kinds": [
-        "link"
+        "link",
+        "related",
+        "tag"
       ]
     },
     {
@@ -6510,7 +7107,7 @@
     {
       "source": "concepts/信仰之跃.md",
       "target": "concepts/那宗教的.md",
-      "weight": 3.8,
+      "weight": 3.45,
       "kinds": [
         "link",
         "tag"
@@ -6599,7 +7196,7 @@
     {
       "source": "concepts/二律背反.md",
       "target": "concepts/先验幻相.md",
-      "weight": 3.35,
+      "weight": 2.8,
       "kinds": [
         "link",
         "tag"
@@ -6684,10 +7281,11 @@
     },
     {
       "source": "concepts/内向性.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 4.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
@@ -6716,10 +7314,11 @@
     },
     {
       "source": "concepts/内在目的性.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 3.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
@@ -6883,15 +7482,16 @@
     },
     {
       "source": "concepts/历史性.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 4.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
       "source": "concepts/历史性.md",
-      "target": "ghost:黑格尔",
+      "target": "entities/黑格尔/profile.md",
       "weight": 1.0,
       "kinds": [
         "link"
@@ -6955,10 +7555,11 @@
     },
     {
       "source": "concepts/国家社科基金重大项目.md",
-      "target": "entities/卫茂平.md",
-      "weight": 2.9,
+      "target": "entities/卫茂平/profile.md",
+      "weight": 4.4,
       "kinds": [
         "link",
+        "related",
         "tag"
       ]
     },
@@ -6976,6 +7577,88 @@
       "weight": 2.0,
       "kinds": [
         "link"
+      ]
+    },
+    {
+      "source": "concepts/复调与对齐.md",
+      "target": "entities/巴赫金/profile.md",
+      "weight": 9.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/复调与对齐.md",
+      "target": "concepts/复调社会.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/复调与对齐.md",
+      "target": "concepts/多声部世界.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/互文性.md",
+      "target": "concepts/复调与对齐.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/价值观对齐.md",
+      "target": "concepts/复调与对齐.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/复调与对齐.md",
+      "target": "concepts/生成式资讯.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/复调与对齐.md",
+      "target": "concepts/新闻三大属性.md",
+      "weight": 4.4,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/复调与对齐.md",
+      "target": "entities/阿摩司·奥兹.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/复调与对齐.md",
+      "target": "concepts/民族性.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
       ]
     },
     {
@@ -7091,18 +7774,20 @@
     },
     {
       "source": "concepts/婚姻观.md",
-      "target": "ghost:黑格尔",
-      "weight": 1.0,
+      "target": "entities/黑格尔/profile.md",
+      "weight": 4.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
       "source": "concepts/婚姻观.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 4.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
@@ -7168,18 +7853,95 @@
     {
       "source": "concepts/宇宙论证明.md",
       "target": "concepts/本体论证明.md",
-      "weight": 3.65,
+      "weight": 3.1,
       "kinds": [
         "link",
         "tag"
       ]
     },
     {
-      "source": "concepts/宇宙论证明.md",
-      "target": "ghost:上帝存在证明",
-      "weight": 1.0,
+      "source": "concepts/实践世界与欲望.md",
+      "target": "concepts/系统提示词学习.md",
+      "weight": 4.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/RLHF不是RL.md",
+      "target": "concepts/实践世界与欲望.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/实践世界与欲望.md",
+      "target": "entities/弗洛伊德/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/实践世界与欲望.md",
+      "target": "entities/拉康/profile.md",
+      "weight": 5.05,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/实践世界与欲望.md",
+      "target": "entities/马克思/profile.md",
+      "weight": 9.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/实践世界与欲望.md",
+      "target": "entities/黑格尔/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/实践世界与欲望.md",
+      "target": "concepts/精神分析.md",
+      "weight": 4.05,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/实践世界与欲望.md",
+      "target": "concepts/无意识.md",
+      "weight": 10.1,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/实践世界与欲望.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
       ]
     },
     {
@@ -7196,6 +7958,98 @@
       "weight": 1.0,
       "kinds": [
         "link"
+      ]
+    },
+    {
+      "source": "concepts/对齐即承认.md",
+      "target": "entities/黑格尔/profile.md",
+      "weight": 7.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/对齐即承认.md",
+      "target": "concepts/承认.md",
+      "weight": 8.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/RLHF不是RL.md",
+      "target": "concepts/对齐即承认.md",
+      "weight": 5.05,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/人类反馈强化学习.md",
+      "target": "concepts/对齐即承认.md",
+      "weight": 3.05,
+      "kinds": [
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/价值观对齐.md",
+      "target": "concepts/对齐即承认.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/对齐即承认.md",
+      "target": "concepts/模型对齐.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/Superalignment.md",
+      "target": "concepts/对齐即承认.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/对齐即承认.md",
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 8.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/对齐即承认.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/对齐即承认.md",
+      "target": "entities/Andrej-Karpathy/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
       ]
     },
     {
@@ -7234,7 +8088,7 @@
     {
       "source": "concepts/幻觉.md",
       "target": "concepts/检索引起的幻觉.md",
-      "weight": 8.9,
+      "weight": 8.55,
       "kinds": [
         "link",
         "related",
@@ -7244,7 +8098,7 @@
     {
       "source": "concepts/幻觉.md",
       "target": "concepts/知识截止.md",
-      "weight": 8.9,
+      "weight": 8.55,
       "kinds": [
         "link",
         "related",
@@ -7299,7 +8153,36 @@
     {
       "source": "concepts/幻觉.md",
       "target": "entities/常天喆/profile.md",
-      "weight": 3.5,
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/幻觉.md",
+      "target": "concepts/洞穴喻.md",
+      "weight": 7.55,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/幻觉.md",
+      "target": "concepts/语言与世界.md",
+      "weight": 7.55,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/幻觉.md",
+      "target": "entities/柏拉图/profile.md",
+      "weight": 7.0,
       "kinds": [
         "link",
         "related"
@@ -7340,10 +8223,11 @@
     },
     {
       "source": "concepts/忧惧.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 4.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
@@ -7381,7 +8265,17 @@
     },
     {
       "source": "concepts/思维辩证法.md",
-      "target": "ghost:黑格尔",
+      "target": "entities/黑格尔/profile.md",
+      "weight": 6.6,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/思维辩证法.md",
+      "target": "entities/克尔凯郭尔/profile.md",
       "weight": 1.0,
       "kinds": [
         "link"
@@ -7389,18 +8283,11 @@
     },
     {
       "source": "concepts/思维辩证法.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "concepts/辩证法.md",
+      "weight": 5.5,
       "kinds": [
-        "link"
-      ]
-    },
-    {
-      "source": "concepts/思维辩证法.md",
-      "target": "ghost:辩证法",
-      "weight": 1.0,
-      "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
@@ -7449,15 +8336,16 @@
     },
     {
       "source": "concepts/情欲之爱.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 4.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
       "source": "concepts/情欲之爱.md",
-      "target": "ghost:黑格尔",
+      "target": "entities/黑格尔/profile.md",
       "weight": 1.0,
       "kinds": [
         "link"
@@ -7498,7 +8386,7 @@
     },
     {
       "source": "concepts/感觉.md",
-      "target": "ghost:黑格尔",
+      "target": "entities/黑格尔/profile.md",
       "weight": 1.0,
       "kinds": [
         "link"
@@ -7520,6 +8408,51 @@
       "kinds": [
         "link",
         "tag"
+      ]
+    },
+    {
+      "source": "concepts/承认.md",
+      "target": "entities/黑格尔/profile.md",
+      "weight": 9.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/承认.md",
+      "target": "concepts/法哲学原理.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/承认.md",
+      "target": "concepts/最高伦理实体.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/实践世界与欲望.md",
+      "target": "concepts/承认.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/承认.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
       ]
     },
     {
@@ -7632,6 +8565,55 @@
       ]
     },
     {
+      "source": "concepts/无意识.md",
+      "target": "entities/弗洛伊德/profile.md",
+      "weight": 5.05,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/无意识.md",
+      "target": "concepts/精神分析.md",
+      "weight": 5.05,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/无意识.md",
+      "target": "concepts/梦的解析.md",
+      "weight": 6.6,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/无意识.md",
+      "target": "entities/拉康/profile.md",
+      "weight": 5.05,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/无意识.md",
+      "target": "concepts/集体无意识.md",
+      "weight": 5.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
       "source": "concepts/时序泛化难题.md",
       "target": "concepts/生成式资讯.md",
       "weight": 8.0,
@@ -7679,10 +8661,11 @@
     },
     {
       "source": "concepts/时间.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 3.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
@@ -7728,8 +8711,8 @@
       ]
     },
     {
-      "source": "concepts/时间.md",
-      "target": "ghost:信仰",
+      "source": "concepts/信仰.md",
+      "target": "concepts/时间.md",
       "weight": 1.0,
       "kinds": [
         "link"
@@ -7737,10 +8720,11 @@
     },
     {
       "source": "concepts/最初的爱.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 4.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
@@ -7786,6 +8770,15 @@
     },
     {
       "source": "concepts/未来考古学.md",
+      "target": "concepts/谱系学.md",
+      "weight": 6.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/未来考古学.md",
       "target": "entities/Ilya Sutskever.md",
       "weight": 2.0,
       "kinds": [
@@ -7799,6 +8792,14 @@
       "kinds": [
         "link",
         "tag"
+      ]
+    },
+    {
+      "source": "concepts/未来考古学.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 2.0,
+      "kinds": [
+        "link"
       ]
     },
     {
@@ -7844,14 +8845,6 @@
       ]
     },
     {
-      "source": "concepts/本体论证明.md",
-      "target": "ghost:上帝存在证明",
-      "weight": 1.0,
-      "kinds": [
-        "link"
-      ]
-    },
-    {
       "source": "concepts/本质直观.md",
       "target": "concepts/观念对象.md",
       "weight": 2.9,
@@ -7862,10 +8855,12 @@
     },
     {
       "source": "concepts/本质直观.md",
-      "target": "ghost:现象学",
-      "weight": 1.0,
+      "target": "concepts/现象学.md",
+      "weight": 6.4,
       "kinds": [
-        "link"
+        "link",
+        "related",
+        "tag"
       ]
     },
     {
@@ -7886,17 +8881,117 @@
       ]
     },
     {
-      "source": "concepts/梦的解析.md",
-      "target": "entities/弗洛伊德/profile.md",
-      "weight": 3.8,
+      "source": "concepts/机器的时间性.md",
+      "target": "concepts/瞬间.md",
+      "weight": 5.5,
       "kinds": [
         "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/机器的时间性.md",
+      "target": "concepts/永恒.md",
+      "weight": 5.3,
+      "kinds": [
+        "link",
+        "related",
         "tag"
       ]
     },
     {
+      "source": "concepts/机器的时间性.md",
+      "target": "concepts/重复.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/时间.md",
+      "target": "concepts/机器的时间性.md",
+      "weight": 3.4,
+      "kinds": [
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/历史性.md",
+      "target": "concepts/机器的时间性.md",
+      "weight": 3.4,
+      "kinds": [
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/时序泛化难题.md",
+      "target": "concepts/机器的时间性.md",
+      "weight": 5.4,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/机器的时间性.md",
+      "target": "concepts/知识截止.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/机器的时间性.md",
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 7.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/机器的时间性.md",
+      "target": "entities/海德格尔/profile.md",
+      "weight": 9.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/机器的时间性.md",
+      "target": "entities/Andrej-Karpathy/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/机器的时间性.md",
+      "target": "concepts/生成式资讯.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/机器的时间性.md",
+      "target": "entities/柏拉图/profile.md",
+      "weight": 7.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
       "source": "concepts/梦的解析.md",
-      "target": "concepts/精神分析.md",
+      "target": "entities/弗洛伊德/profile.md",
       "weight": 3.45,
       "kinds": [
         "link",
@@ -7905,10 +9000,11 @@
     },
     {
       "source": "concepts/梦的解析.md",
-      "target": "ghost:无意识",
-      "weight": 1.0,
+      "target": "concepts/精神分析.md",
+      "weight": 3.1,
       "kinds": [
-        "link"
+        "link",
+        "tag"
       ]
     },
     {
@@ -7949,7 +9045,7 @@
     {
       "source": "concepts/检索引起的幻觉.md",
       "target": "concepts/知识截止.md",
-      "weight": 3.9,
+      "weight": 3.55,
       "kinds": [
         "link",
         "tag"
@@ -8057,10 +9153,11 @@
     },
     {
       "source": "concepts/民族性.md",
-      "target": "ghost:马克思",
-      "weight": 1.0,
+      "target": "entities/马克思/profile.md",
+      "weight": 5.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
@@ -8097,10 +9194,11 @@
     },
     {
       "source": "concepts/永恒.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 4.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
@@ -8120,16 +9218,74 @@
       ]
     },
     {
-      "source": "concepts/法哲学原理.md",
-      "target": "ghost:黑格尔",
-      "weight": 1.0,
+      "source": "concepts/沉沦.md",
+      "target": "entities/郁达夫/profile.md",
+      "weight": 6.4,
       "kinds": [
-        "link"
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/沉沦.md",
+      "target": "entities/海德格尔/profile.md",
+      "weight": 9.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/沉沦.md",
+      "target": "concepts/零余者.md",
+      "weight": 6.4,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/沉沦.md",
+      "target": "concepts/精神疾病书写.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/沉沦.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 6.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/沉沦.md",
+      "target": "sources/2026-04-17-yudafu-sinking.md",
+      "weight": 4.5,
+      "kinds": [
+        "related",
+        "source"
       ]
     },
     {
       "source": "concepts/法哲学原理.md",
-      "target": "ghost:克尔凯郭尔",
+      "target": "entities/黑格尔/profile.md",
+      "weight": 5.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/法哲学原理.md",
+      "target": "entities/克尔凯郭尔/profile.md",
       "weight": 1.0,
       "kinds": [
         "link"
@@ -8160,6 +9316,52 @@
       ]
     },
     {
+      "source": "concepts/洞穴喻.md",
+      "target": "entities/柏拉图/profile.md",
+      "weight": 9.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/洞穴喻.md",
+      "target": "concepts/语言与世界.md",
+      "weight": 8.55,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/洞穴喻.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/洞穴喻.md",
+      "target": "entities/changsview/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/洞穴喻.md",
+      "target": "sources/2026-04-16-hallucination-is-all-you-need.md",
+      "weight": 1.0,
+      "kinds": [
+        "source"
+      ]
+    },
+    {
       "source": "concepts/满溢现象.md",
       "target": "entities/马里翁/profile.md",
       "weight": 2.0,
@@ -8169,16 +9371,18 @@
     },
     {
       "source": "concepts/满溢现象.md",
-      "target": "ghost:现象学",
-      "weight": 1.0,
+      "target": "concepts/现象学.md",
+      "weight": 6.05,
       "kinds": [
-        "link"
+        "link",
+        "related",
+        "tag"
       ]
     },
     {
       "source": "concepts/满溢现象.md",
       "target": "concepts/现象学神学转向.md",
-      "weight": 3.45,
+      "weight": 3.1,
       "kinds": [
         "link",
         "tag"
@@ -8195,7 +9399,7 @@
     {
       "source": "concepts/满溢现象.md",
       "target": "concepts/还原与给予.md",
-      "weight": 3.8,
+      "weight": 3.45,
       "kinds": [
         "link",
         "tag"
@@ -8211,18 +9415,21 @@
     },
     {
       "source": "concepts/爱的悖谬.md",
-      "target": "ghost:黑格尔",
-      "weight": 1.0,
+      "target": "entities/黑格尔/profile.md",
+      "weight": 5.05,
       "kinds": [
-        "link"
+        "link",
+        "related",
+        "tag"
       ]
     },
     {
       "source": "concepts/爱的悖谬.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 4.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
@@ -8269,10 +9476,11 @@
     },
     {
       "source": "concepts/犹太人问题.md",
-      "target": "ghost:马克思",
-      "weight": 1.0,
+      "target": "entities/马克思/profile.md",
+      "weight": 5.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
@@ -8356,9 +9564,85 @@
       ]
     },
     {
+      "source": "concepts/现象学.md",
+      "target": "entities/胡塞尔/profile.md",
+      "weight": 7.4,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/现象学.md",
+      "target": "entities/海德格尔/profile.md",
+      "weight": 9.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/现象学.md",
+      "target": "entities/马里翁/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/现象学.md",
+      "target": "entities/米歇尔·亨利/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/现象学.md",
+      "target": "entities/莱维纳斯/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/现象学.md",
+      "target": "concepts/观念对象.md",
+      "weight": 6.4,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/现象学.md",
+      "target": "concepts/还原与给予.md",
+      "weight": 6.95,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/现象学.md",
+      "target": "concepts/现象学神学转向.md",
+      "weight": 5.05,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
       "source": "concepts/现象学神学转向.md",
       "target": "concepts/还原与给予.md",
-      "weight": 1.9,
+      "weight": 1.55,
       "kinds": [
         "link",
         "tag"
@@ -8434,10 +9718,11 @@
     },
     {
       "source": "concepts/生存境界.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 4.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
@@ -8482,26 +9767,30 @@
     },
     {
       "source": "concepts/生存辩证法.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 5.05,
       "kinds": [
-        "link"
+        "link",
+        "related",
+        "tag"
       ]
     },
     {
       "source": "concepts/生存辩证法.md",
-      "target": "ghost:黑格尔",
-      "weight": 1.0,
+      "target": "entities/黑格尔/profile.md",
+      "weight": 2.55,
       "kinds": [
-        "link"
+        "link",
+        "tag"
       ]
     },
     {
       "source": "concepts/生存辩证法.md",
-      "target": "ghost:辩证法",
-      "weight": 1.0,
+      "target": "concepts/辩证法.md",
+      "weight": 5.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
@@ -8654,10 +9943,12 @@
     },
     {
       "source": "concepts/瘫痪.md",
-      "target": "ghost:都柏林人",
-      "weight": 1.0,
+      "target": "concepts/都柏林人.md",
+      "weight": 7.3,
       "kinds": [
-        "link"
+        "link",
+        "related",
+        "tag"
       ]
     },
     {
@@ -8686,10 +9977,11 @@
     },
     {
       "source": "concepts/瞬间.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 4.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
@@ -8724,14 +10016,6 @@
       "kinds": [
         "link",
         "tag"
-      ]
-    },
-    {
-      "source": "concepts/精神分析.md",
-      "target": "ghost:无意识",
-      "weight": 1.0,
-      "kinds": [
-        "link"
       ]
     },
     {
@@ -8780,7 +10064,7 @@
     {
       "source": "concepts/人类反馈强化学习.md",
       "target": "concepts/系统提示词学习.md",
-      "weight": 3.4,
+      "weight": 3.05,
       "kinds": [
         "related",
         "tag"
@@ -8821,10 +10105,11 @@
     },
     {
       "source": "concepts/罪.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 4.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
@@ -8839,14 +10124,6 @@
       "source": "concepts/罪.md",
       "target": "concepts/非此即彼.md",
       "weight": 2.0,
-      "kinds": [
-        "link"
-      ]
-    },
-    {
-      "source": "concepts/罪.md",
-      "target": "ghost:信仰",
-      "weight": 1.0,
       "kinds": [
         "link"
       ]
@@ -8879,7 +10156,17 @@
     },
     {
       "source": "concepts/自我中介问题.md",
-      "target": "ghost:黑格尔",
+      "target": "entities/黑格尔/profile.md",
+      "weight": 5.95,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/自我中介问题.md",
+      "target": "entities/克尔凯郭尔/profile.md",
       "weight": 1.0,
       "kinds": [
         "link"
@@ -8887,39 +10174,26 @@
     },
     {
       "source": "concepts/自我中介问题.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/谢林/profile.md",
+      "weight": 1.9,
       "kinds": [
-        "link"
-      ]
-    },
-    {
-      "source": "concepts/自我中介问题.md",
-      "target": "ghost:谢林",
-      "weight": 1.0,
-      "kinds": [
-        "link"
+        "link",
+        "tag"
       ]
     },
     {
       "source": "concepts/虚无.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 5.05,
       "kinds": [
-        "link"
+        "link",
+        "related",
+        "tag"
       ]
     },
     {
       "source": "concepts/虚无.md",
       "target": "ghost:可能性",
-      "weight": 1.0,
-      "kinds": [
-        "link"
-      ]
-    },
-    {
-      "source": "concepts/观念对象.md",
-      "target": "ghost:现象学",
       "weight": 1.0,
       "kinds": [
         "link"
@@ -9014,6 +10288,107 @@
       ]
     },
     {
+      "source": "concepts/语言与世界.md",
+      "target": "entities/庄子/profile.md",
+      "weight": 4.05,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/三言.md",
+      "target": "concepts/语言与世界.md",
+      "weight": 5.95,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/语言与世界.md",
+      "target": "entities/索绪尔/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/能指与所指.md",
+      "target": "concepts/语言与世界.md",
+      "weight": 5.4,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/语言与世界.md",
+      "target": "entities/维特根斯坦/profile.md",
+      "weight": 9.55,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/语言与世界.md",
+      "target": "entities/乔姆斯基/profile.md",
+      "weight": 8.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/互文性.md",
+      "target": "concepts/语言与世界.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/intelligence词源.md",
+      "target": "concepts/语言与世界.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/语言与世界.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/语言与世界.md",
+      "target": "ghost:结构主义",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/语言与世界.md",
+      "target": "ghost:得意忘言",
+      "weight": 1.0,
+      "kinds": [
+        "link"
+      ]
+    },
+    {
       "source": "concepts/语言民族主义.md",
       "target": "entities/阿摩司·奥兹.md",
       "weight": 1.0,
@@ -9027,6 +10402,51 @@
       "weight": 1.9,
       "kinds": [
         "link",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/谱系学.md",
+      "target": "entities/尼采/profile.md",
+      "weight": 9.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/谱系学.md",
+      "target": "entities/福柯/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/谱系学.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/理念创造家.md",
+      "target": "concepts/谱系学.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/话语权力.md",
+      "target": "concepts/谱系学.md",
+      "weight": 5.05,
+      "kinds": [
+        "link",
+        "related",
         "tag"
       ]
     },
@@ -9125,6 +10545,33 @@
       ]
     },
     {
+      "source": "concepts/辩证法.md",
+      "target": "entities/黑格尔/profile.md",
+      "weight": 8.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/辩证法.md",
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/辩证法.md",
+      "target": "entities/康德/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
       "source": "concepts/还原与给予.md",
       "target": "entities/马里翁/profile.md",
       "weight": 2.0,
@@ -9142,18 +10589,11 @@
     },
     {
       "source": "concepts/还原与给予.md",
-      "target": "ghost:海德格尔",
-      "weight": 1.0,
+      "target": "entities/海德格尔/profile.md",
+      "weight": 5.5,
       "kinds": [
-        "link"
-      ]
-    },
-    {
-      "source": "concepts/还原与给予.md",
-      "target": "ghost:现象学",
-      "weight": 1.0,
-      "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
@@ -9183,16 +10623,18 @@
     },
     {
       "source": "concepts/那伦理的.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 5.05,
       "kinds": [
-        "link"
+        "link",
+        "related",
+        "tag"
       ]
     },
     {
       "source": "concepts/那伦理的.md",
       "target": "concepts/那审美的.md",
-      "weight": 3.8,
+      "weight": 3.45,
       "kinds": [
         "link",
         "tag"
@@ -9217,18 +10659,22 @@
     },
     {
       "source": "concepts/那宗教的.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 5.05,
       "kinds": [
-        "link"
+        "link",
+        "related",
+        "tag"
       ]
     },
     {
       "source": "concepts/那审美的.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 5.05,
       "kinds": [
-        "link"
+        "link",
+        "related",
+        "tag"
       ]
     },
     {
@@ -9257,11 +10703,72 @@
       ]
     },
     {
-      "source": "concepts/重复.md",
-      "target": "ghost:克尔凯郭尔",
+      "source": "concepts/都柏林人.md",
+      "target": "entities/乔伊斯/profile.md",
+      "weight": 5.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/都柏林人.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 6.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/都柏林人.md",
+      "target": "entities/叶芝/profile.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/都柏林人.md",
+      "target": "entities/伍尔夫/profile.md",
+      "weight": 3.4,
+      "kinds": [
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/都柏林人.md",
+      "target": "entities/郁达夫/profile.md",
       "weight": 1.0,
       "kinds": [
         "link"
+      ]
+    },
+    {
+      "source": "concepts/沉沦.md",
+      "target": "concepts/都柏林人.md",
+      "weight": 2.0,
+      "kinds": [
+        "link"
+      ]
+    },
+    {
+      "source": "concepts/都柏林人.md",
+      "target": "sources/2026-04-17-joyce-sisters.md",
+      "weight": 4.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/重复.md",
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
       ]
     },
     {
@@ -9298,28 +10805,12 @@
       ]
     },
     {
-      "source": "concepts/集体无意识.md",
-      "target": "ghost:无意识",
-      "weight": 1.0,
-      "kinds": [
-        "link"
-      ]
-    },
-    {
       "source": "concepts/零余者.md",
       "target": "entities/郁达夫/profile.md",
       "weight": 2.9,
       "kinds": [
         "link",
         "tag"
-      ]
-    },
-    {
-      "source": "concepts/零余者.md",
-      "target": "ghost:沉沦",
-      "weight": 1.0,
-      "kinds": [
-        "link"
       ]
     },
     {
@@ -9340,10 +10831,11 @@
     },
     {
       "source": "concepts/非此即彼.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
+      "target": "entities/克尔凯郭尔/profile.md",
+      "weight": 4.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
       ]
     },
     {
@@ -9614,8 +11106,8 @@
       ]
     },
     {
-      "source": "entities/Contextual Query Suggestion/profile.md",
-      "target": "ghost:DPO",
+      "source": "concepts/DPO.md",
+      "target": "entities/Contextual Query Suggestion/profile.md",
       "weight": 3.5,
       "kinds": [
         "link",
@@ -9860,14 +11352,6 @@
     },
     {
       "source": "entities/乔伊斯/profile.md",
-      "target": "ghost:都柏林人",
-      "weight": 1.0,
-      "kinds": [
-        "link"
-      ]
-    },
-    {
-      "source": "entities/乔伊斯/profile.md",
       "target": "ghost:姐妹们",
       "weight": 1.0,
       "kinds": [
@@ -9924,6 +11408,43 @@
       ]
     },
     {
+      "source": "entities/乔姆斯基/profile.md",
+      "target": "entities/索绪尔/profile.md",
+      "weight": 4.4,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "entities/乔姆斯基/profile.md",
+      "target": "entities/维特根斯坦/profile.md",
+      "weight": 7.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/幻觉.md",
+      "target": "entities/乔姆斯基/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/乔姆斯基/profile.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 6.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
       "source": "entities/乔纳森·班尼特/profile.md",
       "target": "entities/常天喆/profile.md",
       "weight": 2.5,
@@ -9975,6 +11496,69 @@
       ]
     },
     {
+      "source": "entities/克尔凯郭尔/profile.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/克尔凯郭尔/profile.md",
+      "target": "entities/黑格尔/profile.md",
+      "weight": 9.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/克尔凯郭尔/profile.md",
+      "target": "entities/谢林/profile.md",
+      "weight": 9.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/克尔凯郭尔/profile.md",
+      "target": "entities/雷吉娜·奥尔森.md",
+      "weight": 5.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/克尔凯郭尔/profile.md",
+      "target": "entities/尼采/profile.md",
+      "weight": 8.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/克尔凯郭尔/profile.md",
+      "target": "entities/海德格尔/profile.md",
+      "weight": 8.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/克尔凯郭尔/profile.md",
+      "target": "sources/2026-04-17-love-faith-existential-dialectics.md",
+      "weight": 4.0,
+      "kinds": [
+        "source",
+        "tag"
+      ]
+    },
+    {
       "source": "entities/刘庆峰/profile.md",
       "target": "entities/科大讯飞/profile.md",
       "weight": 8.9,
@@ -10021,24 +11605,7 @@
     {
       "source": "entities/卫茂平/profile.md",
       "target": "entities/常天喆/profile.md",
-      "weight": 4.5,
-      "kinds": [
-        "link",
-        "related"
-      ]
-    },
-    {
-      "source": "entities/卫茂平/profile.md",
-      "target": "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
-      "weight": 1.0,
-      "kinds": [
-        "source"
-      ]
-    },
-    {
-      "source": "entities/卫茂平.md",
-      "target": "entities/常天喆/profile.md",
-      "weight": 4.5,
+      "weight": 7.0,
       "kinds": [
         "link",
         "related"
@@ -10166,6 +11733,79 @@
       ]
     },
     {
+      "source": "entities/尼采/profile.md",
+      "target": "entities/海德格尔/profile.md",
+      "weight": 9.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "entities/尼采/profile.md",
+      "target": "entities/福柯/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/尼采/profile.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/复调社会.md",
+      "target": "entities/巴赫金/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/多声部世界.md",
+      "target": "entities/巴赫金/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/互文性.md",
+      "target": "entities/巴赫金/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/巴赫金/profile.md",
+      "target": "entities/朱莉亚·克里斯特娃.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/巴赫金/profile.md",
+      "target": "entities/阿摩司·奥兹.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
       "source": "entities/帕特森·布朗/profile.md",
       "target": "entities/常天喆/profile.md",
       "weight": 2.5,
@@ -10201,8 +11841,8 @@
     },
     {
       "source": "entities/常天喆/profile.md",
-      "target": "entities/赵林.md",
-      "weight": 4.5,
+      "target": "entities/赵林/profile.md",
+      "weight": 7.0,
       "kinds": [
         "link",
         "related"
@@ -10314,9 +11954,10 @@
     },
     {
       "source": "entities/常天喆/profile.md",
-      "target": "ghost:黑格尔",
-      "weight": 2.5,
+      "target": "entities/黑格尔/profile.md",
+      "weight": 6.0,
       "kinds": [
+        "link",
         "related"
       ]
     },
@@ -10330,15 +11971,16 @@
     },
     {
       "source": "entities/常天喆/profile.md",
-      "target": "ghost:维特根斯坦",
-      "weight": 2.5,
+      "target": "entities/维特根斯坦/profile.md",
+      "weight": 6.0,
       "kinds": [
+        "link",
         "related"
       ]
     },
     {
       "source": "entities/常天喆/profile.md",
-      "target": "ghost:海德格尔",
+      "target": "entities/海德格尔/profile.md",
       "weight": 2.5,
       "kinds": [
         "related"
@@ -10348,14 +11990,6 @@
       "source": "entities/常天喆/profile.md",
       "target": "entities/索绪尔/profile.md",
       "weight": 5.0,
-      "kinds": [
-        "related"
-      ]
-    },
-    {
-      "source": "entities/常天喆/profile.md",
-      "target": "ghost:乔姆斯基",
-      "weight": 2.5,
       "kinds": [
         "related"
       ]
@@ -10546,15 +12180,6 @@
     },
     {
       "source": "entities/常天喆/profile.md",
-      "target": "ghost:DPO",
-      "weight": 3.5,
-      "kinds": [
-        "link",
-        "related"
-      ]
-    },
-    {
-      "source": "entities/常天喆/profile.md",
       "target": "ghost:Prompt工程",
       "weight": 3.5,
       "kinds": [
@@ -10580,8 +12205,8 @@
       ]
     },
     {
-      "source": "entities/常天喆/profile.md",
-      "target": "ghost:现象学",
+      "source": "concepts/现象学.md",
+      "target": "entities/常天喆/profile.md",
       "weight": 2.5,
       "kinds": [
         "related"
@@ -10590,22 +12215,6 @@
     {
       "source": "concepts/零余者.md",
       "target": "entities/常天喆/profile.md",
-      "weight": 2.5,
-      "kinds": [
-        "related"
-      ]
-    },
-    {
-      "source": "entities/常天喆/profile.md",
-      "target": "ghost:沉沦",
-      "weight": 2.5,
-      "kinds": [
-        "related"
-      ]
-    },
-    {
-      "source": "entities/常天喆/profile.md",
-      "target": "ghost:都柏林人",
       "weight": 2.5,
       "kinds": [
         "related"
@@ -10659,6 +12268,22 @@
       "weight": 5.0,
       "kinds": [
         "related"
+      ]
+    },
+    {
+      "source": "concepts/机器的时间性.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 1.0,
+      "kinds": [
+        "link"
+      ]
+    },
+    {
+      "source": "concepts/复调与对齐.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 1.0,
+      "kinds": [
+        "link"
       ]
     },
     {
@@ -10757,16 +12382,17 @@
     },
     {
       "source": "entities/庄子/profile.md",
-      "target": "ghost:维特根斯坦",
-      "weight": 3.5,
+      "target": "entities/维特根斯坦/profile.md",
+      "weight": 8.55,
       "kinds": [
         "link",
-        "related"
+        "related",
+        "tag"
       ]
     },
     {
       "source": "entities/庄子/profile.md",
-      "target": "ghost:海德格尔",
+      "target": "entities/海德格尔/profile.md",
       "weight": 3.5,
       "kinds": [
         "link",
@@ -10783,8 +12409,8 @@
       ]
     },
     {
-      "source": "entities/庄子/profile.md",
-      "target": "ghost:乔姆斯基",
+      "source": "entities/乔姆斯基/profile.md",
+      "target": "entities/庄子/profile.md",
       "weight": 3.5,
       "kinds": [
         "link",
@@ -10834,11 +12460,12 @@
     },
     {
       "source": "entities/康德/profile.md",
-      "target": "ghost:黑格尔",
-      "weight": 3.5,
+      "target": "entities/黑格尔/profile.md",
+      "weight": 7.55,
       "kinds": [
         "link",
-        "related"
+        "related",
+        "tag"
       ]
     },
     {
@@ -10852,18 +12479,11 @@
     },
     {
       "source": "entities/康德/profile.md",
-      "target": "ghost:上帝存在证明",
-      "weight": 2.5,
+      "target": "entities/赵林/profile.md",
+      "weight": 4.5,
       "kinds": [
+        "link",
         "related"
-      ]
-    },
-    {
-      "source": "entities/康德/profile.md",
-      "target": "entities/赵林.md",
-      "weight": 1.0,
-      "kinds": [
-        "link"
       ]
     },
     {
@@ -11154,6 +12774,41 @@
       ]
     },
     {
+      "source": "concepts/重复.md",
+      "target": "entities/柏拉图/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/语言与世界.md",
+      "target": "entities/柏拉图/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/常天喆/profile.md",
+      "target": "entities/柏拉图/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/克尔凯郭尔/profile.md",
+      "target": "entities/柏拉图/profile.md",
+      "weight": 1.0,
+      "kinds": [
+        "link"
+      ]
+    },
+    {
       "source": "entities/梁汝波/profile.md",
       "target": "sources/2026-04-15-chang-tianzhe-resume.md",
       "weight": 1.0,
@@ -11163,8 +12818,8 @@
     },
     {
       "source": "entities/武汉大学/profile.md",
-      "target": "entities/赵林.md",
-      "weight": 3.5,
+      "target": "entities/赵林/profile.md",
+      "weight": 6.0,
       "kinds": [
         "link",
         "related"
@@ -11184,6 +12839,33 @@
       "weight": 1.0,
       "kinds": [
         "source"
+      ]
+    },
+    {
+      "source": "entities/海德格尔/profile.md",
+      "target": "entities/胡塞尔/profile.md",
+      "weight": 8.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/海德格尔/profile.md",
+      "target": "entities/马里翁/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/现象学神学转向.md",
+      "target": "entities/海德格尔/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
       ]
     },
     {
@@ -11356,17 +13038,8 @@
       ]
     },
     {
-      "source": "entities/胡塞尔/profile.md",
-      "target": "entities/马里翁/profile.md",
-      "weight": 7.0,
-      "kinds": [
-        "link",
-        "related"
-      ]
-    },
-    {
-      "source": "entities/胡塞尔/profile.md",
-      "target": "ghost:海德格尔",
+      "source": "entities/索绪尔/profile.md",
+      "target": "entities/维特根斯坦/profile.md",
       "weight": 3.5,
       "kinds": [
         "link",
@@ -11374,11 +13047,21 @@
       ]
     },
     {
-      "source": "entities/胡塞尔/profile.md",
-      "target": "ghost:现象学",
-      "weight": 1.0,
+      "source": "concepts/幻觉.md",
+      "target": "entities/维特根斯坦/profile.md",
+      "weight": 4.5,
       "kinds": [
-        "link"
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/胡塞尔/profile.md",
+      "target": "entities/马里翁/profile.md",
+      "weight": 7.0,
+      "kinds": [
+        "link",
+        "related"
       ]
     },
     {
@@ -11515,36 +13198,58 @@
       ]
     },
     {
-      "source": "entities/常天喆/profile.md",
-      "target": "entities/赵林/profile.md",
-      "weight": 3.5,
+      "source": "entities/谢林/profile.md",
+      "target": "entities/黑格尔/profile.md",
+      "weight": 10.45,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "entities/康德/profile.md",
+      "target": "entities/谢林/profile.md",
+      "weight": 4.05,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/生存辩证法.md",
+      "target": "entities/谢林/profile.md",
+      "weight": 4.5,
       "kinds": [
         "link",
         "related"
       ]
     },
     {
-      "source": "entities/武汉大学/profile.md",
-      "target": "entities/赵林/profile.md",
-      "weight": 2.5,
+      "source": "entities/谢林/profile.md",
+      "target": "sources/2026-04-17-love-faith-existential-dialectics.md",
+      "weight": 2.0,
       "kinds": [
+        "source"
+      ]
+    },
+    {
+      "source": "entities/赵林/profile.md",
+      "target": "entities/黑格尔/profile.md",
+      "weight": 8.0,
+      "kinds": [
+        "link",
         "related"
       ]
     },
     {
-      "source": "entities/赵林/profile.md",
-      "target": "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
-      "weight": 1.0,
+      "source": "entities/克尔凯郭尔/profile.md",
+      "target": "entities/赵林/profile.md",
+      "weight": 3.5,
       "kinds": [
-        "source"
-      ]
-    },
-    {
-      "source": "entities/赵林/profile.md",
-      "target": "sources/2026-04-15-chang-tianzhe-resume.md",
-      "weight": 1.0,
-      "kinds": [
-        "source"
+        "link",
+        "related"
       ]
     },
     {
@@ -11604,14 +13309,6 @@
       "kinds": [
         "link",
         "related"
-      ]
-    },
-    {
-      "source": "entities/郁达夫/profile.md",
-      "target": "ghost:沉沦",
-      "weight": 1.0,
-      "kinds": [
-        "link"
       ]
     },
     {
@@ -11707,14 +13404,6 @@
     },
     {
       "source": "entities/雷吉娜·奥尔森.md",
-      "target": "ghost:克尔凯郭尔",
-      "weight": 1.0,
-      "kinds": [
-        "link"
-      ]
-    },
-    {
-      "source": "entities/雷吉娜·奥尔森.md",
       "target": "ghost:爱",
       "weight": 1.0,
       "kinds": [
@@ -11747,11 +13436,72 @@
       ]
     },
     {
+      "source": "entities/马克思/profile.md",
+      "target": "entities/黑格尔/profile.md",
+      "weight": 8.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/阿摩司·奥兹.md",
+      "target": "entities/马克思/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/对齐即承认.md",
+      "target": "entities/马克思/profile.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
       "source": "entities/马里翁/profile.md",
       "target": "sources/2026-04-17-husserl-theological-turn.md",
       "weight": 3.5,
       "kinds": [
         "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/最高伦理实体.md",
+      "target": "entities/黑格尔/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/艾伦·伍德/profile.md",
+      "target": "entities/黑格尔/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/邓晓芒/profile.md",
+      "target": "entities/黑格尔/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/黑格尔/profile.md",
+      "target": "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
+      "weight": 2.0,
+      "kinds": [
         "source"
       ]
     },
@@ -11912,7 +13662,7 @@
       ]
     },
     {
-      "source": "entities/赵林.md",
+      "source": "entities/赵林/profile.md",
       "target": "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
       "weight": 1.0,
       "kinds": [
@@ -11928,7 +13678,7 @@
       ]
     },
     {
-      "source": "entities/卫茂平.md",
+      "source": "entities/卫茂平/profile.md",
       "target": "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
       "weight": 1.0,
       "kinds": [
@@ -12040,7 +13790,7 @@
       ]
     },
     {
-      "source": "ghost:DPO",
+      "source": "concepts/DPO.md",
       "target": "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
       "weight": 1.0,
       "kinds": [
@@ -12050,14 +13800,6 @@
     {
       "source": "ghost:Prompt工程",
       "target": "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
-      "weight": 1.0,
-      "kinds": [
-        "source"
-      ]
-    },
-    {
-      "source": "ghost:黑格尔",
-      "target": "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
       "weight": 1.0,
       "kinds": [
         "source"
@@ -12088,7 +13830,7 @@
       ]
     },
     {
-      "source": "ghost:承认",
+      "source": "concepts/承认.md",
       "target": "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
       "weight": 1.0,
       "kinds": [
@@ -12104,7 +13846,15 @@
       ]
     },
     {
-      "source": "ghost:维特根斯坦",
+      "source": "entities/柏拉图/profile.md",
+      "target": "sources/2026-04-16-hallucination-is-all-you-need.md",
+      "weight": 1.0,
+      "kinds": [
+        "source"
+      ]
+    },
+    {
+      "source": "entities/维特根斯坦/profile.md",
       "target": "sources/2026-04-16-hallucination-is-all-you-need.md",
       "weight": 1.0,
       "kinds": [
@@ -12120,7 +13870,15 @@
       ]
     },
     {
-      "source": "ghost:乔姆斯基",
+      "source": "entities/乔姆斯基/profile.md",
+      "target": "sources/2026-04-16-hallucination-is-all-you-need.md",
+      "weight": 1.0,
+      "kinds": [
+        "source"
+      ]
+    },
+    {
+      "source": "entities/尼采/profile.md",
       "target": "sources/2026-04-16-hallucination-is-all-you-need.md",
       "weight": 1.0,
       "kinds": [
@@ -12212,7 +13970,7 @@
       ]
     },
     {
-      "source": "entities/卫茂平.md",
+      "source": "entities/卫茂平/profile.md",
       "target": "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md",
       "weight": 1.0,
       "kinds": [
@@ -12260,7 +14018,7 @@
       ]
     },
     {
-      "source": "ghost:现象学",
+      "source": "concepts/现象学.md",
       "target": "sources/2026-04-17-husserl-theological-turn.md",
       "weight": 3.5,
       "kinds": [
@@ -12303,15 +14061,16 @@
       ]
     },
     {
-      "source": "ghost:克尔凯郭尔",
+      "source": "entities/克尔凯郭尔/profile.md",
       "target": "sources/2026-04-17-irishman-banshee.md",
-      "weight": 1.0,
+      "weight": 1.55,
       "kinds": [
-        "source"
+        "source",
+        "tag"
       ]
     },
     {
-      "source": "ghost:现象学",
+      "source": "concepts/现象学.md",
       "target": "sources/2026-04-17-irishman-banshee.md",
       "weight": 1.0,
       "kinds": [
@@ -12340,15 +14099,6 @@
       "target": "sources/2026-04-17-irishman-banshee.md",
       "weight": 1.0,
       "kinds": [
-        "source"
-      ]
-    },
-    {
-      "source": "ghost:都柏林人",
-      "target": "sources/2026-04-17-joyce-sisters.md",
-      "weight": 3.5,
-      "kinds": [
-        "related",
         "source"
       ]
     },
@@ -12405,7 +14155,7 @@
       ]
     },
     {
-      "source": "ghost:上帝存在证明",
+      "source": "concepts/上帝存在证明.md",
       "target": "sources/2026-04-17-kant-dependency-thesis.md",
       "weight": 2.5,
       "kinds": [
@@ -12474,7 +14224,7 @@
       ]
     },
     {
-      "source": "ghost:现象学",
+      "source": "concepts/现象学.md",
       "target": "sources/2026-04-17-kant-dependency-thesis.md",
       "weight": 1.0,
       "kinds": [
@@ -12506,23 +14256,7 @@
       ]
     },
     {
-      "source": "ghost:克尔凯郭尔",
-      "target": "sources/2026-04-17-love-faith-existential-dialectics.md",
-      "weight": 1.0,
-      "kinds": [
-        "source"
-      ]
-    },
-    {
-      "source": "ghost:黑格尔",
-      "target": "sources/2026-04-17-love-faith-existential-dialectics.md",
-      "weight": 1.0,
-      "kinds": [
-        "source"
-      ]
-    },
-    {
-      "source": "ghost:谢林",
+      "source": "entities/黑格尔/profile.md",
       "target": "sources/2026-04-17-love-faith-existential-dialectics.md",
       "weight": 1.0,
       "kinds": [
@@ -12613,7 +14347,7 @@
     {
       "source": "concepts/那宗教的.md",
       "target": "sources/2026-04-17-love-faith-existential-dialectics.md",
-      "weight": 1.9,
+      "weight": 1.55,
       "kinds": [
         "source",
         "tag"
@@ -12628,7 +14362,7 @@
       ]
     },
     {
-      "source": "ghost:海德格尔",
+      "source": "entities/海德格尔/profile.md",
       "target": "sources/2026-04-17-prometheus-athena.md",
       "weight": 1.0,
       "kinds": [
@@ -12636,7 +14370,7 @@
       ]
     },
     {
-      "source": "ghost:马克思",
+      "source": "entities/马克思/profile.md",
       "target": "sources/2026-04-17-prometheus-athena.md",
       "weight": 1.0,
       "kinds": [
@@ -12644,7 +14378,7 @@
       ]
     },
     {
-      "source": "ghost:黑格尔",
+      "source": "entities/黑格尔/profile.md",
       "target": "sources/2026-04-17-prometheus-athena.md",
       "weight": 1.0,
       "kinds": [
@@ -12652,7 +14386,7 @@
       ]
     },
     {
-      "source": "ghost:谢林",
+      "source": "entities/谢林/profile.md",
       "target": "sources/2026-04-17-prometheus-athena.md",
       "weight": 1.0,
       "kinds": [
@@ -12708,7 +14442,7 @@
       ]
     },
     {
-      "source": "ghost:马克思",
+      "source": "entities/马克思/profile.md",
       "target": "sources/2026-04-17-reconstructing-nationality.md",
       "weight": 1.0,
       "kinds": [
@@ -12822,15 +14556,6 @@
       ]
     },
     {
-      "source": "ghost:沉沦",
-      "target": "sources/2026-04-17-yudafu-sinking.md",
-      "weight": 3.5,
-      "kinds": [
-        "related",
-        "source"
-      ]
-    },
-    {
       "source": "concepts/零余者.md",
       "target": "sources/2026-04-17-yudafu-sinking.md",
       "weight": 3.5,
@@ -12884,7 +14609,7 @@
       ]
     },
     {
-      "source": "ghost:维特根斯坦",
+      "source": "entities/维特根斯坦/profile.md",
       "target": "sources/2026-04-17-zhuangzi-language-philosophy.md",
       "weight": 2.5,
       "kinds": [
@@ -12892,7 +14617,7 @@
       ]
     },
     {
-      "source": "ghost:海德格尔",
+      "source": "entities/海德格尔/profile.md",
       "target": "sources/2026-04-17-zhuangzi-language-philosophy.md",
       "weight": 2.5,
       "kinds": [
@@ -12900,7 +14625,7 @@
       ]
     },
     {
-      "source": "ghost:乔姆斯基",
+      "source": "entities/乔姆斯基/profile.md",
       "target": "sources/2026-04-17-zhuangzi-language-philosophy.md",
       "weight": 2.5,
       "kinds": [
@@ -13301,7 +15026,7 @@
       ]
     },
     {
-      "source": "ghost:承认",
+      "source": "concepts/承认.md",
       "target": "timelines/2023.md",
       "weight": 1.0,
       "kinds": [
@@ -13309,7 +15034,7 @@
       ]
     },
     {
-      "source": "ghost:黑格尔",
+      "source": "entities/黑格尔/profile.md",
       "target": "timelines/2023.md",
       "weight": 1.0,
       "kinds": [
@@ -13365,7 +15090,7 @@
       ]
     },
     {
-      "source": "ghost:DPO",
+      "source": "concepts/DPO.md",
       "target": "timelines/2024.md",
       "weight": 1.0,
       "kinds": [
@@ -13635,6 +15360,30 @@
       ]
     },
     {
+      "source": "concepts/DPO.md",
+      "target": "concepts/对齐即承认.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/DPO.md",
+      "target": "concepts/系统提示词学习.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/对齐即承认.md",
+      "target": "concepts/系统提示词学习.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
       "source": "concepts/LLM-OS.md",
       "target": "concepts/RLHF不是RL.md",
       "weight": 0.55,
@@ -13836,159 +15585,39 @@
     },
     {
       "source": "concepts/《歌德全集》.md",
-      "target": "entities/卫茂平/profile.md",
+      "target": "concepts/沉沦.md",
       "weight": 0.9,
       "kinds": [
         "tag"
       ]
     },
     {
-      "source": "concepts/国家社科基金重大项目.md",
-      "target": "entities/卫茂平/profile.md",
-      "weight": 0.9,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "concepts/乌托邦神话.md",
-      "target": "entities/荣格/profile.md",
-      "weight": 0.9,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "concepts/政治神话.md",
-      "target": "entities/荣格/profile.md",
-      "weight": 0.9,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "concepts/二律背反.md",
-      "target": "concepts/依赖性论题.md",
-      "weight": 1.45,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "concepts/二律背反.md",
-      "target": "concepts/宇宙论证明.md",
+      "source": "concepts/三言.md",
+      "target": "entities/维特根斯坦/profile.md",
       "weight": 0.55,
       "kinds": [
         "tag"
       ]
     },
     {
-      "source": "concepts/二律背反.md",
-      "target": "concepts/本体论证明.md",
+      "source": "concepts/上帝存在证明.md",
+      "target": "entities/乔纳森·班尼特/profile.md",
       "weight": 0.55,
       "kinds": [
         "tag"
       ]
     },
     {
-      "source": "concepts/依赖性论题.md",
-      "target": "concepts/先验幻相.md",
-      "weight": 1.45,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "concepts/先验幻相.md",
-      "target": "concepts/宇宙论证明.md",
+      "source": "concepts/上帝存在证明.md",
+      "target": "entities/帕特森·布朗/profile.md",
       "weight": 0.55,
       "kinds": [
         "tag"
       ]
     },
     {
-      "source": "concepts/先验幻相.md",
-      "target": "concepts/本体论证明.md",
-      "weight": 0.55,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "concepts/二律背反.md",
-      "target": "concepts/思维辩证法.md",
-      "weight": 0.55,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "concepts/二律背反.md",
-      "target": "concepts/爱的悖谬.md",
-      "weight": 0.55,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "concepts/二律背反.md",
-      "target": "concepts/生存辩证法.md",
-      "weight": 0.55,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "concepts/二律背反.md",
-      "target": "concepts/自我中介问题.md",
-      "weight": 0.55,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "concepts/思维辩证法.md",
-      "target": "concepts/爱的悖谬.md",
-      "weight": 0.55,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "concepts/思维辩证法.md",
-      "target": "concepts/自我中介问题.md",
-      "weight": 0.55,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "concepts/生存辩证法.md",
-      "target": "concepts/自我中介问题.md",
-      "weight": 0.55,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "concepts/互文性.md",
-      "target": "concepts/能指与所指.md",
-      "weight": 0.9,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "concepts/互文性.md",
-      "target": "entities/索绪尔/profile.md",
-      "weight": 0.9,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "concepts/本体论证明.md",
-      "target": "entities/阿奎那/profile.md",
+      "source": "concepts/上帝存在证明.md",
+      "target": "entities/艾伦·伍德/profile.md",
       "weight": 0.55,
       "kinds": [
         "tag"
@@ -14035,6 +15664,238 @@
       ]
     },
     {
+      "source": "concepts/乌托邦神话.md",
+      "target": "entities/荣格/profile.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/政治神话.md",
+      "target": "entities/荣格/profile.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/二律背反.md",
+      "target": "concepts/依赖性论题.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/依赖性论题.md",
+      "target": "concepts/先验幻相.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/二律背反.md",
+      "target": "concepts/思维辩证法.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/二律背反.md",
+      "target": "concepts/爱的悖谬.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/二律背反.md",
+      "target": "concepts/生存辩证法.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/二律背反.md",
+      "target": "concepts/自我中介问题.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/二律背反.md",
+      "target": "entities/黑格尔/profile.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/思维辩证法.md",
+      "target": "concepts/爱的悖谬.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/思维辩证法.md",
+      "target": "concepts/自我中介问题.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/生存辩证法.md",
+      "target": "concepts/自我中介问题.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/互文性.md",
+      "target": "concepts/能指与所指.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/互文性.md",
+      "target": "entities/索绪尔/profile.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/人是绳索.md",
+      "target": "concepts/谱系学.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/人是绳索.md",
+      "target": "entities/马克思/profile.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/人是绳索.md",
+      "target": "concepts/无意识.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/人是绳索.md",
+      "target": "entities/拉康/profile.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/人是绳索.md",
+      "target": "concepts/复调与对齐.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/人是绳索.md",
+      "target": "concepts/对齐即承认.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/人是绳索.md",
+      "target": "concepts/机器的时间性.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/复调与对齐.md",
+      "target": "concepts/实践世界与欲望.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/复调与对齐.md",
+      "target": "concepts/对齐即承认.md",
+      "weight": 1.45,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/复调与对齐.md",
+      "target": "concepts/机器的时间性.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/实践世界与欲望.md",
+      "target": "concepts/对齐即承认.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/实践世界与欲望.md",
+      "target": "concepts/机器的时间性.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/对齐即承认.md",
+      "target": "concepts/机器的时间性.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/本体论证明.md",
+      "target": "entities/阿奎那/profile.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/信仰.md",
+      "target": "concepts/生存境界.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
       "source": "concepts/信仰之跃.md",
       "target": "concepts/罪.md",
       "weight": 0.9,
@@ -14053,7 +15914,7 @@
     {
       "source": "concepts/信仰之跃.md",
       "target": "sources/2026-04-17-love-faith-existential-dialectics.md",
-      "weight": 0.9,
+      "weight": 0.55,
       "kinds": [
         "tag"
       ]
@@ -14070,6 +15931,30 @@
       "source": "concepts/全景敞视主义.md",
       "target": "concepts/性史.md",
       "weight": 1.1,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/全景敞视主义.md",
+      "target": "concepts/谱系学.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/性史.md",
+      "target": "concepts/谱系学.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/规训与惩罚.md",
+      "target": "concepts/谱系学.md",
+      "weight": 0.55,
       "kinds": [
         "tag"
       ]
@@ -14275,6 +16160,70 @@
       ]
     },
     {
+      "source": "concepts/实践世界与欲望.md",
+      "target": "concepts/梦的解析.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/实践世界与欲望.md",
+      "target": "concepts/犹太人问题.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/实践世界与欲望.md",
+      "target": "sources/2026-04-17-prometheus-athena.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/犹太人问题.md",
+      "target": "sources/2026-04-17-prometheus-athena.md",
+      "weight": 1.8,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/检索引起的幻觉.md",
+      "target": "concepts/洞穴喻.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/检索引起的幻觉.md",
+      "target": "concepts/语言与世界.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/洞穴喻.md",
+      "target": "concepts/知识截止.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/知识截止.md",
+      "target": "concepts/语言与世界.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
       "source": "concepts/幻觉.md",
       "target": "concepts/弱到强的泛化.md",
       "weight": 0.9,
@@ -14285,7 +16234,15 @@
     {
       "source": "concepts/思维辩证法.md",
       "target": "entities/康德/profile.md",
-      "weight": 0.9,
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/思维辩证法.md",
+      "target": "entities/谢林/profile.md",
+      "weight": 0.55,
       "kinds": [
         "tag"
       ]
@@ -14323,6 +16280,30 @@
       ]
     },
     {
+      "source": "concepts/无意识.md",
+      "target": "entities/瓜塔里/profile.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/梦的解析.md",
+      "target": "entities/瓜塔里/profile.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "entities/弗洛伊德/profile.md",
+      "target": "entities/瓜塔里/profile.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
       "source": "concepts/时间.md",
       "target": "concepts/最初的爱.md",
       "weight": 0.9,
@@ -14333,22 +16314,6 @@
     {
       "source": "concepts/最高伦理实体.md",
       "target": "concepts/那伦理的.md",
-      "weight": 0.9,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "concepts/梦的解析.md",
-      "target": "entities/瓜塔里/profile.md",
-      "weight": 0.9,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "entities/弗洛伊德/profile.md",
-      "target": "entities/瓜塔里/profile.md",
       "weight": 0.9,
       "kinds": [
         "tag"
@@ -14374,6 +16339,30 @@
       "source": "concepts/集体无意识.md",
       "target": "entities/拉康/profile.md",
       "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/沉沦.md",
+      "target": "concepts/现象学.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/沉沦.md",
+      "target": "sources/2026-04-17-prometheus-athena.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/现象学.md",
+      "target": "sources/2026-04-17-prometheus-athena.md",
+      "weight": 0.9,
       "kinds": [
         "tag"
       ]
@@ -14427,14 +16416,6 @@
       ]
     },
     {
-      "source": "concepts/犹太人问题.md",
-      "target": "sources/2026-04-17-prometheus-athena.md",
-      "weight": 1.8,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
       "source": "concepts/瘫痪.md",
       "target": "sources/2026-04-17-prometheus-athena.md",
       "weight": 0.9,
@@ -14445,7 +16426,7 @@
     {
       "source": "concepts/生存辩证法.md",
       "target": "concepts/虚无.md",
-      "weight": 0.9,
+      "weight": 0.55,
       "kinds": [
         "tag"
       ]
@@ -14453,7 +16434,7 @@
     {
       "source": "concepts/生存辩证法.md",
       "target": "sources/2026-04-17-irishman-banshee.md",
-      "weight": 0.9,
+      "weight": 0.55,
       "kinds": [
         "tag"
       ]
@@ -14461,7 +16442,7 @@
     {
       "source": "concepts/虚无.md",
       "target": "sources/2026-04-17-irishman-banshee.md",
-      "weight": 0.9,
+      "weight": 0.55,
       "kinds": [
         "tag"
       ]
@@ -14470,6 +16451,14 @@
       "source": "concepts/痛苦的教训.md",
       "target": "entities/微软亚洲研究院/profile.md",
       "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/都柏林人.md",
+      "target": "sources/2026-04-17-irishman-banshee.md",
+      "weight": 1.8,
       "kinds": [
         "tag"
       ]
@@ -14507,9 +16496,33 @@
       ]
     },
     {
+      "source": "concepts/能指与所指.md",
+      "target": "entities/乔姆斯基/profile.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/谱系学.md",
+      "target": "concepts/辩证法.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/辩证法.md",
+      "target": "concepts/非此即彼.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
       "source": "concepts/那伦理的.md",
       "target": "sources/2026-04-17-love-faith-existential-dialectics.md",
-      "weight": 0.9,
+      "weight": 0.55,
       "kinds": [
         "tag"
       ]
@@ -14517,7 +16530,7 @@
     {
       "source": "concepts/那审美的.md",
       "target": "sources/2026-04-17-love-faith-existential-dialectics.md",
-      "weight": 0.9,
+      "weight": 0.55,
       "kinds": [
         "tag"
       ]
@@ -14667,30 +16680,6 @@
       ]
     },
     {
-      "source": "entities/卫茂平.md",
-      "target": "entities/李俊国.md",
-      "weight": 0.9,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "entities/卫茂平.md",
-      "target": "entities/赵林.md",
-      "weight": 0.9,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "entities/李俊国.md",
-      "target": "entities/赵林.md",
-      "weight": 1.8,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
       "source": "entities/姚舜禹/profile.md",
       "target": "entities/腾讯会议智能助手/profile.md",
       "weight": 0.9,
@@ -14733,6 +16722,22 @@
     {
       "source": "entities/安瑟伦/profile.md",
       "target": "entities/阿奎那/profile.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "entities/尼采/profile.md",
+      "target": "entities/马克思/profile.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "entities/海德格尔/profile.md",
+      "target": "entities/马克思/profile.md",
       "weight": 0.9,
       "kinds": [
         "tag"
@@ -14787,7 +16792,7 @@
       ]
     },
     {
-      "source": "entities/赵林.md",
+      "source": "entities/李俊国.md",
       "target": "entities/赵林/profile.md",
       "weight": 0.9,
       "kinds": [
