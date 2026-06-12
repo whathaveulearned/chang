@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T22:42:27",
+  "generated_at": "2026-06-12T16:43:07",
   "node_count": 247,
   "edge_count": 968,
   "ghost_count": 60,
@@ -20,7 +20,8 @@
       "updated": "2026-04-17",
       "summary": "Artificial General Intelligence的缩写，通用人工智能",
       "degree": 11,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/AI-Native.md",
@@ -37,7 +38,8 @@
       "updated": "2026-04-15",
       "summary": "AI Native指基于AI能力原生设计的产品功能，而不是在现有产品上简单添加AI功能。这类功能深度结合AI技术，提供全新的用户体验。",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/AI产品经理.md",
@@ -54,7 +56,8 @@
       "updated": "2026-04-15",
       "summary": "AI产品经理是负责大语言模型等AI产品的规划、设计和迭代的产品经理角色。与传统产品经理不同，AI产品经理需要直接对模型效果负责，参与system prompt撰写、模型评估标准制定等工作。",
       "degree": 9,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/Fact-checking Agent.md",
@@ -71,7 +74,8 @@
       "updated": "2026-04-15",
       "summary": "Fact-checking Agent是AI求真项目中用于事实核查的智能agent，通过信源筛选、多轮检索、交叉验证对照等策略，实现围绕事实的查验工作流。",
       "degree": 11,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/LLM革命.md",
@@ -88,7 +92,8 @@
       "updated": "2026-04-15",
       "summary": "LLM革命指2023年前后大语言模型（Large Language Model）技术的快速发展和广泛应用，带来了AI产品和职业的重大变革。",
       "degree": 5,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/Orchestration Workflow.md",
@@ -105,7 +110,8 @@
       "updated": "2026-04-15",
       "summary": "Orchestration Workflow是AI智选资讯中采用的解耦的、可动态配置的RAG工作流，用于灵活管理和编排AI内容生产的各个环节。",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/RAG.md",
@@ -121,7 +127,8 @@
       "updated": "2026-04-15",
       "summary": "RAG（Retrieval-Augmented Generation，检索增强生成）是一种结合了信息检索和文本生成的AI技术，通过先从知识库中检索相关信息，再基于检索结果生成回答，以提升AI输出的准确性和时效性。",
       "degree": 10,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/RLHF.md",
@@ -139,7 +146,8 @@
       "updated": "2026-04-17",
       "summary": "Reinforcement Learning from Human Feedback的缩写，人类反馈强化学习",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/SFT.md",
@@ -155,7 +163,8 @@
       "updated": "2026-04-15",
       "summary": "SFT（Supervised Fine-Tuning，监督微调）是一种大模型训练技术，通过使用高质量的标注数据对预训练模型进行微调，以提升模型在特定任务上的表现。",
       "degree": 5,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/Superalignment.md",
@@ -174,7 +183,8 @@
       "updated": "2026-04-17",
       "summary": "OpenAI的超级对齐项目，目标是引导和控制比人类更聪明的人工智能系统",
       "degree": 15,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/System-Engineer.md",
@@ -191,7 +201,8 @@
       "updated": "2026-04-15",
       "summary": "System Engineer是AI产品中负责主对话system prompt撰写的角色，对标Claude的Amanda Askell。这个角色需要直接对大模型在产品主对话效果负责，随模型迭代优化system。",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/《名作欣赏》.md",
@@ -208,7 +219,8 @@
       "updated": "2026-04-17",
       "summary": "文学期刊，常天喆的两篇论文发表于该期刊",
       "degree": 5,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/《歌德全集》.md",
@@ -226,7 +238,8 @@
       "updated": "2026-04-17",
       "summary": "卫茂平教授主持的国家社科基金重大项目的研究对象",
       "degree": 4,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/三言.md",
@@ -244,7 +257,8 @@
       "updated": "2026-04-17",
       "summary": "庄子哲学中的概念，指寓言、重言、卮言三种言说方式",
       "degree": 4,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/上下文工程.md",
@@ -260,7 +274,8 @@
       "updated": "2026-04-15",
       "summary": "上下文工程（Context Engineering）是指通过精心设计 System prompt 和 user prompt，将它们改造为模块化、动态化的结构，配合各类信源资源和辅助标签、信号，科学构建高效上下文的技术。",
       "degree": 11,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/乌托邦神话.md",
@@ -278,7 +293,8 @@
       "updated": "2026-04-17",
       "summary": "重构民族性中的乌托邦神话文本",
       "degree": 3,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/二律背反.md",
@@ -296,7 +312,8 @@
       "updated": "2026-04-17",
       "summary": "康德批判哲学中的核心概念，指理性在追求无条件者时必然陷入的矛盾",
       "degree": 14,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/互文性.md",
@@ -314,7 +331,8 @@
       "updated": "2026-04-17",
       "summary": "法国文论家朱莉亚·克里斯特娃最早提出的理论术语，用于描述\"同一个文本内部的文本互动作用",
       "degree": 13,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/人类反馈强化学习.md",
@@ -332,7 +350,8 @@
       "updated": "2026-04-17",
       "summary": "RLHF的中文翻译，Reinforcement Learning from Human Feedback",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/价值观对齐.md",
@@ -349,7 +368,8 @@
       "updated": "2026-04-15",
       "summary": "价值观对齐（Value Alignment）是AI研究领域的重要方向，旨在确保大语言模型等AI系统的行为与人类的价值观和道德准则保持一致。",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/依赖性论题.md",
@@ -367,7 +387,8 @@
       "updated": "2026-04-17",
       "summary": "康德批判哲学中的核心论题之一，涉及理性对存在的依赖关系",
       "degree": 12,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/信仰之跃.md",
@@ -385,7 +406,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的核心概念，最初的爱获得历史性的方式需要以主体的信仰之跃作为条件",
       "degree": 10,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/先验幻相.md",
@@ -403,7 +425,8 @@
       "updated": "2026-04-17",
       "summary": "康德批判哲学中的核心概念，指理性在追求无条件者时产生的幻相",
       "degree": 10,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/全景敞视主义.md",
@@ -421,7 +444,8 @@
       "updated": "2026-04-17",
       "summary": "福柯在《规训与惩罚》中提出的概念，指一种通过监视来实现规训的权力技术",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/六日战争.md",
@@ -439,7 +463,8 @@
       "updated": "2026-04-17",
       "summary": "阿摩司·奥兹参与的以色列战争之一",
       "degree": 3,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/内互文性.md",
@@ -456,7 +481,8 @@
       "updated": "2026-04-17",
       "summary": "互文性的一种，指一个具体文本内部的关系",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/内向性.md",
@@ -474,7 +500,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的核心概念，指个人面向自己的一种严肃关切的态度，一种充满了\"无限激情\"的态度",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/内在目的性.md",
@@ -492,7 +519,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的概念，\"那审美的\"其实归根结底是内在目的性的呈现",
       "degree": 5,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/内容安全治理.md",
@@ -509,7 +537,8 @@
       "updated": "2026-04-15",
       "summary": "内容安全治理（Safety & Governance）是AI求真项目中采用的识别-生产全链路的内容安全管理机制，用于识别和治理虚假信息、谣言、疑谣、争议内容等。",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/动态上下文路由.md",
@@ -526,7 +555,8 @@
       "updated": "2026-04-15",
       "summary": "动态上下文路由（Dynamic Context Routing）是AI智选资讯中采用的一种技术方案，用于根据不同场景和需求动态选择和路由上下文信息，以提升AI输出质量和准确率。",
       "degree": 9,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/历史性.md",
@@ -545,7 +575,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的概念，\"去成为历史性的东西\"在本质上应当是属于那最初的爱",
       "degree": 10,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/国家奖学金.md",
@@ -562,7 +593,8 @@
       "updated": "2026-04-17",
       "summary": "中华人民共和国教育部颁发的国家奖学金，常天喆获2020-2021年度国家奖学金",
       "degree": 4,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/国家社科基金重大项目.md",
@@ -580,7 +612,8 @@
       "updated": "2026-04-17",
       "summary": "卫茂平教授主持的《歌德全集》研究项目，常天喆参与了部分文献的翻译与整理工作",
       "degree": 6,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/基布兹.md",
@@ -598,7 +631,8 @@
       "updated": "2026-04-17",
       "summary": "以色列的一种集体社区，阿摩司·奥兹14岁离家投身胡尔达基布兹，居住了三十多年",
       "degree": 2,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/复调社会.md",
@@ -615,7 +649,8 @@
       "updated": "2026-04-17",
       "summary": "由互文性开出的多声部世界与复调社会",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/外互文性.md",
@@ -632,7 +667,8 @@
       "updated": "2026-04-17",
       "summary": "互文性的一种，指不同文本间的关系",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/多向度的人.md",
@@ -650,7 +686,8 @@
       "updated": "2026-04-17",
       "summary": "常天喆国奖答辩的主题，源自马尔库塞《单向度的人》",
       "degree": 3,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/多声部世界.md",
@@ -667,7 +704,8 @@
       "updated": "2026-04-17",
       "summary": "由互文性开出的多声部世界与复调社会",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/多源校验.md",
@@ -684,7 +722,8 @@
       "updated": "2026-04-15",
       "summary": "多源校验（Multi-source Validation）是AI求真项目中采用的一种策略，通过信源筛选、多轮检索、交叉验证对照等方式，实现围绕事实的查验工作流，以提升AI输出的可信度和准确性。",
       "degree": 9,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/婚姻观.md",
@@ -703,7 +742,8 @@
       "updated": "2026-04-17",
       "summary": "关于婚姻的哲学观点，黑格尔与克尔凯郭尔对此有不同的看法",
       "degree": 9,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/宇宙论证明.md",
@@ -721,7 +761,8 @@
       "updated": "2026-04-17",
       "summary": "证明上帝存在的一种方式，从世界的存在推导出上帝的存在",
       "degree": 11,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/寓言.md",
@@ -739,7 +780,8 @@
       "updated": "2026-04-17",
       "summary": "一种文体，借非现实的寓言世界表达人类真实情境",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/巴以问题.md",
@@ -757,7 +799,8 @@
       "updated": "2026-04-17",
       "summary": "阿摩司·奥兹致力于巴以冲突的解决和中东地区的和平",
       "degree": 4,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/弱到强的泛化.md",
@@ -776,7 +819,8 @@
       "updated": "2026-04-17",
       "summary": "Weak-to-strong generalization，Superalignment项目的核心问题之一",
       "degree": 6,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/忧惧.md",
@@ -794,7 +838,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的核心概念，忧惧则是人作为有限的、现世的个体对无限与永恒的主观倾向",
       "degree": 5,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/思维辩证法.md",
@@ -812,7 +857,8 @@
       "updated": "2026-04-17",
       "summary": "黑格尔提出的辩证法，强调概念的自否定运动，通过辩证运动调和主客二分的矛盾",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/性史.md",
@@ -830,7 +876,8 @@
       "updated": "2026-04-17",
       "summary": "福柯的重要著作，探讨性话语与权力的关系",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/情欲之爱.md",
@@ -848,7 +895,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔爱情观中的核心概念，克氏将爱情中真正具有建构性作用的、实体性的东西界定为\"情欲之爱",
       "degree": 10,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/感觉.md",
@@ -866,7 +914,8 @@
       "updated": "2026-04-17",
       "summary": "黑格尔将爱在种属上归为\"感觉\"，认为其不自由、也无直接的伦理内容可言",
       "degree": 4,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/政治神话.md",
@@ -883,7 +932,8 @@
       "updated": "2026-04-17",
       "summary": "重构民族性中的政治神话文本",
       "degree": 3,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/文化锡安主义.md",
@@ -901,7 +951,8 @@
       "updated": "2026-04-17",
       "summary": "犹太复国主义的一个流派，强调通过文化和教育来复兴犹太民族",
       "degree": 6,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/文本民族性.md",
@@ -920,7 +971,8 @@
       "updated": "2026-04-17",
       "summary": "阿摩司·奥兹提出的观点，认为犹太民族的连续性安放在了文本的连续体中",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/斋月战争.md",
@@ -938,7 +990,8 @@
       "updated": "2026-04-17",
       "summary": "阿摩司·奥兹参与的以色列战争之一",
       "degree": 3,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/时间.md",
@@ -957,7 +1010,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的概念，瞬间是永恒与时间的相互触摸",
       "degree": 9,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/最初的爱.md",
@@ -975,7 +1029,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔爱情观中的核心概念，\"那最初的\"包含了关于\"那将来的\"应许，是那催促向前的东西，那无限的脉搏",
       "degree": 13,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/最高伦理实体.md",
@@ -992,7 +1047,8 @@
       "updated": "2026-04-17",
       "summary": "个体的多样性症状的解决归于最高伦理实体",
       "degree": 2,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/未来考古学.md",
@@ -1011,7 +1067,8 @@
       "updated": "2026-04-17",
       "summary": "对Superalignment的回看，因为在此之前人类认为Superalignment是一个属于未来的项目，在此之后认为它是一个属于过去的项目",
       "degree": 6,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/本体论证明.md",
@@ -1030,7 +1087,8 @@
       "updated": "2026-04-17",
       "summary": "证明上帝存在的一种方式，从上帝的概念推导出上帝的存在",
       "degree": 13,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/本质直观.md",
@@ -1051,7 +1109,8 @@
       "updated": "2026-04-17",
       "summary": "本质直观（Wesensschau, eidetic intuition）是胡塞尔现象学的核心概念之一，指直接把握事物本质的能力。",
       "degree": 5,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/梦的解析.md",
@@ -1069,7 +1128,8 @@
       "updated": "2026-04-17",
       "summary": "弗洛伊德的重要著作，也是精神分析的核心概念，指对梦的解释",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/模型对齐.md",
@@ -1086,7 +1146,8 @@
       "updated": "2026-04-15",
       "summary": "模型对齐（Alignment）是AI求真项目中采用的平台价值的模型对齐策略，用于确保AI模型的输出与平台的价值观和目标保持一致，同时兼顾平台沟通的形象、信息治理的效果和规避偏信风险的考虑。",
       "degree": 9,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/民族性.md",
@@ -1104,7 +1165,8 @@
       "updated": "2026-04-17",
       "summary": "一个民族所具有的独特的、相对稳定的性格、文化、精神等特征的总和",
       "degree": 17,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/永恒.md",
@@ -1123,7 +1185,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的概念，那永恒的在时间中的出场恰恰是借助于\"瞬间\"来得以呈现",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/法哲学原理.md",
@@ -1141,7 +1204,8 @@
       "updated": "2026-04-17",
       "summary": "黑格尔的著作，在其中阐述了婚姻观",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/泛化.md",
@@ -1159,7 +1223,8 @@
       "updated": "2026-04-17",
       "summary": "generalization，机器学习中的概念，指模型将监督拓展到人工无法监督的任务的能力",
       "degree": 9,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/满溢现象.md",
@@ -1177,7 +1242,8 @@
       "updated": "2026-04-17",
       "summary": "马里翁现象学中的核心概念，指现象的自身给出超出了主体的把握能力",
       "degree": 12,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/爱与黑暗的故事.md",
@@ -1195,7 +1261,8 @@
       "updated": "2026-04-17",
       "summary": "阿摩司·奥兹的著作，2007年被评选为以色列国成立以来十大最重要的书籍之一",
       "degree": 2,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/爱的悖谬.md",
@@ -1214,7 +1281,8 @@
       "updated": "2026-04-17",
       "summary": "黑格尔婚姻观中的核心问题，爱是一种最不可思议的矛盾，绝非理智所能解决的",
       "degree": 13,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/犹太人问题.md",
@@ -1233,7 +1301,8 @@
       "updated": "2026-04-17",
       "summary": "19世纪以来最为重大的人文学科命题之一，关乎犹太民族的生存、认同、地位等问题",
       "degree": 13,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/犹太复国主义左翼.md",
@@ -1251,7 +1320,8 @@
       "updated": "2026-04-17",
       "summary": "阿摩司·奥兹的政治立场，立场鲜明的犹太复国主义左翼",
       "degree": 4,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/现在就和平.md",
@@ -1269,7 +1339,8 @@
       "updated": "2026-04-17",
       "summary": "具有重大影响的非政府组织，阿摩司·奥兹是其创始人之一",
       "degree": 3,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/现象学神学转向.md",
@@ -1291,7 +1362,8 @@
       "updated": "2026-04-17",
       "summary": "现象学神学转向（Theological turn in phenomenology）是20世纪后半叶现象学发展中的重要事件，指现象学从严格科学转向神学关怀。",
       "degree": 10,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/生存境界.md",
@@ -1311,7 +1383,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的概念，指审美的、伦理的、宗教的三种生存境界",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/生存辩证法.md",
@@ -1329,7 +1402,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔提出的一种辩证法，与黑格尔的思维辩证法相对，强调生存的个体性、历史性和内在性",
       "degree": 16,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/瘫痪.md",
@@ -1347,7 +1421,8 @@
       "updated": "2026-04-17",
       "summary": "乔伊斯在《都柏林人》中提出的概念，指都柏林是世界\"麻痹的中心",
       "degree": 5,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/省级大学生创业创新项目.md",
@@ -1364,7 +1439,8 @@
       "updated": "2026-04-17",
       "summary": "常天喆参与的省级大学生创业创新项目，其中两项为第一负责人",
       "degree": 6,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/瞬间.md",
@@ -1382,7 +1458,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔生存论时间观中的核心概念，那永恒的在时间中的出场恰恰是借助于\"瞬间\"来得以呈现",
       "degree": 9,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/精神分析.md",
@@ -1400,7 +1477,8 @@
       "updated": "2026-04-17",
       "summary": "弗洛伊德创立的心理学流派，强调无意识的重要性",
       "degree": 9,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/精神疾病书写.md",
@@ -1418,7 +1496,8 @@
       "updated": "2026-04-17",
       "summary": "常天喆研究的学术领域，省级项目《审视与洞察：精神疾病书写的两种视域》的主题",
       "degree": 5,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/经略综合研究项目.md",
@@ -1436,7 +1515,8 @@
       "updated": "2026-04-17",
       "summary": "北京大学章永乐副教授主持的研究项目，项目编号QA150801，常天喆参与研究",
       "degree": 5,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/网易新闻浪潮工作室.md",
@@ -1454,7 +1534,8 @@
       "updated": "2026-04-17",
       "summary": "常天喆为其撰文十余篇，累计阅读量达500万次以上",
       "degree": 2,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/罪.md",
@@ -1472,7 +1553,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的核心概念，虚无是\"罪\"的真正诱因，\"罪\"只能在虚无中显现自身",
       "degree": 9,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/胡尔达基布兹.md",
@@ -1490,7 +1572,8 @@
       "updated": "2026-04-17",
       "summary": "Kibbutz Hulda，阿摩司·奥兹14岁离家投身的基布兹，居住了三十多年",
       "degree": 2,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/能指与所指.md",
@@ -1508,7 +1591,8 @@
       "updated": "2026-04-17",
       "summary": "索绪尔语言学中的核心概念，能指是符号的音响形象，所指是符号的概念",
       "degree": 5,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/自我中介问题.md",
@@ -1526,7 +1610,8 @@
       "updated": "2026-04-17",
       "summary": "黑格尔观念论体系中的核心问题，在其对自身的设定的可能性中把我自身把握自身的理性失败了",
       "degree": 10,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/虚无.md",
@@ -1544,7 +1629,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的核心概念，虚无是生存的规定性，指代的是生存的可能性、将来性也就是永恒性",
       "degree": 10,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/观念对象.md",
@@ -1565,7 +1651,8 @@
       "updated": "2026-04-17",
       "summary": "观念对象（Ideal object）是胡塞尔在《逻辑研究》中提出的概念，指那些不是实在的、而是观念性存在的对象。",
       "degree": 4,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/规训与惩罚.md",
@@ -1583,7 +1670,8 @@
       "updated": "2026-04-17",
       "summary": "福柯的重要著作，探讨现代社会的规训权力",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/话语权力.md",
@@ -1601,7 +1689,8 @@
       "updated": "2026-04-17",
       "summary": "福柯哲学中的核心概念，指话语与权力的结合",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/语言民族主义.md",
@@ -1619,7 +1708,8 @@
       "updated": "2026-04-17",
       "summary": "强调语言在民族认同和民族建构中的重要作用的思想",
       "degree": 6,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/质量检验agent.md",
@@ -1637,7 +1727,8 @@
       "updated": "2026-04-15",
       "summary": "质量检验agent是AI资讯场景中用于提升AI输出准确率和质量的自动化质检系统。通过模型选型、检索能力、多模型协同等技术手段，在模型侧非自有的条件下，有效地在能力瓶颈上拔高了模型输出的准确率上限。",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/超级对齐.md",
@@ -1656,7 +1747,8 @@
       "updated": "2026-04-17",
       "summary": "Superalignment的中文翻译，OpenAI的项目，目标是引导和控制比人类更聪明的人工智能系统",
       "degree": 11,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/跨学科.md",
@@ -1672,7 +1764,8 @@
       "updated": "2026-04-15",
       "summary": "跨学科是指结合多个不同学科领域的知识、方法和思维方式来解决问题或进行研究。在职业发展中，跨学科背景意味着拥有多个不同领域的教育或工作经历。",
       "degree": 4,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/还原与给予.md",
@@ -1690,7 +1783,8 @@
       "updated": "2026-04-17",
       "summary": "马里翁现象学中的核心概念，指现象学还原与现象的自身给出",
       "degree": 9,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/那伦理的.md",
@@ -1709,7 +1803,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的概念，指伦理的生存境界",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/那宗教的.md",
@@ -1727,7 +1822,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的核心概念，指宗教境界，是克尔凯郭尔生存境界的最高阶段",
       "degree": 11,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/那审美的.md",
@@ -1746,7 +1842,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的概念，指审美者的静观态度，将生命本身沦为\"去生活\"的纯粹的\"尝试性努力",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/重复.md",
@@ -1764,7 +1861,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的核心范畴，意味着一种\"与回忆方向相反的运动",
       "degree": 9,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/重新语境化.md",
@@ -1781,7 +1879,8 @@
       "updated": "2026-04-17",
       "summary": "将民族性各图式重新语境化的潜在可能",
       "degree": 1,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/集体无意识.md",
@@ -1799,7 +1898,8 @@
       "updated": "2026-04-17",
       "summary": "荣格分析心理学中的核心概念，指人类集体的、普遍的无意识内容",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/零余者.md",
@@ -1817,7 +1917,8 @@
       "updated": "2026-04-17",
       "summary": "郁达夫小说中的核心人物形象，指那些被社会排斥、感到孤独绝望的知识分子",
       "degree": 6,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "concepts/非此即彼.md",
@@ -1835,7 +1936,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔的重要著作，也是其哲学中的核心概念，表达了生存选择的终极矛盾",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/AI智选资讯/profile.md",
@@ -1858,7 +1960,8 @@
       "updated": "2026-04-15",
       "summary": "AI智选资讯是抖音前端唯一的AIGC功能化产品项目，目前逐步涵盖了频道天窗、AI抖音独立端、抖音精选独立端、抖音异形卡、AI账号五个应用场景。是国内乃至世界上目前用户基数最大、原生创新最多、输出效果最佳的AI资讯类产品。",
       "degree": 15,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/AI求真/profile.md",
@@ -1880,7 +1983,8 @@
       "updated": "2026-04-15",
       "summary": "AI求真是字节跳动2025年「20件大事」之一，是抖音端内打通推搜的AI原生功能，用于识别和治理虚假信息。该项目在汝波All-hands全员会上受到重点提及和称赞。",
       "degree": 14,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/AI热点/profile.md",
@@ -1902,7 +2006,8 @@
       "updated": "2026-04-15",
       "summary": "AI热点是抖音AI搜索热点top1分支，影响面占抖音AI搜索结果约20%。相关能力被复用到AI搜\"可信度\"线条的其他业务当中。",
       "degree": 15,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/Amanda-Askell/profile.md",
@@ -1921,7 +2026,8 @@
       "updated": "2026-04-15",
       "summary": "Amanda Askell是Claude的system engineer，是常天喆在百度担任System Engineer时的对标对象。",
       "degree": 4,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/Contextual Query Suggestion/profile.md",
@@ -1943,7 +2049,8 @@
       "updated": "2026-04-15",
       "summary": "Contextual Query Suggestion是文心一言的多轮对话推荐问题生成功能，是国内app端最早试水大模型sug生成的产品。",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/Ilya Sutskever.md",
@@ -1961,7 +2068,8 @@
       "updated": "2026-04-17",
       "summary": "OpenAI的联合创始人和首席科学家，原本与Jan Leike共同领导Superalignment项目。Ilya离开OpenAI后，Superalignment项目荒废了大半年。",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/Jan Leike.md",
@@ -1979,7 +2087,8 @@
       "updated": "2026-04-17",
       "summary": "OpenAI的研究员，原本与Ilya Sutskever共同领导Superalignment项目。",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/OpenAI.md",
@@ -1998,7 +2107,8 @@
       "updated": "2026-04-17",
       "summary": "人工智能研究公司，发起了Superalignment（超级对齐）项目，目标是引导和控制比人类更聪明的人工智能系统。",
       "degree": 9,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/changsview/profile.md",
@@ -2019,7 +2129,8 @@
       "updated": "2026-04-16",
       "summary": "changsview 是常天喆的个人微信公众号，用于发表关于AI、哲学、社会、文化等主题的深度文章。",
       "degree": 4,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/qwen/profile.md",
@@ -2042,7 +2153,8 @@
       "updated": "2026-04-16",
       "summary": "qwen（通义千问）是阿里巴巴开发的大语言模型。",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/乔伊斯/profile.md",
@@ -2064,7 +2176,8 @@
       "updated": "2026-04-17",
       "summary": "詹姆斯·奥古斯汀·艾洛伊修斯·乔伊斯（James Augustine Aloysius Joyce，1882年2月2日－1941年1月13日）是爱尔兰作家、诗人，意识流文学的代表人物之一。他的作品《尤利西斯》被认为是20世纪最重要的文学作品之一。",
       "degree": 16,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/乔纳森·班尼特/profile.md",
@@ -2084,7 +2197,8 @@
       "updated": "2026-04-17",
       "summary": "乔纳森·班尼特（Jonathan Bennett）是英国哲学家、康德学者，以对康德《纯粹理性批判》的诠释而闻名。",
       "degree": 6,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/伍尔夫/profile.md",
@@ -2105,7 +2219,8 @@
       "updated": "2026-04-17",
       "summary": "弗吉尼亚·伍尔夫（Virginia Woolf，1882年1月25日－1941年3月28日）是英国作家、文学批评家、女性主义者，意识流文学的代表人物之一。",
       "degree": 4,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/刘庆峰/profile.md",
@@ -2127,7 +2242,8 @@
       "updated": "2026-04-16",
       "summary": "刘庆峰是科大讯飞的董事长，科大讯飞是中国领先的语音技术和人工智能公司。",
       "degree": 4,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/华中科技大学/profile.md",
@@ -2146,7 +2262,8 @@
       "updated": "2026-04-15",
       "summary": "华中科技大学是中国顶尖综合性大学，985、211、双一流高校，常天喆的本科就读院校，汉语言文学专业。",
       "degree": 6,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/卫茂平/profile.md",
@@ -2165,7 +2282,8 @@
       "updated": "2026-04-15",
       "summary": "卫茂平是上海外国语大学德语系主任，主持国家级社科基金项目《歌德全集》研究。常天喆曾参与该项目。",
       "degree": 4,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/卫茂平.md",
@@ -2183,7 +2301,8 @@
       "updated": "2026-04-17",
       "summary": "上海外国语大学德语系主任，主持国家社科基金重大项目《歌德全集》研究。",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/叶芝/profile.md",
@@ -2204,7 +2323,8 @@
       "updated": "2026-04-17",
       "summary": "威廉·巴特勒·叶芝（William Butler Yeats，1865年6月13日－1939年1月28日）是爱尔兰诗人、剧作家，1923年诺贝尔文学奖得主，爱尔兰文艺复兴运动的领袖。",
       "degree": 4,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/姚舜禹/profile.md",
@@ -2226,7 +2346,8 @@
       "updated": "2026-04-16",
       "summary": "姚舜禹是混元（腾讯混元大模型）负责人。",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/字节跳动/profile.md",
@@ -2245,7 +2366,8 @@
       "updated": "2026-04-15",
       "summary": "字节跳动是中国领先的科技公司，抖音的开发者。常天喆目前在字节跳动抖音主端担任AI产品经理，主导了AI求真功能、AI资讯生产、AI资讯总结页等多个AI Native功能。",
       "degree": 23,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/安瑟伦/profile.md",
@@ -2265,7 +2387,8 @@
       "updated": "2026-04-17",
       "summary": "安瑟伦（Anselm of Canterbury，约1033年－1109年4月21日）是意大利神学家、哲学家，经院哲学的先驱者，被称为\"最后一位教父和第一位经院哲学家\"。",
       "degree": 6,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/帕特森·布朗/profile.md",
@@ -2285,7 +2408,8 @@
       "updated": "2026-04-17",
       "summary": "帕特森·布朗（Patterson Brown）是当代康德学者，以质疑康德依赖性论题（DT）的充分性而闻名。",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/常天喆/profile.md",
@@ -2306,7 +2430,8 @@
       "updated": "2026-04-17",
       "summary": "常天喆是国内首批LLM产品经理之一，拥有汉语言文学、法学、外国哲学的跨学科教育背景，从2023年开始进入AI产品领域，先后在腾讯会议、微软亚洲研究院、百度文心一言、字节跳动抖音工作，主导多个AI产品功能落地，拥有多项AI专利。",
       "degree": 126,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/庄子/profile.md",
@@ -2328,7 +2453,8 @@
       "updated": "2026-04-17",
       "summary": "庄子（约公元前369年－公元前286年），名周，是中国战国时期的哲学家，道家学派的代表人物之一。他的语言哲学思想被认为是\"最早自觉的语言批判\"，比维特根斯坦的《逻辑哲学论》早了两千多年。",
       "degree": 12,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/康德/profile.md",
@@ -2350,7 +2476,8 @@
       "updated": "2026-04-17",
       "summary": "伊曼努尔·康德（Immanuel Kant，1724年4月22日－1804年2月12日）是德国古典哲学的创始人，其学说深深影响近代西方哲学，并开启了德国唯心主义和康德主义等诸多流派。",
       "degree": 18,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/弗洛伊德/profile.md",
@@ -2371,7 +2498,8 @@
       "updated": "2026-04-17",
       "summary": "西格蒙德·弗洛伊德（Sigmund Freud，1856年5月6日－1939年9月23日）是奥地利心理学家、神经科学家，精神分析学的创始人。",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/微软亚洲研究院/profile.md",
@@ -2391,7 +2519,8 @@
       "updated": "2026-04-15",
       "summary": "微软亚洲研究院（MSRA）是亚太地区最领先的AI研究机构，常天喆曾在这里进行大语言模型价值观对齐问题研究，发表了中文首篇大模型价值观对齐论文。",
       "degree": 10,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/抖音/profile.md",
@@ -2412,7 +2541,8 @@
       "updated": "2026-04-15",
       "summary": "抖音是字节跳动旗下的短视频平台，是AI求真、AI智选资讯、AI热点等多个AI产品的应用平台。",
       "degree": 14,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/抖音AI求真功能/profile.md",
@@ -2433,7 +2563,8 @@
       "updated": "2026-04-15",
       "summary": "抖音AI求真功能是抖音主端内最早落地的AI Native功能之一，由常天喆主导，在2026年梁汝波All-hands上被重点表扬。",
       "degree": 9,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/抖音AI资讯总结页/profile.md",
@@ -2454,7 +2585,8 @@
       "updated": "2026-04-15",
       "summary": "抖音AI资讯总结页是抖音端内最早落地的AI Native功能之一，由常天喆主导，通过上下文工程+后链路工程，在稳定模型输出效果的同时，流畅穿插了富媒体角标、媒体信源角标。",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/拉康/profile.md",
@@ -2475,7 +2607,8 @@
       "updated": "2026-04-17",
       "summary": "雅克·拉康（Jacques Lacan，1901年4月13日－1981年9月9日）是法国精神分析学家、精神病学家，结构主义精神分析的代表人物。",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/文心一言/profile.md",
@@ -2496,7 +2629,8 @@
       "updated": "2026-04-15",
       "summary": "文心一言是百度开发的大语言模型产品，常天喆是百度第3早构建文心一言app的产品经理，从NewApp项目保密阶段就开始参与。",
       "degree": 13,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/朱莉亚·克里斯特娃.md",
@@ -2515,7 +2649,8 @@
       "updated": "2026-04-17",
       "summary": "法国文论家、哲学家、女性主义者，最早提出了\"互文性\"这一理论术语。",
       "degree": 11,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/李俊国.md",
@@ -2532,7 +2667,8 @@
       "updated": "2026-04-17",
       "summary": "华中科技大学教授，常天喆的导师，指导了省级项目《审视与洞察：精神疾病书写的两种视域》。",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/杨尼考/profile.md",
@@ -2552,7 +2688,8 @@
       "updated": "2026-04-17",
       "summary": "多米尼克·杨尼考（Dominique Janicaud，1937年11月14日－2002年9月18日）是法国哲学家、现象学家，以反对现象学的神学转向而闻名。",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/林俊暘/profile.md",
@@ -2574,7 +2711,8 @@
       "updated": "2026-04-16",
       "summary": "林俊暘曾任 qwen（通义千问）负责人。",
       "degree": 4,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/梁汝波/profile.md",
@@ -2593,7 +2731,8 @@
       "updated": "2026-04-15",
       "summary": "梁汝波是字节跳动CEO，在2026年All-hands上重点表扬了常天喆主导的抖音AI求真功能的回答效果。",
       "degree": 6,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/武汉大学/profile.md",
@@ -2612,7 +2751,8 @@
       "updated": "2026-04-15",
       "summary": "武汉大学是中国顶尖综合性大学，985、211、双一流高校，常天喆的硕士就读院校，外国哲学专业。",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/混元/profile.md",
@@ -2635,7 +2775,8 @@
       "updated": "2026-04-16",
       "summary": "混元（腾讯混元）是腾讯开发的大语言模型。",
       "degree": 9,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/瓦尔特·本雅明.md",
@@ -2653,7 +2794,8 @@
       "updated": "2026-04-17",
       "summary": "德国哲学家、文学理论家，法兰克福学派成员。将多义性认定为寓言的基本特点。",
       "degree": 5,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/百度/profile.md",
@@ -2673,7 +2815,8 @@
       "updated": "2026-04-15",
       "summary": "百度是中国领先的AI公司，文心一言的开发者。常天喆是百度第3早构建文心一言app的产品经理，从NewApp项目保密阶段就开始参与，担任主对话System Engineer。",
       "degree": 11,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/福柯/profile.md",
@@ -2694,7 +2837,8 @@
       "updated": "2026-04-17",
       "summary": "米歇尔·福柯（Michel Foucault，1926年10月15日－1984年6月25日）是法国哲学家、思想史家、社会理论家，对权力、话语、性等议题有深刻探讨。",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/科大讯飞/profile.md",
@@ -2717,7 +2861,8 @@
       "updated": "2026-04-16",
       "summary": "科大讯飞是中国领先的语音技术和人工智能公司。",
       "degree": 4,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/章永乐.md",
@@ -2734,7 +2879,8 @@
       "updated": "2026-04-17",
       "summary": "北京大学副教授，主持\"经略综合研究项目\"（项目编号QA150801）。",
       "degree": 4,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/笛卡尔/profile.md",
@@ -2755,7 +2901,8 @@
       "updated": "2026-04-17",
       "summary": "勒内·笛卡尔（René Descartes，1596年3月31日－1650年2月11日）是法国哲学家、数学家、科学家，被称为\"近代哲学之父\"和\"解析几何之父\"。",
       "degree": 5,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/米歇尔·亨利/profile.md",
@@ -2776,7 +2923,8 @@
       "updated": "2026-04-17",
       "summary": "米歇尔·亨利（Michel Henry，1922年1月10日－2002年7月3日）是法国哲学家、现象学家，生命现象学的创始人。",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/索绪尔/profile.md",
@@ -2796,7 +2944,8 @@
       "updated": "2026-04-17",
       "summary": "费尔迪南·德·索绪尔（Ferdinand de Saussure，1857年11月26日－1913年2月22日）是瑞士语言学家，结构主义语言学的创始人，被称为\"现代语言学之父\"。",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/胡塞尔/profile.md",
@@ -2817,7 +2966,8 @@
       "updated": "2026-04-17",
       "summary": "埃德蒙德·古斯塔夫·阿尔布雷希特·胡塞尔（Edmund Gustav Albrecht Husserl，1859年4月8日－1938年4月27日）是德国哲学家，现象学的创始人。他的现象学为20世纪哲学的发展奠定了基础。",
       "degree": 15,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/腾讯/profile.md",
@@ -2835,7 +2985,8 @@
       "updated": "2026-04-15",
       "summary": "腾讯是中国领先的科技公司。常天喆曾在腾讯会议担任AI产品经理，参与腾讯混元落地腾讯会议智能助手项目，是国内首批LLM产品经理之一。",
       "degree": 9,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/腾讯会议智能助手/profile.md",
@@ -2856,7 +3007,8 @@
       "updated": "2026-04-15",
       "summary": "腾讯会议智能助手是腾讯混元落地的AI产品，常天喆曾参与其产品策略分析和需求实现，是国内最早的LLM落地产品之一。",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/艾伦·伍德/profile.md",
@@ -2876,7 +3028,8 @@
       "updated": "2026-04-17",
       "summary": "艾伦·伍德（Allen Wood）是美国哲学家、康德学者，以研究康德的理性神学而闻名。",
       "degree": 6,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/荣格/profile.md",
@@ -2897,7 +3050,8 @@
       "updated": "2026-04-17",
       "summary": "卡尔·古斯塔夫·荣格（Carl Gustav Jung，1875年7月26日－1961年6月6日）是瑞士心理学家、精神科医师，分析心理学的创始人。",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/莱维纳斯/profile.md",
@@ -2919,7 +3073,8 @@
       "updated": "2026-04-17",
       "summary": "埃马纽埃尔·莱维纳斯（Emmanuel Levinas，1906年1月12日－1995年12月25日）是法国哲学家、犹太思想家，他者伦理学的创始人。",
       "degree": 6,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/赵林/profile.md",
@@ -2938,7 +3093,8 @@
       "updated": "2026-04-15",
       "summary": "赵林是武汉大学教授，国务院特殊津贴专家，常天喆的硕士导师，研究方向为西方文化哲学与当代文化研究。",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/赵林.md",
@@ -2956,7 +3112,8 @@
       "updated": "2026-04-17",
       "summary": "武汉大学哲学院教授，常天喆的硕士导师，方向为西方文化哲学与当代文化研究。",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/边沁/profile.md",
@@ -2976,7 +3133,8 @@
       "updated": "2026-04-17",
       "summary": "杰里米·边沁（Jeremy Bentham，1748年2月15日－1832年6月6日）是英国哲学家、法学家、社会改革家，功利主义的创始人。",
       "degree": 4,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/邓晓芒/profile.md",
@@ -2993,7 +3151,8 @@
       "updated": "2026-04-15",
       "summary": "邓晓芒是中国著名哲学家，认可常天喆的学术能力，支持其以硕士研究生身份破格发表CSSCI/AMI核心论文。",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/郁达夫/profile.md",
@@ -3014,7 +3173,8 @@
       "updated": "2026-04-17",
       "summary": "郁达夫（1896年12月7日－1945年9月17日）是中国现代作家、诗人，创造社的发起人之一。他的小说《沉沦》是中国现代文学史上的重要作品，塑造了\"零余者\"的经典形象。",
       "degree": 12,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/阿奎那/profile.md",
@@ -3035,7 +3195,8 @@
       "updated": "2026-04-17",
       "summary": "托马斯·阿奎那（Thomas Aquinas，约1225年－1274年3月7日）是意大利神学家、哲学家，经院哲学的集大成者。",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/阿摩司·奥兹.md",
@@ -3054,7 +3215,8 @@
       "updated": "2026-04-17",
       "summary": "阿摩司·奥兹（Amos Oz，原名阿摩司·克劳斯纳，1939-2018），以色列作家、社会活动家，被称为\"以色列的良心\"。",
       "degree": 17,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/雷吉娜·奥尔森.md",
@@ -3071,7 +3233,8 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔的毕生所爱，克尔凯郭尔与她在精神上的纠缠决定了他的一生。",
       "degree": 6,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "entities/马里翁/profile.md",
@@ -3093,7 +3256,8 @@
       "updated": "2026-04-17",
       "summary": "让-吕克·马里翁（Jean-Luc Marion，1946年7月3日－）是法国哲学家、现象学家、天主教神学家，现象学神学转向的代表人物。",
       "degree": 10,
-      "ghost": false
+      "ghost": false,
+      "private": false
     },
     {
       "id": "sources/2025-01-24-superalignment-future-archeology.md",
@@ -3115,11 +3279,12 @@
       "updated": "2026-04-17",
       "summary": "对OpenAI超级对齐（Superalignment）项目的深度分析，探讨其哲学意蕴和技术挑战",
       "degree": 12,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "sources/2026-04-15-chang-tianzhe-feishu-resume.md",
-      "title": "常天喆-AI产品经理-简历-对内版",
+      "title": "AI产品经理-简历-对内版",
       "type": "source-summary",
       "domain": [
         "career",
@@ -3132,7 +3297,8 @@
       "updated": "2026-04-15",
       "summary": "这是常天喆的一份详细的AI产品经理简历，涵盖了从2023年至今在字节跳动、百度、微软亚洲研究院、腾讯的工作经历，以及教育背景、学术成就、专利、自媒体影响力等。",
       "degree": 45,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "sources/2026-04-15-chang-tianzhe-jiuye-jingyan.md",
@@ -3149,7 +3315,8 @@
       "updated": "2026-04-15",
       "summary": "1. 跨学科背景是优势：汉语言文学、法学、哲学的组合看似与AI产品经理不直接相关，但实际上培养了批判性思维、跨领域理解能力和沟通能力",
       "degree": 16,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "sources/2026-04-15-chang-tianzhe-resume.md",
@@ -3166,7 +3333,8 @@
       "updated": "2026-04-15",
       "summary": "1. 跨学科背景是AI PM的核心竞争力：汉语言文学（语言理解）+ 哲学（逻辑思维、价值观对齐）+ 法学（规则意识）的组合，在AI产品领域具有独特优势",
       "degree": 24,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "sources/2026-04-16-cheng-ren-zhi-dou-zheng-ji-he-jie.md",
@@ -3182,7 +3350,8 @@
       "updated": "2026-04-16",
       "summary": "常天喆发表在《德国哲学》期刊上的学术论文，探讨黑格尔《法哲学原理》第126-127节中关于\"紧急避难权\"（Notrecht）的看似矛盾的态度，揭示了黑格尔所有权理论中根植于\"承认\"的理论线索。",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "sources/2026-04-16-hallucination-is-all-you-need.md",
@@ -3199,7 +3368,8 @@
       "updated": "2026-04-16",
       "summary": "常天喆发表在 changsview 公众号的深度文章，从哲学和技术角度探讨大模型幻觉的本质。核心论点：幻觉不是病理性的错误，而是不可避免的规定性；没有幻觉就没有泛化能力；语言是独立于现实生产意义的符号系统。",
       "degree": 6,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "sources/2026-04-16-key-meetings.md",
@@ -3224,7 +3394,8 @@
       "updated": "",
       "summary": "本文档记录了常天喆与 AI 行业重要人物的几次关键会面。",
       "degree": 8,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "sources/2026-04-17-chang-tianzhe-guojiang-dabian.md",
@@ -3242,7 +3413,8 @@
       "updated": "2026-04-17",
       "summary": "常天喆2020年国家奖学金答辩稿，介绍了其本科期间在学习科研、学生工作、社会实践等方面的表现",
       "degree": 7,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "sources/2026-04-17-chang-tianzhe-media-articles.md",
@@ -3261,11 +3433,12 @@
       "updated": "2026-04-17",
       "summary": "常天喆在浪潮工作室等新媒体平台发表的文章列表及链接",
       "degree": 3,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "sources/2026-04-17-chang-zi-kao.md",
-      "title": "【投稿】\"常\"字攷",
+      "title": "\"常\"字攷",
       "type": "source",
       "domain": [],
       "tags": [
@@ -3280,7 +3453,8 @@
       "updated": "2026-04-17",
       "summary": "结合字形字音对\"常\"字词义流变的考察，从结构义出发，探讨\"常\"字的本义、引申义和语义关系",
       "degree": 2,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "sources/2026-04-17-husserl-theological-turn.md",
@@ -3298,11 +3472,12 @@
       "updated": "2026-04-17",
       "summary": "本文探讨了胡塞尔《逻辑研究》第二研究中是否为现象学的神学转向提供了理论支撑。",
       "degree": 12,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "sources/2026-04-17-irishman-banshee.md",
-      "title": "【五公斤】爱尔兰人",
+      "title": "爱尔兰人",
       "type": "source",
       "domain": [],
       "tags": [
@@ -3319,7 +3494,8 @@
       "updated": "2026-04-17",
       "summary": "对电影《伊尼舍林的报丧女妖》的深度影评，从存在主义、现象学、爱尔兰历史等角度进行分析",
       "degree": 9,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "sources/2026-04-17-joyce-sisters.md",
@@ -3337,7 +3513,8 @@
       "updated": "2026-04-17",
       "summary": "本文就詹姆斯·乔伊斯的名篇《姐妹们》中复杂而模糊的主人公形象进行精神分析，以小说中出现的具有神秘色彩的自白和梦境内容结合精神分析学展开诠释集体与个体无意识内容。",
       "degree": 14,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "sources/2026-04-17-kant-dependency-thesis.md",
@@ -3354,7 +3531,8 @@
       "updated": "2026-04-17",
       "summary": "本文探讨了康德在《纯粹理性批判》中提出的\"依赖性论题（Dependency Thesis, DT）\"是否构成对上帝存在宇宙论证明的充分反驳。",
       "degree": 19,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "sources/2026-04-17-love-faith-existential-dialectics.md",
@@ -3376,7 +3554,8 @@
       "updated": "2026-04-17",
       "summary": "对克尔凯郭尔《婚姻在审美上的有效性》一文的深度分析，探讨其对黑格尔婚姻观的批判以及生存辩证法的演绎",
       "degree": 21,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "sources/2026-04-17-prometheus-athena.md",
@@ -3397,7 +3576,8 @@
       "updated": "2026-04-17",
       "summary": "探讨时间观作为现代性问题之嚆矢，分析海德格尔和马克思主义中包含的两种双向开放时间观作为抵御线性时间观的神圣化出路",
       "degree": 12,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "sources/2026-04-17-reconstructing-nationality.md",
@@ -3419,7 +3599,8 @@
       "updated": "2026-04-17",
       "summary": "对阿摩司·奥兹《乡村生活图景》中《彼时一个遥远的地方》的互文性分析，探讨其对犹太民族性的重构",
       "degree": 20,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "sources/2026-04-17-yudafu-sinking.md",
@@ -3437,7 +3618,8 @@
       "updated": "2026-04-17",
       "summary": "本文基于福柯的权力话语理论和20世纪非理性哲学的讨论，以两种话语体系施加给零余者的身体压抑为主线，为郁达夫《沉沦》主人公的命运及最终死亡提供了新的合理性解答。",
       "degree": 10,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "sources/2026-04-17-zhuangzi-language-philosophy.md",
@@ -3455,7 +3637,8 @@
       "updated": "2026-04-17",
       "summary": "本文探讨了《庄子》中的语言哲学思想，认为庄子的语言批判是\"最早自觉的语言批判\"，比维特根斯坦的《逻辑哲学论》早了两千多年。",
       "degree": 11,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "timelines/2023.md",
@@ -3472,7 +3655,8 @@
       "updated": "2026-04-16",
       "summary": "2023年是常天喆从学术领域转向AI产品领域的关键一年。这一年，他在腾讯、微软亚洲研究院、百度等多个顶级机构工作，参与了国内首批大模型产品的落地。",
       "degree": 17,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "timelines/2024.md",
@@ -3489,7 +3673,8 @@
       "updated": "2026-04-16",
       "summary": "2024年是常天喆在文心一言深耕的一年，他主导了多个核心功能的产品化落地，包括Contextual Query Suggestion、对话推荐内容、DeepSeek-R1接入等，为文心一言的增长做出了重要贡献。",
       "degree": 11,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "timelines/2025.md",
@@ -3506,7 +3691,8 @@
       "updated": "2026-04-16",
       "summary": "2025年是常天喆在字节跳动抖音取得重大突破的一年。他从0到1构建了抖音AI搜的热点top1、资讯top1分支，以及AI求真、AI智选资讯等核心产品，多项成果受到CEO梁汝波的表扬，获评字节跳动「2025年20件大事」。",
       "degree": 17,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "timelines/2026.md",
@@ -3523,7 +3709,8 @@
       "updated": "2026-04-16",
       "summary": "2026年是常天喆在AI智选资讯项目继续深耕的一年，搭建了完整的高级记者agent生产链路，实现富媒体内容/智能组件一体化生成，每天平均生成400条优质AI内容，覆盖高价值资讯点。",
       "degree": 5,
-      "ghost": false
+      "ghost": false,
+      "private": true
     },
     {
       "id": "ghost:DPO",
@@ -3536,7 +3723,8 @@
       "updated": "",
       "summary": "",
       "degree": 5,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:得意忘言",
@@ -3549,20 +3737,8 @@
       "updated": "",
       "summary": "",
       "degree": 3,
-      "ghost": true
-    },
-    {
-      "id": "ghost:批判哲学",
-      "title": "批判哲学",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:纯粹理性批判",
@@ -3575,7 +3751,22 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:批判哲学",
+      "title": "批判哲学",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 3,
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:辩证法",
@@ -3588,7 +3779,8 @@
       "updated": "",
       "summary": "",
       "degree": 3,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:现象与物自体",
@@ -3601,7 +3793,8 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:克里斯特娃",
@@ -3614,7 +3807,8 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:上帝存在证明",
@@ -3627,7 +3821,8 @@
       "updated": "",
       "summary": "",
       "degree": 5,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:克尔凯郭尔",
@@ -3640,7 +3835,8 @@
       "updated": "",
       "summary": "",
       "degree": 27,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:自由",
@@ -3653,7 +3849,8 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:信仰",
@@ -3666,7 +3863,8 @@
       "updated": "",
       "summary": "",
       "degree": 3,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:权力",
@@ -3679,7 +3877,8 @@
       "updated": "",
       "summary": "",
       "degree": 3,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:文本",
@@ -3692,7 +3891,8 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:黑格尔",
@@ -3705,20 +3905,8 @@
       "updated": "",
       "summary": "",
       "degree": 15,
-      "ghost": true
-    },
-    {
-      "id": "ghost:多义性",
-      "title": "多义性",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 2,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:本雅明",
@@ -3731,7 +3919,22 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:多义性",
+      "title": "多义性",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 2,
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:两国方案",
@@ -3744,7 +3947,8 @@
       "updated": "",
       "summary": "",
       "degree": 5,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:可能性",
@@ -3757,7 +3961,8 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:爱",
@@ -3770,7 +3975,8 @@
       "updated": "",
       "summary": "",
       "degree": 3,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:婚姻",
@@ -3783,7 +3989,8 @@
       "updated": "",
       "summary": "",
       "degree": 3,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:现象学",
@@ -3796,7 +4003,8 @@
       "updated": "",
       "summary": "",
       "degree": 9,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:无意识",
@@ -3809,33 +4017,8 @@
       "updated": "",
       "summary": "",
       "degree": 3,
-      "ghost": true
-    },
-    {
-      "id": "ghost:卡夫卡",
-      "title": "卡夫卡",
-      "type": "entity",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
-      "ghost": true
-    },
-    {
-      "id": "ghost:马克思",
-      "title": "马克思",
-      "type": "entity",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 4,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:阿伦特",
@@ -3848,7 +4031,8 @@
       "updated": "",
       "summary": "",
       "degree": 3,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:列奥·施特劳斯",
@@ -3861,7 +4045,36 @@
       "updated": "",
       "summary": "",
       "degree": 3,
-      "ghost": true
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:马克思",
+      "title": "马克思",
+      "type": "entity",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 4,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:卡夫卡",
+      "title": "卡夫卡",
+      "type": "entity",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 3,
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:自身给出",
@@ -3874,7 +4087,8 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:现代性",
@@ -3887,7 +4101,8 @@
       "updated": "",
       "summary": "",
       "degree": 3,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:犹太复国主义",
@@ -3900,7 +4115,8 @@
       "updated": "",
       "summary": "",
       "degree": 3,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:他者",
@@ -3913,7 +4129,8 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:都柏林人",
@@ -3926,7 +4143,8 @@
       "updated": "",
       "summary": "",
       "degree": 4,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:北京大学",
@@ -3939,7 +4157,8 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:结构主义",
@@ -3952,7 +4171,8 @@
       "updated": "",
       "summary": "",
       "degree": 3,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:谢林",
@@ -3965,7 +4185,8 @@
       "updated": "",
       "summary": "",
       "degree": 3,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:海德格尔",
@@ -3978,7 +4199,8 @@
       "updated": "",
       "summary": "",
       "degree": 6,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:沉沦",
@@ -3991,46 +4213,8 @@
       "updated": "",
       "summary": "",
       "degree": 4,
-      "ghost": true
-    },
-    {
-      "id": "ghost:多模态融合",
-      "title": "多模态融合",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
-      "ghost": true
-    },
-    {
-      "id": "ghost:可解释性",
-      "title": "可解释性",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
-      "ghost": true
-    },
-    {
-      "id": "ghost:事实一致性",
-      "title": "事实一致性",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:微博智搜",
@@ -4043,11 +4227,12 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
-      "id": "ghost:梅毒",
-      "title": "梅毒",
+      "id": "ghost:多模态融合",
+      "title": "多模态融合",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -4055,12 +4240,13 @@
       "confidence": "ghost",
       "updated": "",
       "summary": "",
-      "degree": 2,
-      "ghost": true
+      "degree": 3,
+      "ghost": true,
+      "private": false
     },
     {
-      "id": "ghost:恋童癖",
-      "title": "恋童癖",
+      "id": "ghost:事实一致性",
+      "title": "事实一致性",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -4068,8 +4254,23 @@
       "confidence": "ghost",
       "updated": "",
       "summary": "",
-      "degree": 2,
-      "ghost": true
+      "degree": 3,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:可解释性",
+      "title": "可解释性",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 3,
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:姐妹们",
@@ -4082,11 +4283,12 @@
       "updated": "",
       "summary": "",
       "degree": 3,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
-      "id": "ghost:郭沫若",
-      "title": "郭沫若",
+      "id": "ghost:梅毒",
+      "title": "梅毒",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -4095,63 +4297,12 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
-      "id": "ghost:腾讯会议",
-      "title": "腾讯会议",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
-      "ghost": true
-    },
-    {
-      "id": "ghost:谢幸",
-      "title": "谢幸",
-      "type": "entity",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 4,
-      "ghost": true
-    },
-    {
-      "id": "ghost:矣晓沅",
-      "title": "矣晓沅",
-      "type": "entity",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 4,
-      "ghost": true
-    },
-    {
-      "id": "ghost:周礼栋",
-      "title": "周礼栋",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
-      "ghost": true
-    },
-    {
-      "id": "ghost:鲁迅",
-      "title": "鲁迅",
+      "id": "ghost:恋童癖",
+      "title": "恋童癖",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -4160,72 +4311,8 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true
-    },
-    {
-      "id": "ghost:乔姆斯基",
-      "title": "乔姆斯基",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 4,
-      "ghost": true
-    },
-    {
-      "id": "ghost:屠格涅夫",
-      "title": "屠格涅夫",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 2,
-      "ghost": true
-    },
-    {
-      "id": "ghost:老子",
-      "title": "老子",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
-      "ghost": true
-    },
-    {
-      "id": "ghost:维特根斯坦",
-      "title": "维特根斯坦",
-      "type": "entity",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 4,
-      "ghost": true
-    },
-    {
-      "id": "ghost:语言哲学",
-      "title": "语言哲学",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:Prompt工程",
@@ -4238,7 +4325,162 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:乔姆斯基",
+      "title": "乔姆斯基",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 4,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:矣晓沅",
+      "title": "矣晓沅",
+      "type": "entity",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 4,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:腾讯会议",
+      "title": "腾讯会议",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 3,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:周礼栋",
+      "title": "周礼栋",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 3,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:谢幸",
+      "title": "谢幸",
+      "type": "entity",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 4,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:屠格涅夫",
+      "title": "屠格涅夫",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 2,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:语言哲学",
+      "title": "语言哲学",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 3,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:鲁迅",
+      "title": "鲁迅",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 2,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:维特根斯坦",
+      "title": "维特根斯坦",
+      "type": "entity",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 4,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:老子",
+      "title": "老子",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 3,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:郭沫若",
+      "title": "郭沫若",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 2,
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:道言悖论",
@@ -4251,7 +4493,8 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:DeepSeek",
@@ -4264,7 +4507,8 @@
       "updated": "",
       "summary": "",
       "degree": 3,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:德国哲学",
@@ -4277,7 +4521,8 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:承认",
@@ -4290,7 +4535,8 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true
+      "ghost": true,
+      "private": false
     },
     {
       "id": "ghost:无家可归状态",
@@ -4303,7 +4549,8 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true
+      "ghost": true,
+      "private": false
     }
   ],
   "links": [

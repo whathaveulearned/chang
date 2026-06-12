@@ -5,7 +5,7 @@ import * as d3 from 'd3'
 import { motion, AnimatePresence } from 'framer-motion'
 
 // ============================================================
-// Types — mirror public/data/graph.json (built by scripts/build_graph.py)
+// Types — mirror public/data/graph.json (scripts/build_graph.py)
 // ============================================================
 
 interface RawNode {
@@ -20,6 +20,7 @@ interface RawNode {
   summary: string
   degree: number
   ghost: boolean
+  private: boolean
 }
 
 interface RawLink {
@@ -41,9 +42,10 @@ interface GNode extends d3.SimulationNodeDatum {
   summary: string
   degree: number
   ghost: boolean
+  private: boolean
   radius: number
   cluster: number
-  color: string
+  tone: string
   isCenter: boolean
   phase: number
 }
@@ -59,7 +61,7 @@ interface GLink {
 interface ClusterInfo {
   id: number
   name: string
-  color: string
+  tone: string
   count: number
 }
 
@@ -72,56 +74,58 @@ interface Graph {
 }
 
 // ============================================================
-// Constants
+// Aesthetic — monochrome base, muted Morandi cluster tones
 // ============================================================
 
 const CENTER_TITLE = '常天喆'
-const CENTER_COLOR = '#fbbf24'
-const MISC_COLOR = '#7c8aa0'
+const BONE = '#ECEAE3' // off-white core
+const INK = '#06060A' // near-black backdrop
 
 const TYPE_LABELS: Record<string, string> = {
-  entity: '实体',
+  entity: '人物',
   concept: '概念',
   source: '来源',
   'source-summary': '来源',
-  timeline: '时间线',
+  timeline: '时间',
 }
 
 const KIND_LABELS: Record<string, string> = {
   related: '关联',
   link: '引用',
   source: '出处',
-  tag: '同主题',
+  tag: '同源',
 }
 
-// edge priority: which kind defines an edge's look when it has several
 const KIND_PRIORITY = ['related', 'source', 'link', 'tag']
 
-const CLUSTER_PALETTE = [
-  '#22d3ee', // cyan
-  '#a78bfa', // violet
-  '#f472b6', // pink
-  '#34d399', // emerald
-  '#fb923c', // orange
-  '#60a5fa', // blue
-  '#e879f9', // fuchsia
-  '#2dd4bf', // teal
-  '#facc15', // yellow
-  '#f87171', // red
-  '#c084fc', // purple
-  '#4ade80', // green
+// Morandi: low-saturation, dusty, grayed tones. On near-black they read as
+// tinted bone rather than colour — distinguishable, never neon.
+const MORANDI = [
+  '#AEB4A6', // sage
+  '#C2A9A2', // clay rose
+  '#9DAAB6', // dusty slate blue
+  '#B2A6B0', // mauve grey
+  '#BFB5A4', // warm taupe
+  '#A7AE9A', // olive grey
+  '#9EB1AB', // dusty teal
+  '#B8AEA2', // stone
+  '#ADA8B2', // lavender ash
+  '#C4B6AC', // sand
+  '#A4ABAE', // cool grey
+  '#B6AFA0', // linen
 ]
+const MISC_TONE = '#8A8A86'
 
 // ============================================================
-// Data pipeline — consume graph.json, cluster, lay out
+// Data pipeline
 // ============================================================
 
 function buildGraph(data: { nodes: RawNode[]; links: RawLink[] }): Graph {
   const nodes: GNode[] = data.nodes.map((n) => ({
     ...n,
-    radius: 4,
+    radius: 3,
     cluster: -1,
-    color: MISC_COLOR,
+    tone: MISC_TONE,
     isCenter: n.title === CENTER_TITLE,
     phase: Math.random() * Math.PI * 2,
   }))
@@ -138,7 +142,6 @@ function buildGraph(data: { nodes: RawNode[]; links: RawLink[] }): Graph {
       primaryKind: KIND_PRIORITY.find((k) => l.kinds.includes(k)) || 'link',
     }))
 
-  // ---- adjacency + weighted adjacency ----
   const adjacency = new Map<string, Set<string>>()
   const wAdj = new Map<string, Array<[string, number]>>()
   nodes.forEach((n) => {
@@ -155,8 +158,6 @@ function buildGraph(data: { nodes: RawNode[]; links: RawLink[] }): Graph {
   })
 
   // ---- community detection: weighted label propagation ----
-  // Center + source/timeline pages bridge unrelated topics, so they sit out
-  // of voting and adopt a neighborhood label afterwards.
   const isNeutral = (n: GNode) =>
     n.isCenter || n.type === 'source' || n.type === 'source-summary' || n.type === 'timeline'
 
@@ -189,7 +190,6 @@ function buildGraph(data: { nodes: RawNode[]; links: RawLink[] }): Graph {
     }
     if (changed === 0) break
   }
-
   nodes.forEach((n) => {
     if (!isNeutral(n)) return
     const tally = new Map<number, number>()
@@ -209,7 +209,6 @@ function buildGraph(data: { nodes: RawNode[]; links: RawLink[] }): Graph {
     if (best >= 0) labels.set(n.id, best)
   })
 
-  // ---- rank + name clusters ----
   const members = new Map<number, GNode[]>()
   nodes.forEach((n) => {
     const l = labels.get(n.id)!
@@ -220,55 +219,50 @@ function buildGraph(data: { nodes: RawNode[]; links: RawLink[] }): Graph {
 
   const clusters: ClusterInfo[] = []
   ranked.forEach(([, mem], idx) => {
-    const usePalette = idx < CLUSTER_PALETTE.length && mem.length >= 3
-    const color = usePalette ? CLUSTER_PALETTE[idx] : MISC_COLOR
+    const usePalette = idx < MORANDI.length && mem.length >= 3
+    const tone = usePalette ? MORANDI[idx] : MISC_TONE
     const sorted = mem.filter((m) => !m.isCenter).sort((a, b) => b.degree - a.degree)
     const hub =
       sorted.find((m) => m.type === 'entity' && m.title.length <= 10) ||
-      sorted.find((m) => m.type !== 'source' && m.type !== 'source-summary' && m.type !== 'timeline' && m.title.length <= 12) ||
+      sorted.find((m) => !m.private && m.title.length <= 12) ||
       sorted[0]
     if (usePalette) {
-      clusters.push({ id: idx, name: hub ? hub.title : `星系 ${idx + 1}`, color, count: mem.length })
+      clusters.push({ id: idx, name: hub ? hub.title : `簇 ${idx + 1}`, tone, count: mem.length })
     }
     mem.forEach((m) => {
       m.cluster = idx
-      m.color = usePalette ? color : MISC_COLOR
+      m.tone = usePalette ? tone : MISC_TONE
     })
   })
 
-  // ---- visual size ----
   nodes.forEach((n) => {
-    const base = n.ghost ? 3 : n.type === 'timeline' ? 5 : 3.4
-    n.radius = Math.min(16, base + Math.sqrt(n.degree) * 1.2)
+    const base = n.ghost ? 2.4 : n.type === 'timeline' ? 4 : 2.8
+    n.radius = Math.min(13, base + Math.sqrt(n.degree) * 1.05)
     if (n.isCenter) {
-      n.radius = 20
-      n.color = CENTER_COLOR
+      n.radius = 15
+      n.tone = BONE
     }
   })
 
   return { nodes, links, clusters, adjacency, nodeById }
 }
 
-// ============================================================
-// Glow sprite cache
-// ============================================================
-
-const spriteCache = new Map<string, HTMLCanvasElement>()
-function glowSprite(color: string): HTMLCanvasElement {
-  let c = spriteCache.get(color)
+// soft round dot sprite (single, tinted at draw time via globalAlpha)
+const haloCache = new Map<string, HTMLCanvasElement>()
+function halo(color: string): HTMLCanvasElement {
+  let c = haloCache.get(color)
   if (c) return c
   c = document.createElement('canvas')
-  c.width = 64
-  c.height = 64
+  c.width = 48
+  c.height = 48
   const ctx = c.getContext('2d')!
-  const g = ctx.createRadialGradient(32, 32, 0, 32, 32, 32)
-  g.addColorStop(0, color)
-  g.addColorStop(0.25, color + 'aa')
-  g.addColorStop(0.6, color + '33')
+  const g = ctx.createRadialGradient(24, 24, 0, 24, 24, 24)
+  g.addColorStop(0, color + 'cc')
+  g.addColorStop(0.4, color + '40')
   g.addColorStop(1, color + '00')
   ctx.fillStyle = g
-  ctx.fillRect(0, 0, 64, 64)
-  spriteCache.set(color, c)
+  ctx.fillRect(0, 0, 48, 48)
+  haloCache.set(color, c)
   return c
 }
 
@@ -277,7 +271,6 @@ function glowSprite(color: string): HTMLCanvasElement {
 // ============================================================
 
 export default function KnowledgeGraph() {
-  const bgRef = useRef<HTMLCanvasElement>(null)
   const mainRef = useRef<HTMLCanvasElement>(null)
   const wrapRef = useRef<HTMLDivElement>(null)
 
@@ -286,26 +279,23 @@ export default function KnowledgeGraph() {
   const [selected, setSelected] = useState<GNode | null>(null)
   const [query, setQuery] = useState('')
   const [searchOpen, setSearchOpen] = useState(false)
-  const [hiddenKinds, setHiddenKinds] = useState<Set<string>>(new Set())
-  const [panelOpen, setPanelOpen] = useState(true)
+  const [legendOpen, setLegendOpen] = useState(false)
 
   const graphRef = useRef<Graph | null>(null)
   const transformRef = useRef(d3.zoomIdentity)
   const hoverRef = useRef<GNode | null>(null)
   const selectedRef = useRef<GNode | null>(null)
-  const hiddenRef = useRef<Set<string>>(new Set())
   const zoomRef = useRef<d3.ZoomBehavior<HTMLCanvasElement, unknown> | null>(null)
   const sizeRef = useRef({ w: 0, h: 0, dpr: 1 })
   const searchInputRef = useRef<HTMLInputElement>(null)
+  const fitRef = useRef(0.8)
+  // d3-transition's zoom interpolation is unreliable here, so we drive smooth
+  // zoom ourselves via d3.timer + immediate transform application.
+  const animateToRef = useRef<((t: d3.ZoomTransform, dur?: number) => void) | null>(null)
 
   selectedRef.current = selected
-  hiddenRef.current = hiddenKinds
 
-  useEffect(() => {
-    if (window.innerWidth < 640) setPanelOpen(false)
-  }, [])
-
-  // ---------- Load data ----------
+  // ---------- load ----------
   useEffect(() => {
     fetch('/data/graph.json')
       .then((r) => r.json())
@@ -321,7 +311,7 @@ export default function KnowledgeGraph() {
       })
   }, [])
 
-  // ---------- Search ----------
+  // ---------- search ----------
   const searchResults = useMemo(() => {
     if (!graph || !query.trim()) return []
     const q = query.trim().toLowerCase()
@@ -331,14 +321,11 @@ export default function KnowledgeGraph() {
       .slice(0, 8)
   }, [graph, query])
 
-  // ---------- Fly-to ----------
-  const flyTo = (node: GNode, scale = 1.6) => {
-    const canvas = mainRef.current
-    const zoom = zoomRef.current
-    if (!canvas || !zoom || node.x == null) return
+  const flyTo = (node: GNode, scale = 2.2) => {
+    if (node.x == null || !animateToRef.current) return
     const { w, h } = sizeRef.current
     const t = d3.zoomIdentity.translate(w / 2, h / 2).scale(scale).translate(-node.x!, -node.y!)
-    d3.select(canvas).transition().duration(900).ease(d3.easeCubicInOut).call(zoom.transform as any, t)
+    animateToRef.current(t, 800)
   }
 
   const selectNode = (node: GNode) => {
@@ -346,7 +333,6 @@ export default function KnowledgeGraph() {
     flyTo(node)
   }
 
-  // ---------- Keyboard ----------
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -362,43 +348,31 @@ export default function KnowledgeGraph() {
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
-  // ---------- Canvas ----------
+  // ---------- canvas ----------
   useEffect(() => {
-    if (!graph || !mainRef.current || !bgRef.current) return
-
+    if (!graph || !mainRef.current) return
     const canvas = mainRef.current
-    const bgCanvas = bgRef.current
     const ctx = canvas.getContext('2d')!
-    const bgCtx = bgCanvas.getContext('2d')!
 
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2)
       const w = window.innerWidth
       const h = window.innerHeight
       sizeRef.current = { w, h, dpr }
-      ;[canvas, bgCanvas].forEach((c) => {
-        c.width = w * dpr
-        c.height = h * dpr
-        c.style.width = `${w}px`
-        c.style.height = `${h}px`
-      })
+      canvas.width = w * dpr
+      canvas.height = h * dpr
+      canvas.style.width = `${w}px`
+      canvas.style.height = `${h}px`
     }
     resize()
 
-    const stars = Array.from({ length: 420 }, () => ({
+    // faint static dust — texture, not a starfield
+    const dust = Array.from({ length: 90 }, () => ({
       x: Math.random(),
       y: Math.random(),
-      r: Math.random() * 1.3 + 0.3,
-      base: Math.random() * 0.5 + 0.15,
-      amp: Math.random() * 0.35,
-      speed: Math.random() * 0.0015 + 0.0004,
-      phase: Math.random() * Math.PI * 2,
-      layer: Math.random() < 0.5 ? 0.03 : 0.07,
+      r: Math.random() * 0.9 + 0.2,
+      a: Math.random() * 0.06 + 0.015,
     }))
-
-    interface Meteor { x: number; y: number; vx: number; vy: number; life: number; max: number }
-    let meteors: Meteor[] = []
-    let nextMeteor = performance.now() + 2500
 
     const { nodes, links, nodeById, adjacency } = graph
     const center = nodes.find((n) => n.isCenter)
@@ -407,34 +381,61 @@ export default function KnowledgeGraph() {
       center.fy = 0
     }
 
+    // dense layout — tight colonies, short links, weak repulsion
     const simulation = d3
       .forceSimulation<GNode>(nodes)
-      .velocityDecay(0.32)
+      .velocityDecay(0.35)
       .force(
         'link',
         d3
           .forceLink<GNode, any>(links as any)
           .id((d: any) => d.id)
-          .distance((l: any) => (l.primaryKind === 'tag' ? 150 : 110) - Math.min(l.weight, 5) * 7)
-          .strength((l: any) => Math.min(0.9, (l.primaryKind === 'tag' ? 0.12 : 0.32) + l.weight * 0.1))
+          .distance((l: any) => (l.primaryKind === 'tag' ? 80 : 52) - Math.min(l.weight, 4) * 4)
+          .strength((l: any) => Math.min(0.95, (l.primaryKind === 'tag' ? 0.14 : 0.42) + l.weight * 0.08))
       )
-      .force('charge', d3.forceManyBody<GNode>().strength((d) => (d.isCenter ? -2200 : -120 - d.radius * 26)).distanceMax(900))
-      .force('x', d3.forceX(0).strength(0.012))
-      .force('y', d3.forceY(0).strength(0.016))
-      .force('collide', d3.forceCollide<GNode>().radius((d) => d.radius + 7).strength(0.9))
+      .force('charge', d3.forceManyBody<GNode>().strength((d) => (d.isCenter ? -1100 : -80 - d.radius * 16)).distanceMax(700))
+      .force('x', d3.forceX(0).strength(0.03))
+      .force('y', d3.forceY(0).strength(0.035))
+      .force('collide', d3.forceCollide<GNode>().radius((d) => d.radius + 2.2).strength(1))
       .alpha(1)
-      .alphaDecay(0.015)
+      .alphaDecay(0.018)
 
     const findNode = (sx: number, sy: number): GNode | undefined => {
       const t = transformRef.current
       const [x, y] = t.invert([sx, sy])
-      const n = simulation.find(x, y, Math.max(18 / t.k, 14))
-      return n
+      return simulation.find(x, y, Math.max(14 / t.k, 9))
+    }
+
+    const fitView = (dur = 700) => {
+      const xs: number[] = []
+      const ys: number[] = []
+      for (const n of nodes) {
+        if (n.x == null || n.y == null) continue
+        xs.push(n.x)
+        ys.push(n.y)
+      }
+      if (xs.length === 0) return
+      xs.sort((a, b) => a - b)
+      ys.sort((a, b) => a - b)
+      // percentile box ignores a few far-flung outliers that would otherwise
+      // blow up the bounds and shrink the whole field
+      const q = (arr: number[], p: number) => arr[Math.floor((arr.length - 1) * p)]
+      const minX = q(xs, 0.03), maxX = q(xs, 0.97)
+      const minY = q(ys, 0.03), maxY = q(ys, 0.97)
+      const { w, h } = sizeRef.current
+      const gw = maxX - minX || 1
+      const gh = maxY - minY || 1
+      const scale = Math.min(1.7, 0.8 * Math.min(w / gw, h / gh))
+      fitRef.current = scale
+      const cx = (minX + maxX) / 2
+      const cy = (minY + maxY) / 2
+      const t = d3.zoomIdentity.translate(w / 2, h / 2).scale(scale).translate(-cx, -cy)
+      animateTo(t, dur)
     }
 
     const zoom = d3
       .zoom<HTMLCanvasElement, unknown>()
-      .scaleExtent([0.08, 6])
+      .scaleExtent([0.2, 8])
       .filter((event: any) => {
         if (event.type === 'mousedown' || event.type === 'touchstart') {
           const [sx, sy] = d3.pointer(event, canvas)
@@ -446,15 +447,49 @@ export default function KnowledgeGraph() {
         transformRef.current = event.transform
       })
     zoomRef.current = zoom
-
     const sel = d3.select(canvas)
     sel.call(zoom as any)
 
+    // Smooth zoom driven by the existing rAF draw loop. d3.timer and
+    // d3-transition's zoom interpolation both misfire in this canvas/preview
+    // context, but immediate `sel.call(zoom.transform)` is reliable — so we
+    // step the interpolation ourselves each frame.
+    let zoomAnim: { start: d3.ZoomTransform; target: d3.ZoomTransform; t0: number; dur: number } | null = null
+    const animateTo = (target: d3.ZoomTransform, dur = 800) => {
+      if (dur <= 0) {
+        sel.call(zoom.transform as any, target)
+        return
+      }
+      zoomAnim = { start: transformRef.current, target, t0: performance.now(), dur }
+    }
+    const stepZoom = (time: number) => {
+      if (!zoomAnim) return
+      const { start, target, t0, dur } = zoomAnim
+      const u = Math.min(1, (time - t0) / dur)
+      const e = d3.easeCubicInOut(u)
+      const k = start.k + (target.k - start.k) * e
+      const x = start.x + (target.x - start.x) * e
+      const y = start.y + (target.y - start.y) * e
+      sel.call(zoom.transform as any, d3.zoomIdentity.translate(x, y).scale(k))
+      if (u >= 1) zoomAnim = null
+    }
+    animateToRef.current = animateTo
+
+    // opening: start framed out, let the mass condense, then ease to a precise
+    // fit. Settle detection via tick event, with a timed fallback.
     const { w, h } = sizeRef.current
-    const startT = d3.zoomIdentity.translate(w / 2, h / 2).scale(0.05)
-    const endT = d3.zoomIdentity.translate(w / 2, h / 2).scale(0.5)
-    sel.call(zoom.transform as any, startT)
-    sel.transition().duration(2400).ease(d3.easeCubicOut).call(zoom.transform as any, endT)
+    sel.call(zoom.transform as any, d3.zoomIdentity.translate(w / 2, h / 2).scale(0.45))
+    let fitted = false
+    const doFit = (dur: number) => {
+      if (fitted) return
+      fitted = true
+      fitView(dur)
+      simulation.on('tick.fit', null)
+    }
+    simulation.on('tick.fit', () => {
+      if (simulation.alpha() < 0.12) doFit(700)
+    })
+    const fitFallback = setTimeout(() => doFit(700), 3200)
 
     const drag = d3
       .drag<HTMLCanvasElement, unknown>()
@@ -464,7 +499,7 @@ export default function KnowledgeGraph() {
         return n && !n.isCenter ? n : (null as any)
       })
       .on('start', (event: any) => {
-        if (!event.active) simulation.alphaTarget(0.25).restart()
+        if (!event.active) simulation.alphaTarget(0.2).restart()
         const t = transformRef.current
         event.subject.fx = t.invertX(event.x)
         event.subject.fy = t.invertY(event.y)
@@ -497,9 +532,7 @@ export default function KnowledgeGraph() {
       if (n) {
         setSelected(n)
         flyTo(n)
-      } else {
-        setSelected(null)
-      }
+      } else setSelected(null)
     }
     canvas.addEventListener('mousemove', onMove)
     canvas.addEventListener('mousedown', onDown)
@@ -507,247 +540,171 @@ export default function KnowledgeGraph() {
     canvas.addEventListener('click', onClick)
 
     let raf = 0
-
-    const drawBackground = (time: number) => {
-      const { w, h, dpr } = sizeRef.current
-      bgCtx.setTransform(dpr, 0, 0, dpr, 0, 0)
-      bgCtx.clearRect(0, 0, w, h)
-      const t = transformRef.current
-
-      for (const s of stars) {
-        const tw = s.base + Math.sin(time * s.speed + s.phase) * s.amp
-        if (tw <= 0.02) continue
-        const px = (s.x * w + t.x * s.layer + w) % w
-        const py = (s.y * h + t.y * s.layer + h) % h
-        bgCtx.globalAlpha = Math.max(0, Math.min(1, tw))
-        bgCtx.fillStyle = '#cfe2ff'
-        bgCtx.beginPath()
-        bgCtx.arc(px, py, s.r, 0, Math.PI * 2)
-        bgCtx.fill()
-      }
-      bgCtx.globalAlpha = 1
-
-      if (time > nextMeteor) {
-        nextMeteor = time + 4000 + Math.random() * 6000
-        const fromTop = Math.random() < 0.7
-        meteors.push({
-          x: Math.random() * w * 0.8 + w * 0.2,
-          y: fromTop ? -20 : Math.random() * h * 0.3,
-          vx: -(2.5 + Math.random() * 3),
-          vy: 2 + Math.random() * 2.5,
-          life: 0,
-          max: 60 + Math.random() * 40,
-        })
-      }
-      meteors = meteors.filter((m) => m.life < m.max)
-      for (const m of meteors) {
-        m.x += m.vx
-        m.y += m.vy
-        m.life++
-        const fade = Math.sin((m.life / m.max) * Math.PI)
-        const grad = bgCtx.createLinearGradient(m.x, m.y, m.x - m.vx * 14, m.y - m.vy * 14)
-        grad.addColorStop(0, `rgba(190,225,255,${0.85 * fade})`)
-        grad.addColorStop(1, 'rgba(190,225,255,0)')
-        bgCtx.strokeStyle = grad
-        bgCtx.lineWidth = 1.4
-        bgCtx.beginPath()
-        bgCtx.moveTo(m.x, m.y)
-        bgCtx.lineTo(m.x - m.vx * 14, m.y - m.vy * 14)
-        bgCtx.stroke()
-      }
-    }
-
     const draw = (time: number) => {
+      stepZoom(time)
       const { w, h, dpr } = sizeRef.current
       const t = transformRef.current
-      const hidden = hiddenRef.current
       const focus = hoverRef.current || selectedRef.current
       const neighbors = focus ? adjacency.get(focus.id) : null
 
-      drawBackground(time)
-
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
       ctx.clearRect(0, 0, w, h)
+
+      // dust
+      ctx.fillStyle = '#ffffff'
+      for (const d of dust) {
+        ctx.globalAlpha = d.a
+        ctx.beginPath()
+        ctx.arc(d.x * w, d.y * h, d.r, 0, Math.PI * 2)
+        ctx.fill()
+      }
+      ctx.globalAlpha = 1
+
       ctx.translate(t.x, t.y)
       ctx.scale(t.k, t.k)
 
-      const linkVisible = (l: GLink) => !hidden.has(l.primaryKind)
-      const ox = (n: GNode) => n.x! + Math.sin(time * 0.00045 + n.phase) * 1.4
-      const oy = (n: GNode) => n.y! + Math.cos(time * 0.0004 + n.phase * 1.3) * 1.4
+      const drift = (n: GNode, ax: boolean) =>
+        (ax ? n.x! : n.y!) + (ax ? Math.sin(time * 0.0004 + n.phase) : Math.cos(time * 0.00035 + n.phase * 1.2)) * 0.8
+      const ox = (n: GNode) => drift(n, true)
+      const oy = (n: GNode) => drift(n, false)
 
-      // nebulas
-      ctx.globalCompositeOperation = 'screen'
-      for (const c of graph.clusters.slice(0, 10)) {
-        let cx = 0, cy = 0, m = 0
-        for (const n of nodes) {
-          if (n.cluster !== c.id || n.x == null || n.y == null) continue
-          cx += n.x
-          cy += n.y
-          m++
-        }
-        if (m < 3) continue
-        cx /= m
-        cy /= m
-        const r = 70 + Math.sqrt(m) * 34
-        const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, r)
-        g.addColorStop(0, c.color + '14')
-        g.addColorStop(0.6, c.color + '0a')
-        g.addColorStop(1, c.color + '00')
-        ctx.fillStyle = g
-        ctx.beginPath()
-        ctx.arc(cx, cy, r, 0, Math.PI * 2)
-        ctx.fill()
-      }
-
-      // links
-      ctx.globalCompositeOperation = 'lighter'
+      // ---- edges: straight hairlines ----
       ctx.lineCap = 'round'
       for (const l of links) {
-        if (!linkVisible(l)) continue
         const s = l.source as GNode
         const tg = l.target as GNode
         if (s.x == null || tg.x == null) continue
-
         const isTag = l.primaryKind === 'tag'
-        let alpha = (isTag ? 0.06 : 0.1) + Math.min(l.weight, 5) * 0.04
-        let width = (l.primaryKind === 'related' ? 0.9 : 0.5) + Math.min(l.weight, 5) * 0.3
-        let color = s.cluster === tg.cluster ? s.color : '#8aa3c2'
+
+        let alpha = (isTag ? 0.05 : 0.1) + Math.min(l.weight, 5) * 0.018
+        let width = (l.primaryKind === 'related' ? 0.55 : 0.4) / 1
+        let color = '255,255,255'
 
         if (focus) {
           const touches = s.id === focus.id || tg.id === focus.id
           if (touches) {
-            alpha = 0.85
-            width += 0.6
-            color = focus.color === MISC_COLOR ? '#b8cce8' : focus.color
+            alpha = 0.55
+            width = 0.9
+            const c = hexToRgb(focus.tone)
+            color = `${c.r},${c.g},${c.b}`
           } else {
-            alpha *= 0.1
+            alpha *= 0.18
           }
         }
-
-        const x1 = ox(s), y1 = oy(s), x2 = ox(tg), y2 = oy(tg)
-        const mx = (x1 + x2) / 2, my = (y1 + y2) / 2
-        const dx = x2 - x1, dy = y2 - y1
-        const bend = 0.14
         ctx.globalAlpha = alpha
-        ctx.strokeStyle = color
+        ctx.strokeStyle = `rgba(${color},1)`
         ctx.lineWidth = width
-        if (isTag && !(focus && (s.id === focus.id || tg.id === focus.id))) {
-          ctx.setLineDash([2, 4])
-        }
         ctx.beginPath()
-        ctx.moveTo(x1, y1)
-        ctx.quadraticCurveTo(mx - dy * bend, my + dx * bend, x2, y2)
+        ctx.moveTo(ox(s), oy(s))
+        ctx.lineTo(ox(tg), oy(tg))
         ctx.stroke()
-        ctx.setLineDash([])
       }
 
-      // nodes
+      // ---- nodes ----
       for (const n of nodes) {
         if (n.x == null) continue
-        let alpha = n.ghost ? 0.92 : 1
-        if (focus && focus.id !== n.id && !neighbors?.has(n.id)) alpha *= 0.12
-
+        let alpha = 1
+        if (focus && focus.id !== n.id && !neighbors?.has(n.id)) alpha *= 0.16
         const x = ox(n), y = oy(n)
         const isFocus = focus?.id === n.id
 
-        const sprite = glowSprite(n.color)
-        const glowR = n.radius * (n.isCenter ? 4.2 + Math.sin(time / 480) * 0.5 : isFocus ? 4.4 : 3.2)
-        ctx.globalAlpha = alpha * (n.isCenter ? 0.95 : isFocus ? 0.9 : n.ghost ? 0.4 : 0.55)
-        ctx.drawImage(sprite, x - glowR, y - glowR, glowR * 2, glowR * 2)
+        // soft halo for center / focus only — keeps the field crisp
+        if (n.isCenter || isFocus) {
+          const sprite = halo(n.isCenter ? BONE : n.tone)
+          const r = n.radius * (n.isCenter ? 4.5 + Math.sin(time / 600) * 0.4 : 4)
+          ctx.globalAlpha = alpha * (n.isCenter ? 0.5 : 0.4)
+          ctx.drawImage(sprite, x - r, y - r, r * 2, r * 2)
+        }
 
-        ctx.globalCompositeOperation = 'source-over'
+        ctx.globalAlpha = alpha
         if (n.ghost) {
-          // hollow star: a ring + faint core marks an un-built page
-          ctx.globalAlpha = alpha
           ctx.beginPath()
           ctx.arc(x, y, n.radius, 0, Math.PI * 2)
-          ctx.fillStyle = '#0a1222'
+          ctx.fillStyle = INK
           ctx.fill()
-          ctx.lineWidth = 1.4
-          ctx.strokeStyle = n.color
-          ctx.setLineDash([2.5, 2.5])
-          ctx.stroke()
-          ctx.setLineDash([])
+          ctx.lineWidth = 0.9
+          ctx.strokeStyle = n.tone
           ctx.globalAlpha = alpha * 0.85
-          ctx.fillStyle = n.color
-          ctx.beginPath()
-          ctx.arc(x, y, Math.max(1, n.radius * 0.4), 0, Math.PI * 2)
-          ctx.fill()
+          ctx.stroke()
         } else {
-          ctx.globalAlpha = alpha
-          ctx.fillStyle = n.color
           ctx.beginPath()
-          ctx.arc(x, y, n.radius * (isFocus ? 1.18 : 1), 0, Math.PI * 2)
+          ctx.arc(x, y, n.radius * (isFocus ? 1.2 : 1), 0, Math.PI * 2)
+          ctx.fillStyle = n.tone
           ctx.fill()
-          ctx.fillStyle = n.isCenter ? '#fff7e0' : '#ffffff'
-          ctx.globalAlpha = alpha * 0.9
-          ctx.beginPath()
-          ctx.arc(x, y, Math.max(1, n.radius * 0.4), 0, Math.PI * 2)
-          ctx.fill()
+          if (n.isCenter || n.radius > 6) {
+            ctx.globalAlpha = alpha * 0.95
+            ctx.fillStyle = BONE
+            ctx.beginPath()
+            ctx.arc(x, y, Math.max(1, n.radius * 0.42), 0, Math.PI * 2)
+            ctx.fill()
+          }
         }
 
         if (selectedRef.current?.id === n.id) {
           ctx.globalAlpha = 0.9
-          ctx.strokeStyle = '#ffffff'
-          ctx.lineWidth = 1.2 / t.k
-          ctx.setLineDash([4 / t.k, 4 / t.k])
-          ctx.lineDashOffset = -time / 60
+          ctx.strokeStyle = BONE
+          ctx.lineWidth = 1 / t.k
+          ctx.setLineDash([3 / t.k, 3 / t.k])
+          ctx.lineDashOffset = -time / 70
           ctx.beginPath()
-          ctx.arc(x, y, n.radius + 7 / t.k, 0, Math.PI * 2)
+          ctx.arc(x, y, n.radius + 6 / t.k, 0, Math.PI * 2)
           ctx.stroke()
           ctx.setLineDash([])
         }
-        ctx.globalCompositeOperation = 'lighter'
       }
 
-      // labels
-      ctx.globalCompositeOperation = 'source-over'
+      // ---- labels: sparse by default, rich on focus ----
       const k = t.k
       const minX = -t.x / k, minY = -t.y / k
       const maxX = (w - t.x) / k, maxY = (h - t.y) / k
       for (const n of nodes) {
         if (n.x == null) continue
+        const inFocus = focus && (focus.id === n.id || neighbors?.has(n.id))
+        const isFocus = focus?.id === n.id
+        let show = false
+        if (focus) {
+          show = !!inFocus
+        } else {
+          // ambient: never private labels. First glance stays nearly text-free
+          // — only the very top hubs — with more names surfacing as you zoom in.
+          if (n.private) show = false
+          else if (n.isCenter) show = k > 0.85
+          else show = (k > 3 && n.degree >= 5) || (k > 2 && n.degree >= 9) || (k > 1.4 && n.degree >= 18)
+        }
+        if (!show) continue
         const x = ox(n), y = oy(n)
         if (x < minX || x > maxX || y < minY || y > maxY) continue
 
-        const isFocusArea = focus && (focus.id === n.id || neighbors?.has(n.id))
-        const show =
-          n.isCenter ||
-          isFocusArea ||
-          (!focus && (n.degree >= 9 || k > 2 || (k > 1.1 && n.degree >= 4)))
-        if (!show) continue
-        if (focus && !isFocusArea && !n.isCenter) continue
-
-        const fontSize = (n.isCenter ? 14 : focus?.id === n.id ? 13 : 11) / k
-        ctx.font = `${n.isCenter || focus?.id === n.id ? 600 : 400} ${fontSize}px -apple-system, "PingFang SC", sans-serif`
+        const fontSize = (n.isCenter ? 13 : isFocus ? 12.5 : 10.5) / k
+        ctx.font = `${n.isCenter || isFocus ? 500 : 400} ${fontSize}px -apple-system, "PingFang SC", sans-serif`
         ctx.textAlign = 'center'
         ctx.textBaseline = 'top'
-        const ty = y + n.radius + 4 / k
-        ctx.globalAlpha = focus && !isFocusArea ? 0.3 : 0.95
-        ctx.shadowColor = 'rgba(2,6,18,0.95)'
-        ctx.shadowBlur = 4
-        ctx.fillStyle = focus?.id === n.id ? '#ffffff' : n.ghost ? '#9fb2cf' : '#c8d8ee'
-        const label = n.title.length > 14 ? n.title.slice(0, 14) + '…' : n.title
-        ctx.fillText(label, x, ty)
+        ctx.globalAlpha = focus && !inFocus ? 0.25 : 0.92
+        ctx.shadowColor = 'rgba(0,0,0,0.9)'
+        ctx.shadowBlur = 5
+        ctx.fillStyle = isFocus ? BONE : '#b8b8b2'
+        const label = n.title.length > 13 ? n.title.slice(0, 13) + '…' : n.title
+        ctx.fillText(label, x, y + n.radius + 3.5 / k)
         ctx.shadowBlur = 0
       }
       ctx.globalAlpha = 1
-    }
 
-    const loop = (time: number) => {
-      draw(time)
-      raf = requestAnimationFrame(loop)
+      raf = requestAnimationFrame(draw)
     }
-    raf = requestAnimationFrame(loop)
+    raf = requestAnimationFrame(draw)
 
     const onResize = () => {
       resize()
-      simulation.alpha(0.2).restart()
+      simulation.alpha(0.15).restart()
     }
     window.addEventListener('resize', onResize)
 
+    // expose fit for the reset button
+    ;(canvas as any).__fit = () => fitView(700)
+
     return () => {
       cancelAnimationFrame(raf)
+      clearTimeout(fitFallback)
       simulation.stop()
       window.removeEventListener('resize', onResize)
       canvas.removeEventListener('mousemove', onMove)
@@ -760,7 +717,6 @@ export default function KnowledgeGraph() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [graph])
 
-  // ---------- selected node's connections, grouped ----------
   const connections = useMemo(() => {
     if (!selected || !graph) return []
     const out: Array<{ node: GNode; kinds: string[] }> = []
@@ -777,26 +733,10 @@ export default function KnowledgeGraph() {
     return out.sort((a, b) => b.node.degree - a.node.degree)
   }, [selected, graph])
 
-  const toggleKind = (kind: string) => {
-    setHiddenKinds((prev) => {
-      const next = new Set(prev)
-      if (next.has(kind)) next.delete(kind)
-      else next.add(kind)
-      return next
-    })
-  }
-
   const resetView = () => {
-    const canvas = mainRef.current
-    const zoom = zoomRef.current
-    if (!canvas || !zoom) return
-    const { w, h } = sizeRef.current
     setSelected(null)
-    d3.select(canvas)
-      .transition()
-      .duration(900)
-      .ease(d3.easeCubicInOut)
-      .call(zoom.transform as any, d3.zoomIdentity.translate(w / 2, h / 2).scale(0.5))
+    const canvas = mainRef.current as any
+    if (canvas?.__fit) canvas.__fit()
   }
 
   // ============================================================
@@ -805,133 +745,33 @@ export default function KnowledgeGraph() {
 
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center h-screen bg-[#030712] gap-6">
-        <div className="relative w-16 h-16">
-          <div className="absolute inset-0 rounded-full border-2 border-cyan-400/20" />
-          <div className="absolute inset-0 rounded-full border-t-2 border-cyan-300 animate-spin" />
-          <div className="absolute inset-[26px] rounded-full bg-amber-300 shadow-[0_0_24px_6px_rgba(251,191,36,0.6)]" />
-        </div>
-        <div className="text-sm tracking-[0.4em] text-slate-400">构建知识星图中</div>
+      <div className="flex items-center justify-center h-screen" style={{ background: INK }}>
+        <div className="text-[13px] tracking-[0.5em] text-neutral-600 animate-pulse">CHANG-WIKI</div>
       </div>
     )
   }
 
-  const ghostCount = graph?.nodes.filter((n) => n.ghost).length || 0
-
   return (
-    <div ref={wrapRef} className="relative w-full h-screen overflow-hidden bg-[#030712] select-none">
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse 80% 60% at 30% 20%, rgba(34,60,110,0.25), transparent 60%),' +
-            'radial-gradient(ellipse 70% 60% at 75% 75%, rgba(60,30,90,0.22), transparent 65%),' +
-            'radial-gradient(ellipse 100% 80% at 50% 50%, rgba(8,15,35,0.5), #030712 100%)',
-        }}
-      />
-      <canvas ref={bgRef} className="absolute inset-0" />
+    <div ref={wrapRef} className="relative w-full h-screen overflow-hidden select-none" style={{ background: INK }}>
       <canvas ref={mainRef} className="absolute inset-0" />
+      {/* faint vignette */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at center, transparent 55%, rgba(1,4,12,0.55) 100%)' }}
+        style={{ background: 'radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.6) 100%)' }}
       />
 
-      {/* Identity / control card */}
-      <div className="absolute top-5 left-5 z-20 max-w-[300px]">
-        <motion.div
-          initial={{ opacity: 0, y: -16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className="bg-[#0a1222]/70 backdrop-blur-2xl rounded-2xl border border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.5)] overflow-hidden"
-        >
-          <div className="p-5 pb-4">
-            <div className="flex items-center gap-3">
-              <div className="relative w-10 h-10 shrink-0">
-                <div className="absolute inset-0 rounded-full bg-amber-300/90 blur-[10px]" />
-                <div className="absolute inset-[7px] rounded-full bg-gradient-to-br from-amber-100 to-amber-400 shadow-[0_0_18px_4px_rgba(251,191,36,0.55)]" />
-              </div>
-              <div>
-                <h1 className="text-lg font-semibold text-white leading-tight">常天喆 · 知识星图</h1>
-                <p className="text-[11px] text-slate-400 mt-0.5 tracking-wide">AI 产品经理 · 文学 × 哲学 × AI</p>
-              </div>
-            </div>
-            <p className="mt-3 text-[12px] leading-relaxed text-slate-400">
-              我读过的、想过的、做过的，都在这片星空里。每一簇星系是一个思想领域，连线是它们之间真实的关联。
-            </p>
-          </div>
-
-          <button
-            onClick={() => setPanelOpen((v) => !v)}
-            className="w-full px-5 py-2 text-[11px] text-slate-500 hover:text-slate-300 border-t border-white/5 flex items-center justify-between transition-colors"
-          >
-            <span>星系图例 & 连线筛选</span>
-            <span>{panelOpen ? '收起 ▲' : '展开 ▼'}</span>
-          </button>
-
-          <AnimatePresence initial={false}>
-            {panelOpen && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.25 }}
-                className="overflow-hidden"
-              >
-                <div className="px-5 pb-4">
-                  <div className="space-y-1.5 max-h-[170px] overflow-y-auto pr-1 thin-scroll">
-                    {graph?.clusters.slice(0, 10).map((c) => (
-                      <div key={c.id} className="flex items-center gap-2.5 text-[12px]">
-                        <span
-                          className="w-2 h-2 rounded-full shrink-0"
-                          style={{ backgroundColor: c.color, boxShadow: `0 0 8px ${c.color}` }}
-                        />
-                        <span className="text-slate-300 truncate">{c.name} 星系</span>
-                        <span className="ml-auto text-slate-600 tabular-nums">{c.count}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-3 pt-3 border-t border-white/5">
-                    <p className="text-[10px] text-slate-500 mb-1.5">连线类型（点击隐藏）</p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {Object.entries(KIND_LABELS).map(([kind, label]) => {
-                        const off = hiddenKinds.has(kind)
-                        return (
-                          <button
-                            key={kind}
-                            onClick={() => toggleKind(kind)}
-                            className={`px-2.5 py-1 rounded-full text-[11px] border transition-all ${
-                              off ? 'border-white/5 text-slate-600' : 'border-white/15 text-slate-200 bg-white/5'
-                            }`}
-                          >
-                            {label}
-                          </button>
-                        )
-                      })}
-                    </div>
-                  </div>
-
-                  <div className="mt-4 pt-3 border-t border-white/5 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-slate-500">
-                    <span>✦ {graph?.nodes.length} 星体</span>
-                    <span>⟡ {graph?.links.length} 连线</span>
-                    <span>❖ {graph?.clusters.length} 星系</span>
-                    <span>◌ {ghostCount} 未建页</span>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.div>
+      {/* Wordmark + single quote */}
+      <div className="absolute top-8 left-9 z-20 max-w-[340px] animate-[fade_1.2s_ease-out]">
+        <h1 className="text-[26px] font-light tracking-[0.12em] text-neutral-100">Chang-wiki</h1>
+        <p className="mt-2.5 text-[12px] leading-relaxed text-neutral-500 font-light italic">
+          The universe is made of stories, not of atoms.
+        </p>
+        <p className="mt-1 text-[10.5px] text-neutral-700 tracking-wide">— Muriel Rukeyser</p>
       </div>
 
       {/* Search */}
-      <div className="absolute top-5 left-1/2 -translate-x-1/2 z-20 w-[300px] hidden sm:block">
-        <motion.div
-          initial={{ opacity: 0, y: -16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-          className="relative"
-        >
+      <div className="absolute top-8 left-1/2 -translate-x-1/2 z-20 w-[280px] hidden sm:block">
+        <div className="relative">
           <input
             ref={searchInputRef}
             value={query}
@@ -940,8 +780,8 @@ export default function KnowledgeGraph() {
               setSearchOpen(true)
             }}
             onFocus={() => setSearchOpen(true)}
-            placeholder="搜索星体 / 标签…（按 / 聚焦）"
-            className="w-full px-4 py-2.5 rounded-xl bg-[#0a1222]/70 backdrop-blur-2xl border border-white/10 text-sm text-slate-200 placeholder-slate-500 outline-none focus:border-cyan-400/40 transition-colors shadow-[0_8px_40px_rgba(0,0,0,0.5)]"
+            placeholder="搜索 / search"
+            className="w-full px-0 py-2 bg-transparent border-b border-white/15 text-[13px] text-neutral-200 placeholder-neutral-600 outline-none focus:border-white/40 transition-colors text-center tracking-wide"
           />
           <AnimatePresence>
             {searchOpen && searchResults.length > 0 && (
@@ -949,7 +789,7 @@ export default function KnowledgeGraph() {
                 initial={{ opacity: 0, y: -6 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}
-                className="absolute mt-2 w-full bg-[#0a1222]/90 backdrop-blur-2xl rounded-xl border border-white/10 overflow-hidden shadow-2xl"
+                className="absolute mt-2 w-full bg-[#0c0c10]/95 backdrop-blur-xl rounded-lg border border-white/10 overflow-hidden shadow-2xl"
               >
                 {searchResults.map((n) => (
                   <button
@@ -959,131 +799,124 @@ export default function KnowledgeGraph() {
                       setSearchOpen(false)
                       setQuery('')
                     }}
-                    className="w-full px-4 py-2.5 flex items-center gap-2.5 text-left hover:bg-white/5 transition-colors"
+                    className="w-full px-3.5 py-2 flex items-center gap-2.5 text-left hover:bg-white/5 transition-colors"
                   >
-                    <span
-                      className="w-2 h-2 rounded-full shrink-0"
-                      style={{ backgroundColor: n.color, boxShadow: `0 0 6px ${n.color}` }}
-                    />
-                    <span className="text-sm text-slate-200 truncate">{n.title}</span>
-                    <span className="ml-auto text-[10px] text-slate-500">
-                      {n.ghost ? '未建页' : TYPE_LABELS[n.type] || n.type} · {n.degree}
-                    </span>
+                    <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: n.tone }} />
+                    <span className="text-[13px] text-neutral-300 truncate">{n.title}</span>
+                    <span className="ml-auto text-[10px] text-neutral-600">{n.degree}</span>
                   </button>
                 ))}
               </motion.div>
             )}
           </AnimatePresence>
-        </motion.div>
+        </div>
       </div>
 
-      {/* Reset */}
-      <div className="absolute bottom-5 left-5 z-20 flex items-center gap-3">
-        <button
-          onClick={resetView}
-          className="px-3.5 py-2 rounded-xl bg-[#0a1222]/70 backdrop-blur-2xl border border-white/10 text-[12px] text-slate-300 hover:text-white hover:border-white/25 transition-all"
-        >
-          ⊙ 回到全景
+      {/* Bottom-left controls — minimal */}
+      <div className="absolute bottom-8 left-9 z-20 flex items-center gap-5 text-[11px] text-neutral-600">
+        <button onClick={resetView} className="hover:text-neutral-300 transition-colors tracking-wide">
+          全景
         </button>
-        <span className="text-[11px] text-slate-600 hidden md:inline">
-          拖拽星体 · 滚轮缩放 · 点击查看 · Esc 取消
-        </span>
+        <button onClick={() => setLegendOpen((v) => !v)} className="hover:text-neutral-300 transition-colors tracking-wide">
+          图例
+        </button>
+        {graph && (
+          <span className="tracking-wide text-neutral-700">
+            {graph.nodes.length} · {graph.links.length}
+          </span>
+        )}
       </div>
 
-      {/* Detail panel */}
+      {/* Legend — off by default, monochrome */}
+      <AnimatePresence>
+        {legendOpen && graph && (
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 8 }}
+            className="absolute bottom-20 left-9 z-20 w-[200px] bg-[#0c0c10]/85 backdrop-blur-xl rounded-lg border border-white/10 p-4"
+          >
+            <p className="text-[10px] text-neutral-600 mb-2.5 tracking-[0.2em]">聚类</p>
+            <div className="space-y-1.5 max-h-[240px] overflow-y-auto thin-scroll pr-1">
+              {graph.clusters.slice(0, 12).map((c) => (
+                <div key={c.id} className="flex items-center gap-2.5 text-[12px]">
+                  <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: c.tone }} />
+                  <span className="text-neutral-400 truncate">{c.name}</span>
+                  <span className="ml-auto text-neutral-700 tabular-nums text-[11px]">{c.count}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Detail panel — monochrome */}
       <AnimatePresence>
         {selected && (
           <motion.div
             key={selected.id}
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 40 }}
-            transition={{ type: 'spring', damping: 26, stiffness: 300 }}
-            className="absolute top-5 right-5 bottom-5 z-20 w-[340px] max-w-[calc(100vw-40px)] flex flex-col bg-[#0a1222]/75 backdrop-blur-2xl rounded-2xl border border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.5)] overflow-hidden"
+            exit={{ opacity: 0, x: 30 }}
+            transition={{ type: 'spring', damping: 28, stiffness: 320 }}
+            className="absolute top-8 right-8 bottom-8 z-20 w-[330px] max-w-[calc(100vw-48px)] flex flex-col bg-[#0a0a0e]/85 backdrop-blur-2xl rounded-xl border border-white/10 overflow-hidden"
           >
-            <div className="p-5 pb-4 border-b border-white/5">
+            <div className="p-6 pb-4 border-b border-white/5">
               <button
                 onClick={() => setSelected(null)}
-                className="absolute top-4 right-4 w-7 h-7 rounded-lg flex items-center justify-center text-slate-500 hover:text-white hover:bg-white/10 transition-all"
+                className="absolute top-5 right-5 w-7 h-7 rounded-md flex items-center justify-center text-neutral-600 hover:text-neutral-200 hover:bg-white/10 transition-all"
               >
                 ✕
               </button>
               <div className="flex items-center gap-2.5 pr-8">
-                <span
-                  className="w-3 h-3 rounded-full shrink-0"
-                  style={{ backgroundColor: selected.color, boxShadow: `0 0 12px ${selected.color}` }}
-                />
-                <h2 className="text-lg font-semibold text-white leading-snug">{selected.title}</h2>
+                <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: selected.tone }} />
+                <h2 className="text-[19px] font-normal text-neutral-100 leading-snug">{selected.title}</h2>
               </div>
-              <div className="mt-3 flex flex-wrap items-center gap-1.5">
-                <span className="px-2 py-0.5 rounded-full text-[11px] bg-white/5 border border-white/10 text-slate-300">
+              <div className="mt-3 flex flex-wrap items-center gap-1.5 text-[11px]">
+                <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-neutral-400">
                   {selected.ghost ? '未建页' : TYPE_LABELS[selected.type] || selected.type}
                 </span>
                 {graph?.clusters.find((c) => c.id === selected.cluster) && (
-                  <span
-                    className="px-2 py-0.5 rounded-full text-[11px] border"
-                    style={{
-                      color: selected.color,
-                      borderColor: selected.color + '55',
-                      backgroundColor: selected.color + '14',
-                    }}
-                  >
-                    {graph.clusters.find((c) => c.id === selected.cluster)!.name} 星系
+                  <span className="px-2 py-0.5 rounded-full border border-white/10 text-neutral-400">
+                    {graph.clusters.find((c) => c.id === selected.cluster)!.name}
                   </span>
                 )}
-                {selected.judgment && (
-                  <span className="px-2 py-0.5 rounded-full text-[11px] bg-emerald-500/10 border border-emerald-400/30 text-emerald-300">
-                    {selected.judgment}
-                  </span>
-                )}
-                {selected.domain.map((d) => (
-                  <span key={d} className="px-2 py-0.5 rounded-full text-[11px] bg-white/5 border border-white/10 text-slate-400">
-                    {d}
-                  </span>
-                ))}
               </div>
 
               {selected.summary && (
-                <p className="mt-3 text-[12.5px] leading-relaxed text-slate-300">{selected.summary}</p>
+                <p className="mt-3.5 text-[12.5px] leading-relaxed text-neutral-400 font-light">{selected.summary}</p>
               )}
               {selected.ghost && (
-                <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
-                  这是一颗「未建页星体」—— 被 {selected.degree} 处引用，但还没有独立页面。一个等待书写的节点。
+                <p className="mt-3.5 text-[11px] leading-relaxed text-neutral-600 font-light">
+                  未建页 · 被 {selected.degree} 处引用，尚无独立条目。
                 </p>
               )}
               {selected.tags.length > 0 && (
-                <div className="mt-3 flex flex-wrap gap-1">
+                <div className="mt-3 flex flex-wrap gap-1.5">
                   {selected.tags.slice(0, 8).map((tg) => (
-                    <span key={tg} className="px-1.5 py-0.5 rounded text-[10px] text-slate-500 bg-white/[0.03]">
-                      #{tg}
-                    </span>
+                    <span key={tg} className="text-[10px] text-neutral-600">#{tg}</span>
                   ))}
                 </div>
               )}
             </div>
 
-            <div className="px-5 py-3 text-[11px] text-slate-500 flex items-center justify-between">
+            <div className="px-6 py-3 text-[11px] text-neutral-600 flex items-center justify-between">
               <span>{connections.length} 条关联</span>
-              {selected.updated && <span>更新于 {selected.updated}</span>}
+              {selected.updated && <span className="text-neutral-700">{selected.updated}</span>}
             </div>
 
-            <div className="flex-1 overflow-y-auto px-3 pb-3 thin-scroll">
+            <div className="flex-1 overflow-y-auto px-3 pb-4 thin-scroll">
               {connections.map(({ node, kinds }, i) => (
                 <button
                   key={node.id + i}
                   onClick={() => selectNode(node)}
-                  className="w-full px-3 py-2 rounded-xl flex items-center gap-2.5 text-left hover:bg-white/5 transition-colors group"
+                  className="w-full px-3 py-2 rounded-lg flex items-center gap-2.5 text-left hover:bg-white/5 transition-colors group"
                 >
-                  <span
-                    className="w-2 h-2 rounded-full shrink-0"
-                    style={{ backgroundColor: node.color, boxShadow: `0 0 6px ${node.color}` }}
-                  />
-                  <span className="text-[13px] text-slate-300 group-hover:text-white truncate transition-colors">
+                  <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: node.tone }} />
+                  <span className="text-[13px] text-neutral-400 group-hover:text-neutral-100 truncate transition-colors">
                     {node.title}
                   </span>
-                  <span className="ml-auto text-[10px] text-slate-600 shrink-0">
-                    {KIND_LABELS[kinds[0]] || kinds[0]}
-                  </span>
+                  <span className="ml-auto text-[10px] text-neutral-700 shrink-0">{KIND_LABELS[kinds[0]] || kinds[0]}</span>
                 </button>
               ))}
             </div>
@@ -1092,4 +925,14 @@ export default function KnowledgeGraph() {
       </AnimatePresence>
     </div>
   )
+}
+
+// small hex→rgb helper for edge tinting
+function hexToRgb(hex: string): { r: number; g: number; b: number } {
+  const h = hex.replace('#', '')
+  return {
+    r: parseInt(h.slice(0, 2), 16),
+    g: parseInt(h.slice(2, 4), 16),
+    b: parseInt(h.slice(4, 6), 16),
+  }
 }

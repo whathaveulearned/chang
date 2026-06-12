@@ -38,6 +38,8 @@ EXCLUDED_DIRS = {"raw", "_template"}
 
 FM_RE = re.compile(r"\A(?:﻿)?---\r?\n(.*?)\r?\n---", re.DOTALL)
 
+CENTER_TITLE = "常天喆"
+
 # Ghost promotion: a [[name]] with no page, referenced by at least this many
 # distinct pages, becomes its own node.
 GHOST_MIN_REFS = 2
@@ -127,6 +129,23 @@ def extract_description(content: str) -> str:
         if len(p) >= 12:
             return p[:240]
     return ""
+
+
+def clean_title(title: str) -> str:
+    """Strip decorative brackets and a leading personal-name prefix so labels
+    read clean (e.g. 【哲学评鉴】X → X, 常天喆-个人简历 → 个人简历)."""
+    t = re.sub(r"【[^】]*】", "", title)
+    t = re.sub(r"^\s*\[[^\]]*\]\s*", "", t)
+    # drop a leading "常天喆" prefix on derived/source titles, never on the
+    # bare center node itself (handled by the `or title` fallback)
+    stripped = re.sub(r"^常天喆[\s·\-—–_、:：]+", "", t).strip()
+    t = stripped or t.strip()
+    return t or title
+
+
+# Node types whose labels reveal private/raw material and should stay hidden
+# in the ambient (zoomed-out) view.
+PRIVATE_TYPES = {"source", "source-summary", "timeline"}
 
 
 def page_aliases(path: str, title: str) -> set[str]:
@@ -286,9 +305,11 @@ def main():
 
     nodes = []
     for pg in kept:
+        is_center = pg["title"] == CENTER_TITLE
         nodes.append({
             "id": pg["path"],
-            "title": pg["title"],
+            # cleaned for display; original title only ever mattered for resolution
+            "title": pg["title"] if is_center else clean_title(pg["title"]),
             "type": pg["type"],
             "domain": pg["domain"],
             "tags": pg["tags"],
@@ -298,6 +319,8 @@ def main():
             "summary": pg["summary"],
             "degree": degree[pg["path"]],
             "ghost": pg.get("ghost", False),
+            # private = don't surface its label in the ambient view
+            "private": pg["type"] in PRIVATE_TYPES,
         })
 
     out = {
