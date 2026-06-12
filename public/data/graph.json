@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-12T16:43:07",
-  "node_count": 247,
-  "edge_count": 968,
+  "generated_at": "2026-06-12T18:17:22",
+  "node_count": 278,
+  "edge_count": 1138,
   "ghost_count": 60,
   "nodes": [
     {
@@ -19,7 +19,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "Artificial General Intelligence的缩写，通用人工智能",
-      "degree": 11,
+      "degree": 12,
       "ghost": false,
       "private": false
     },
@@ -60,6 +60,29 @@
       "private": false
     },
     {
+      "id": "concepts/Agent-as-a-Judge.md",
+      "title": "Agent-as-a-Judge",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "llm",
+        "research"
+      ],
+      "tags": [
+        "大语言模型",
+        "Agent",
+        "评估",
+        "AI as judge"
+      ],
+      "judgment": "",
+      "confidence": "medium",
+      "updated": "2026-06-12",
+      "summary": "用智能体评估智能体的范式（arXiv:2410.10934），性能优于 LLM-as-a-Judge，为可扩展的自我改进提供丰富奖励信号",
+      "degree": 8,
+      "ghost": false,
+      "private": false
+    },
+    {
       "id": "concepts/Fact-checking Agent.md",
       "title": "Fact-checking Agent",
       "type": "concept",
@@ -73,7 +96,53 @@
       "confidence": "high",
       "updated": "2026-04-15",
       "summary": "Fact-checking Agent是AI求真项目中用于事实核查的智能agent，通过信源筛选、多轮检索、交叉验证对照等策略，实现围绕事实的查验工作流。",
-      "degree": 11,
+      "degree": 15,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/LLM-OS.md",
+      "title": "LLM OS",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "llm",
+        "tech"
+      ],
+      "tags": [
+        "Andrej Karpathy",
+        "大语言模型",
+        "系统架构",
+        "Agent"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "Karpathy 的类比——把大模型视为新型操作系统的内核，工具、记忆、上下文窗口等围绕其组织",
+      "degree": 10,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/LLM-as-a-Judge.md",
+      "title": "LLM-as-a-Judge",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "llm",
+        "research"
+      ],
+      "tags": [
+        "大语言模型",
+        "评估",
+        "质检",
+        "AI as judge"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "用大模型对模型输出进行评估打分的范式；价值上限高，但对提示复杂度与答案长度敏感、存在宽容倾向等局限",
+      "degree": 6,
       "ghost": false,
       "private": false
     },
@@ -109,7 +178,7 @@
       "confidence": "high",
       "updated": "2026-04-15",
       "summary": "Orchestration Workflow是AI智选资讯中采用的解耦的、可动态配置的RAG工作流，用于灵活管理和编排AI内容生产的各个环节。",
-      "degree": 8,
+      "degree": 10,
       "ghost": false,
       "private": false
     },
@@ -126,7 +195,7 @@
       "confidence": "high",
       "updated": "2026-04-15",
       "summary": "RAG（Retrieval-Augmented Generation，检索增强生成）是一种结合了信息检索和文本生成的AI技术，通过先从知识库中检索相关信息，再基于检索结果生成回答，以提升AI输出的准确性和时效性。",
-      "degree": 10,
+      "degree": 15,
       "ghost": false,
       "private": false
     },
@@ -145,7 +214,31 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "Reinforcement Learning from Human Feedback的缩写，人类反馈强化学习",
-      "degree": 8,
+      "degree": 10,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/RLHF不是RL.md",
+      "title": "RLHF不是RL",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "llm",
+        "research"
+      ],
+      "tags": [
+        "Andrej Karpathy",
+        "RLHF",
+        "强化学习",
+        "奖励模型",
+        "模型对齐"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "Karpathy 的论点——RLHF 训练的奖励模型只是「vibe check」式代理目标，不是真正解决问题的目标，因此 RLHF 不等于真正的强化学习",
+      "degree": 12,
       "ghost": false,
       "private": false
     },
@@ -167,6 +260,29 @@
       "private": false
     },
     {
+      "id": "concepts/Software-2.0.md",
+      "title": "Software 2.0",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "llm",
+        "tech"
+      ],
+      "tags": [
+        "Andrej Karpathy",
+        "深度学习",
+        "范式转移",
+        "神经网络"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "Karpathy 提出的范式——神经网络的权重成为新的「代码」，程序由数据与梯度下降「编写」而非人手书写",
+      "degree": 9,
+      "ghost": false,
+      "private": false
+    },
+    {
       "id": "concepts/Superalignment.md",
       "title": "Superalignment",
       "type": "concept",
@@ -182,7 +298,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "OpenAI的超级对齐项目，目标是引导和控制比人类更聪明的人工智能系统",
-      "degree": 15,
+      "degree": 17,
       "ghost": false,
       "private": false
     },
@@ -201,6 +317,53 @@
       "updated": "2026-04-15",
       "summary": "System Engineer是AI产品中负责主对话system prompt撰写的角色，对标Claude的Amanda Askell。这个角色需要直接对大模型在产品主对话效果负责，随模型迭代优化system。",
       "degree": 8,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/Vibe-Coding.md",
+      "title": "Vibe Coding",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "llm",
+        "tech"
+      ],
+      "tags": [
+        "Andrej Karpathy",
+        "大语言模型",
+        "编程范式",
+        "AI协作"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "Karpathy 带火的说法——凭直觉/感觉与大模型协作编程，把意图交给 AI 生成实现",
+      "degree": 7,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/intelligence词源.md",
+      "title": "intelligence词源",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "linguistics",
+        "news"
+      ],
+      "tags": [
+        "词源",
+        "智能",
+        "资讯",
+        "情报",
+        "语言"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "intelligence 一词在 OED 中兼有「智能·资讯·情报」三义，其拉丁词根 intelligere（inter「之间」+legere「选择/阅读」）暗合 LLM 挑选词语生成 token 的原理",
+      "degree": 9,
       "ghost": false,
       "private": false
     },
@@ -273,7 +436,7 @@
       "confidence": "high",
       "updated": "2026-04-15",
       "summary": "上下文工程（Context Engineering）是指通过精心设计 System prompt 和 user prompt，将它们改造为模块化、动态化的结构，配合各类信源资源和辅助标签、信号，科学构建高效上下文的技术。",
-      "degree": 11,
+      "degree": 19,
       "ghost": false,
       "private": false
     },
@@ -349,7 +512,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "RLHF的中文翻译，Reinforcement Learning from Human Feedback",
-      "degree": 7,
+      "degree": 10,
       "ghost": false,
       "private": false
     },
@@ -367,7 +530,31 @@
       "confidence": "high",
       "updated": "2026-04-15",
       "summary": "价值观对齐（Value Alignment）是AI研究领域的重要方向，旨在确保大语言模型等AI系统的行为与人类的价值观和道德准则保持一致。",
-      "degree": 8,
+      "degree": 15,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/优质正文Agent.md",
+      "title": "优质正文Agent",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "product",
+        "news"
+      ],
+      "tags": [
+        "AI资讯",
+        "Agent",
+        "多Agent",
+        "ReAct",
+        "资讯生产"
+      ],
+      "judgment": "",
+      "confidence": "medium",
+      "updated": "2026-06-12",
+      "summary": "生成式资讯中由大纲、组件、章节信息、正文等多个子 Agent 协作产出一篇结构化优质资讯的架构",
+      "degree": 7,
       "ghost": false,
       "private": false
     },
@@ -406,6 +593,29 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔哲学中的核心概念，最初的爱获得历史性的方式需要以主体的信仰之跃作为条件",
       "degree": 10,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/信源透明度.md",
+      "title": "信源透明度",
+      "type": "concept",
+      "domain": [
+        "news",
+        "ai"
+      ],
+      "tags": [
+        "新闻伦理",
+        "信源",
+        "信任",
+        "AI资讯",
+        "可解释性"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "Source Attribution——AI 资讯能否提供清晰、可追溯的引文与来源；研究显示用户信任的关键不在「是否 AI 写」，而在内容是否可解释、可核验",
+      "degree": 8,
       "ghost": false,
       "private": false
     },
@@ -554,7 +764,7 @@
       "confidence": "high",
       "updated": "2026-04-15",
       "summary": "动态上下文路由（Dynamic Context Routing）是AI智选资讯中采用的一种技术方案，用于根据不同场景和需求动态选择和路由上下文信息，以提升AI输出质量和准确率。",
-      "degree": 9,
+      "degree": 11,
       "ghost": false,
       "private": false
     },
@@ -721,7 +931,7 @@
       "confidence": "high",
       "updated": "2026-04-15",
       "summary": "多源校验（Multi-source Validation）是AI求真项目中采用的一种策略，通过信源筛选、多轮检索、交叉验证对照等方式，实现围绕事实的查验工作流，以提升AI输出的可信度和准确性。",
-      "degree": 9,
+      "degree": 11,
       "ghost": false,
       "private": false
     },
@@ -803,6 +1013,30 @@
       "private": false
     },
     {
+      "id": "concepts/幻觉.md",
+      "title": "幻觉",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "llm",
+        "philosophy"
+      ],
+      "tags": [
+        "大语言模型",
+        "幻觉",
+        "泛化",
+        "真实性",
+        "changsview"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "Hallucination——大模型生成的、脱离现实世界的符号生产剩余物；常天喆主张幻觉不可根除，没有幻觉就没有泛化",
+      "degree": 12,
+      "ghost": false,
+      "private": false
+    },
+    {
       "id": "concepts/弱到强的泛化.md",
       "title": "弱到强的泛化",
       "type": "concept",
@@ -818,7 +1052,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "Weak-to-strong generalization，Superalignment项目的核心问题之一",
-      "degree": 6,
+      "degree": 8,
       "ghost": false,
       "private": false
     },
@@ -994,6 +1228,53 @@
       "private": false
     },
     {
+      "id": "concepts/新闻三大属性.md",
+      "title": "新闻三大属性",
+      "type": "concept",
+      "domain": [
+        "news",
+        "ai"
+      ],
+      "tags": [
+        "新闻学",
+        "AI资讯",
+        "真实性",
+        "时效性",
+        "思想性"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "经典新闻学将新闻的根本属性概括为真实性、时效性、思想性——恰好对应大模型当下三大挑战（幻觉、时序、伦理）",
+      "degree": 9,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/时序泛化难题.md",
+      "title": "时序泛化难题",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "llm",
+        "news"
+      ],
+      "tags": [
+        "大语言模型",
+        "时效性",
+        "知识截止",
+        "RAG",
+        "AI资讯"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "Temporal Generalization Challenge——让训练于固定时间快照的「静态」模型理解分秒必争的动态事实所带来的根本困难",
+      "degree": 9,
+      "ghost": false,
+      "private": false
+    },
+    {
       "id": "concepts/时间.md",
       "title": "时间",
       "type": "concept",
@@ -1127,7 +1408,52 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "弗洛伊德的重要著作，也是精神分析的核心概念，指对梦的解释",
-      "degree": 7,
+      "degree": 8,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/检索引起的幻觉.md",
+      "title": "检索引起的幻觉",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "llm",
+        "news"
+      ],
+      "tags": [
+        "RAG",
+        "幻觉",
+        "信源",
+        "AI资讯"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "Retrieval-Induced Hallucination——错误的检索结果污染生成、甚至导致更严重幻觉，因为模型倾向于完全相信被喂入的上下文",
+      "degree": 11,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/概念创造.md",
+      "title": "概念创造",
+      "type": "concept",
+      "domain": [
+        "philosophy",
+        "ai"
+      ],
+      "tags": [
+        "德勒兹",
+        "什么是哲学",
+        "概念",
+        "AI思想"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "德勒兹《什么是哲学？》的核心论断——哲学唯一的目标是建构概念，概念并非预先存在而须被创造",
+      "degree": 5,
       "ghost": false,
       "private": false
     },
@@ -1145,7 +1471,7 @@
       "confidence": "high",
       "updated": "2026-04-15",
       "summary": "模型对齐（Alignment）是AI求真项目中采用的平台价值的模型对齐策略，用于确保AI模型的输出与平台的价值观和目标保持一致，同时兼顾平台沟通的形象、信息治理的效果和规避偏信风险的考虑。",
-      "degree": 9,
+      "degree": 10,
       "ghost": false,
       "private": false
     },
@@ -1222,7 +1548,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "generalization，机器学习中的概念，指模型将监督拓展到人工无法监督的任务的能力",
-      "degree": 9,
+      "degree": 11,
       "ghost": false,
       "private": false
     },
@@ -1366,6 +1692,28 @@
       "private": false
     },
     {
+      "id": "concepts/理念创造家.md",
+      "title": "理念创造家",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "philosophy"
+      ],
+      "tags": [
+        "AI思想",
+        "概念创造",
+        "大语言模型",
+        "思想史"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "AI 领域中创造或带火关键概念、为快速变动的工程实践赋予可传播理念形式的人",
+      "degree": 6,
+      "ghost": false,
+      "private": false
+    },
+    {
       "id": "concepts/生存境界.md",
       "title": "生存境界",
       "type": "concept",
@@ -1402,6 +1750,53 @@
       "updated": "2026-04-17",
       "summary": "克尔凯郭尔提出的一种辩证法，与黑格尔的思维辩证法相对，强调生存的个体性、历史性和内在性",
       "degree": 16,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/生成式资讯.md",
+      "title": "生成式资讯",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "product",
+        "news"
+      ],
+      "tags": [
+        "AI资讯",
+        "大语言模型",
+        "新闻",
+        "LLM for News",
+        "资讯生产"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "用大语言模型生成新闻资讯内容的产品方向；其内容生成挑战几乎等同于大模型当下面临的根本挑战本身",
+      "degree": 21,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/痛苦的教训.md",
+      "title": "痛苦的教训",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "research"
+      ],
+      "tags": [
+        "强化学习",
+        "scaling",
+        "算力",
+        "AI研究",
+        "Rich Sutton"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "Rich Sutton 的论断（The Bitter Lesson）——长期来看，利用算力的通用方法总是胜过依赖人类先验知识的方法",
+      "degree": 7,
       "ghost": false,
       "private": false
     },
@@ -1462,6 +1857,28 @@
       "private": false
     },
     {
+      "id": "concepts/知识截止.md",
+      "title": "知识截止",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "llm"
+      ],
+      "tags": [
+        "大语言模型",
+        "时效性",
+        "幻觉",
+        "AI资讯"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "Knowledge Cut-off——模型参数冻结的时间点成为其知识边界，面对此后的新事件倾向于拒答或生成幻觉",
+      "degree": 7,
+      "ghost": false,
+      "private": false
+    },
+    {
       "id": "concepts/精神分析.md",
       "title": "精神分析",
       "type": "concept",
@@ -1496,6 +1913,30 @@
       "updated": "2026-04-17",
       "summary": "常天喆研究的学术领域，省级项目《审视与洞察：精神疾病书写的两种视域》的主题",
       "degree": 5,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/系统提示词学习.md",
+      "title": "系统提示词学习",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "llm",
+        "research"
+      ],
+      "tags": [
+        "Andrej Karpathy",
+        "大语言模型",
+        "学习范式",
+        "RLHF",
+        "上下文工程"
+      ],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "Karpathy 提出的学习范式（System Prompt Learning）——让大模型为自己撰写、编辑系统提示词，把经验以显式文本而非权重的方式积累",
+      "degree": 9,
       "ghost": false,
       "private": false
     },
@@ -1590,7 +2031,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "索绪尔语言学中的核心概念，能指是符号的音响形象，所指是符号的概念",
-      "degree": 5,
+      "degree": 6,
       "ghost": false,
       "private": false
     },
@@ -1674,6 +2115,28 @@
       "private": false
     },
     {
+      "id": "concepts/计算新闻学.md",
+      "title": "计算新闻学",
+      "type": "concept",
+      "domain": [
+        "news",
+        "ai"
+      ],
+      "tags": [
+        "新闻学",
+        "AI资讯",
+        "杜克大学",
+        "交叉学科"
+      ],
+      "judgment": "",
+      "confidence": "medium",
+      "updated": "2026-06-12",
+      "summary": "Computational Journalism——利用信息技术手段查验事实、提高新闻效率的研究方向；AI 资讯可视作其分支「AI 新闻学」",
+      "degree": 6,
+      "ghost": false,
+      "private": false
+    },
+    {
       "id": "concepts/话语权力.md",
       "title": "话语权力",
       "type": "concept",
@@ -1707,7 +2170,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "强调语言在民族认同和民族建构中的重要作用的思想",
-      "degree": 6,
+      "degree": 7,
       "ghost": false,
       "private": false
     },
@@ -1726,7 +2189,7 @@
       "confidence": "high",
       "updated": "2026-04-15",
       "summary": "质量检验agent是AI资讯场景中用于提升AI输出准确率和质量的自动化质检系统。通过模型选型、检索能力、多模型协同等技术手段，在模型侧非自有的条件下，有效地在能力瓶颈上拔高了模型输出的准确率上限。",
-      "degree": 8,
+      "degree": 13,
       "ghost": false,
       "private": false
     },
@@ -1783,6 +2246,29 @@
       "updated": "2026-04-17",
       "summary": "马里翁现象学中的核心概念，指现象学还原与现象的自身给出",
       "degree": 9,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "concepts/选题Agent.md",
+      "title": "选题Agent",
+      "type": "concept",
+      "domain": [
+        "ai",
+        "product",
+        "news"
+      ],
+      "tags": [
+        "AI资讯",
+        "Agent",
+        "选题",
+        "资讯生产"
+      ],
+      "judgment": "",
+      "confidence": "medium",
+      "updated": "2026-06-12",
+      "summary": "生成式资讯生产链路中负责「选什么题、覆盖哪些事件、用什么角度」的 Agent，是优质内容的前提",
+      "degree": 6,
       "ghost": false,
       "private": false
     },
@@ -1959,7 +2445,7 @@
       "confidence": "high",
       "updated": "2026-04-15",
       "summary": "AI智选资讯是抖音前端唯一的AIGC功能化产品项目，目前逐步涵盖了频道天窗、AI抖音独立端、抖音精选独立端、抖音异形卡、AI账号五个应用场景。是国内乃至世界上目前用户基数最大、原生创新最多、输出效果最佳的AI资讯类产品。",
-      "degree": 15,
+      "degree": 19,
       "ghost": false,
       "private": false
     },
@@ -2005,7 +2491,7 @@
       "confidence": "high",
       "updated": "2026-04-15",
       "summary": "AI热点是抖音AI搜索热点top1分支，影响面占抖音AI搜索结果约20%。相关能力被复用到AI搜\"可信度\"线条的其他业务当中。",
-      "degree": 15,
+      "degree": 17,
       "ghost": false,
       "private": false
     },
@@ -2026,6 +2512,30 @@
       "updated": "2026-04-15",
       "summary": "Amanda Askell是Claude的system engineer，是常天喆在百度担任System Engineer时的对标对象。",
       "degree": 4,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "entities/Andrej-Karpathy/profile.md",
+      "title": "Andrej Karpathy",
+      "type": "entity",
+      "domain": [
+        "ai",
+        "llm",
+        "tech"
+      ],
+      "tags": [
+        "深度学习",
+        "大语言模型",
+        "理念创造家",
+        "OpenAI",
+        "Tesla"
+      ],
+      "judgment": "positive",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "Andrej Karpathy 是当代 AI 领域最重要的「理念创造家」之一——带火重要概念、为快速变动的大模型实践赋予可传播的理念形式的人。在常天喆看来，AI 领域思想极其密集却异样「贫瘠」，缺乏思想图谱式的梳理，而 Karpathy 正是少数把高速变动的工程实践提炼为「思想」而非零散「知识」的人。",
+      "degree": 15,
       "ghost": false,
       "private": false
     },
@@ -2067,7 +2577,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "OpenAI的联合创始人和首席科学家，原本与Jan Leike共同领导Superalignment项目。Ilya离开OpenAI后，Superalignment项目荒废了大半年。",
-      "degree": 8,
+      "degree": 10,
       "ghost": false,
       "private": false
     },
@@ -2091,6 +2601,52 @@
       "private": false
     },
     {
+      "id": "entities/Jason-Wei/profile.md",
+      "title": "Jason Wei",
+      "type": "entity",
+      "domain": [
+        "ai",
+        "llm",
+        "research"
+      ],
+      "tags": [
+        "大语言模型",
+        "思维链",
+        "涌现能力",
+        "理念创造家",
+        "OpenAI"
+      ],
+      "judgment": "watching",
+      "confidence": "medium",
+      "updated": "2026-06-12",
+      "summary": "Jason Wei 是大语言模型领域有影响力的研究者，公开工作以「思维链提示」（Chain-of-Thought Prompting）、大模型「涌现能力」（Emergent Abilities）、指令微调等方向为人所知，曾任职 Google Brain、OpenAI。在常天喆的 AI 思想梳理中，与 Andrej Karpathy 同列为 AI 领域的 理念创造家。",
+      "degree": 5,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "entities/John-McCarthy/profile.md",
+      "title": "John McCarthy",
+      "type": "entity",
+      "domain": [
+        "ai",
+        "history"
+      ],
+      "tags": [
+        "人工智能",
+        "AI历史",
+        "达特茅斯会议",
+        "LISP"
+      ],
+      "judgment": "watching",
+      "confidence": "medium",
+      "updated": "2026-06-12",
+      "summary": "约翰·麦卡锡（John McCarthy）于 1956 年最早提出「Artificial Intelligence（人工智能）」这一概念并被沿用至今（达特茅斯会议）。在本 wiki 的 intelligence词源 讨论中，他作为「AI」一词的命名者出现——而「智能资讯」的概念在隐秘意义上其实与之同时被提出。",
+      "degree": 3,
+      "ghost": false,
+      "private": false
+    },
+    {
       "id": "entities/OpenAI.md",
       "title": "OpenAI",
       "type": "entity",
@@ -2106,7 +2662,53 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "人工智能研究公司，发起了Superalignment（超级对齐）项目，目标是引导和控制比人类更聪明的人工智能系统。",
-      "degree": 9,
+      "degree": 12,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "entities/Particle/profile.md",
+      "title": "Particle",
+      "type": "entity",
+      "domain": [
+        "ai",
+        "product",
+        "news"
+      ],
+      "tags": [
+        "AI资讯",
+        "新闻产品",
+        "个性化推荐",
+        "信源合作"
+      ],
+      "judgment": "positive",
+      "confidence": "medium",
+      "updated": "2026-06-12",
+      "summary": "Particle 是一款 AI 资讯个性化推荐/订阅 App，由前 Twitter 团队成员创立（联创兼 CEO Sara Beykpour）。在 生成式资讯 的产品对标中是「专业性 + 交互设计」方向的代表。",
+      "degree": 5,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "entities/Perplexity/profile.md",
+      "title": "Perplexity",
+      "type": "entity",
+      "domain": [
+        "ai",
+        "product",
+        "news"
+      ],
+      "tags": [
+        "AI搜索",
+        "资讯",
+        "信源引用",
+        "搜推联动"
+      ],
+      "judgment": "positive",
+      "confidence": "medium",
+      "updated": "2026-06-12",
+      "summary": "Perplexity 是基于 AI 的智能搜索引擎，集搜索、推荐、chatbot、智能任务于一体，其 Discover 子功能类似资讯推荐。在 生成式资讯 对标中是「专业信源 + 搜推联动 + Agent 生态」方向的代表。",
+      "degree": 8,
       "ghost": false,
       "private": false
     },
@@ -2128,7 +2730,7 @@
       "confidence": "high",
       "updated": "2026-04-16",
       "summary": "changsview 是常天喆的个人微信公众号，用于发表关于AI、哲学、社会、文化等主题的深度文章。",
-      "degree": 4,
+      "degree": 5,
       "ghost": false,
       "private": false
     },
@@ -2429,7 +3031,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "常天喆是国内首批LLM产品经理之一，拥有汉语言文学、法学、外国哲学的跨学科教育背景，从2023年开始进入AI产品领域，先后在腾讯会议、微软亚洲研究院、百度文心一言、字节跳动抖音工作，主导多个AI产品功能落地，拥有多项AI专利。",
-      "degree": 126,
+      "degree": 137,
       "ghost": false,
       "private": false
     },
@@ -2497,7 +3099,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "西格蒙德·弗洛伊德（Sigmund Freud，1856年5月6日－1939年9月23日）是奥地利心理学家、神经科学家，精神分析学的创始人。",
-      "degree": 8,
+      "degree": 9,
       "ghost": false,
       "private": false
     },
@@ -2518,7 +3120,29 @@
       "confidence": "high",
       "updated": "2026-04-15",
       "summary": "微软亚洲研究院（MSRA）是亚太地区最领先的AI研究机构，常天喆曾在这里进行大语言模型价值观对齐问题研究，发表了中文首篇大模型价值观对齐论文。",
-      "degree": 10,
+      "degree": 11,
+      "ghost": false,
+      "private": false
+    },
+    {
+      "id": "entities/德勒兹/profile.md",
+      "title": "德勒兹",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "french-philosophy"
+      ],
+      "tags": [
+        "法国哲学",
+        "后结构主义",
+        "概念创造",
+        "什么是哲学"
+      ],
+      "judgment": "watching",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "吉尔·德勒兹（Gilles Deleuze）是法国后结构主义代表哲学家。在常天喆的 AI 思想梳理中，德勒兹与 瓜塔里 合著《什么是哲学？》（Qu'est-ce que la philosophie?）中关于「哲学的目标是建构概念」的论断，被用来理解 AI 领域的 理念创造家：",
+      "degree": 6,
       "ghost": false,
       "private": false
     },
@@ -2779,6 +3403,28 @@
       "private": false
     },
     {
+      "id": "entities/瓜塔里/profile.md",
+      "title": "瓜塔里",
+      "type": "entity",
+      "domain": [
+        "philosophy",
+        "french-philosophy"
+      ],
+      "tags": [
+        "法国哲学",
+        "后结构主义",
+        "精神分析",
+        "什么是哲学"
+      ],
+      "judgment": "watching",
+      "confidence": "medium",
+      "updated": "2026-06-12",
+      "summary": "菲利克斯·瓜塔里（Félix Guattari），法国精神分析学家、哲学家，与 德勒兹 长期合作，合著《什么是哲学？》《反俄狄浦斯》《千高原》等。在本 wiki 中主要作为《什么是哲学？》关于 概念创造 论断的共同作者出现。",
+      "degree": 4,
+      "ghost": false,
+      "private": false
+    },
+    {
       "id": "entities/瓦尔特·本雅明.md",
       "title": "瓦尔特·本雅明",
       "type": "entity",
@@ -2836,7 +3482,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "米歇尔·福柯（Michel Foucault，1926年10月15日－1984年6月25日）是法国哲学家、思想史家、社会理论家，对权力、话语、性等议题有深刻探讨。",
-      "degree": 8,
+      "degree": 9,
       "ghost": false,
       "private": false
     },
@@ -3367,7 +4013,7 @@
       "confidence": "high",
       "updated": "2026-04-16",
       "summary": "常天喆发表在 changsview 公众号的深度文章，从哲学和技术角度探讨大模型幻觉的本质。核心论点：幻觉不是病理性的错误，而是不可避免的规定性；没有幻觉就没有泛化能力；语言是独立于现实生产意义的符号系统。",
-      "degree": 6,
+      "degree": 7,
       "ghost": false,
       "private": true
     },
@@ -3641,6 +4287,59 @@
       "private": true
     },
     {
+      "id": "sources/2026-06-12-intelligence-ai-zixun.md",
+      "title": "Intelligence：AI资讯领域的信息学习&分享",
+      "type": "source-summary",
+      "domain": [
+        "ai",
+        "news",
+        "research"
+      ],
+      "tags": [],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "一份围绕「AIx资讯」的信息学习与沉淀文档。以 intelligence词源（智能·资讯·情报三义同源）开篇，汇集 AI 资讯方向的产品对标、行业文章/调查、以及有启发的论文（AI 新闻学、LLM-as-a-Judge 等）。",
+      "degree": 10,
+      "ghost": false,
+      "private": true
+    },
+    {
+      "id": "sources/2026-06-12-llm-for-news.md",
+      "title": "LLM for News：对大语言模型产品用于资讯场景的思考",
+      "type": "source-summary",
+      "domain": [
+        "ai",
+        "product",
+        "news"
+      ],
+      "tags": [],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "常天喆关于大模型用于资讯场景的系统思考。核心命题：生成式资讯所面临的内容生成挑战几乎等同于大模型当下面临的根本挑战本身，是大模型应用的「阿喀琉斯之踵」——大模型的三大挑战（幻觉、时序、伦理）恰好对应经典新闻学的三大属性（真实性、时效性、思想性）。",
+      "degree": 11,
+      "ghost": false,
+      "private": true
+    },
+    {
+      "id": "sources/2026-06-12-ren-shi-lian-jie-shou-yu-ai.md",
+      "title": "人是连接兽与AI的绳索",
+      "type": "source-summary",
+      "domain": [
+        "ai",
+        "philosophy"
+      ],
+      "tags": [],
+      "judgment": "",
+      "confidence": "high",
+      "updated": "2026-06-12",
+      "summary": "常天喆梳理 AI 领域有价值信息与思考的开放笔记。核心立场：AI 已发展到其最关键线索的外在表现已成为某种「思想」而非零散「知识」，但这一思想极密集的领域却异样「贫瘠」，缺乏思想图谱式的梳理；因此有必要把高速变动中的 AI 理论与实践，作为有体系、有延展度的「思想碎片」保存记录。",
+      "degree": 11,
+      "ghost": false,
+      "private": true
+    },
+    {
       "id": "timelines/2023.md",
       "title": "2023 Timeline",
       "type": "timeline",
@@ -3741,34 +4440,6 @@
       "private": false
     },
     {
-      "id": "ghost:纯粹理性批判",
-      "title": "纯粹理性批判",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 2,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:批判哲学",
-      "title": "批判哲学",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
-      "ghost": true,
-      "private": false
-    },
-    {
       "id": "ghost:辩证法",
       "title": "辩证法",
       "type": "concept",
@@ -3793,6 +4464,34 @@
       "updated": "",
       "summary": "",
       "degree": 2,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:纯粹理性批判",
+      "title": "纯粹理性批判",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 2,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:批判哲学",
+      "title": "批判哲学",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 3,
       "ghost": true,
       "private": false
     },
@@ -3825,20 +4524,6 @@
       "private": false
     },
     {
-      "id": "ghost:克尔凯郭尔",
-      "title": "克尔凯郭尔",
-      "type": "entity",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 27,
-      "ghost": true,
-      "private": false
-    },
-    {
       "id": "ghost:自由",
       "title": "自由",
       "type": "concept",
@@ -3849,6 +4534,20 @@
       "updated": "",
       "summary": "",
       "degree": 2,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:克尔凯郭尔",
+      "title": "克尔凯郭尔",
+      "type": "entity",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 27,
       "ghost": true,
       "private": false
     },
@@ -3909,8 +4608,8 @@
       "private": false
     },
     {
-      "id": "ghost:本雅明",
-      "title": "本雅明",
+      "id": "ghost:多义性",
+      "title": "多义性",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -3923,8 +4622,8 @@
       "private": false
     },
     {
-      "id": "ghost:多义性",
-      "title": "多义性",
+      "id": "ghost:本雅明",
+      "title": "本雅明",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -3965,8 +4664,8 @@
       "private": false
     },
     {
-      "id": "ghost:爱",
-      "title": "爱",
+      "id": "ghost:婚姻",
+      "title": "婚姻",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -3979,8 +4678,8 @@
       "private": false
     },
     {
-      "id": "ghost:婚姻",
-      "title": "婚姻",
+      "id": "ghost:爱",
+      "title": "爱",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -4010,6 +4709,20 @@
       "id": "ghost:无意识",
       "title": "无意识",
       "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 3,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:卡夫卡",
+      "title": "卡夫卡",
+      "type": "entity",
       "domain": [],
       "tags": [],
       "judgment": "",
@@ -4059,20 +4772,6 @@
       "updated": "",
       "summary": "",
       "degree": 4,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:卡夫卡",
-      "title": "卡夫卡",
-      "type": "entity",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
       "ghost": true,
       "private": false
     },
@@ -4217,6 +4916,20 @@
       "private": false
     },
     {
+      "id": "ghost:可解释性",
+      "title": "可解释性",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 3,
+      "ghost": true,
+      "private": false
+    },
+    {
       "id": "ghost:微博智搜",
       "title": "微博智搜",
       "type": "concept",
@@ -4227,20 +4940,6 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:多模态融合",
-      "title": "多模态融合",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
       "ghost": true,
       "private": false
     },
@@ -4259,8 +4958,8 @@
       "private": false
     },
     {
-      "id": "ghost:可解释性",
-      "title": "可解释性",
+      "id": "ghost:多模态融合",
+      "title": "多模态融合",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -4315,6 +5014,62 @@
       "private": false
     },
     {
+      "id": "ghost:矣晓沅",
+      "title": "矣晓沅",
+      "type": "entity",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 4,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:语言哲学",
+      "title": "语言哲学",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 3,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:周礼栋",
+      "title": "周礼栋",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 3,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:屠格涅夫",
+      "title": "屠格涅夫",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 2,
+      "ghost": true,
+      "private": false
+    },
+    {
       "id": "ghost:Prompt工程",
       "title": "Prompt工程",
       "type": "concept",
@@ -4343,78 +5098,8 @@
       "private": false
     },
     {
-      "id": "ghost:矣晓沅",
-      "title": "矣晓沅",
-      "type": "entity",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 4,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:腾讯会议",
-      "title": "腾讯会议",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:周礼栋",
-      "title": "周礼栋",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:谢幸",
-      "title": "谢幸",
-      "type": "entity",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 4,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:屠格涅夫",
-      "title": "屠格涅夫",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 2,
-      "ghost": true,
-      "private": false
-    },
-    {
-      "id": "ghost:语言哲学",
-      "title": "语言哲学",
+      "id": "ghost:老子",
+      "title": "老子",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -4441,6 +5126,20 @@
       "private": false
     },
     {
+      "id": "ghost:谢幸",
+      "title": "谢幸",
+      "type": "entity",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 4,
+      "ghost": true,
+      "private": false
+    },
+    {
       "id": "ghost:维特根斯坦",
       "title": "维特根斯坦",
       "type": "entity",
@@ -4455,20 +5154,6 @@
       "private": false
     },
     {
-      "id": "ghost:老子",
-      "title": "老子",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
-      "ghost": true,
-      "private": false
-    },
-    {
       "id": "ghost:郭沫若",
       "title": "郭沫若",
       "type": "concept",
@@ -4479,6 +5164,20 @@
       "updated": "",
       "summary": "",
       "degree": 2,
+      "ghost": true,
+      "private": false
+    },
+    {
+      "id": "ghost:腾讯会议",
+      "title": "腾讯会议",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 3,
       "ghost": true,
       "private": false
     },
@@ -4756,6 +5455,41 @@
       ]
     },
     {
+      "source": "concepts/Agent-as-a-Judge.md",
+      "target": "concepts/LLM-as-a-Judge.md",
+      "weight": 10.8,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/Agent-as-a-Judge.md",
+      "target": "concepts/质量检验agent.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/Agent-as-a-Judge.md",
+      "target": "concepts/生成式资讯.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/Agent-as-a-Judge.md",
+      "target": "concepts/Fact-checking Agent.md",
+      "weight": 1.0,
+      "kinds": [
+        "link"
+      ]
+    },
+    {
       "source": "concepts/Fact-checking Agent.md",
       "target": "entities/常天喆/profile.md",
       "weight": 4.5,
@@ -4828,6 +5562,70 @@
       ]
     },
     {
+      "source": "concepts/LLM-OS.md",
+      "target": "entities/Andrej-Karpathy/profile.md",
+      "weight": 8.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/LLM-OS.md",
+      "target": "concepts/Software-2.0.md",
+      "weight": 7.55,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/LLM-OS.md",
+      "target": "concepts/上下文工程.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/LLM-OS.md",
+      "target": "concepts/系统提示词学习.md",
+      "weight": 8.55,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/LLM-as-a-Judge.md",
+      "target": "concepts/质量检验agent.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/LLM-as-a-Judge.md",
+      "target": "concepts/生成式资讯.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/LLM-as-a-Judge.md",
+      "target": "concepts/价值观对齐.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
       "source": "concepts/LLM革命.md",
       "target": "entities/常天喆/profile.md",
       "weight": 3.5,
@@ -4891,7 +5689,7 @@
     {
       "source": "concepts/Orchestration Workflow.md",
       "target": "concepts/动态上下文路由.md",
-      "weight": 6.3,
+      "weight": 5.05,
       "kinds": [
         "link",
         "related",
@@ -4978,7 +5776,7 @@
     {
       "source": "concepts/RLHF.md",
       "target": "concepts/人类反馈强化学习.md",
-      "weight": 2.9,
+      "weight": 2.55,
       "kinds": [
         "link",
         "tag"
@@ -5009,6 +5807,70 @@
       ]
     },
     {
+      "source": "concepts/RLHF不是RL.md",
+      "target": "entities/Andrej-Karpathy/profile.md",
+      "weight": 9.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/RLHF不是RL.md",
+      "target": "concepts/系统提示词学习.md",
+      "weight": 10.45,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/RLHF不是RL.md",
+      "target": "concepts/人类反馈强化学习.md",
+      "weight": 4.95,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/RLHF.md",
+      "target": "concepts/RLHF不是RL.md",
+      "weight": 3.05,
+      "kinds": [
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/RLHF不是RL.md",
+      "target": "concepts/模型对齐.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/RLHF不是RL.md",
+      "target": "concepts/价值观对齐.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/RLHF不是RL.md",
+      "target": "concepts/Superalignment.md",
+      "weight": 1.0,
+      "kinds": [
+        "link"
+      ]
+    },
+    {
       "source": "concepts/SFT.md",
       "target": "entities/常天喆/profile.md",
       "weight": 7.0,
@@ -5032,6 +5894,34 @@
       "weight": 2.0,
       "kinds": [
         "source"
+      ]
+    },
+    {
+      "source": "concepts/Software-2.0.md",
+      "target": "entities/Andrej-Karpathy/profile.md",
+      "weight": 9.55,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/Software-2.0.md",
+      "target": "concepts/Vibe-Coding.md",
+      "weight": 9.55,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/Software-2.0.md",
+      "target": "concepts/上下文工程.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
       ]
     },
     {
@@ -5143,6 +6033,59 @@
       "weight": 4.0,
       "kinds": [
         "source"
+      ]
+    },
+    {
+      "source": "concepts/Vibe-Coding.md",
+      "target": "entities/Andrej-Karpathy/profile.md",
+      "weight": 8.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/Vibe-Coding.md",
+      "target": "concepts/上下文工程.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/LLM-OS.md",
+      "target": "concepts/Vibe-Coding.md",
+      "weight": 3.05,
+      "kinds": [
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/intelligence词源.md",
+      "target": "concepts/生成式资讯.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/intelligence词源.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/intelligence词源.md",
+      "target": "concepts/能指与所指.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
       ]
     },
     {
@@ -5437,6 +6380,52 @@
       ]
     },
     {
+      "source": "concepts/优质正文Agent.md",
+      "target": "concepts/生成式资讯.md",
+      "weight": 7.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/优质正文Agent.md",
+      "target": "concepts/选题Agent.md",
+      "weight": 9.45,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/优质正文Agent.md",
+      "target": "concepts/质量检验agent.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/上下文工程.md",
+      "target": "concepts/优质正文Agent.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/优质正文Agent.md",
+      "target": "concepts/幻觉.md",
+      "weight": 1.0,
+      "kinds": [
+        "link"
+      ]
+    },
+    {
       "source": "concepts/依赖性论题.md",
       "target": "entities/康德/profile.md",
       "weight": 2.0,
@@ -5525,6 +6514,60 @@
       "kinds": [
         "link",
         "tag"
+      ]
+    },
+    {
+      "source": "concepts/信源透明度.md",
+      "target": "concepts/生成式资讯.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/信源透明度.md",
+      "target": "concepts/新闻三大属性.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/信源透明度.md",
+      "target": "concepts/检索引起的幻觉.md",
+      "weight": 5.4,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/信源透明度.md",
+      "target": "entities/Particle/profile.md",
+      "weight": 7.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/信源透明度.md",
+      "target": "entities/Perplexity/profile.md",
+      "weight": 8.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/价值观对齐.md",
+      "target": "concepts/信源透明度.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
       ]
     },
     {
@@ -6189,6 +7232,88 @@
       ]
     },
     {
+      "source": "concepts/幻觉.md",
+      "target": "concepts/检索引起的幻觉.md",
+      "weight": 8.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/幻觉.md",
+      "target": "concepts/知识截止.md",
+      "weight": 8.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/幻觉.md",
+      "target": "concepts/生成式资讯.md",
+      "weight": 9.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/幻觉.md",
+      "target": "concepts/新闻三大属性.md",
+      "weight": 6.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/多源校验.md",
+      "target": "concepts/幻觉.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/Fact-checking Agent.md",
+      "target": "concepts/幻觉.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/幻觉.md",
+      "target": "entities/changsview/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/幻觉.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/幻觉.md",
+      "target": "sources/2026-04-16-hallucination-is-all-you-need.md",
+      "weight": 3.0,
+      "kinds": [
+        "source"
+      ]
+    },
+    {
       "source": "concepts/弱到强的泛化.md",
       "target": "concepts/超级对齐.md",
       "weight": 2.0,
@@ -6479,6 +7604,80 @@
       ]
     },
     {
+      "source": "concepts/新闻三大属性.md",
+      "target": "concepts/生成式资讯.md",
+      "weight": 8.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/新闻三大属性.md",
+      "target": "concepts/时序泛化难题.md",
+      "weight": 7.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/价值观对齐.md",
+      "target": "concepts/新闻三大属性.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/时序泛化难题.md",
+      "target": "concepts/生成式资讯.md",
+      "weight": 8.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/时序泛化难题.md",
+      "target": "concepts/知识截止.md",
+      "weight": 9.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/时序泛化难题.md",
+      "target": "concepts/检索引起的幻觉.md",
+      "weight": 6.55,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/RAG.md",
+      "target": "concepts/时序泛化难题.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/上下文工程.md",
+      "target": "concepts/时序泛化难题.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
       "source": "concepts/时间.md",
       "target": "ghost:克尔凯郭尔",
       "weight": 1.0,
@@ -6710,6 +7909,89 @@
       "weight": 1.0,
       "kinds": [
         "link"
+      ]
+    },
+    {
+      "source": "concepts/RAG.md",
+      "target": "concepts/检索引起的幻觉.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/检索引起的幻觉.md",
+      "target": "concepts/生成式资讯.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/多源校验.md",
+      "target": "concepts/检索引起的幻觉.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/Fact-checking Agent.md",
+      "target": "concepts/检索引起的幻觉.md",
+      "weight": 2.0,
+      "kinds": [
+        "link"
+      ]
+    },
+    {
+      "source": "concepts/检索引起的幻觉.md",
+      "target": "concepts/知识截止.md",
+      "weight": 3.9,
+      "kinds": [
+        "link",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/概念创造.md",
+      "target": "entities/德勒兹/profile.md",
+      "weight": 8.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/概念创造.md",
+      "target": "entities/瓜塔里/profile.md",
+      "weight": 8.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/概念创造.md",
+      "target": "concepts/理念创造家.md",
+      "weight": 9.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/概念创造.md",
+      "target": "entities/Andrej-Karpathy/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
       ]
     },
     {
@@ -7123,6 +8405,34 @@
       ]
     },
     {
+      "source": "concepts/理念创造家.md",
+      "target": "entities/Andrej-Karpathy/profile.md",
+      "weight": 8.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/理念创造家.md",
+      "target": "entities/德勒兹/profile.md",
+      "weight": 9.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/理念创造家.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
       "source": "concepts/生存境界.md",
       "target": "ghost:克尔凯郭尔",
       "weight": 1.0,
@@ -7227,6 +8537,113 @@
       ]
     },
     {
+      "source": "concepts/价值观对齐.md",
+      "target": "concepts/生成式资讯.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/上下文工程.md",
+      "target": "concepts/生成式资讯.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/生成式资讯.md",
+      "target": "concepts/选题Agent.md",
+      "weight": 7.9,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/生成式资讯.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/生成式资讯.md",
+      "target": "entities/AI智选资讯/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/生成式资讯.md",
+      "target": "concepts/计算新闻学.md",
+      "weight": 8.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/生成式资讯.md",
+      "target": "concepts/知识截止.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/生成式资讯.md",
+      "target": "concepts/质量检验agent.md",
+      "weight": 1.0,
+      "kinds": [
+        "link"
+      ]
+    },
+    {
+      "source": "concepts/RLHF不是RL.md",
+      "target": "concepts/痛苦的教训.md",
+      "weight": 4.05,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/痛苦的教训.md",
+      "target": "concepts/系统提示词学习.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/痛苦的教训.md",
+      "target": "entities/Andrej-Karpathy/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/弱到强的泛化.md",
+      "target": "concepts/痛苦的教训.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
       "source": "concepts/瘫痪.md",
       "target": "entities/乔伊斯/profile.md",
       "weight": 1.9,
@@ -7273,6 +8690,15 @@
       "weight": 1.0,
       "kinds": [
         "link"
+      ]
+    },
+    {
+      "source": "concepts/RAG.md",
+      "target": "concepts/知识截止.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
       ]
     },
     {
@@ -7331,6 +8757,33 @@
       "weight": 2.0,
       "kinds": [
         "link"
+      ]
+    },
+    {
+      "source": "concepts/系统提示词学习.md",
+      "target": "entities/Andrej-Karpathy/profile.md",
+      "weight": 10.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/上下文工程.md",
+      "target": "concepts/系统提示词学习.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/人类反馈强化学习.md",
+      "target": "concepts/系统提示词学习.md",
+      "weight": 3.4,
+      "kinds": [
+        "related",
+        "tag"
       ]
     },
     {
@@ -7516,6 +8969,42 @@
       ]
     },
     {
+      "source": "concepts/新闻三大属性.md",
+      "target": "concepts/计算新闻学.md",
+      "weight": 4.4,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/LLM-as-a-Judge.md",
+      "target": "concepts/计算新闻学.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/计算新闻学.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/Fact-checking Agent.md",
+      "target": "concepts/计算新闻学.md",
+      "weight": 1.0,
+      "kinds": [
+        "link"
+      ]
+    },
+    {
       "source": "concepts/话语权力.md",
       "target": "entities/福柯/profile.md",
       "weight": 3.45,
@@ -7673,6 +9162,23 @@
       "weight": 1.0,
       "kinds": [
         "link"
+      ]
+    },
+    {
+      "source": "concepts/质量检验agent.md",
+      "target": "concepts/选题Agent.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/选题Agent.md",
+      "target": "entities/AI智选资讯/profile.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
       ]
     },
     {
@@ -8046,6 +9552,33 @@
       ]
     },
     {
+      "source": "entities/Andrej-Karpathy/profile.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/上下文工程.md",
+      "target": "entities/Andrej-Karpathy/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/Andrej-Karpathy/profile.md",
+      "target": "entities/OpenAI.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
       "source": "entities/Contextual Query Suggestion/profile.md",
       "target": "entities/常天喆/profile.md",
       "weight": 6.0,
@@ -8136,6 +9669,103 @@
       "weight": 1.0,
       "kinds": [
         "link"
+      ]
+    },
+    {
+      "source": "entities/Andrej-Karpathy/profile.md",
+      "target": "entities/Jason-Wei/profile.md",
+      "weight": 5.4,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/理念创造家.md",
+      "target": "entities/Jason-Wei/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/Jason-Wei/profile.md",
+      "target": "entities/常天喆/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/Jason-Wei/profile.md",
+      "target": "entities/OpenAI.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/intelligence词源.md",
+      "target": "entities/John-McCarthy/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/AGI.md",
+      "target": "entities/John-McCarthy/profile.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/生成式资讯.md",
+      "target": "entities/Particle/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/新闻三大属性.md",
+      "target": "entities/Particle/profile.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
+      "source": "entities/Particle/profile.md",
+      "target": "entities/Perplexity/profile.md",
+      "weight": 7.0,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/生成式资讯.md",
+      "target": "entities/Perplexity/profile.md",
+      "weight": 4.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/RAG.md",
+      "target": "entities/Perplexity/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
       ]
     },
     {
@@ -9318,6 +10948,34 @@
       "weight": 1.0,
       "kinds": [
         "source"
+      ]
+    },
+    {
+      "source": "entities/德勒兹/profile.md",
+      "target": "entities/瓜塔里/profile.md",
+      "weight": 11.7,
+      "kinds": [
+        "link",
+        "related",
+        "tag"
+      ]
+    },
+    {
+      "source": "entities/常天喆/profile.md",
+      "target": "entities/德勒兹/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
+      ]
+    },
+    {
+      "source": "entities/德勒兹/profile.md",
+      "target": "entities/福柯/profile.md",
+      "weight": 3.5,
+      "kinds": [
+        "link",
+        "related"
       ]
     },
     {
@@ -11282,6 +12940,287 @@
       ]
     },
     {
+      "source": "entities/常天喆/profile.md",
+      "target": "sources/2026-06-12-intelligence-ai-zixun.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/intelligence词源.md",
+      "target": "sources/2026-06-12-intelligence-ai-zixun.md",
+      "weight": 4.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/生成式资讯.md",
+      "target": "sources/2026-06-12-intelligence-ai-zixun.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/计算新闻学.md",
+      "target": "sources/2026-06-12-intelligence-ai-zixun.md",
+      "weight": 4.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/LLM-as-a-Judge.md",
+      "target": "sources/2026-06-12-intelligence-ai-zixun.md",
+      "weight": 4.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/Agent-as-a-Judge.md",
+      "target": "sources/2026-06-12-intelligence-ai-zixun.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/信源透明度.md",
+      "target": "sources/2026-06-12-intelligence-ai-zixun.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "entities/Particle/profile.md",
+      "target": "sources/2026-06-12-intelligence-ai-zixun.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "entities/Perplexity/profile.md",
+      "target": "sources/2026-06-12-intelligence-ai-zixun.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/价值观对齐.md",
+      "target": "sources/2026-06-12-intelligence-ai-zixun.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
+      "source": "entities/常天喆/profile.md",
+      "target": "sources/2026-06-12-llm-for-news.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/生成式资讯.md",
+      "target": "sources/2026-06-12-llm-for-news.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/新闻三大属性.md",
+      "target": "sources/2026-06-12-llm-for-news.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/时序泛化难题.md",
+      "target": "sources/2026-06-12-llm-for-news.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/知识截止.md",
+      "target": "sources/2026-06-12-llm-for-news.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/检索引起的幻觉.md",
+      "target": "sources/2026-06-12-llm-for-news.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/幻觉.md",
+      "target": "sources/2026-06-12-llm-for-news.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/价值观对齐.md",
+      "target": "sources/2026-06-12-llm-for-news.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/信源透明度.md",
+      "target": "sources/2026-06-12-llm-for-news.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/RAG.md",
+      "target": "sources/2026-06-12-llm-for-news.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/Superalignment.md",
+      "target": "sources/2026-06-12-llm-for-news.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "entities/常天喆/profile.md",
+      "target": "sources/2026-06-12-ren-shi-lian-jie-shou-yu-ai.md",
+      "weight": 2.5,
+      "kinds": [
+        "related"
+      ]
+    },
+    {
+      "source": "concepts/理念创造家.md",
+      "target": "sources/2026-06-12-ren-shi-lian-jie-shou-yu-ai.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "entities/Andrej-Karpathy/profile.md",
+      "target": "sources/2026-06-12-ren-shi-lian-jie-shou-yu-ai.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "entities/Jason-Wei/profile.md",
+      "target": "sources/2026-06-12-ren-shi-lian-jie-shou-yu-ai.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/Software-2.0.md",
+      "target": "sources/2026-06-12-ren-shi-lian-jie-shou-yu-ai.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/Vibe-Coding.md",
+      "target": "sources/2026-06-12-ren-shi-lian-jie-shou-yu-ai.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/LLM-OS.md",
+      "target": "sources/2026-06-12-ren-shi-lian-jie-shou-yu-ai.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/系统提示词学习.md",
+      "target": "sources/2026-06-12-ren-shi-lian-jie-shou-yu-ai.md",
+      "weight": 4.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/RLHF不是RL.md",
+      "target": "sources/2026-06-12-ren-shi-lian-jie-shou-yu-ai.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "concepts/概念创造.md",
+      "target": "sources/2026-06-12-ren-shi-lian-jie-shou-yu-ai.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
+      "source": "entities/德勒兹/profile.md",
+      "target": "sources/2026-06-12-ren-shi-lian-jie-shou-yu-ai.md",
+      "weight": 3.5,
+      "kinds": [
+        "related",
+        "source"
+      ]
+    },
+    {
       "source": "entities/腾讯/profile.md",
       "target": "timelines/2023.md",
       "weight": 1.0,
@@ -11653,6 +13592,230 @@
       "weight": 1.0,
       "kinds": [
         "source"
+      ]
+    },
+    {
+      "source": "concepts/Agent-as-a-Judge.md",
+      "target": "concepts/LLM-OS.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/Agent-as-a-Judge.md",
+      "target": "concepts/优质正文Agent.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/Agent-as-a-Judge.md",
+      "target": "concepts/选题Agent.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/LLM-OS.md",
+      "target": "concepts/优质正文Agent.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/LLM-OS.md",
+      "target": "concepts/选题Agent.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/LLM-OS.md",
+      "target": "concepts/RLHF不是RL.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/RLHF不是RL.md",
+      "target": "concepts/Software-2.0.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/RLHF不是RL.md",
+      "target": "concepts/Vibe-Coding.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/Software-2.0.md",
+      "target": "concepts/系统提示词学习.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/Vibe-Coding.md",
+      "target": "concepts/系统提示词学习.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/Orchestration Workflow.md",
+      "target": "concepts/时序泛化难题.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/Orchestration Workflow.md",
+      "target": "concepts/检索引起的幻觉.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/动态上下文路由.md",
+      "target": "concepts/时序泛化难题.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/动态上下文路由.md",
+      "target": "concepts/检索引起的幻觉.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/RLHF.md",
+      "target": "concepts/痛苦的教训.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/人类反馈强化学习.md",
+      "target": "concepts/痛苦的教训.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/Software-2.0.md",
+      "target": "concepts/泛化.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/Software-2.0.md",
+      "target": "entities/Ilya Sutskever.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/泛化.md",
+      "target": "entities/Andrej-Karpathy/profile.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/泛化.md",
+      "target": "entities/Ilya Sutskever.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "entities/Andrej-Karpathy/profile.md",
+      "target": "entities/Ilya Sutskever.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/intelligence词源.md",
+      "target": "entities/AI智选资讯/profile.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/intelligence词源.md",
+      "target": "entities/AI热点/profile.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/intelligence词源.md",
+      "target": "entities/Perplexity/profile.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "entities/AI智选资讯/profile.md",
+      "target": "entities/AI热点/profile.md",
+      "weight": 1.1,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "entities/AI智选资讯/profile.md",
+      "target": "entities/Perplexity/profile.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "entities/AI热点/profile.md",
+      "target": "entities/Perplexity/profile.md",
+      "weight": 0.55,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/intelligence词源.md",
+      "target": "concepts/语言民族主义.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
       ]
     },
     {
@@ -12112,6 +14275,14 @@
       ]
     },
     {
+      "source": "concepts/幻觉.md",
+      "target": "concepts/弱到强的泛化.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
       "source": "concepts/思维辩证法.md",
       "target": "entities/康德/profile.md",
       "weight": 0.9,
@@ -12144,6 +14315,14 @@
       ]
     },
     {
+      "source": "concepts/新闻三大属性.md",
+      "target": "concepts/知识截止.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
       "source": "concepts/时间.md",
       "target": "concepts/最初的爱.md",
       "weight": 0.9,
@@ -12154,6 +14333,22 @@
     {
       "source": "concepts/最高伦理实体.md",
       "target": "concepts/那伦理的.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "concepts/梦的解析.md",
+      "target": "entities/瓜塔里/profile.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "entities/弗洛伊德/profile.md",
+      "target": "entities/瓜塔里/profile.md",
       "weight": 0.9,
       "kinds": [
         "tag"
@@ -12202,14 +14397,6 @@
     {
       "source": "concepts/泛化.md",
       "target": "entities/Jan Leike.md",
-      "weight": 0.9,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "concepts/泛化.md",
-      "target": "entities/Ilya Sutskever.md",
       "weight": 0.9,
       "kinds": [
         "tag"
@@ -12280,6 +14467,14 @@
       ]
     },
     {
+      "source": "concepts/痛苦的教训.md",
+      "target": "entities/微软亚洲研究院/profile.md",
+      "weight": 0.9,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
       "source": "concepts/瞬间.md",
       "target": "concepts/重复.md",
       "weight": 0.9,
@@ -12331,14 +14526,6 @@
       "source": "entities/AI智选资讯/profile.md",
       "target": "entities/AI求真/profile.md",
       "weight": 0.55,
-      "kinds": [
-        "tag"
-      ]
-    },
-    {
-      "source": "entities/AI智选资讯/profile.md",
-      "target": "entities/AI热点/profile.md",
-      "weight": 1.45,
       "kinds": [
         "tag"
       ]
@@ -12403,6 +14590,14 @@
       "source": "entities/抖音AI求真功能/profile.md",
       "target": "entities/抖音AI资讯总结页/profile.md",
       "weight": 1.45,
+      "kinds": [
+        "tag"
+      ]
+    },
+    {
+      "source": "entities/John-McCarthy/profile.md",
+      "target": "entities/OpenAI.md",
+      "weight": 0.9,
       "kinds": [
         "tag"
       ]
