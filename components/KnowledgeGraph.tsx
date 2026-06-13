@@ -21,6 +21,8 @@ interface RawNode {
   degree: number
   ghost: boolean
   private: boolean
+  en: string
+  featured: boolean
 }
 
 interface RawLink {
@@ -43,6 +45,8 @@ interface GNode extends d3.SimulationNodeDatum {
   degree: number
   ghost: boolean
   private: boolean
+  en: string
+  featured: boolean
   radius: number
   cluster: number
   tone: string
@@ -80,6 +84,11 @@ interface Graph {
 const CENTER_TITLE = '常天喆'
 const BONE = '#ECEAE3' // off-white core
 const INK = '#06060A' // near-black backdrop
+
+// Elegant serif stack — literary, gallery-grade; matches Chang's background.
+const FONT_CJK =
+  '"Songti SC", "STSong", "Source Han Serif SC", "Noto Serif SC", "Source Han Serif CN", serif'
+const FONT_EN = '"Optima", "Cormorant Garamond", "Songti SC", Georgia, "Times New Roman", serif'
 
 const TYPE_LABELS: Record<string, string> = {
   entity: '人物',
@@ -321,11 +330,32 @@ export default function KnowledgeGraph() {
       .slice(0, 8)
   }, [graph, query])
 
-  const flyTo = (node: GNode, scale = 2.2) => {
-    if (node.x == null || !animateToRef.current) return
+  // Clicking a node "opens its constellation": frame the node together with
+  // its direct neighbours, offset left so the detail panel doesn't cover them.
+  const flyTo = (node: GNode) => {
+    const g = graphRef.current
+    if (node.x == null || node.y == null || !g || !animateToRef.current) return
+    const pts: Array<[number, number]> = [[node.x, node.y]]
+    g.adjacency.get(node.id)?.forEach((id) => {
+      const m = g.nodeById.get(id)
+      if (m && m.x != null && m.y != null) pts.push([m.x, m.y])
+    })
+    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity
+    for (const [px, py] of pts) {
+      minX = Math.min(minX, px); maxX = Math.max(maxX, px)
+      minY = Math.min(minY, py); maxY = Math.max(maxY, py)
+    }
     const { w, h } = sizeRef.current
-    const t = d3.zoomIdentity.translate(w / 2, h / 2).scale(scale).translate(-node.x!, -node.y!)
-    animateToRef.current(t, 800)
+    const panel = w > 640 ? 360 : 0 // detail panel reserves right space
+    const availW = w - panel
+    const pad = 90
+    const gw = (maxX - minX) + pad * 2
+    const gh = (maxY - minY) + pad * 2
+    const scale = Math.max(0.5, Math.min(3.2, Math.min(availW / gw, h / gh)))
+    const cx = (minX + maxX) / 2
+    const cy = (minY + maxY) / 2
+    const t = d3.zoomIdentity.translate(availW / 2, h / 2).scale(scale).translate(-cx, -cy)
+    animateToRef.current(t, 850)
   }
 
   const selectNode = (node: GNode) => {
@@ -641,22 +671,77 @@ export default function KnowledgeGraph() {
         }
 
         if (selectedRef.current?.id === n.id) {
-          ctx.globalAlpha = 0.9
+          // clean concentric halo — a quiet "you are here", no spinner
+          const pulse = 0.5 + 0.5 * Math.sin(time / 600)
+          ctx.globalAlpha = 0.85
           ctx.strokeStyle = BONE
-          ctx.lineWidth = 1 / t.k
-          ctx.setLineDash([3 / t.k, 3 / t.k])
-          ctx.lineDashOffset = -time / 70
+          ctx.lineWidth = 1.2 / t.k
           ctx.beginPath()
-          ctx.arc(x, y, n.radius + 6 / t.k, 0, Math.PI * 2)
+          ctx.arc(x, y, n.radius + 5 / t.k, 0, Math.PI * 2)
           ctx.stroke()
-          ctx.setLineDash([])
+          ctx.globalAlpha = 0.12 + pulse * 0.18
+          ctx.lineWidth = 1 / t.k
+          ctx.beginPath()
+          ctx.arc(x, y, n.radius + (10 + pulse * 4) / t.k, 0, Math.PI * 2)
+          ctx.stroke()
         }
       }
 
-      // ---- labels: sparse by default, rich on focus ----
+      // ---- labels: collision-aware; featured EN keywords always on ----
+      // draw in SCREEN space (constant size, easy collision boxes)
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
       const k = t.k
-      const minX = -t.x / k, minY = -t.y / k
-      const maxX = (w - t.x) / k, maxY = (h - t.y) / k
+      // drawn label boxes in SCREEN space, to suppress overlaps
+      const boxes: Array<[number, number, number, number]> = []
+      const fits = (cx: number, cy: number, half: number, hh: number) => {
+        const x0 = cx - half, x1 = cx + half, y0 = cy - hh, y1 = cy + hh
+        for (const [bx0, by0, bx1, by1] of boxes) {
+          if (x0 < bx1 && x1 > bx0 && y0 < by1 && y1 > by0) return false
+        }
+        boxes.push([x0, y0, x1, y1])
+        return true
+      }
+
+      const drawLabel = (
+        n: GNode, text: string, opts: { featured?: boolean; dim?: number; weight?: number; size?: number }
+      ) => {
+        const sx = (ox(n)) * k + t.x
+        const sy = (oy(n)) * k + t.y
+        if (sx < -50 || sx > w + 50 || sy < -30 || sy > h + 30) return
+        const fs = opts.size ?? 12
+        const yOff = n.radius * k + 5
+        ctx.font = `${opts.weight ?? 400} ${fs}px ${opts.featured ? FONT_EN : FONT_CJK}`
+        if (opts.featured && 'letterSpacing' in ctx) (ctx as any).letterSpacing = '1.5px'
+        const wpx = ctx.measureText(text).width
+        const labY = sy + yOff + fs / 2
+        // featured keywords reserve a much larger box so they never stack
+        const padX = opts.featured ? 26 : 4
+        const padY = opts.featured ? 22 : 3
+        if (!fits(sx, labY, wpx / 2 + padX, fs / 2 + padY)) {
+          if (opts.featured && 'letterSpacing' in ctx) (ctx as any).letterSpacing = '0px'
+          return
+        }
+        ctx.textAlign = 'center'
+        ctx.textBaseline = 'middle'
+        ctx.globalAlpha = opts.dim ?? 1
+        ctx.shadowColor = 'rgba(0,0,0,0.92)'
+        ctx.shadowBlur = opts.featured ? 8 : 5
+        ctx.fillStyle = opts.featured ? '#f0ede4' : opts.weight && opts.weight >= 500 ? BONE : '#b9b6ad'
+        ctx.fillText(text, sx, labY)
+        ctx.shadowBlur = 0
+        if (opts.featured && 'letterSpacing' in ctx) (ctx as any).letterSpacing = '0px'
+      }
+
+      // 1) featured EN keywords — drawn first so they claim space (skip when a
+      //    node is focused, to keep the focus view clean)
+      if (!focus) {
+        for (const n of nodes) {
+          if (!n.featured || !n.en || n.x == null) continue
+          drawLabel(n, n.en.toUpperCase(), { featured: true, size: 13, weight: 500 })
+        }
+      }
+
+      // 2) focus mode: node + neighbours; else center + top hubs by zoom
       for (const n of nodes) {
         if (n.x == null) continue
         const inFocus = focus && (focus.id === n.id || neighbors?.has(n.id))
@@ -665,27 +750,18 @@ export default function KnowledgeGraph() {
         if (focus) {
           show = !!inFocus
         } else {
-          // ambient: never private labels. First glance stays nearly text-free
-          // — only the very top hubs — with more names surfacing as you zoom in.
           if (n.private) show = false
           else if (n.isCenter) show = k > 0.85
+          else if (n.featured) show = false // already drawn in EN
           else show = (k > 3 && n.degree >= 5) || (k > 2 && n.degree >= 9) || (k > 1.4 && n.degree >= 18)
         }
         if (!show) continue
-        const x = ox(n), y = oy(n)
-        if (x < minX || x > maxX || y < minY || y > maxY) continue
-
-        const fontSize = (n.isCenter ? 13 : isFocus ? 12.5 : 10.5) / k
-        ctx.font = `${n.isCenter || isFocus ? 500 : 400} ${fontSize}px -apple-system, "PingFang SC", sans-serif`
-        ctx.textAlign = 'center'
-        ctx.textBaseline = 'top'
-        ctx.globalAlpha = focus && !inFocus ? 0.25 : 0.92
-        ctx.shadowColor = 'rgba(0,0,0,0.9)'
-        ctx.shadowBlur = 5
-        ctx.fillStyle = isFocus ? BONE : '#b8b8b2'
         const label = n.title.length > 13 ? n.title.slice(0, 13) + '…' : n.title
-        ctx.fillText(label, x, y + n.radius + 3.5 / k)
-        ctx.shadowBlur = 0
+        drawLabel(n, label, {
+          dim: focus && !inFocus ? 0.25 : 0.95,
+          weight: n.isCenter || isFocus ? 500 : 400,
+          size: (n.isCenter ? 14 : isFocus ? 13 : 11),
+        })
       }
       ctx.globalAlpha = 1
 
@@ -870,7 +946,19 @@ export default function KnowledgeGraph() {
               </button>
               <div className="flex items-center gap-2.5 pr-8">
                 <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: selected.tone }} />
-                <h2 className="text-[19px] font-normal text-neutral-100 leading-snug">{selected.title}</h2>
+                <h2
+                  className="text-[20px] font-normal text-neutral-100 leading-snug"
+                  style={{ fontFamily: '"Songti SC","Source Han Serif SC","Noto Serif SC",serif' }}
+                >
+                  {selected.en ? (
+                    <>
+                      {selected.title}
+                      <span className="ml-2 text-[13px] text-neutral-500 tracking-wide">{selected.en}</span>
+                    </>
+                  ) : (
+                    selected.title
+                  )}
+                </h2>
               </div>
               <div className="mt-3 flex flex-wrap items-center gap-1.5 text-[11px]">
                 <span className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-neutral-400">

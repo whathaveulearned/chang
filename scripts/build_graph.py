@@ -148,6 +148,20 @@ def clean_title(title: str) -> str:
 PRIVATE_TYPES = {"source", "source-summary", "timeline"}
 
 
+def short_title(title: str) -> str:
+    """A graph-legible display name: cut a long descriptive title at its first
+    structural break (： — 、, etc.) and keep the meaningful head."""
+    t = title.strip()
+    if len(t) <= 14:
+        return t
+    for sep in ["——", "：", ":", "—", "·", "，", ",", " "]:
+        if sep in t:
+            head = t.split(sep)[0].strip()
+            if 2 <= len(head) <= 16:
+                return head
+    return t[:14] + "…"
+
+
 def page_aliases(path: str, title: str) -> set[str]:
     pp = PurePosixPath(path)
     aliases = {normalize(pp.with_suffix("").as_posix()), normalize(pp.stem), normalize(title)}
@@ -191,6 +205,9 @@ def main():
             "updated": fm.get("updated", ""),
             "created": fm.get("created", ""),
             "summary": str(fm.get("summary") or "") or extract_description(content),
+            "label": str(fm.get("label") or ""),
+            "en": str(fm.get("en") or ""),
+            "featured": str(fm.get("featured") or "").lower() == "true",
             "body_links": extract_wikilinks(content),
         })
 
@@ -306,10 +323,16 @@ def main():
     nodes = []
     for pg in kept:
         is_center = pg["title"] == CENTER_TITLE
+        # display name: explicit label > center's own name > shortened clean title
+        if pg.get("label"):
+            disp = pg["label"]
+        elif is_center:
+            disp = pg["title"]
+        else:
+            disp = short_title(clean_title(pg["title"]))
         nodes.append({
             "id": pg["path"],
-            # cleaned for display; original title only ever mattered for resolution
-            "title": pg["title"] if is_center else clean_title(pg["title"]),
+            "title": disp,
             "type": pg["type"],
             "domain": pg["domain"],
             "tags": pg["tags"],
@@ -321,6 +344,8 @@ def main():
             "ghost": pg.get("ghost", False),
             # private = don't surface its label in the ambient view
             "private": pg["type"] in PRIVATE_TYPES,
+            "en": pg.get("en", ""),
+            "featured": pg.get("featured", False),
         })
 
     out = {
