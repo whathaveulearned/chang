@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Chang's Wiki - Knowledge Graph",
-  description: "常天喆的个人知识库知识图谱",
+  title: "Chang-wiki",
+  description: "The universe is made of stories, not of atoms.",
 };
 
 export default function RootLayout({
