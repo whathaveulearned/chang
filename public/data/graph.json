@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-13T16:57:04",
-  "node_count": 305,
-  "edge_count": 1448,
-  "ghost_count": 38,
+  "generated_at": "2026-06-14T23:05:32",
+  "node_count": 304,
+  "edge_count": 1447,
+  "ghost_count": 37,
   "nodes": [
     {
       "id": "concepts/AGI.md",
@@ -1370,7 +1370,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "一种文体，借非现实的寓言世界表达人类真实情境",
-      "degree": 7,
+      "degree": 6,
       "ghost": false,
       "private": false,
       "en": "",
@@ -4796,7 +4796,7 @@
       "confidence": "high",
       "updated": "2026-04-17",
       "summary": "德国哲学家、文学理论家，法兰克福学派成员。将多义性认定为寓言的基本特点。",
-      "degree": 7,
+      "degree": 8,
       "ghost": false,
       "private": false,
       "en": "",
@@ -6102,8 +6102,8 @@
       "featured": false
     },
     {
-      "id": "ghost:现象与物自体",
-      "title": "现象与物自体",
+      "id": "ghost:批判哲学",
+      "title": "批判哲学",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -6111,7 +6111,7 @@
       "confidence": "ghost",
       "updated": "",
       "summary": "",
-      "degree": 2,
+      "degree": 3,
       "ghost": true,
       "private": false,
       "en": "",
@@ -6134,8 +6134,8 @@
       "featured": false
     },
     {
-      "id": "ghost:批判哲学",
-      "title": "批判哲学",
+      "id": "ghost:现象与物自体",
+      "title": "现象与物自体",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -6143,7 +6143,7 @@
       "confidence": "ghost",
       "updated": "",
       "summary": "",
-      "degree": 3,
+      "degree": 2,
       "ghost": true,
       "private": false,
       "en": "",
@@ -6230,22 +6230,6 @@
       "featured": false
     },
     {
-      "id": "ghost:本雅明",
-      "title": "本雅明",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 2,
-      "ghost": true,
-      "private": false,
-      "en": "",
-      "featured": false
-    },
-    {
       "id": "ghost:两国方案",
       "title": "两国方案",
       "type": "concept",
@@ -6278,8 +6262,8 @@
       "featured": false
     },
     {
-      "id": "ghost:婚姻",
-      "title": "婚姻",
+      "id": "ghost:爱",
+      "title": "爱",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -6294,8 +6278,8 @@
       "featured": false
     },
     {
-      "id": "ghost:爱",
-      "title": "爱",
+      "id": "ghost:婚姻",
+      "title": "婚姻",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -6390,6 +6374,22 @@
       "featured": false
     },
     {
+      "id": "ghost:可解释性",
+      "title": "可解释性",
+      "type": "concept",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 3,
+      "ghost": true,
+      "private": false,
+      "en": "",
+      "featured": false
+    },
+    {
       "id": "ghost:事实一致性",
       "title": "事实一致性",
       "type": "concept",
@@ -6406,8 +6406,8 @@
       "featured": false
     },
     {
-      "id": "ghost:可解释性",
-      "title": "可解释性",
+      "id": "ghost:多模态融合",
+      "title": "多模态融合",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -6432,22 +6432,6 @@
       "updated": "",
       "summary": "",
       "degree": 2,
-      "ghost": true,
-      "private": false,
-      "en": "",
-      "featured": false
-    },
-    {
-      "id": "ghost:多模态融合",
-      "title": "多模态融合",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
       "ghost": true,
       "private": false,
       "en": "",
@@ -6502,40 +6486,8 @@
       "featured": false
     },
     {
-      "id": "ghost:谢幸",
-      "title": "谢幸",
-      "type": "entity",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 4,
-      "ghost": true,
-      "private": false,
-      "en": "",
-      "featured": false
-    },
-    {
-      "id": "ghost:语言哲学",
-      "title": "语言哲学",
-      "type": "concept",
-      "domain": [],
-      "tags": [],
-      "judgment": "",
-      "confidence": "ghost",
-      "updated": "",
-      "summary": "",
-      "degree": 3,
-      "ghost": true,
-      "private": false,
-      "en": "",
-      "featured": false
-    },
-    {
-      "id": "ghost:周礼栋",
-      "title": "周礼栋",
+      "id": "ghost:郭沫若",
+      "title": "郭沫若",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -6566,8 +6518,24 @@
       "featured": false
     },
     {
-      "id": "ghost:屠格涅夫",
-      "title": "屠格涅夫",
+      "id": "ghost:矣晓沅",
+      "title": "矣晓沅",
+      "type": "entity",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 4,
+      "ghost": true,
+      "private": false,
+      "en": "",
+      "featured": false
+    },
+    {
+      "id": "ghost:语言哲学",
+      "title": "语言哲学",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -6575,7 +6543,23 @@
       "confidence": "ghost",
       "updated": "",
       "summary": "",
-      "degree": 2,
+      "degree": 3,
+      "ghost": true,
+      "private": false,
+      "en": "",
+      "featured": false
+    },
+    {
+      "id": "ghost:谢幸",
+      "title": "谢幸",
+      "type": "entity",
+      "domain": [],
+      "tags": [],
+      "judgment": "",
+      "confidence": "ghost",
+      "updated": "",
+      "summary": "",
+      "degree": 4,
       "ghost": true,
       "private": false,
       "en": "",
@@ -6598,8 +6582,8 @@
       "featured": false
     },
     {
-      "id": "ghost:郭沫若",
-      "title": "郭沫若",
+      "id": "ghost:周礼栋",
+      "title": "周礼栋",
       "type": "concept",
       "domain": [],
       "tags": [],
@@ -6614,16 +6598,16 @@
       "featured": false
     },
     {
-      "id": "ghost:矣晓沅",
-      "title": "矣晓沅",
-      "type": "entity",
+      "id": "ghost:屠格涅夫",
+      "title": "屠格涅夫",
+      "type": "concept",
       "domain": [],
       "tags": [],
       "judgment": "",
       "confidence": "ghost",
       "updated": "",
       "summary": "",
-      "degree": 4,
+      "degree": 2,
       "ghost": true,
       "private": false,
       "en": "",
@@ -9299,8 +9283,8 @@
     },
     {
       "source": "concepts/寓言.md",
-      "target": "ghost:本雅明",
-      "weight": 1.0,
+      "target": "entities/瓦尔特·本雅明.md",
+      "weight": 2.0,
       "kinds": [
         "link"
       ]
@@ -14868,14 +14852,6 @@
       ]
     },
     {
-      "source": "concepts/寓言.md",
-      "target": "entities/瓦尔特·本雅明.md",
-      "weight": 1.0,
-      "kinds": [
-        "link"
-      ]
-    },
-    {
       "source": "entities/瓦尔特·本雅明.md",
       "target": "ghost:多义性",
       "weight": 1.0,
@@ -16530,7 +16506,7 @@
       ]
     },
     {
-      "source": "ghost:本雅明",
+      "source": "entities/瓦尔特·本雅明.md",
       "target": "sources/2026-04-17-prometheus-athena.md",
       "weight": 1.0,
       "kinds": [

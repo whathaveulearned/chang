@@ -386,8 +386,8 @@ export default function KnowledgeGraph() {
 
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2)
-      const w = window.innerWidth
-      const h = window.innerHeight
+      const w = Math.max(window.innerWidth, 320)
+      const h = Math.max(window.innerHeight, 400)
       sizeRef.current = { w, h, dpr }
       canvas.width = w * dpr
       canvas.height = h * dpr
@@ -559,10 +559,8 @@ export default function KnowledgeGraph() {
       if (moved) return
       const [sx, sy] = d3.pointer(e, canvas)
       const n = findNode(sx, sy)
-      if (n) {
-        setSelected(n)
-        flyTo(n)
-      } else setSelected(null)
+      if (n) setSelected(n)
+      else setSelected(null)
     }
     canvas.addEventListener('mousemove', onMove)
     canvas.addEventListener('mousedown', onDown)
@@ -671,23 +669,21 @@ export default function KnowledgeGraph() {
         }
 
         if (selectedRef.current?.id === n.id) {
-          // clean concentric halo — a quiet "you are here", no spinner
-          const pulse = 0.5 + 0.5 * Math.sin(time / 600)
-          ctx.globalAlpha = 0.85
+          ctx.globalAlpha = 0.75
           ctx.strokeStyle = BONE
           ctx.lineWidth = 1.2 / t.k
           ctx.beginPath()
           ctx.arc(x, y, n.radius + 5 / t.k, 0, Math.PI * 2)
           ctx.stroke()
-          ctx.globalAlpha = 0.12 + pulse * 0.18
-          ctx.lineWidth = 1 / t.k
+          ctx.globalAlpha = 0.2
+          ctx.lineWidth = 0.8 / t.k
           ctx.beginPath()
-          ctx.arc(x, y, n.radius + (10 + pulse * 4) / t.k, 0, Math.PI * 2)
+          ctx.arc(x, y, n.radius + 14 / t.k, 0, Math.PI * 2)
           ctx.stroke()
         }
       }
 
-      // ---- labels: collision-aware; featured EN keywords always on ----
+      // ---- labels: collision-aware ----
       // draw in SCREEN space (constant size, easy collision boxes)
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
       const k = t.k
@@ -703,42 +699,62 @@ export default function KnowledgeGraph() {
       }
 
       const drawLabel = (
-        n: GNode, text: string, opts: { featured?: boolean; dim?: number; weight?: number; size?: number }
+        n: GNode, text: string, opts: { dim?: number; weight?: number; size?: number }
       ) => {
         const sx = (ox(n)) * k + t.x
         const sy = (oy(n)) * k + t.y
         if (sx < -50 || sx > w + 50 || sy < -30 || sy > h + 30) return
         const fs = opts.size ?? 12
         const yOff = n.radius * k + 5
-        ctx.font = `${opts.weight ?? 400} ${fs}px ${opts.featured ? FONT_EN : FONT_CJK}`
-        if (opts.featured && 'letterSpacing' in ctx) (ctx as any).letterSpacing = '1.5px'
+        ctx.font = `${opts.weight ?? 400} ${fs}px ${FONT_CJK}`
         const wpx = ctx.measureText(text).width
         const labY = sy + yOff + fs / 2
-        // featured keywords reserve a much larger box so they never stack
-        const padX = opts.featured ? 26 : 4
-        const padY = opts.featured ? 22 : 3
-        if (!fits(sx, labY, wpx / 2 + padX, fs / 2 + padY)) {
-          if (opts.featured && 'letterSpacing' in ctx) (ctx as any).letterSpacing = '0px'
-          return
-        }
+        if (!fits(sx, labY, wpx / 2 + 4, fs / 2 + 3)) return
         ctx.textAlign = 'center'
         ctx.textBaseline = 'middle'
         ctx.globalAlpha = opts.dim ?? 1
         ctx.shadowColor = 'rgba(0,0,0,0.92)'
-        ctx.shadowBlur = opts.featured ? 8 : 5
-        ctx.fillStyle = opts.featured ? '#f0ede4' : opts.weight && opts.weight >= 500 ? BONE : '#b9b6ad'
+        ctx.shadowBlur = 5
+        ctx.fillStyle = opts.weight && opts.weight >= 500 ? BONE : '#b9b6ad'
         ctx.fillText(text, sx, labY)
         ctx.shadowBlur = 0
-        if (opts.featured && 'letterSpacing' in ctx) (ctx as any).letterSpacing = '0px'
       }
 
-      // 1) featured EN keywords — drawn first so they claim space (skip when a
-      //    node is focused, to keep the focus view clean)
+      // 1) Featured EN zone labels — galaxy region identifiers.
+      //    Drawn at cluster centroid, always visible, no collision suppression.
       if (!focus) {
+        // compute cluster centroids in screen space
+        const clusterSx = new Map<number, number>()
+        const clusterSy = new Map<number, number>()
+        const clusterCnt = new Map<number, number>()
         for (const n of nodes) {
-          if (!n.featured || !n.en || n.x == null) continue
-          drawLabel(n, n.en.toUpperCase(), { featured: true, size: 13, weight: 500 })
+          if (n.x == null || n.cluster < 0) continue
+          const sx = ox(n) * k + t.x
+          const sy = oy(n) * k + t.y
+          clusterSx.set(n.cluster, (clusterSx.get(n.cluster) || 0) + sx)
+          clusterSy.set(n.cluster, (clusterSy.get(n.cluster) || 0) + sy)
+          clusterCnt.set(n.cluster, (clusterCnt.get(n.cluster) || 0) + 1)
         }
+        for (const n of nodes) {
+          if (!n.featured || !n.en || n.cluster < 0) continue
+          const cnt = clusterCnt.get(n.cluster) || 0
+          if (!cnt) continue
+          const sx = (clusterSx.get(n.cluster) || 0) / cnt
+          const sy = (clusterSy.get(n.cluster) || 0) / cnt
+          if (sx < -120 || sx > w + 120 || sy < -40 || sy > h + 40) continue
+          ctx.font = `300 13px ${FONT_EN}`
+          if ('letterSpacing' in ctx) (ctx as any).letterSpacing = '3px'
+          ctx.textAlign = 'center'
+          ctx.textBaseline = 'middle'
+          ctx.globalAlpha = 0.28
+          ctx.shadowColor = 'rgba(0,0,0,0.85)'
+          ctx.shadowBlur = 6
+          ctx.fillStyle = '#ccc8be'
+          ctx.fillText(n.en.toUpperCase(), sx, sy)
+          ctx.shadowBlur = 0
+          if ('letterSpacing' in ctx) (ctx as any).letterSpacing = '0px'
+        }
+        ctx.globalAlpha = 1
       }
 
       // 2) focus mode: node + neighbours; else center + top hubs by zoom
@@ -751,7 +767,7 @@ export default function KnowledgeGraph() {
           show = !!inFocus
         } else {
           if (n.private) show = false
-          else if (n.isCenter) show = k > 0.85
+          else if (n.isCenter) show = k > 0.5
           else if (n.featured) show = false // already drawn in EN
           else show = (k > 3 && n.degree >= 5) || (k > 2 && n.degree >= 9) || (k > 1.4 && n.degree >= 18)
         }
@@ -990,7 +1006,10 @@ export default function KnowledgeGraph() {
 
             <div className="px-6 py-3 text-[11px] text-neutral-600 flex items-center justify-between">
               <span>{connections.length} 条关联</span>
-              {selected.updated && <span className="text-neutral-700">{selected.updated}</span>}
+              <div className="flex items-center gap-3">
+                <button onClick={() => flyTo(selected)} className="hover:text-neutral-300 transition-colors tracking-wide">定位</button>
+                {selected.updated && <span className="text-neutral-700">{selected.updated}</span>}
+              </div>
             </div>
 
             <div className="flex-1 overflow-y-auto px-3 pb-4 thin-scroll">
